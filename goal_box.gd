@@ -11,16 +11,16 @@ func set_texture(mesh:MeshInstance3D):
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_texture($front)
-	set_texture($back)
-	set_texture($left)
-	set_texture($right)
-	set_texture($top)
-	set_texture($bot)
+	set_texture($scaler/front)
+	set_texture($scaler/back)
+	set_texture($scaler/left)
+	set_texture($scaler/right)
+	set_texture($scaler/top)
+	set_texture($scaler/bot)
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	rotate_y(delta)
+	# rotate_y(delta)
 	pass

@@ -1,9 +1,24 @@
-[gd_scene load_steps=15 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=23 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
-[ext_resource type="Script" uid="uid://de0stoyp4vqi2" path="res://goal_box.gd" id="2_coq8p"]
+[ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="2_sasra"]
-[ext_resource type="Texture2D" uid="uid://yrkevmxuio66" path="res://goals/E-WEB-Goal-02.png" id="4_coq8p"]
+[ext_resource type="PackedScene" uid="uid://5sggqhc8uux2" path="res://goal_box.tscn" id="3_coq8p"]
+[ext_resource type="Texture2D" uid="uid://p8putbgjitl6" path="res://goals/E-WEB-Goal-03.png" id="4_njel3"]
+[ext_resource type="Texture2D" uid="uid://k1c7jpvbeutp" path="res://goals/E-WEB-Goal-04.png" id="5_vr1i5"]
+[ext_resource type="Texture2D" uid="uid://bb7ay212glga4" path="res://goals/E-WEB-Goal-05.png" id="6_rpuu0"]
+[ext_resource type="Texture2D" uid="uid://dhhgj3m8gvcir" path="res://goals/E-WEB-Goal-06.png" id="7_oo8pe"]
+[ext_resource type="Texture2D" uid="uid://dgb8pq8idsch3" path="res://goals/E-WEB-Goal-07.png" id="8_4gito"]
+[ext_resource type="Texture2D" uid="uid://ct42pjwfwvjn0" path="res://goals/E-WEB-Goal-09.png" id="9_fbuy2"]
+[ext_resource type="Texture2D" uid="uid://d2b0flvvgola7" path="res://goals/E-WEB-Goal-10.png" id="10_fbuy2"]
+[ext_resource type="Texture2D" uid="uid://c4wdugn8nqwsr" path="res://goals/E-WEB-Goal-08.png" id="10_ykxp3"]
+[ext_resource type="Texture2D" uid="uid://ch5ldi5mlxetk" path="res://goals/E-WEB-Goal-11.png" id="11_0k8yu"]
+[ext_resource type="Texture2D" uid="uid://d1n0828jvlp8c" path="res://goals/E-WEB-Goal-12.png" id="12_hiucn"]
+[ext_resource type="Texture2D" uid="uid://dx70jn77fea38" path="res://goals/E-WEB-Goal-13.png" id="13_k6its"]
+[ext_resource type="Texture2D" uid="uid://cse8qbjky4vee" path="res://goals/E-WEB-Goal-14.png" id="14_2dw41"]
+[ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="15_k6its"]
+[ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
+[ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -19,26 +34,6 @@ ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
 glow_enabled = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_ia1lp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sasra"]
-albedo_texture = ExtResource("2_sasra")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coq8p"]
-albedo_texture = ExtResource("2_sasra")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nij2"]
-albedo_texture = ExtResource("2_sasra")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cbxl"]
-albedo_texture = ExtResource("2_sasra")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pr8v"]
-albedo_texture = ExtResource("2_sasra")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buypi"]
-albedo_texture = ExtResource("2_sasra")
 
 [node name="test_scene" type="Node3D"]
 script = ExtResource("1_uhqqe")
@@ -61,76 +56,56 @@ tracker = &"left_hand"
 [node name="XRController3D2" type="XRController3D" parent="XROrigin3D"]
 tracker = &"right_hand"
 
-[node name="goal_box" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83154, 0, -3.24892)
-script = ExtResource("2_coq8p")
+[node name="goals" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422494, 1.26748, -1.29878)
+script = ExtResource("2_2dw41")
+
+[node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("2_sasra")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="goal_box"]
+[node name="goal_box2" parent="goals" instance=ExtResource("3_coq8p")]
 
-[node name="front" type="MeshInstance3D" parent="goal_box"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_sasra")
+[node name="goal_box3" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("4_njel3")
 
-[node name="back" type="MeshInstance3D" parent="goal_box"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_coq8p")
+[node name="goal_box4" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("5_vr1i5")
 
-[node name="left" type="MeshInstance3D" parent="goal_box"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 0)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_2nij2")
+[node name="goal_box5" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("6_rpuu0")
 
-[node name="right" type="MeshInstance3D" parent="goal_box"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_7cbxl")
+[node name="goal_box6" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("7_oo8pe")
 
-[node name="top" type="MeshInstance3D" parent="goal_box"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_8pr8v")
+[node name="goal_box7" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("8_4gito")
 
-[node name="bot" type="MeshInstance3D" parent="goal_box"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_buypi")
+[node name="goal_box8" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("10_ykxp3")
 
-[node name="goal_box2" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23651, 0, -3.24892)
-script = ExtResource("2_coq8p")
-image = ExtResource("4_coq8p")
+[node name="goal_box9" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("9_fbuy2")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="goal_box2"]
+[node name="goal_box10" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("10_fbuy2")
 
-[node name="front" type="MeshInstance3D" parent="goal_box2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_sasra")
+[node name="goal_box11" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("11_0k8yu")
 
-[node name="back" type="MeshInstance3D" parent="goal_box2"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_coq8p")
+[node name="goal_box12" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("12_hiucn")
 
-[node name="left" type="MeshInstance3D" parent="goal_box2"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 0)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_2nij2")
+[node name="goal_box13" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("13_k6its")
 
-[node name="right" type="MeshInstance3D" parent="goal_box2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_7cbxl")
+[node name="goal_box14" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("14_2dw41")
 
-[node name="top" type="MeshInstance3D" parent="goal_box2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_8pr8v")
+[node name="goal_box15" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("15_k6its")
 
-[node name="bot" type="MeshInstance3D" parent="goal_box2"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0)
-mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_buypi")
+[node name="goal_box16" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("16_2dw41")
+
+[node name="goal_box17" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("17_ykxp3")
