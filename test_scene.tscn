@@ -57,7 +57,7 @@ tracker = &"left_hand"
 tracker = &"right_hand"
 
 [node name="goals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422494, 1.26748, -1.29878)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80759, 1.63909, -1.29878)
 script = ExtResource("2_2dw41")
 
 [node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]
