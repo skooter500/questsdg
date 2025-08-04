@@ -19,11 +19,14 @@ config/icon="res://icon.svg"
 
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_2d=2
+anti_aliasing/quality/msaa_3d=2
 
 [xr]
 
 openxr/enabled=true
 openxr/environment_blend_mode=2
+openxr/startup_alert=false
 openxr/extensions/hand_tracking=true
 shaders/enabled=true
 openxr/extensions/meta/passthrough=true

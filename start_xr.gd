@@ -13,6 +13,10 @@ func enable_passthrough() -> bool:
 			return true
 		else:
 			return false
+	get_viewport().transparent_bg = true
+	environment.background_mode = Environment.BG_CLEAR_COLOR
+	environment.ambient_light_source = Environment.AMBIENT_SOURCE_COLOR
+	
 
 
 # Called when the node enters the scene tree for the first time.
