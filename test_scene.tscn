@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=15 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://de0stoyp4vqi2" path="res://goal_box.gd" id="2_coq8p"]
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="2_sasra"]
+[ext_resource type="Texture2D" uid="uid://yrkevmxuio66" path="res://goals/E-WEB-Goal-02.png" id="4_coq8p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -22,6 +23,21 @@ glow_enabled = true
 [sub_resource type="QuadMesh" id="QuadMesh_ia1lp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sasra"]
+albedo_texture = ExtResource("2_sasra")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coq8p"]
+albedo_texture = ExtResource("2_sasra")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nij2"]
+albedo_texture = ExtResource("2_sasra")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cbxl"]
+albedo_texture = ExtResource("2_sasra")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pr8v"]
+albedo_texture = ExtResource("2_sasra")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buypi"]
 albedo_texture = ExtResource("2_sasra")
 
 [node name="test_scene" type="Node3D"]
@@ -46,8 +62,9 @@ tracker = &"left_hand"
 tracker = &"right_hand"
 
 [node name="goal_box" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.24892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83154, 0, -3.24892)
 script = ExtResource("2_coq8p")
+image = ExtResource("2_sasra")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="goal_box"]
 
@@ -59,24 +76,61 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sasra")
 [node name="back" type="MeshInstance3D" parent="goal_box"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5)
 mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_sasra")
+surface_material_override/0 = SubResource("StandardMaterial3D_coq8p")
 
 [node name="left" type="MeshInstance3D" parent="goal_box"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 0)
 mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_sasra")
+surface_material_override/0 = SubResource("StandardMaterial3D_2nij2")
 
 [node name="right" type="MeshInstance3D" parent="goal_box"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0)
 mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_sasra")
+surface_material_override/0 = SubResource("StandardMaterial3D_7cbxl")
 
 [node name="top" type="MeshInstance3D" parent="goal_box"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
 mesh = SubResource("QuadMesh_ia1lp")
-surface_material_override/0 = SubResource("StandardMaterial3D_sasra")
+surface_material_override/0 = SubResource("StandardMaterial3D_8pr8v")
 
 [node name="bot" type="MeshInstance3D" parent="goal_box"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0)
 mesh = SubResource("QuadMesh_ia1lp")
+surface_material_override/0 = SubResource("StandardMaterial3D_buypi")
+
+[node name="goal_box2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23651, 0, -3.24892)
+script = ExtResource("2_coq8p")
+image = ExtResource("4_coq8p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="goal_box2"]
+
+[node name="front" type="MeshInstance3D" parent="goal_box2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+mesh = SubResource("QuadMesh_ia1lp")
 surface_material_override/0 = SubResource("StandardMaterial3D_sasra")
+
+[node name="back" type="MeshInstance3D" parent="goal_box2"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5)
+mesh = SubResource("QuadMesh_ia1lp")
+surface_material_override/0 = SubResource("StandardMaterial3D_coq8p")
+
+[node name="left" type="MeshInstance3D" parent="goal_box2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 0)
+mesh = SubResource("QuadMesh_ia1lp")
+surface_material_override/0 = SubResource("StandardMaterial3D_2nij2")
+
+[node name="right" type="MeshInstance3D" parent="goal_box2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0)
+mesh = SubResource("QuadMesh_ia1lp")
+surface_material_override/0 = SubResource("StandardMaterial3D_7cbxl")
+
+[node name="top" type="MeshInstance3D" parent="goal_box2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
+mesh = SubResource("QuadMesh_ia1lp")
+surface_material_override/0 = SubResource("StandardMaterial3D_8pr8v")
+
+[node name="bot" type="MeshInstance3D" parent="goal_box2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0)
+mesh = SubResource("QuadMesh_ia1lp")
+surface_material_override/0 = SubResource("StandardMaterial3D_buypi")
