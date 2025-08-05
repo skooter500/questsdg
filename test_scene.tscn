@@ -1,14 +1,18 @@
-[gd_scene load_steps=27 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=31 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
+[ext_resource type="Script" uid="uid://dttcldpevggnp" path="res://hand.gd" id="2_p7tmn"]
 [ext_resource type="PackedScene" uid="uid://cjcehqrfoxav3" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="2_pvxhv"]
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="2_sasra"]
 [ext_resource type="PackedScene" uid="uid://dabmoo0spa6vg" path="res://addons/hand_pose_detector/hands/RightHandHumanoid.gltf" id="3_6h1ut"]
+[ext_resource type="Script" uid="uid://dya4sxc8awaw0" path="res://addons/hand_pose_detector/hand_pose_detector.gd" id="3_b11sm"]
 [ext_resource type="PackedScene" uid="uid://5sggqhc8uux2" path="res://goal_box.tscn" id="3_coq8p"]
 [ext_resource type="Texture2D" uid="uid://p8putbgjitl6" path="res://goals/E-WEB-Goal-03.png" id="4_njel3"]
 [ext_resource type="Texture2D" uid="uid://k1c7jpvbeutp" path="res://goals/E-WEB-Goal-04.png" id="5_vr1i5"]
+[ext_resource type="PackedScene" uid="uid://df5hynbooj1uj" path="res://addons/hand_pose_detector/hand_pose_detector.tscn" id="6_mfkbt"]
 [ext_resource type="Texture2D" uid="uid://bb7ay212glga4" path="res://goals/E-WEB-Goal-05.png" id="6_rpuu0"]
+[ext_resource type="Resource" uid="uid://ckjd0xa2a240p" path="res://addons/hand_pose_detector/poses/standard_pose_set.tres" id="7_077gh"]
 [ext_resource type="Texture2D" uid="uid://dhhgj3m8gvcir" path="res://goals/E-WEB-Goal-06.png" id="7_oo8pe"]
 [ext_resource type="Texture2D" uid="uid://dgb8pq8idsch3" path="res://goals/E-WEB-Goal-07.png" id="8_4gito"]
 [ext_resource type="Texture2D" uid="uid://ct42pjwfwvjn0" path="res://goals/E-WEB-Goal-09.png" id="9_fbuy2"]
@@ -60,6 +64,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
 
 [node name="left" type="XRNode3D" parent="XROrigin3D"]
 tracker = &"/user/hand_tracker/left"
+script = ExtResource("2_p7tmn")
+
+[node name="HandPoseDetector" type="Node" parent="XROrigin3D/left"]
+script = ExtResource("3_b11sm")
+hand_pose_set = ExtResource("7_077gh")
+metadata/_custom_type_script = "uid://dya4sxc8awaw0"
 
 [node name="left_hand" type="Area3D" parent="XROrigin3D/left"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0680579, 0.159387)
@@ -74,6 +84,7 @@ shape = SubResource("SphereShape3D_pvxhv")
 
 [node name="right" type="XRNode3D" parent="XROrigin3D"]
 tracker = &"/user/hand_tracker/right"
+script = ExtResource("2_p7tmn")
 
 [node name="right_hand" type="Area3D" parent="XROrigin3D/right"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0676188, 0.159387)
@@ -87,8 +98,12 @@ shape = SubResource("SphereShape3D_pvxhv")
 [node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="0"]
 hand_tracker = &"/user/hand_tracker/right"
 
+[node name="HandPoseDetector" parent="XROrigin3D/right" instance=ExtResource("6_mfkbt")]
+hand_tracker_name = "/user/hand_tracker/right"
+hand_pose_set = ExtResource("7_077gh")
+
 [node name="goals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67593, 1.52172, -0.165061)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.273559, 1.33562, -0.684787)
 script = ExtResource("2_2dw41")
 
 [node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]
@@ -144,7 +159,13 @@ image = ExtResource("17_ykxp3")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="goals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977309, 0.484867, 0)
 stream = ExtResource("22_6h1ut")
+volume_db = -40.93
 autoplay = true
+
+[connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
+[connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]
+[connection signal="pose_ended" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_ended"]
+[connection signal="pose_started" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_started"]
 
 [editable path="XROrigin3D/left/LeftHandHumanoid2"]
 [editable path="XROrigin3D/right/RightHandHumanoid2"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://5sggqhc8uux2"]
+[gd_scene load_steps=15 format=3 uid="uid://5sggqhc8uux2"]
 
 [ext_resource type="Script" uid="uid://de0stoyp4vqi2" path="res://goal_box.gd" id="1_n4etf"]
 [ext_resource type="Texture2D" uid="uid://yrkevmxuio66" path="res://goals/E-WEB-Goal-02.png" id="2_0iafl"]
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="3_nldhb"]
 [ext_resource type="AudioStream" uid="uid://d1hubcc2rhcgy" path="res://sounds/swoosh-07-351043.mp3" id="4_0iafl"]
+[ext_resource type="AudioStream" uid="uid://cy78ftcl5bwxt" path="res://sounds/PowerUp10.wav" id="5_nldhb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n4etf"]
 size = Vector3(0.198706, 0.198889, 0.195898)
@@ -11,22 +12,30 @@ size = Vector3(0.198706, 0.198889, 0.195898)
 [sub_resource type="QuadMesh" id="QuadMesh_ia1lp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buypi"]
+transparency = 1
 albedo_texture = ExtResource("3_nldhb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pr8v"]
+transparency = 1
 albedo_texture = ExtResource("3_nldhb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_coq8p"]
+transparency = 1
 albedo_texture = ExtResource("3_nldhb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7cbxl"]
+transparency = 1
 albedo_texture = ExtResource("3_nldhb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nij2"]
+transparency = 1
 albedo_texture = ExtResource("3_nldhb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sasra"]
+transparency = 1
 albedo_texture = ExtResource("3_nldhb")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nldhb"]
 
 [node name="goal_box" type="Area3D"]
 script = ExtResource("1_n4etf")
@@ -78,6 +87,13 @@ surface_material_override/0 = SubResource("StandardMaterial3D_sasra")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_0iafl")
 volume_db = 80.0
+
+[node name="selected_sound" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_nldhb")
+volume_db = -26.0
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nldhb")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
