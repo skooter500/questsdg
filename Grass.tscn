@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2cltasm8m6ma"]
+
+[ext_resource type="PackedScene" uid="uid://bs10a0rwwidun" path="res://Models/grass.glb" id="1_7oqlf"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_7oqlf")]
