@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="3_nldhb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n4etf"]
-size = Vector3(0.1, 0.1, 0.1)
+size = Vector3(0.198706, 0.198889, 0.195898)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ia1lp"]
 
@@ -32,6 +32,7 @@ script = ExtResource("1_n4etf")
 image = ExtResource("2_0iafl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000256343, -0.00166626, -0.000292974)
 shape = SubResource("BoxShape3D_n4etf")
 
 [node name="scaler" type="Node3D" parent="."]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=25 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
+[ext_resource type="PackedScene" uid="uid://cjcehqrfoxav3" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="2_pvxhv"]
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="2_sasra"]
+[ext_resource type="PackedScene" uid="uid://dabmoo0spa6vg" path="res://addons/hand_pose_detector/hands/RightHandHumanoid.gltf" id="3_6h1ut"]
 [ext_resource type="PackedScene" uid="uid://5sggqhc8uux2" path="res://goal_box.tscn" id="3_coq8p"]
 [ext_resource type="Texture2D" uid="uid://p8putbgjitl6" path="res://goals/E-WEB-Goal-03.png" id="4_njel3"]
 [ext_resource type="Texture2D" uid="uid://k1c7jpvbeutp" path="res://goals/E-WEB-Goal-04.png" id="5_vr1i5"]
@@ -50,14 +52,23 @@ shadow_enabled = true
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
 
-[node name="XRController3D" type="XRController3D" parent="XROrigin3D"]
-tracker = &"left_hand"
+[node name="left" type="XRNode3D" parent="XROrigin3D"]
+tracker = &"/user/hand_tracker/left"
 
-[node name="XRController3D2" type="XRController3D" parent="XROrigin3D"]
-tracker = &"right_hand"
+[node name="LeftHandHumanoid2" parent="XROrigin3D/left" instance=ExtResource("2_pvxhv")]
+
+[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1"]
+
+[node name="right" type="XRNode3D" parent="XROrigin3D"]
+tracker = &"/user/hand_tracker/right"
+
+[node name="RightHandHumanoid2" parent="XROrigin3D/right" instance=ExtResource("3_6h1ut")]
+
+[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="0"]
+hand_tracker = &"/user/hand_tracker/right"
 
 [node name="goals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80759, 1.63909, -1.29878)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.692611, 1.52172, -1.61009)
 script = ExtResource("2_2dw41")
 
 [node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]
@@ -109,3 +120,6 @@ image = ExtResource("16_2dw41")
 
 [node name="goal_box17" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("17_ykxp3")
+
+[editable path="XROrigin3D/left/LeftHandHumanoid2"]
+[editable path="XROrigin3D/right/RightHandHumanoid2"]
