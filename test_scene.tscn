@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=24 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="15_k6its"]
 [ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
+[ext_resource type="ArrayMesh" uid="uid://jxxw53dwo5fw" path="res://Models/TUD_Campus2 v2.obj" id="20_g6y4b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -109,3 +110,7 @@ image = ExtResource("16_2dw41")
 
 [node name="goal_box17" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("17_ykxp3")
+
+[node name="TudCampus2V2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.1, 8.74228e-09, 3.82137e-16, 0, -4.37114e-09, 0.1, 8.74228e-09, 0.1, 4.37114e-09, -0.0145044, 0, -2.19954)
+mesh = ExtResource("20_g6y4b")
