@@ -2,18 +2,18 @@ extends Area3D
 
 var fade_tween:Tween = null
 
+var sprites = []
 var mats = []
 
-func fade_in():
+func bounce_in():
 	if fade_tween:
 		return
 	else:
-		fade_tween = create_tween().set_trans(Tween.TRANS_LINEAR)
-		$selected_sound.pitch_scale = 0.5
+		scale = Vector3.ZERO
+		fade_tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
+		fade_tween.tween_property(self, "scale", Vector3.ONE,2)
+		$selected_sound.pitch_scale = 0.6
 		$selected_sound.play()
-		for mat in mats:
-			fade_tween.tween_property(mat, "albedo_color:a", 1.0, 2.0)
-			fade_tween.set_parallel(true)
 			# Optional: Hide the mesh when fade completes
 		# fade_tween.finished.connect(make_invisible)
 
@@ -21,13 +21,21 @@ func fade_in():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for child in get_children():
-		var mat:StandardMaterial3D = child.get_surface_override_material(0)
-		mat = mat.duplicate()
-		mat.albedo_color.a = 0
-		child.set_surface_override_material(0, mat)
-		mats.push_back(mat)
-	# fade_in()
+	
+	sprites.push_back($scaler/front)
+	sprites.push_back($scaler/bott)
+	sprites.push_back($scaler/left)
+	sprites.push_back($scaler/top)
+	sprites.push_back($scaler/back)
+	sprites.push_back($scaler/right)
+	
+	#for sprite in sprites:
+		#var mat:StandardMaterial3D = sprite.get_surface_override_material(0)
+		#mat = mat.duplicate()
+		#mat.albedo_color.a = 0
+		#sprites.set_surface_override_material(0, mat)
+		#mats.push_back(mat)
+	bounce_in()
 	pass # Replace with function body.
 
 

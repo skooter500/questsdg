@@ -1,5 +1,6 @@
-[gd_scene load_steps=518 format=3 uid="uid://bdllxnud8sodo"]
+[gd_scene load_steps=519 format=3 uid="uid://bdllxnud8sodo"]
 
+[ext_resource type="Script" uid="uid://bpatk7f43t115" path="res://goal_box_animated.gd" id="1_5fbwa"]
 [ext_resource type="AudioStream" uid="uid://d1hubcc2rhcgy" path="res://sounds/swoosh-07-351043.mp3" id="4_5gxx3"]
 [ext_resource type="AudioStream" uid="uid://cy78ftcl5bwxt" path="res://sounds/PowerUp10.wav" id="5_8s77m"]
 [ext_resource type="Texture2D" uid="uid://pvourutjt450" path="res://goals/Goal-1/Goal 1/1_SDG_MakeEveryDayCount_Gifs_GDU_frames/frame_001.png" id="7_nld71"]
@@ -2068,6 +2069,7 @@ animations = [{
 }]
 
 [node name="goal_box_animated" type="Area3D"]
+script = ExtResource("1_5fbwa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000256343, -0.00166626, -0.000292974)
@@ -2076,7 +2078,7 @@ shape = SubResource("BoxShape3D_n4etf")
 [node name="scaler" type="Node3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
-[node name="front2" type="AnimatedSprite3D" parent="scaler"]
+[node name="front" type="AnimatedSprite3D" parent="scaler"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 pixel_size = 0.001
 sprite_frames = SubResource("SpriteFrames_xs8jk")
@@ -2090,7 +2092,7 @@ sprite_frames = SubResource("SpriteFrames_xs8jk")
 speed_scale = 5.0
 script = ExtResource("215_ys8l3")
 
-[node name="left3" type="AnimatedSprite3D" parent="scaler"]
+[node name="left" type="AnimatedSprite3D" parent="scaler"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, 0)
 pixel_size = 0.001
 sprite_frames = SubResource("SpriteFrames_0w4vq")
@@ -2102,14 +2104,14 @@ pixel_size = 0.001
 sprite_frames = SubResource("SpriteFrames_0w4vq")
 script = ExtResource("215_ys8l3")
 
-[node name="back2" type="AnimatedSprite3D" parent="scaler"]
+[node name="back" type="AnimatedSprite3D" parent="scaler"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5)
 pixel_size = 0.001
 sprite_frames = SubResource("SpriteFrames_xs8jk")
 speed_scale = 5.0
 script = ExtResource("215_ys8l3")
 
-[node name="right2" type="AnimatedSprite3D" parent="scaler"]
+[node name="right" type="AnimatedSprite3D" parent="scaler"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0)
 pixel_size = 0.001
 sprite_frames = SubResource("SpriteFrames_0w4vq")
