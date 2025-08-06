@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ikfqihmfo5o0"]
+[gd_scene load_steps=5 format=3 uid="uid://brgw2wktsrl2k"]
 
-[ext_resource type="PackedScene" uid="uid://hoiy56ou21ca" path="res://Models/tower_crane.glb" id="1_pait3"]
+[ext_resource type="PackedScene" path="res://Models/tower_crane.glb" id="1_pait3"]
 
 [sub_resource type="Animation" id="Animation_pait3"]
 resource_name = "Crane_Rotation"

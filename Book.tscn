@@ -1,6 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://bk1tf7imwq32v"]
+[gd_scene load_steps=6 format=3 uid="uid://dafqy6t1e5spc"]
 
-[ext_resource type="PackedScene" uid="uid://dwqu5yw13jfpr" path="res://Models/open book no pages v1 v1.fbx" id="1_ckbho"]
+[ext_resource type="PackedScene" path="res://Models/open book no pages v1 v1.fbx" id="1_ckbho"]
+
+[sub_resource type="Animation" id="Animation_ckbho"]
+resource_name = "Book Rotation"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("open book no pages v1 v1:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
 
 [sub_resource type="Animation" id="Animation_el5v3"]
 resource_name = "Book_Rise"
@@ -57,23 +74,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_ckbho"]
-resource_name = "Book Rotation"
-length = 10.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("open book no pages v1 v1:rotation:y")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xm5bx"]

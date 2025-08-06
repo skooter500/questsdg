@@ -1,6 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://diloh7o4yd4xp"]
+[gd_scene load_steps=5 format=3 uid="uid://b00u5k8csutu6"]
 
-[ext_resource type="PackedScene" uid="uid://ckteswuqa0c1x" path="res://Models/oak_trees.glb" id="1_nbyt5"]
+[ext_resource type="PackedScene" path="res://Models/oak_trees.glb" id="1_nbyt5"]
+
+[sub_resource type="Animation" id="Animation_72j6q"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.1, 0.1, 0.1)
 
 [sub_resource type="Animation" id="Animation_dn7q5"]
 resource_name = "Tree_Growth"
@@ -19,16 +29,6 @@ tracks/1/path = NodePath("Sketchfab_Scene")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 10, 1, 0, 0.5, 0)
-
-[sub_resource type="Animation" id="Animation_72j6q"]
-length = 0.001
-tracks/0/type = "scale_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sketchfab_Scene")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.1, 0.1, 0.1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fxwtr"]
 _data = {
