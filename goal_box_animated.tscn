@@ -1,6 +1,5 @@
-[gd_scene load_steps=522 format=3 uid="uid://bdllxnud8sodo"]
+[gd_scene load_steps=518 format=3 uid="uid://bdllxnud8sodo"]
 
-[ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="3_hxgoo"]
 [ext_resource type="AudioStream" uid="uid://d1hubcc2rhcgy" path="res://sounds/swoosh-07-351043.mp3" id="4_5gxx3"]
 [ext_resource type="AudioStream" uid="uid://cy78ftcl5bwxt" path="res://sounds/PowerUp10.wav" id="5_8s77m"]
 [ext_resource type="Texture2D" uid="uid://pvourutjt450" path="res://goals/Goal-1/Goal 1/1_SDG_MakeEveryDayCount_Gifs_GDU_frames/frame_001.png" id="7_nld71"]
@@ -2068,16 +2067,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="QuadMesh" id="QuadMesh_ia1lp"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_buypi"]
-transparency = 1
-albedo_texture = ExtResource("3_hxgoo")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pr8v"]
-transparency = 1
-albedo_texture = ExtResource("3_hxgoo")
-
 [node name="goal_box_animated" type="Area3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -2089,6 +2078,13 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
 [node name="front2" type="AnimatedSprite3D" parent="scaler"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+pixel_size = 0.001
+sprite_frames = SubResource("SpriteFrames_xs8jk")
+speed_scale = 5.0
+script = ExtResource("215_ys8l3")
+
+[node name="bott" type="AnimatedSprite3D" parent="scaler"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
 pixel_size = 0.001
 sprite_frames = SubResource("SpriteFrames_xs8jk")
 speed_scale = 5.0
@@ -2112,18 +2108,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0
 pixel_size = 0.001
 sprite_frames = SubResource("SpriteFrames_0w4vq")
 script = ExtResource("215_ys8l3")
-
-[node name="bot" type="MeshInstance3D" parent="scaler"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0)
-mesh = SubResource("QuadMesh_ia1lp")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_buypi")
-
-[node name="top" type="MeshInstance3D" parent="scaler"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
-mesh = SubResource("QuadMesh_ia1lp")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_8pr8v")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_5gxx3")
