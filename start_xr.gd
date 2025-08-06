@@ -23,6 +23,8 @@ func enable_passthrough() -> bool:
 func _ready() -> void:
 	$Grass/AnimationPlayer.play("grass_growing")
 	$Crane/AnimationPlayer.play("Crane_Rotation")
+	$Book/AnimationPlayer.play("Book_Rise")
+	$Book/AnimationPlayer.queue("Book Rotation")
 	xr_interface = XRServer.primary_interface	
 	if xr_interface and xr_interface.is_initialized():
 		print("OpenXR initialised successfully")
