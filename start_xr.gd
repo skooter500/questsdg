@@ -25,6 +25,10 @@ func _ready() -> void:
 	$Crane/AnimationPlayer.play("Crane_Rotation")
 	$Book/AnimationPlayer.play("Book_Rise")
 	$Book/AnimationPlayer.queue("Book Rotation")
+	$Tree/AnimationPlayer.play("Tree_Growth")
+	$Tree2/AnimationPlayer.play("Tree_Growth")
+	$Tree3/AnimationPlayer.play("Tree_Growth")
+
 	xr_interface = XRServer.primary_interface	
 	if xr_interface and xr_interface.is_initialized():
 		print("OpenXR initialised successfully")
