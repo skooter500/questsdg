@@ -86,7 +86,7 @@ _data = {
 [node name="Book" type="Node3D"]
 
 [node name="open book no pages v1 v1" parent="." instance=ExtResource("1_ckbho")]
-transform = Transform3D(3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0, 0.619251, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0172234, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
