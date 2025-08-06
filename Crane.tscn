@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://brgw2wktsrl2k"]
+
+[ext_resource type="PackedScene" path="res://Models/tower_crane.glb" id="1_pait3"]
+
+[sub_resource type="Animation" id="Animation_pait3"]
+resource_name = "Crane_Rotation"
+length = 16.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5, 8, 9.5, 11, 12.5, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.349066, 0.698132, 1.0472, 1.0472, 0.698132, 0.349066, 0.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_w0v8j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene:rotation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5nx05"]
+_data = {
+&"Crane_Rotation": SubResource("Animation_pait3"),
+&"RESET": SubResource("Animation_w0v8j")
+}
+
+[node name="Crane" type="Node3D"]
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_pait3")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5nx05")
+}
