@@ -32,6 +32,7 @@ func _ready() -> void:
 var fade_out_tween:Tween = null
 
 func make_invisible():
+	fade_out_tween = null
 	monitoring = false        # Stops detecting other bodies entering/exiting
 	monitorable = false 
 	
