@@ -36,6 +36,10 @@ func _ready() -> void:
 	instance.position = Vector3(2.628, 1.5, -0.314)
 	var anim_player = instance.get_node("AnimationPlayer")
 	anim_player.play("Cloud_Movement")
+	
+	await get_tree().create_timer(5.0).timeout
+	var rain_particles = instance.get_node("RainParticles")
+	rain_particles.emitting = true
 
 
 	xr_interface = XRServer.primary_interface	

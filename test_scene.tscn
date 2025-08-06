@@ -51,7 +51,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
-transform = Transform3D(0.999701, -0.00063956, -0.0244238, 0, 0.999657, -0.026177, 0.0244322, 0.0261691, 0.999359, 0.751272, 0, 1.7716)
+transform = Transform3D(0.999701, -0.00063956, -0.0244238, 0, 0.999657, -0.026177, 0.0244322, 0.0261691, 0.999359, 0.307607, 0, 1.7716)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
