@@ -141,7 +141,7 @@ _data = {
 &"grass_growing": SubResource("Animation_d2gna")
 }
 
-[node name="Node3D" type="Node3D"]
+[node name="Grass" type="Node3D"]
 
 [node name="Grass1" parent="." instance=ExtResource("1_7oqlf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.143604, 0)

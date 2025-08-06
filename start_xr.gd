@@ -21,7 +21,8 @@ func enable_passthrough() -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Grass_Node/AnimationPlayer.play("grass_growing")
+	$Grass/AnimationPlayer.play("grass_growing")
+	$Crane/AnimationPlayer.play("Crane_Rotation")
 	xr_interface = XRServer.primary_interface	
 	if xr_interface and xr_interface.is_initialized():
 		print("OpenXR initialised successfully")
