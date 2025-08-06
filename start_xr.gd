@@ -29,10 +29,13 @@ func _ready() -> void:
 	$Trees/Tree2/AnimationPlayer.play("Tree_Growth")
 	$Trees/Tree3/AnimationPlayer.play("Tree_Growth")
 	
+	await get_tree().create_timer(3.0).timeout
 	var my_scene = load("res://Cloud.tscn")
 	var instance = my_scene.instantiate()
 	add_child(instance)
 	instance.position = Vector3(2.628, 1.5, -0.314)
+	var anim_player = instance.get_node("AnimationPlayer")
+	anim_player.play("Cloud_Movement")
 
 
 	xr_interface = XRServer.primary_interface	

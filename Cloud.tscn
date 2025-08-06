@@ -187,6 +187,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_cjfxi")
 }
 
+[node name="RainParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.69937, 0, -3.43925)
+
 [editable path="BigCloud1/cloud01"]
 [editable path="BigCloud1/cloud02"]
 [editable path="BigCloud1/cloud04"]
