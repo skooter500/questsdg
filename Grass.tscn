@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://0nr7g2mvj4vx"]
 
-[ext_resource type="PackedScene" path="res://Models/grass.glb" id="1_7oqlf"]
+[ext_resource type="PackedScene" uid="uid://bs10a0rwwidun" path="res://Models/grass.glb" id="1_7oqlf"]
 
 [sub_resource type="Animation" id="Animation_po8e2"]
 length = 0.001

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dafqy6t1e5spc"]
 
-[ext_resource type="PackedScene" path="res://Models/open book no pages v1 v1.fbx" id="1_ckbho"]
+[ext_resource type="PackedScene" uid="uid://dwqu5yw13jfpr" path="res://Models/open book no pages v1 v1.fbx" id="1_ckbho"]
 
 [sub_resource type="Animation" id="Animation_ckbho"]
 resource_name = "Book Rotation"

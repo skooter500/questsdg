@@ -25,9 +25,15 @@ func _ready() -> void:
 	$Crane/AnimationPlayer.play("Crane_Rotation")
 	$Book/AnimationPlayer.play("Book_Rise")
 	$Book/AnimationPlayer.queue("Book Rotation")
-	$Tree/AnimationPlayer.play("Tree_Growth")
-	$Tree2/AnimationPlayer.play("Tree_Growth")
-	$Tree3/AnimationPlayer.play("Tree_Growth")
+	$Trees/Tree/AnimationPlayer.play("Tree_Growth")
+	$Trees/Tree2/AnimationPlayer.play("Tree_Growth")
+	$Trees/Tree3/AnimationPlayer.play("Tree_Growth")
+	
+	var my_scene = load("res://Cloud.tscn")
+	var instance = my_scene.instantiate()
+	add_child(instance)
+	instance.position = Vector3(2.628, 1.5, -0.314)
+
 
 	xr_interface = XRServer.primary_interface	
 	if xr_interface and xr_interface.is_initialized():

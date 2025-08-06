@@ -20,10 +20,10 @@
 [ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
 [ext_resource type="ArrayMesh" uid="uid://jxxw53dwo5fw" path="res://Models/TUD_Campus2 v2.obj" id="20_g6y4b"]
-[ext_resource type="PackedScene" uid="uid://cu43cufl0ijhb" path="res://Grass.tscn" id="21_pvxhv"]
-[ext_resource type="PackedScene" uid="uid://ikfqihmfo5o0" path="res://Crane.tscn" id="22_6h1ut"]
-[ext_resource type="PackedScene" uid="uid://bk1tf7imwq32v" path="res://Book.tscn" id="23_6m80x"]
-[ext_resource type="PackedScene" uid="uid://diloh7o4yd4xp" path="res://Tree.tscn" id="24_cqn77"]
+[ext_resource type="PackedScene" uid="uid://0nr7g2mvj4vx" path="res://Grass.tscn" id="21_pvxhv"]
+[ext_resource type="PackedScene" uid="uid://brgw2wktsrl2k" path="res://Crane.tscn" id="22_6h1ut"]
+[ext_resource type="PackedScene" uid="uid://dafqy6t1e5spc" path="res://Book.tscn" id="23_6m80x"]
+[ext_resource type="PackedScene" uid="uid://b00u5k8csutu6" path="res://Tree.tscn" id="24_cqn77"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -129,11 +129,13 @@ transform = Transform3D(0.822343, 0, -0.568992, 0, 1, 0, 0.568992, 0, 0.822343, 
 [node name="Book" parent="." instance=ExtResource("23_6m80x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74726, 0.130649, -1.23624)
 
-[node name="Tree" parent="." instance=ExtResource("24_cqn77")]
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="Tree" parent="Trees" instance=ExtResource("24_cqn77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.72008, -0.42721, -0.601539)
 
-[node name="Tree2" parent="." instance=ExtResource("24_cqn77")]
+[node name="Tree2" parent="Trees" instance=ExtResource("24_cqn77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97194, -0.42721, -0.601539)
 
-[node name="Tree3" parent="." instance=ExtResource("24_cqn77")]
+[node name="Tree3" parent="Trees" instance=ExtResource("24_cqn77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82944, -0.42721, -0.430612)
