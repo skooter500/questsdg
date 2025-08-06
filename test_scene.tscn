@@ -1,7 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=33 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
+[ext_resource type="PackedScene" uid="uid://bdllxnud8sodo" path="res://goal_box_animated.tscn" id="2_mfkbt"]
 [ext_resource type="Script" uid="uid://dttcldpevggnp" path="res://hand.gd" id="2_p7tmn"]
 [ext_resource type="PackedScene" uid="uid://cjcehqrfoxav3" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="2_pvxhv"]
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="2_sasra"]
@@ -19,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://d2b0flvvgola7" path="res://goals/E-WEB-Goal-10.png" id="10_fbuy2"]
 [ext_resource type="Texture2D" uid="uid://c4wdugn8nqwsr" path="res://goals/E-WEB-Goal-08.png" id="10_ykxp3"]
 [ext_resource type="Texture2D" uid="uid://ch5ldi5mlxetk" path="res://goals/E-WEB-Goal-11.png" id="11_0k8yu"]
+[ext_resource type="Texture2D" uid="uid://yrkevmxuio66" path="res://goals/E-WEB-Goal-02.png" id="11_b11sm"]
 [ext_resource type="Texture2D" uid="uid://d1n0828jvlp8c" path="res://goals/E-WEB-Goal-12.png" id="12_hiucn"]
 [ext_resource type="Texture2D" uid="uid://dx70jn77fea38" path="res://goals/E-WEB-Goal-13.png" id="13_k6its"]
 [ext_resource type="Texture2D" uid="uid://cse8qbjky4vee" path="res://goals/E-WEB-Goal-14.png" id="14_2dw41"]
@@ -47,6 +49,10 @@ radius = 0.05
 
 [node name="test_scene" type="Node3D"]
 script = ExtResource("1_uhqqe")
+
+[node name="goal_box_animated" parent="." instance=ExtResource("2_mfkbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.155, -0.46053)
+visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ia1lp")
@@ -103,13 +109,14 @@ hand_tracker_name = "/user/hand_tracker/right"
 hand_pose_set = ExtResource("7_077gh")
 
 [node name="goals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.273559, 1.33562, -0.684787)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.78141, 1.33562, -0.275884)
 script = ExtResource("2_2dw41")
 
 [node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("2_sasra")
 
 [node name="goal_box2" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("11_b11sm")
 
 [node name="goal_box3" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("4_njel3")
