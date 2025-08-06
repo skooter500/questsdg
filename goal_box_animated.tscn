@@ -2096,6 +2096,12 @@ pixel_size = 0.001
 sprite_frames = SubResource("SpriteFrames_0w4vq")
 script = ExtResource("215_ys8l3")
 
+[node name="top" type="AnimatedSprite3D" parent="scaler"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.5, 0)
+pixel_size = 0.001
+sprite_frames = SubResource("SpriteFrames_0w4vq")
+script = ExtResource("215_ys8l3")
+
 [node name="back2" type="AnimatedSprite3D" parent="scaler"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5)
 pixel_size = 0.001
