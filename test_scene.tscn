@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=29 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://brgw2wktsrl2k" path="res://Crane.tscn" id="22_6h1ut"]
 [ext_resource type="PackedScene" uid="uid://dafqy6t1e5spc" path="res://Book.tscn" id="23_6m80x"]
 [ext_resource type="PackedScene" uid="uid://b00u5k8csutu6" path="res://Tree.tscn" id="24_cqn77"]
+[ext_resource type="PackedScene" uid="uid://baroo3ypmv8tw" path="res://UN_Flag.tscn" id="25_22oil"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -51,7 +52,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
-transform = Transform3D(0.999701, -0.00063956, -0.0244238, 0, 0.999657, -0.026177, 0.0244322, 0.0261691, 0.999359, 0.307607, 0, 1.7716)
+transform = Transform3D(0.999701, -0.00063956, -0.0244238, 0, 0.999657, -0.026177, 0.0244322, 0.0261691, 0.999359, 2.78249, -0.605542, -1.92427)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
@@ -139,3 +140,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97194, -0.42721, -0.601539)
 
 [node name="Tree3" parent="Trees" instance=ExtResource("24_cqn77")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82944, -0.42721, -0.430612)
+
+[node name="UNFlag" parent="." instance=ExtResource("25_22oil")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.85055, 0.0999155, -2.50886)
