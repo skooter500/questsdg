@@ -1,10 +1,11 @@
-[gd_scene load_steps=40 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=41 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
 [ext_resource type="Script" uid="uid://dttcldpevggnp" path="res://hand.gd" id="2_p7tmn"]
 [ext_resource type="PackedScene" uid="uid://cjcehqrfoxav3" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="2_pvxhv"]
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="2_sasra"]
+[ext_resource type="PackedScene" uid="uid://bdllxnud8sodo" path="res://goal_box_animated.tscn" id="2_wpm1j"]
 [ext_resource type="PackedScene" uid="uid://dabmoo0spa6vg" path="res://addons/hand_pose_detector/hands/RightHandHumanoid.gltf" id="3_6h1ut"]
 [ext_resource type="Script" uid="uid://dya4sxc8awaw0" path="res://addons/hand_pose_detector/hand_pose_detector.gd" id="3_b11sm"]
 [ext_resource type="PackedScene" uid="uid://5sggqhc8uux2" path="res://goal_box.tscn" id="3_coq8p"]
@@ -667,6 +668,10 @@ radius = 0.05
 
 [node name="test_scene" type="Node3D"]
 script = ExtResource("1_uhqqe")
+
+[node name="goal_box" parent="." instance=ExtResource("2_wpm1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.295947, 1.06111, -0.603388)
+goal_num = 15
 
 [node name="plesiosaurus" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, 1.62681, 1.12757, 3.55784)

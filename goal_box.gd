@@ -2,6 +2,8 @@ extends Area3D
 
 @export var image:Texture 
 
+
+
 var inside:bool = false
 
 var mats = []
