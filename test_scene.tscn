@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=31 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://dafqy6t1e5spc" path="res://Book.tscn" id="23_6m80x"]
 [ext_resource type="PackedScene" uid="uid://b00u5k8csutu6" path="res://Tree.tscn" id="24_cqn77"]
 [ext_resource type="PackedScene" uid="uid://baroo3ypmv8tw" path="res://UN_Flag.tscn" id="25_22oil"]
+[ext_resource type="ArrayMesh" uid="uid://dvo6odknkbog4" path="res://Models/Blanchardstown/maps3d-2025-08-07_07-58-57.obj" id="26_b11sm"]
+[ext_resource type="ArrayMesh" uid="uid://bc51irimb70eg" path="res://Models/Tallaght/maps3d-2025-08-07_07-59-20.obj" id="27_mfkbt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -117,7 +119,7 @@ image = ExtResource("16_2dw41")
 [node name="goal_box17" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("17_ykxp3")
 
-[node name="TudCampus2V2" type="MeshInstance3D" parent="."]
+[node name="Grangegorman" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.1, 8.74228e-09, 3.82137e-16, 0, -4.37114e-09, 0.1, 8.74228e-09, 0.1, 4.37114e-09, -0.0145044, 0, -2.19954)
 mesh = ExtResource("20_g6y4b")
 
@@ -143,3 +145,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.82944, -0.42721, -0.430612)
 
 [node name="UNFlag" parent="." instance=ExtResource("25_22oil")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 2.85055, 0.0999155, -2.50886)
+
+[node name="Blanchardstown" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.55671e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.55671e-09, -11.2598, 0, 4.85132)
+mesh = ExtResource("26_b11sm")
+
+[node name="Tallaght" type="MeshInstance3D" parent="."]
+transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, 13.277, 0, 5.11612)
+mesh = ExtResource("27_mfkbt")
