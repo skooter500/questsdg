@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=117 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -29,7 +29,21 @@
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
 [ext_resource type="AudioStream" uid="uid://crk61a5k8qbu5" path="res://sounds/ambient-wave-48-tribute-17243.mp3" id="22_6h1ut"]
 [ext_resource type="Script" uid="uid://c05cqxnf0g8ke" path="res://darren_stuff/plesiosaurus.gd" id="30_f5i4p"]
+[ext_resource type="Script" uid="uid://bpatk7f43t115" path="res://goal_box_animated.gd" id="30_nsj3a"]
 [ext_resource type="PackedScene" uid="uid://bdllxnud8sodo" path="res://goal_box_animated.tscn" id="30_wpm1j"]
+[ext_resource type="VideoStream" uid="uid://pyiux5hoq0t5" path="res://goals/videos/2_SDG_MakeEveryDayCount_Gifs_GDU.ogv" id="31_eabpx"]
+[ext_resource type="VideoStream" uid="uid://lk1vyx85yx6m" path="res://goals/videos/E_GIF_02.ogv" id="32_nsj3a"]
+[ext_resource type="AudioStream" uid="uid://d1hubcc2rhcgy" path="res://sounds/swoosh-07-351043.mp3" id="32_ph5dq"]
+[ext_resource type="VideoStream" uid="uid://cepa6xy68jlg2" path="res://goals/videos/3_SDG_MakeEveryDayCount_Gifs_GDU.ogv" id="33_cr11a"]
+[ext_resource type="AudioStream" uid="uid://cy78ftcl5bwxt" path="res://sounds/PowerUp10.wav" id="33_j5gtg"]
+[ext_resource type="VideoStream" uid="uid://be1soad4m7e8l" path="res://goals/videos/E_GIF_03.ogv" id="34_ph5dq"]
+[ext_resource type="VideoStream" uid="uid://bmb6isweo1flr" path="res://goals/videos/4_SDG_MakeEveryDayCount_Gifs_GDU.ogv" id="35_ph5dq"]
+[ext_resource type="Script" uid="uid://hy55i832u2f1" path="res://sub_viewport.gd" id="36_6f7tj"]
+[ext_resource type="VideoStream" uid="uid://c0ga3k7ag161d" path="res://goals/videos/E_GIF_04.ogv" id="36_j5gtg"]
+[ext_resource type="VideoStream" uid="uid://mb7nn7adxjtb" path="res://goals/videos/1_SDG_MakeEveryDayCount_Gifs_GDU.ogv" id="37_rf3s6"]
+[ext_resource type="VideoStream" uid="uid://ddnm0pnuvio4q" path="res://goals/videos/5_SDG_MakeEveryDayCount_Gifs_GDU.ogv" id="37_v6rpk"]
+[ext_resource type="VideoStream" uid="uid://dgnoo5n3yct4t" path="res://goals/videos/E_GIF_05.ogv" id="38_1hang"]
+[ext_resource type="VideoStream" uid="uid://cw1aqnbs70uym" path="res://goals/videos/E_GIF_01.ogv" id="38_73ssi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ige8k"]
 resource_name = "Material.001"
@@ -666,8 +680,117 @@ glow_enabled = true
 [sub_resource type="SphereShape3D" id="SphereShape3D_pvxhv"]
 radius = 0.05
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_6f7tj"]
+viewport_path = NodePath("animated_goals/goal_box_animated4/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rf3s6"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_6f7tj")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_73ssi"]
+viewport_path = NodePath("animated_goals/goal_box_animated4/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ommoy"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_73ssi")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cnsht"]
+viewport_path = NodePath("animated_goals/goal_box_animated4/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0oai"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_cnsht")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jsd5u"]
+viewport_path = NodePath("animated_goals/goal_box_animated4/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r76ah"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_jsd5u")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dqovh"]
+viewport_path = NodePath("animated_goals/goal_box_animated4/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhdcm"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_dqovh")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_er6et"]
+viewport_path = NodePath("animated_goals/goal_box_animated4/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m2enk"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_er6et")
+albedo_texture_force_srgb = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n4etf"]
+size = Vector3(0.198706, 0.198889, 0.195898)
+
+[sub_resource type="QuadMesh" id="QuadMesh_80lwv"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bbrx0"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wf4a"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_bbrx0")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_axqpm"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8y3yv"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_axqpm")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8vv8c"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhyan"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_8vv8c")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iv28d"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ul5gb"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_iv28d")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cnlok"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukhd7"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_cnlok")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mh6jc"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbg6s"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_mh6jc")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_eabpx"]
+viewport_path = NodePath("animated_goals/goal_box_animated2/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nsj3a"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_eabpx")
+albedo_texture_force_srgb = true
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_cr11a"]
-viewport_path = NodePath("animated_goals/goal_box_animated/SubViewport")
+viewport_path = NodePath("animated_goals/goal_box_animated2/SubViewport2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ph5dq"]
 resource_local_to_scene = true
@@ -675,7 +798,7 @@ albedo_texture = SubResource("ViewportTexture_cr11a")
 albedo_texture_force_srgb = true
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_j5gtg"]
-viewport_path = NodePath("animated_goals/goal_box_animated/SubViewport2")
+viewport_path = NodePath("animated_goals/goal_box_animated2/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpnay"]
 resource_local_to_scene = true
@@ -683,7 +806,7 @@ albedo_texture = SubResource("ViewportTexture_j5gtg")
 albedo_texture_force_srgb = true
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_v6rpk"]
-viewport_path = NodePath("animated_goals/goal_box_animated/SubViewport")
+viewport_path = NodePath("animated_goals/goal_box_animated2/SubViewport2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hang"]
 resource_local_to_scene = true
@@ -691,7 +814,7 @@ albedo_texture = SubResource("ViewportTexture_v6rpk")
 albedo_texture_force_srgb = true
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_jxdac"]
-viewport_path = NodePath("animated_goals/goal_box_animated/SubViewport2")
+viewport_path = NodePath("animated_goals/goal_box_animated2/SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqo83"]
 resource_local_to_scene = true
@@ -699,19 +822,107 @@ albedo_texture = SubResource("ViewportTexture_jxdac")
 albedo_texture_force_srgb = true
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_u4y7u"]
-viewport_path = NodePath("animated_goals/goal_box_animated/SubViewport")
+viewport_path = NodePath("animated_goals/goal_box_animated2/SubViewport2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2pu3"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_u4y7u")
 albedo_texture_force_srgb = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_6f7tj"]
-viewport_path = NodePath("animated_goals/goal_box_animated/SubViewport2")
+[sub_resource type="ViewportTexture" id="ViewportTexture_ph5dq"]
+viewport_path = NodePath("animated_goals/goal_box_animated3/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rf3s6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5gtg"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_6f7tj")
+albedo_texture = SubResource("ViewportTexture_ph5dq")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jpnay"]
+viewport_path = NodePath("animated_goals/goal_box_animated3/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v6rpk"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_jpnay")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1hang"]
+viewport_path = NodePath("animated_goals/goal_box_animated3/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jxdac"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_1hang")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fqo83"]
+viewport_path = NodePath("animated_goals/goal_box_animated3/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4y7u"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_fqo83")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_e2pu3"]
+viewport_path = NodePath("animated_goals/goal_box_animated3/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6f7tj"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_e2pu3")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rf3s6"]
+viewport_path = NodePath("animated_goals/goal_box_animated3/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73ssi"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_rf3s6")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ommoy"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cnsht"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_ommoy")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_c0oai"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsd5u"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_c0oai")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r76ah"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dqovh"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_r76ah")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rhdcm"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_er6et"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_rhdcm")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_m2enk"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bbrx0"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_m2enk")
+albedo_texture_force_srgb = true
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3wf4a"]
+viewport_path = NodePath("SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_axqpm"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_3wf4a")
 albedo_texture_force_srgb = true
 
 [node name="test_scene" type="Node3D"]
@@ -1363,35 +1574,212 @@ stream = ExtResource("22_6h1ut")
 volume_db = -40.93
 autoplay = true
 
-[node name="animated_goals" type="Node" parent="."]
+[node name="animated_goals" type="Node3D" parent="."]
 
-[node name="goal_box_animated" parent="animated_goals" instance=ExtResource("30_wpm1j")]
+[node name="goal_box_animated4" parent="animated_goals" instance=ExtResource("30_wpm1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02157, -0.447464)
+
+[node name="vid_screen" parent="animated_goals/goal_box_animated4/scaler" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rf3s6")
+
+[node name="vid_screen2" parent="animated_goals/goal_box_animated4/scaler" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_ommoy")
+
+[node name="vid_screen3" parent="animated_goals/goal_box_animated4/scaler" index="2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_c0oai")
+
+[node name="vid_screen4" parent="animated_goals/goal_box_animated4/scaler" index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_r76ah")
+
+[node name="vid_screen5" parent="animated_goals/goal_box_animated4/scaler" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rhdcm")
+
+[node name="vid_screen6" parent="animated_goals/goal_box_animated4/scaler" index="5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_m2enk")
+
+[node name="VideoStreamPlayer" parent="animated_goals/goal_box_animated4/SubViewport" index="0"]
+stream = ExtResource("35_ph5dq")
+
+[node name="VideoStreamPlayer" parent="animated_goals/goal_box_animated4/SubViewport2" index="0"]
+stream = ExtResource("36_j5gtg")
+
+[node name="goal_box_animated" type="Area3D" parent="animated_goals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.446362, 1.2394, -0.694342)
+script = ExtResource("30_nsj3a")
 
-[node name="vid_screen" parent="animated_goals/goal_box_animated/scaler" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="animated_goals/goal_box_animated"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000256343, -0.00166626, -0.000292974)
+shape = SubResource("BoxShape3D_n4etf")
+
+[node name="scaler" type="Node3D" parent="animated_goals/goal_box_animated"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="vid_screen" type="MeshInstance3D" parent="animated_goals/goal_box_animated/scaler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_3wf4a")
+
+[node name="vid_screen2" type="MeshInstance3D" parent="animated_goals/goal_box_animated/scaler"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_8y3yv")
+
+[node name="vid_screen3" type="MeshInstance3D" parent="animated_goals/goal_box_animated/scaler"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 0)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_xhyan")
+
+[node name="vid_screen4" type="MeshInstance3D" parent="animated_goals/goal_box_animated/scaler"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_ul5gb")
+
+[node name="vid_screen5" type="MeshInstance3D" parent="animated_goals/goal_box_animated/scaler"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_ukhd7")
+
+[node name="vid_screen6" type="MeshInstance3D" parent="animated_goals/goal_box_animated/scaler"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_gbg6s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="animated_goals/goal_box_animated"]
+stream = ExtResource("32_ph5dq")
+volume_db = 80.0
+
+[node name="selected_sound" type="AudioStreamPlayer3D" parent="animated_goals/goal_box_animated"]
+stream = ExtResource("33_j5gtg")
+volume_db = -26.0
+
+[node name="SubViewport" type="SubViewport" parent="animated_goals/goal_box_animated"]
+script = ExtResource("36_6f7tj")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="animated_goals/goal_box_animated/SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("37_rf3s6")
+autoplay = true
+loop = true
+
+[node name="SubViewport2" type="SubViewport" parent="animated_goals/goal_box_animated"]
+script = ExtResource("36_6f7tj")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="animated_goals/goal_box_animated/SubViewport2"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("38_73ssi")
+autoplay = true
+loop = true
+
+[node name="goal_box_animated2" parent="animated_goals" instance=ExtResource("30_wpm1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0811179, 1.2394, -0.694342)
+
+[node name="vid_screen" parent="animated_goals/goal_box_animated2/scaler" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_nsj3a")
+
+[node name="vid_screen2" parent="animated_goals/goal_box_animated2/scaler" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_ph5dq")
 
-[node name="vid_screen2" parent="animated_goals/goal_box_animated/scaler" index="1"]
+[node name="vid_screen3" parent="animated_goals/goal_box_animated2/scaler" index="2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_jpnay")
 
-[node name="vid_screen3" parent="animated_goals/goal_box_animated/scaler" index="2"]
+[node name="vid_screen4" parent="animated_goals/goal_box_animated2/scaler" index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_1hang")
 
-[node name="vid_screen4" parent="animated_goals/goal_box_animated/scaler" index="3"]
+[node name="vid_screen5" parent="animated_goals/goal_box_animated2/scaler" index="4"]
 surface_material_override/0 = SubResource("StandardMaterial3D_fqo83")
 
-[node name="vid_screen5" parent="animated_goals/goal_box_animated/scaler" index="4"]
+[node name="vid_screen6" parent="animated_goals/goal_box_animated2/scaler" index="5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_e2pu3")
 
-[node name="vid_screen6" parent="animated_goals/goal_box_animated/scaler" index="5"]
-surface_material_override/0 = SubResource("StandardMaterial3D_rf3s6")
+[node name="VideoStreamPlayer" parent="animated_goals/goal_box_animated2/SubViewport" index="0"]
+stream = ExtResource("31_eabpx")
+
+[node name="VideoStreamPlayer" parent="animated_goals/goal_box_animated2/SubViewport2" index="0"]
+stream = ExtResource("32_nsj3a")
+
+[node name="goal_box_animated3" parent="animated_goals" instance=ExtResource("30_wpm1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.307122, 1.15425, -0.692303)
+
+[node name="vid_screen" parent="animated_goals/goal_box_animated3/scaler" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j5gtg")
+
+[node name="vid_screen2" parent="animated_goals/goal_box_animated3/scaler" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_v6rpk")
+
+[node name="vid_screen3" parent="animated_goals/goal_box_animated3/scaler" index="2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_jxdac")
+
+[node name="vid_screen4" parent="animated_goals/goal_box_animated3/scaler" index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_u4y7u")
+
+[node name="vid_screen5" parent="animated_goals/goal_box_animated3/scaler" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6f7tj")
+
+[node name="vid_screen6" parent="animated_goals/goal_box_animated3/scaler" index="5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_73ssi")
+
+[node name="VideoStreamPlayer" parent="animated_goals/goal_box_animated3/SubViewport" index="0"]
+stream = ExtResource("33_cr11a")
+
+[node name="VideoStreamPlayer" parent="animated_goals/goal_box_animated3/SubViewport2" index="0"]
+stream = ExtResource("34_ph5dq")
+
+[node name="goal_box_animated5" parent="animated_goals" instance=ExtResource("30_wpm1j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.35084, -0.439021)
+
+[node name="vid_screen" parent="animated_goals/goal_box_animated5/scaler" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_cnsht")
+
+[node name="vid_screen2" parent="animated_goals/goal_box_animated5/scaler" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_jsd5u")
+
+[node name="vid_screen3" parent="animated_goals/goal_box_animated5/scaler" index="2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_dqovh")
+
+[node name="vid_screen4" parent="animated_goals/goal_box_animated5/scaler" index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_er6et")
+
+[node name="vid_screen5" parent="animated_goals/goal_box_animated5/scaler" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bbrx0")
+
+[node name="vid_screen6" parent="animated_goals/goal_box_animated5/scaler" index="5"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_axqpm")
+
+[node name="VideoStreamPlayer" parent="animated_goals/goal_box_animated5/SubViewport" index="0"]
+stream = ExtResource("37_v6rpk")
+
+[node name="VideoStreamPlayer" parent="animated_goals/goal_box_animated5/SubViewport2" index="0"]
+stream = ExtResource("38_1hang")
 
 [connection signal="animation_finished" from="plesiosaurus/AnimationPlayer" to="plesiosaurus" method="_on_animation_player_animation_finished"]
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]
 [connection signal="pose_ended" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_started"]
+[connection signal="area_entered" from="animated_goals/goal_box_animated" to="animated_goals/goal_box_animated" method="_on_area_entered"]
+[connection signal="area_exited" from="animated_goals/goal_box_animated" to="animated_goals/goal_box_animated" method="_on_area_exited"]
 
 [editable path="XROrigin3D/left/LeftHandHumanoid2"]
 [editable path="XROrigin3D/right/RightHandHumanoid2"]
-[editable path="animated_goals/goal_box_animated"]
+[editable path="animated_goals/goal_box_animated4"]
+[editable path="animated_goals/goal_box_animated2"]
+[editable path="animated_goals/goal_box_animated3"]
+[editable path="animated_goals/goal_box_animated5"]

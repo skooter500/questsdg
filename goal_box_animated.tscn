@@ -12,52 +12,52 @@ size = Vector3(0.198706, 0.198889, 0.195898)
 
 [sub_resource type="QuadMesh" id="QuadMesh_80lwv"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_4hf76"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_cr11a"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lw7ft"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ph5dq"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_4hf76")
+albedo_texture = SubResource("ViewportTexture_cr11a")
 albedo_texture_force_srgb = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_gdxcn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_j5gtg"]
 viewport_path = NodePath("SubViewport2")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4hf76"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jpnay"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_gdxcn")
+albedo_texture = SubResource("ViewportTexture_j5gtg")
 albedo_texture_force_srgb = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_fhmvi"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_v6rpk"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gdxcn"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hang"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_fhmvi")
+albedo_texture = SubResource("ViewportTexture_v6rpk")
 albedo_texture_force_srgb = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_31xvs"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_jxdac"]
 viewport_path = NodePath("SubViewport2")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhmvi"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqo83"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_31xvs")
+albedo_texture = SubResource("ViewportTexture_jxdac")
 albedo_texture_force_srgb = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_b20jr"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_u4y7u"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31xvs"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2pu3"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_b20jr")
+albedo_texture = SubResource("ViewportTexture_u4y7u")
 albedo_texture_force_srgb = true
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lw7ft"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6f7tj"]
 viewport_path = NodePath("SubViewport2")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b20jr"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rf3s6"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_lw7ft")
+albedo_texture = SubResource("ViewportTexture_6f7tj")
 albedo_texture_force_srgb = true
 
 [node name="goal_box_animated" type="Area3D"]
@@ -73,32 +73,32 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 [node name="vid_screen" type="MeshInstance3D" parent="scaler"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 mesh = SubResource("QuadMesh_80lwv")
-surface_material_override/0 = SubResource("StandardMaterial3D_lw7ft")
+surface_material_override/0 = SubResource("StandardMaterial3D_ph5dq")
 
 [node name="vid_screen2" type="MeshInstance3D" parent="scaler"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.5, 0)
 mesh = SubResource("QuadMesh_80lwv")
-surface_material_override/0 = SubResource("StandardMaterial3D_4hf76")
+surface_material_override/0 = SubResource("StandardMaterial3D_jpnay")
 
 [node name="vid_screen3" type="MeshInstance3D" parent="scaler"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 0)
 mesh = SubResource("QuadMesh_80lwv")
-surface_material_override/0 = SubResource("StandardMaterial3D_gdxcn")
+surface_material_override/0 = SubResource("StandardMaterial3D_1hang")
 
 [node name="vid_screen4" type="MeshInstance3D" parent="scaler"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.5, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.5, 0)
 mesh = SubResource("QuadMesh_80lwv")
-surface_material_override/0 = SubResource("StandardMaterial3D_fhmvi")
+surface_material_override/0 = SubResource("StandardMaterial3D_fqo83")
 
 [node name="vid_screen5" type="MeshInstance3D" parent="scaler"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5)
 mesh = SubResource("QuadMesh_80lwv")
-surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
+surface_material_override/0 = SubResource("StandardMaterial3D_e2pu3")
 
 [node name="vid_screen6" type="MeshInstance3D" parent="scaler"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 0, 0)
 mesh = SubResource("QuadMesh_80lwv")
-surface_material_override/0 = SubResource("StandardMaterial3D_b20jr")
+surface_material_override/0 = SubResource("StandardMaterial3D_rf3s6")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_5gxx3")
