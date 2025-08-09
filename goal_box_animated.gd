@@ -34,6 +34,8 @@ func load_sprites():
 	add_frames_from_path(anim0Frames, path0)
 	add_frames_from_path(anim1Frames, path1)
 	
+	print(anim0Frames.get_frame_count("default"))
+	
 	sprites.push_back($scaler/front)
 	sprites.push_back($scaler/bott)
 	sprites.push_back($scaler/left)
@@ -46,19 +48,24 @@ func load_sprites():
 			sprites[i].sprite_frames = anim1Frames
 		else:
 			sprites[i].sprite_frames = anim0Frames
-		sprites[i].play("default")
-	
+		# sprites[i].play("default")
+	for sprite in sprites:
+		print(sprite.sprite_frames.get_frame_count("default"))
+		
 	
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#for sprite in sprites:
+	for sprite in sprites:
+		print(sprite.sprite_frames.get_frame_count("default"))
 		#var mat:StandardMaterial3D = sprite.get_surface_override_material(0)
 		#mat = mat.duplicate()
 		#mat.albedo_color.a = 0
 		#sprites.set_surface_override_material(0, mat)
 		#mats.push_back(mat)
 	bounce_in()
+	
+	
 	pass # Replace with function body.
 
 
@@ -71,10 +78,14 @@ func _process(delta: float) -> void:
 func add_frames_from_path(sprite_frames: SpriteFrames, path: String):
 	var dir = DirAccess.open(path)
 	if dir:
-		var files = dir.get_files()
-		for file_name in files:
-			if file_name.ends_with(".png"):
-				var texture = load(path + file_name)
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			# print(file_name)
+			if file_name.ends_with('.png.import') :
+				file_name = file_name.left(len(file_name) - len('.import'))
+				var texture = load(path + "/" + file_name)
 				sprite_frames.add_frame("default", texture)
+			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path: " + path)

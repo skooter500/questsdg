@@ -15,6 +15,10 @@ run/main_scene="uid://bol1dc0pyta2f"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[debug]
+
+gdscript/warnings/enable=false
+
 [rendering]
 
 renderer/rendering_method="mobile"

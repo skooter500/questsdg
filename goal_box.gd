@@ -38,11 +38,11 @@ func make_invisible():
 	monitoring = false        # Stops detecting other bodies entering/exiting
 	monitorable = false 
 	
-	#var ani_box = $"..".ani_boxes[goal]
-	#ani_box.position = position
-	#ani_box.rotation = rotation
-	#self.queue_free()
-	# get_parent().add_child(ani_box)
+	var ani_box = $"..".ani_boxes[goal-1]
+	ani_box.position = position
+	ani_box.rotation = rotation
+	self.queue_free()
+	get_parent().add_child(ani_box)
 	
 func fade_out():
 	if fade_out_tween:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdllxnud8sodo"]
+[gd_scene load_steps=7 format=3 uid="uid://bdllxnud8sodo"]
 
 [ext_resource type="Script" uid="uid://bpatk7f43t115" path="res://goal_box_animated.gd" id="1_5fbwa"]
 [ext_resource type="AudioStream" uid="uid://d1hubcc2rhcgy" path="res://sounds/swoosh-07-351043.mp3" id="4_5gxx3"]
@@ -7,6 +7,8 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n4etf"]
 size = Vector3(0.198706, 0.198889, 0.195898)
+
+[sub_resource type="TorusMesh" id="TorusMesh_80lwv"]
 
 [node name="goal_box_animated" type="Area3D"]
 script = ExtResource("1_5fbwa")
@@ -50,6 +52,9 @@ script = ExtResource("215_ys8l3")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0)
 pixel_size = 0.001
 script = ExtResource("215_ys8l3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="scaler"]
+mesh = SubResource("TorusMesh_80lwv")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_5gxx3")
