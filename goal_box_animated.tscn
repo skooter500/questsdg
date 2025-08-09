@@ -1,14 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdllxnud8sodo"]
+[gd_scene load_steps=9 format=3 uid="uid://bdllxnud8sodo"]
 
 [ext_resource type="Script" uid="uid://bpatk7f43t115" path="res://goal_box_animated.gd" id="1_5fbwa"]
 [ext_resource type="AudioStream" uid="uid://d1hubcc2rhcgy" path="res://sounds/swoosh-07-351043.mp3" id="4_5gxx3"]
+[ext_resource type="VideoStream" uid="uid://ftdlh22y32cq" path="res://goals/Goal 1/1_SDG_MakeEveryDayCount_Gifs_GDU.ogv" id="4_80lwv"]
 [ext_resource type="AudioStream" uid="uid://cy78ftcl5bwxt" path="res://sounds/PowerUp10.wav" id="5_8s77m"]
-[ext_resource type="Script" uid="uid://ne3leq4jnnd8" path="res://animated_sprite_3d.gd" id="215_ys8l3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n4etf"]
 size = Vector3(0.198706, 0.198889, 0.195898)
 
-[sub_resource type="TorusMesh" id="TorusMesh_80lwv"]
+[sub_resource type="QuadMesh" id="QuadMesh_80lwv"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lw7ft"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31xvs"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_lw7ft")
 
 [node name="goal_box_animated" type="Area3D"]
 script = ExtResource("1_5fbwa")
@@ -20,41 +27,35 @@ shape = SubResource("BoxShape3D_n4etf")
 [node name="scaler" type="Node3D" parent="."]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 
-[node name="front" type="AnimatedSprite3D" parent="scaler"]
+[node name="vid_screen" type="MeshInstance3D" parent="scaler"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
-pixel_size = 0.001
-speed_scale = 5.0
-script = ExtResource("215_ys8l3")
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
 
-[node name="bott" type="AnimatedSprite3D" parent="scaler"]
+[node name="vid_screen2" type="MeshInstance3D" parent="scaler"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
-pixel_size = 0.001
-speed_scale = 5.0
-script = ExtResource("215_ys8l3")
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
 
-[node name="left" type="AnimatedSprite3D" parent="scaler"]
+[node name="vid_screen3" type="MeshInstance3D" parent="scaler"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, 0)
-pixel_size = 0.001
-script = ExtResource("215_ys8l3")
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
 
-[node name="top" type="AnimatedSprite3D" parent="scaler"]
+[node name="vid_screen4" type="MeshInstance3D" parent="scaler"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.5, 0)
-pixel_size = 0.001
-script = ExtResource("215_ys8l3")
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
 
-[node name="back" type="AnimatedSprite3D" parent="scaler"]
+[node name="vid_screen5" type="MeshInstance3D" parent="scaler"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5)
-pixel_size = 0.001
-speed_scale = 5.0
-script = ExtResource("215_ys8l3")
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
 
-[node name="right" type="AnimatedSprite3D" parent="scaler"]
+[node name="vid_screen6" type="MeshInstance3D" parent="scaler"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0)
-pixel_size = 0.001
-script = ExtResource("215_ys8l3")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="scaler"]
-mesh = SubResource("TorusMesh_80lwv")
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_5gxx3")
@@ -63,6 +64,15 @@ volume_db = 80.0
 [node name="selected_sound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_8s77m")
 volume_db = -26.0
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("4_80lwv")
+autoplay = true
+loop = true
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

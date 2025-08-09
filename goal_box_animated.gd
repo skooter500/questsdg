@@ -2,13 +2,23 @@ extends Area3D
 
 var fade_tween:Tween = null
 
-var sprites = []
-var mats = []
-
-var anim0Frames:SpriteFrames
-var anim1Frames:SpriteFrames
 
 @export var goal_num:int = 6
+@export var videos:Array[VideoStream]
+var players:Array[VideoStreamPlayer]
+
+var vid_screens:Array[MeshInstance3D]
+
+func get_all_mesh_instances() -> Array[MeshInstance3D]:
+	# Built-in method - finds all MeshInstance3D children recursively
+	var mesh_nodes = find_children("*", "MeshInstance3D", true, false)
+	
+	# Convert to typed array
+	var typed_array: Array[MeshInstance3D] = []
+	for node in mesh_nodes:
+		typed_array.append(node as MeshInstance3D)
+	
+	return typed_array
 
 func bounce_in():
 	if fade_tween:
@@ -22,47 +32,35 @@ func bounce_in():
 			# Optional: Hide the mesh when fade completes
 		# fade_tween.finished.connect(make_invisible)
 
-func load_sprites():
-	anim0Frames = SpriteFrames.new()
-	anim1Frames = SpriteFrames.new()
-	# anim0Frames.add_animation("default")
-	# anim1Frames.add_animation("default")
-
-	var path0 = "res://goals/Goal-" + str(goal_num) + "/Goal " + str(goal_num) + "/" + str(goal_num) + "_SDG_MakeEveryDayCount_Gifs_GDU_frames/"
-	var path1 = "res://goals/Goal-" + str(goal_num) + "/Goal " + str(goal_num) + "/E_GIF_" + "%02d" % goal_num + "_frames/"
-
-	add_frames_from_path(anim0Frames, path0)
-	add_frames_from_path(anim1Frames, path1)
-	
-	print(anim0Frames.get_frame_count("default"))
-	
-	sprites.push_back($scaler/front)
-	sprites.push_back($scaler/bott)
-	sprites.push_back($scaler/left)
-	sprites.push_back($scaler/top)
-	sprites.push_back($scaler/back)
-	sprites.push_back($scaler/right)
-	
-	for i in range(sprites.size()):
-		if i == 2 or i == 5: # left and right faces
-			sprites[i].sprite_frames = anim1Frames
-		else:
-			sprites[i].sprite_frames = anim0Frames
-		# sprites[i].play("default")
-	for sprite in sprites:
-		print(sprite.sprite_frames.get_frame_count("default"))
-		
-	
-
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	for sprite in sprites:
-		print(sprite.sprite_frames.get_frame_count("default"))
-		#var mat:StandardMaterial3D = sprite.get_surface_override_material(0)
-		#mat = mat.duplicate()
-		#mat.albedo_color.a = 0
-		#sprites.set_surface_override_material(0, mat)
-		#mats.push_back(mat)
+func _ready() -> void:	
+	for video in videos:		
+		var video_player:VideoStreamPlayer = VideoStreamPlayer.new()
+		video_player.stream = video
+		video_player.expand = false
+		video_player.loop = true
+		video_player.autoplay = true
+		var svp = SubViewport.new()
+		svp.size = video_player.get_video_texture().get_size()
+		svp.add_child(video_player)
+		
+		players.push_back(video_player)
+		video_player.play()
+		video_player.loop = true
+	var player_id = 0
+	
+	vid_screens = get_all_mesh_instances()
+	for vid_screen in vid_screens:	
+		var material = vid_screen.get_surface_override_material(0)
+		material.albedo_texture = players[player_id].get_video_texture()
+		material.emission_enabled = true
+		material.emission_texture = players[player_id].get_video_texture()
+		material.emission_energy = 1.0
+		# Apply material to mesh
+		vid_screen.set_surface_override_material(0, material)
+		player_id = (player_id + 1) % players.size()
+	
+	
 	bounce_in()
 	
 	

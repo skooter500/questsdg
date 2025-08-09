@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=49 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -29,6 +29,11 @@
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
 [ext_resource type="AudioStream" uid="uid://crk61a5k8qbu5" path="res://sounds/ambient-wave-48-tribute-17243.mp3" id="22_6h1ut"]
 [ext_resource type="Script" uid="uid://c05cqxnf0g8ke" path="res://darren_stuff/plesiosaurus.gd" id="30_f5i4p"]
+[ext_resource type="Script" uid="uid://bpatk7f43t115" path="res://goal_box_animated.gd" id="30_nsj3a"]
+[ext_resource type="VideoStream" uid="uid://ftdlh22y32cq" path="res://goals/Goal 1/1_SDG_MakeEveryDayCount_Gifs_GDU.ogv" id="32_jpnay"]
+[ext_resource type="AudioStream" uid="uid://d1hubcc2rhcgy" path="res://sounds/swoosh-07-351043.mp3" id="32_ph5dq"]
+[ext_resource type="AudioStream" uid="uid://cy78ftcl5bwxt" path="res://sounds/PowerUp10.wav" id="33_j5gtg"]
+[ext_resource type="VideoStream" uid="uid://pjdhodd1yl82" path="res://goals/Goal 1/E_GIF_01.ogv" id="33_jpnay"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ige8k"]
 resource_name = "Material.001"
@@ -665,6 +670,18 @@ glow_enabled = true
 [sub_resource type="SphereShape3D" id="SphereShape3D_pvxhv"]
 radius = 0.05
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_n4etf"]
+size = Vector3(0.198706, 0.198889, 0.195898)
+
+[sub_resource type="QuadMesh" id="QuadMesh_80lwv"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lw7ft"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_31xvs"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_lw7ft")
+
 [node name="test_scene" type="Node3D"]
 script = ExtResource("1_uhqqe")
 
@@ -1239,6 +1256,7 @@ hand_pose_set = ExtResource("7_077gh")
 
 [node name="goals" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0844698, 1.33562, 2.32101)
+visible = false
 script = ExtResource("2_2dw41")
 
 [node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]
@@ -1314,11 +1332,63 @@ stream = ExtResource("22_6h1ut")
 volume_db = -40.93
 autoplay = true
 
+[node name="goal_box_animated" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.249331, 1.21144, -0.645175)
+script = ExtResource("30_nsj3a")
+videos = Array[VideoStream]([ExtResource("32_jpnay"), ExtResource("33_jpnay")])
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="goal_box_animated"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000256343, -0.00166626, -0.000292974)
+shape = SubResource("BoxShape3D_n4etf")
+
+[node name="scaler" type="Node3D" parent="goal_box_animated"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="vid_screen" type="MeshInstance3D" parent="goal_box_animated/scaler"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
+
+[node name="vid_screen2" type="MeshInstance3D" parent="goal_box_animated/scaler"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
+
+[node name="vid_screen3" type="MeshInstance3D" parent="goal_box_animated/scaler"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.5, 0, 0)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
+
+[node name="vid_screen4" type="MeshInstance3D" parent="goal_box_animated/scaler"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.5, 0)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
+
+[node name="vid_screen5" type="MeshInstance3D" parent="goal_box_animated/scaler"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
+
+[node name="vid_screen6" type="MeshInstance3D" parent="goal_box_animated/scaler"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.5, 0, 0)
+mesh = SubResource("QuadMesh_80lwv")
+surface_material_override/0 = SubResource("StandardMaterial3D_31xvs")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="goal_box_animated"]
+stream = ExtResource("32_ph5dq")
+volume_db = 80.0
+
+[node name="selected_sound" type="AudioStreamPlayer3D" parent="goal_box_animated"]
+stream = ExtResource("33_j5gtg")
+volume_db = -26.0
+
 [connection signal="animation_finished" from="plesiosaurus/AnimationPlayer" to="plesiosaurus" method="_on_animation_player_animation_finished"]
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]
 [connection signal="pose_ended" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_started"]
+[connection signal="area_entered" from="goal_box_animated" to="goal_box_animated" method="_on_area_entered"]
+[connection signal="area_exited" from="goal_box_animated" to="goal_box_animated" method="_on_area_exited"]
 
 [editable path="XROrigin3D/left/LeftHandHumanoid2"]
 [editable path="XROrigin3D/right/RightHandHumanoid2"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="import_gif_to_sprite_frames"
+type="SpriteFrames"
+uid="uid://cwsfdvegwrrxi"
+path="res://.godot/imported/2_SDG_MakeEveryDayCount_Gifs_GDU.gif-f2cc7762ee8de82311ecc1b42234554d.tres"
+
+[deps]
+
+source_file="res://goals/Goal 2/2_SDG_MakeEveryDayCount_Gifs_GDU.gif"
+dest_files=["res://.godot/imported/2_SDG_MakeEveryDayCount_Gifs_GDU.gif-f2cc7762ee8de82311ecc1b42234554d.tres"]
+
+[params]
+
+frames_per_second=30
