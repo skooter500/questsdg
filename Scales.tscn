@@ -1,58 +1,155 @@
-[gd_scene load_steps=9 format=3 uid="uid://c5qddvsuwbu60"]
+[gd_scene load_steps=11 format=3 uid="uid://c5qddvsuwbu60"]
 
 [ext_resource type="PackedScene" uid="uid://d3nxxpd7uwkm" path="res://Models/scales/source/Scales.fbx" id="1_yjabd"]
-[ext_resource type="Texture2D" uid="uid://buvvy5sv44oci" path="res://Models/Gender_Neutral.png" id="2_w61ta"]
+[ext_resource type="PackedScene" uid="uid://bdxq2suxjh4cf" path="res://Models/meeple.glb" id="2_yjabd"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_gjmbn"]
-size = Vector2(0.08, 0.08)
-orientation = 0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w61ta"]
+albedo_color = Color(0.94902, 0.329412, 1, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_v1k3y"]
-size = Vector2(0.08, 0.08)
-orientation = 2
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjmbn"]
+albedo_color = Color(0.489622, 0.489622, 0.489622, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_tlm4k"]
-size = Vector2(0.08, 0.08)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1k3y"]
+albedo_color = Color(0.968627, 0.917647, 0.321569, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_mg5fl"]
-flip_faces = true
-size = Vector2(0.08, 0.08)
-orientation = 2
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tlm4k"]
+albedo_color = Color(1.15514e-06, 0, 0.891678, 1)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_3rwnv"]
-flip_faces = true
-size = Vector2(0.08, 0.08)
-orientation = 0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mg5fl"]
+albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rehd7"]
-albedo_texture = ExtResource("2_w61ta")
-uv1_scale = Vector3(10000, 10000, 1)
+[sub_resource type="Animation" id="Animation_3rwnv"]
+resource_name = "Scale_Growth"
+length = 4.0
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.1, 0.1, 0.1, 4, 1, 1, 1, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 4, 1, 0, 0.0321394, 0)
+
+[sub_resource type="Animation" id="Animation_rehd7"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.1, 0.1, 0.1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sa870"]
+_data = {
+&"RESET": SubResource("Animation_rehd7"),
+&"Scale_Growth": SubResource("Animation_3rwnv")
+}
 
 [node name="Scales" type="Node3D"]
 
 [node name="Transform" type="Node3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="Scales" parent="Transform" instance=ExtResource("1_yjabd")]
 
-[node name="Symbol_Cube" type="Node3D" parent="Transform"]
+[node name="MeepleParent" type="Node3D" parent="Transform"]
 
-[node name="Back" type="MeshInstance3D" parent="Transform/Symbol_Cube"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0448796, 0.150798, -0.176712)
-mesh = SubResource("PlaneMesh_gjmbn")
+[node name="PinkMeeple" parent="Transform/MeepleParent" instance=ExtResource("2_yjabd")]
+transform = Transform3D(0.112552, 0, 0.165324, 0, 0.2, 0, -0.165324, 0, 0.112552, 0.0328902, 0.107092, -0.12049)
 
-[node name="Right" type="MeshInstance3D" parent="Transform/Symbol_Cube"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00442833, 0.150558, -0.137)
-mesh = SubResource("PlaneMesh_v1k3y")
+[node name="Object_4" parent="Transform/MeepleParent/PinkMeeple/Sketchfab_model/root/GLTF_SceneRootNode/Curve_1" index="0"]
+transform = Transform3D(0.953059, 0.302787, 0, -0.302787, 0.953059, 0, 0, 0, 1, 0.119914, 0.0221091, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_w61ta")
 
-[node name="Top" type="MeshInstance3D" parent="Transform/Symbol_Cube"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, 0.191, -0.177)
-mesh = SubResource("PlaneMesh_tlm4k")
+[node name="GrayMeeple" parent="Transform/MeepleParent" instance=ExtResource("2_yjabd")]
+transform = Transform3D(-0.109004, 0, 0.167685, 0, 0.2, 0, -0.167685, 0, -0.109004, 0.0529103, 0.106143, -0.186273)
 
-[node name="Left" type="MeshInstance3D" parent="Transform/Symbol_Cube"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005, 0.151, -0.217)
-mesh = SubResource("PlaneMesh_mg5fl")
+[node name="Object_4" parent="Transform/MeepleParent/GrayMeeple/Sketchfab_model/root/GLTF_SceneRootNode/Curve_1" index="0"]
+transform = Transform3D(0.994485, 0.104876, 0, -0.104876, 0.994485, 0, 0, 0, 1, 0.0372933, 0.0388424, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_gjmbn")
 
-[node name="Front" type="MeshInstance3D" parent="Transform/Symbol_Cube"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035, 0.151, -0.177)
-mesh = SubResource("PlaneMesh_3rwnv")
-surface_material_override/0 = SubResource("StandardMaterial3D_rehd7")
+[node name="YellowMeeple" parent="Transform/MeepleParent" instance=ExtResource("2_yjabd")]
+transform = Transform3D(0.188433, 0, 0.0670311, 0, 0.2, 0, -0.0670311, 0, 0.188433, -0.035992, 0.100129, -0.195994)
+
+[node name="Object_4" parent="Transform/MeepleParent/YellowMeeple/Sketchfab_model/root/GLTF_SceneRootNode/Curve_1" index="0"]
+transform = Transform3D(0.992171, -0.124883, 0, 0.124883, 0.992171, 0, 0, 0, 0.999999, 0.0215198, -0.0391489, -0.0283858)
+surface_material_override/0 = SubResource("StandardMaterial3D_v1k3y")
+
+[node name="PurpleMeeple" parent="Transform/MeepleParent" instance=ExtResource("2_yjabd")]
+transform = Transform3D(0.0547616, 0, 0.192357, 0, 0.2, 0, -0.192357, 0, 0.0547616, -0.0479517, 0.10699, -0.158704)
+
+[node name="BlueMeeple" parent="Transform/MeepleParent" instance=ExtResource("2_yjabd")]
+transform = Transform3D(-0.1655, 0, 0.112292, 0, 0.2, 0, -0.112292, 0, -0.1655, -0.00536669, 0.105189, -0.132231)
+
+[node name="Object_4" parent="Transform/MeepleParent/BlueMeeple/Sketchfab_model/root/GLTF_SceneRootNode/Curve_1" index="0"]
+transform = Transform3D(1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 0, 0, 1, 0.0200649, -0.0176517, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_tlm4k")
+
+[node name="BlackMeeple" parent="Transform/MeepleParent" instance=ExtResource("2_yjabd")]
+transform = Transform3D(0.192643, 0, 0.053747, 0, 0.2, 0, -0.053747, 0, 0.192643, -0.00440236, 0.113376, -0.111472)
+
+[node name="Object_4" parent="Transform/MeepleParent/BlackMeeple/Sketchfab_model/root/GLTF_SceneRootNode/Curve_1" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mg5fl")
+
+[node name="MeepleParent2" type="Node3D" parent="Transform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.345293)
+
+[node name="PinkMeeple" parent="Transform/MeepleParent2" instance=ExtResource("2_yjabd")]
+transform = Transform3D(0.112552, 0, 0.165324, 0, 0.2, 0, -0.165324, 0, 0.112552, 0.0328902, 0.107092, -0.12049)
+
+[node name="Object_4" parent="Transform/MeepleParent2/PinkMeeple/Sketchfab_model/root/GLTF_SceneRootNode/Curve_1" index="0"]
+transform = Transform3D(0.953059, 0.302787, 0, -0.302787, 0.953059, 0, 0, 0, 1, 0.119914, 0.0221091, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_w61ta")
+
+[node name="GrayMeeple" parent="Transform/MeepleParent2" instance=ExtResource("2_yjabd")]
+transform = Transform3D(-0.109004, 0, 0.167685, 0, 0.2, 0, -0.167685, 0, -0.109004, 0.0529103, 0.106143, -0.186273)
+
+[node name="Object_4" parent="Transform/MeepleParent2/GrayMeeple/Sketchfab_model/root/GLTF_SceneRootNode/Curve_1" index="0"]
+transform = Transform3D(0.994485, 0.104876, 0, -0.104876, 0.994485, 0, 0, 0, 1, 0.0372933, 0.0388424, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_gjmbn")
+
+[node name="YellowMeeple" parent="Transform/MeepleParent2" instance=ExtResource("2_yjabd")]
+transform = Transform3D(0.188433, 0, 0.0670311, 0, 0.2, 0, -0.0670311, 0, 0.188433, -0.035992, 0.100129, -0.195994)
+
+[node name="Object_4" parent="Transform/MeepleParent2/YellowMeeple/Sketchfab_model/root/GLTF_SceneRootNode/Curve_1" index="0"]
+transform = Transform3D(0.992171, -0.124883, 0, 0.124883, 0.992171, 0, 0, 0, 0.999999, 0.0215198, -0.0391489, -0.0283858)
+surface_material_override/0 = SubResource("StandardMaterial3D_v1k3y")
+
+[node name="PurpleMeeple" parent="Transform/MeepleParent2" instance=ExtResource("2_yjabd")]
+transform = Transform3D(0.0547616, 0, 0.192357, 0, 0.2, 0, -0.192357, 0, 0.0547616, -0.0479517, 0.10699, -0.158704)
+
+[node name="BlueMeeple" parent="Transform/MeepleParent2" instance=ExtResource("2_yjabd")]
+transform = Transform3D(-0.1655, 0, 0.112292, 0, 0.2, 0, -0.112292, 0, -0.1655, -0.00536669, 0.105189, -0.132231)
+
+[node name="Object_4" parent="Transform/MeepleParent2/BlueMeeple/Sketchfab_model/root/GLTF_SceneRootNode/Curve_1" index="0"]
+transform = Transform3D(1, -5.96046e-08, 0, 5.96046e-08, 1, 0, 0, 0, 1, 0.0200649, -0.0176517, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_tlm4k")
+
+[node name="BlackMeeple" parent="Transform/MeepleParent2" instance=ExtResource("2_yjabd")]
+transform = Transform3D(0.192643, 0, 0.053747, 0, 0.2, 0, -0.053747, 0, 0.192643, -0.00440236, 0.113376, -0.111472)
+
+[node name="Object_4" parent="Transform/MeepleParent2/BlackMeeple/Sketchfab_model/root/GLTF_SceneRootNode/Curve_1" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_mg5fl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sa870")
+}
+
+[editable path="Transform/MeepleParent/PinkMeeple"]
+[editable path="Transform/MeepleParent/GrayMeeple"]
+[editable path="Transform/MeepleParent/YellowMeeple"]
+[editable path="Transform/MeepleParent/BlueMeeple"]
+[editable path="Transform/MeepleParent/BlackMeeple"]
+[editable path="Transform/MeepleParent2/PinkMeeple"]
+[editable path="Transform/MeepleParent2/GrayMeeple"]
+[editable path="Transform/MeepleParent2/YellowMeeple"]
+[editable path="Transform/MeepleParent2/BlueMeeple"]
+[editable path="Transform/MeepleParent2/BlackMeeple"]

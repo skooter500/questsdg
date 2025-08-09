@@ -29,6 +29,7 @@ func _ready() -> void:
 	$Trees/Tree2/AnimationPlayer.play("Tree_Growth")
 	$Trees/Tree3/AnimationPlayer.play("Tree_Growth")
 	$UNFlag/AnimationPlayer.play("Flag_Wave")
+	$Scales/AnimationPlayer.play("Scale_Growth")
 	
 	await get_tree().create_timer(3.0).timeout
 	var my_scene = load("res://Cloud.tscn")

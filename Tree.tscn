@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b00u5k8csutu6"]
 
-[ext_resource type="PackedScene" uid="uid://ckteswuqa0c1x" path="res://Models/oak_trees.glb" id="1_nbyt5"]
+[ext_resource type="PackedScene" uid="uid://ckteswuqa0c1x" path="res://Models/Tree/oak_trees.glb" id="1_nbyt5"]
 
 [sub_resource type="Animation" id="Animation_72j6q"]
 length = 0.001
