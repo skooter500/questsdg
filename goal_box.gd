@@ -2,13 +2,11 @@ extends Area3D
 
 @export var image:Texture 
 
-
-
 var inside:bool = false
 
 var mats = []
 
-var ani = preload("res://goal_box_animated.tscn")
+@export var goal:int=1
 	
 func set_texture(mesh:MeshInstance3D):
 	var mat:StandardMaterial3D = mesh.get_surface_override_material(0)
@@ -40,11 +38,11 @@ func make_invisible():
 	monitoring = false        # Stops detecting other bodies entering/exiting
 	monitorable = false 
 	
-	var ani_box = ani.instantiate()
-	ani_box.position = position
-	ani_box.rotation = rotation
-	self.queue_free()
-	get_parent().add_child(ani_box)
+	#var ani_box = $"..".ani_boxes[goal]
+	#ani_box.position = position
+	#ani_box.rotation = rotation
+	#self.queue_free()
+	# get_parent().add_child(ani_box)
 	
 func fade_out():
 	if fade_out_tween:

@@ -8,9 +8,7 @@ var mats = []
 var anim0Frames:SpriteFrames
 var anim1Frames:SpriteFrames
 
-@export var goal_num:int = 1
-
-@export var goal_num1:int = 2
+@export var goal_num:int = 6
 
 func bounce_in():
 	if fade_tween:
@@ -24,17 +22,14 @@ func bounce_in():
 			# Optional: Hide the mesh when fade completes
 		# fade_tween.finished.connect(make_invisible)
 
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func load_sprites():
 	anim0Frames = SpriteFrames.new()
 	anim1Frames = SpriteFrames.new()
-	anim0Frames.add_animation("default")
-	anim1Frames.add_animation("default")
+	# anim0Frames.add_animation("default")
+	# anim1Frames.add_animation("default")
 
-	var path0 = "res://goals/Goal-" + str(goal_num1) + "/Goal " + str(goal_num1) + "/" + str(goal_num1) + "_SDG_MakeEveryDayCount_Gifs_GDU_frames/"
-	var path1 = "res://goals/Goal-" + str(goal_num1) + "/Goal " + str(goal_num1) + "/E_GIF_" + "%02d" % goal_num1 + "_frames/"
+	var path0 = "res://goals/Goal-" + str(goal_num) + "/Goal " + str(goal_num) + "/" + str(goal_num) + "_SDG_MakeEveryDayCount_Gifs_GDU_frames/"
+	var path1 = "res://goals/Goal-" + str(goal_num) + "/Goal " + str(goal_num) + "/E_GIF_" + "%02d" % goal_num + "_frames/"
 
 	add_frames_from_path(anim0Frames, path0)
 	add_frames_from_path(anim1Frames, path1)
@@ -53,6 +48,10 @@ func _ready() -> void:
 			sprites[i].sprite_frames = anim0Frames
 		sprites[i].play("default")
 	
+	
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
 	#for sprite in sprites:
 		#var mat:StandardMaterial3D = sprite.get_surface_override_material(0)
 		#mat = mat.duplicate()
