@@ -64,22 +64,26 @@ func _ready() -> void:
 	lerp_target = global_position
 	pass # Replace with function body.
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# rotate_y(delta)
 	# rotate_x(delta)
 	# print("hand " + str(hand))
-	if hand:
-		lerp_target = hand.global_position
-		var to_target = lerp_target- global_position
-		linear_velocity = lerp(linear_velocity, to_target, delta * 20) 
-		if ! hand.grabbed:
-			hand = null
-	pass
 	
-var max_dist = 0.4
+	if hand:
+		if hand.grabbed:
+			grabbing = true
+		else:
+			grabbing = false
+	if grabbing:
+		var v = hand.global_position - global_position
+		apply_central_force(v)
+		# var v = hand.global_position - global_position(0, 0, -10))
+		# ition =) lerp(global_position, hand.vtion, delta * # 10)
+	pass
 
+var grabbing	
+var inside = false
 func add_frames_from_path(sprite_frames: SpriteFrames, path: String):
 	var dir = DirAccess.open(path)
 	if dir:
@@ -107,10 +111,13 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 	if area.name.contains("hand"):
 		var h = area.get_parent()
 		hand =h
+		inside = true
 	pass 
 	
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
-	if hand and area.get_parent() == hand && ! hand.grabbed:
-		hand = null
+	if area.get_parent() == hand:
+		inside = false
+		if ! hand.grabbed:
+			hand = null
 	pass # Replace with function body.
