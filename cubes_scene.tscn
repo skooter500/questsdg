@@ -1,11 +1,10 @@
-[gd_scene load_steps=41 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=40 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
 [ext_resource type="Script" uid="uid://dttcldpevggnp" path="res://hand.gd" id="2_p7tmn"]
 [ext_resource type="PackedScene" uid="uid://cjcehqrfoxav3" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="2_pvxhv"]
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="2_sasra"]
-[ext_resource type="PackedScene" uid="uid://bdllxnud8sodo" path="res://goal_box_animated.tscn" id="2_wpm1j"]
 [ext_resource type="PackedScene" uid="uid://dabmoo0spa6vg" path="res://addons/hand_pose_detector/hands/RightHandHumanoid.gltf" id="3_6h1ut"]
 [ext_resource type="Script" uid="uid://dya4sxc8awaw0" path="res://addons/hand_pose_detector/hand_pose_detector.gd" id="3_b11sm"]
 [ext_resource type="PackedScene" uid="uid://5sggqhc8uux2" path="res://goal_box.tscn" id="3_coq8p"]
@@ -669,10 +668,6 @@ radius = 0.05
 [node name="test_scene" type="Node3D"]
 script = ExtResource("1_uhqqe")
 
-[node name="goal_box" parent="." instance=ExtResource("2_wpm1j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.295947, 1.06111, -0.603388)
-goal_num = 15
-
 [node name="plesiosaurus" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-10, 0, 0.01, 0, 0.01, 0, -0.01, 0, -4.37114e-10, 1.62681, 1.12757, 3.55784)
 script = ExtResource("30_f5i4p")
@@ -1243,7 +1238,7 @@ hand_tracker_name = "/user/hand_tracker/right"
 hand_pose_set = ExtResource("7_077gh")
 
 [node name="goals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0844698, 1.33562, 2.32101)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0844698, 1.33562, -0.947991)
 script = ExtResource("2_2dw41")
 
 [node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]
@@ -1251,51 +1246,67 @@ image = ExtResource("2_sasra")
 
 [node name="goal_box2" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("11_b11sm")
+goal = 2
 
 [node name="goal_box3" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("4_njel3")
+goal = 3
 
 [node name="goal_box4" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("5_vr1i5")
+goal = 4
 
 [node name="goal_box5" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("6_rpuu0")
+goal = 5
 
 [node name="goal_box6" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("7_oo8pe")
+goal = 6
 
 [node name="goal_box7" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("8_4gito")
+goal = 7
 
 [node name="goal_box8" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("10_ykxp3")
+goal = 8
 
 [node name="goal_box9" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("9_fbuy2")
+goal = 9
 
 [node name="goal_box10" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("10_fbuy2")
+goal = 10
 
 [node name="goal_box11" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("11_0k8yu")
+goal = 11
 
 [node name="goal_box12" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("12_hiucn")
+goal = 12
 
 [node name="goal_box13" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("13_k6its")
+goal = 13
 
 [node name="goal_box14" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("14_2dw41")
+goal = 14
 
 [node name="goal_box15" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("15_k6its")
+goal = 15
 
 [node name="goal_box16" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("16_2dw41")
+goal = 16
 
 [node name="goal_box17" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("17_ykxp3")
+goal = 17
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="goals"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977309, 0.484867, 0)

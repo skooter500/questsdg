@@ -2,14 +2,22 @@ extends Area3D
 
 @export var image:Texture 
 
-
-
 var inside:bool = false
 
 var mats = []
 
-var ani = preload("res://goal_box_animated.tscn")
-	
+@export var goal:int = 1
+
+var ani_box_scene = preload("res://goal_box_animated.tscn")
+
+var ani_box
+
+func load_ani_box():
+	ani_box = ani_box_scene.instantiate()
+	ani_box.load_sprites()
+	print("Goal " + str(goal) + " loaded")
+		
+
 func set_texture(mesh:MeshInstance3D):
 	var mat:StandardMaterial3D = mesh.get_surface_override_material(0)
 	mat = mat.duplicate()
@@ -22,6 +30,10 @@ var right:Hand
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	#var t = Thread.new()
+	#t.start(load_ani_box)
+	#
 	set_texture($scaler/front)
 	set_texture($scaler/back)
 	set_texture($scaler/left)
@@ -40,7 +52,7 @@ func make_invisible():
 	monitoring = false        # Stops detecting other bodies entering/exiting
 	monitorable = false 
 	
-	var ani_box = ani.instantiate()
+	ani_box = get_parent().ani_boxes[goal - 1]
 	ani_box.position = position
 	ani_box.rotation = rotation
 	self.queue_free()

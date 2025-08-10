@@ -1,7 +1,23 @@
 extends Node3D
-	
+
+var ani_boxes = []
+
+var ani_box_scene = preload("res://goal_box_animated.tscn")
+
+func load_ani_boxes():
+	for i in 17:
+		print("Loading " + str(i))
+		var ani_box = ani_box_scene.instantiate()
+		ani_box.goal_num1 = i + 1
+		ani_box.load_frames()
+		ani_boxes.push_back(ani_box)
+		print("Loaded " + str(i))
+		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
+	
+	var thread = Thread.new()
+	thread.start(load_ani_boxes)
 	var cols = 6
 	var gap = 0.3
 	var row = 0
