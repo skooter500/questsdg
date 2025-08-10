@@ -61,6 +61,7 @@ albedo_texture = SubResource("ViewportTexture_6f7tj")
 albedo_texture_force_srgb = true
 
 [node name="goal_box_animated" type="Area3D"]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 script = ExtResource("1_5fbwa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -115,7 +116,6 @@ script = ExtResource("4_lw7ft")
 offset_right = 40.0
 offset_bottom = 40.0
 stream = ExtResource("4_80lwv")
-autoplay = true
 loop = true
 
 [node name="SubViewport2" type="SubViewport" parent="."]
