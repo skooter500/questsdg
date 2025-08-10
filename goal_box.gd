@@ -90,7 +90,7 @@ var hand
 func _on_area_entered(area: Area3D) -> void:	
 	if area.name.contains("hand"):
 		play_sound()
-		hand = area
+		hand = area.get_parent()
 		var t = create_tween() \
 			.set_ease(Tween.EASE_IN_OUT) \
 			.set_trans(Tween.TRANS_QUINT)

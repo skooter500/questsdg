@@ -1240,7 +1240,7 @@ hand_tracker_name = "/user/hand_tracker/right"
 hand_pose_set = ExtResource("7_077gh")
 
 [node name="goals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40118, 1.56184, -0.947991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40118, 1.33562, -0.947991)
 script = ExtResource("2_2dw41")
 
 [node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]

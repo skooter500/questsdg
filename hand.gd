@@ -19,7 +19,7 @@ func _on_hand_pose_detector_pose_started(p_name: String) -> void:
 	print(p_name + " started")
 	if p_name == "ThumbsUp":
 		selected = true
-	if p_name == "Pinch":
+	if p_name == "Index Pinch":
 		grabbed = true
 	pass # Replace with function body.
 
@@ -28,6 +28,6 @@ func _on_hand_pose_detector_pose_ended(p_name: String) -> void:
 	print(p_name + " ended")
 	if p_name == "ThumbsUp":
 		selected = false
-	if p_name == "Pinch":
+	if p_name == "Index Pinch":
 		grabbed = false
 	pass # Replace with function body.

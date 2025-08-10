@@ -1,4 +1,4 @@
-extends Area3D
+extends RigidBody3D
 
 var fade_tween:Tween = null
 
@@ -34,12 +34,12 @@ func load_frames():
 	add_frames_from_path(anim0Frames, path0)
 	add_frames_from_path(anim1Frames, path1)
 	
-	sprites.push_back($scaler/front)
-	sprites.push_back($scaler/bott)
-	sprites.push_back($scaler/left)
-	sprites.push_back($scaler/top)
-	sprites.push_back($scaler/back)
-	sprites.push_back($scaler/right)
+	sprites.push_back($Area3D/scaler/front)
+	sprites.push_back($Area3D/scaler/bott)
+	sprites.push_back($Area3D/scaler/left)
+	sprites.push_back($Area3D/scaler/top)
+	sprites.push_back($Area3D/scaler/back)
+	sprites.push_back($Area3D/scaler/right)
 	
 	for i in range(sprites.size()):
 		if i == 2 or i == 5: # left and right faces
@@ -47,6 +47,7 @@ func load_frames():
 		else:
 			sprites[i].sprite_frames = anim0Frames
 
+var lerp_target:Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -60,6 +61,7 @@ func _ready() -> void:
 		#sprites.set_surface_override_material(0, mat)
 		#mats.push_back(mat)
 	bounce_in()
+	lerp_target = global_position
 	pass # Replace with function body.
 
 
@@ -67,10 +69,16 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# rotate_y(delta)
 	# rotate_x(delta)
-	
-	if hand && hand.grabbed:
-		global_position = lerp(global_position, hand.global_position, delta * 5)
+	# print("hand " + str(hand))
+	if hand:
+		lerp_target = hand.global_position
+		var to_target = lerp_target- global_position
+		linear_velocity = lerp(linear_velocity, to_target, delta * 20) 
+		if ! hand.grabbed:
+			hand = null
 	pass
+	
+var max_dist = 0.4
 
 func add_frames_from_path(sprite_frames: SpriteFrames, path: String):
 	var dir = DirAccess.open(path)
@@ -93,15 +101,16 @@ func add_frames_from_path(sprite_frames: SpriteFrames, path: String):
 
 var hand = null
 
-func _on_area_entered(area: Area3D) -> void:
-	if area.name.contains("hand"):
-		hand = area
-	pass 
-	
 # Replace with function body.
 
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	if area.name.contains("hand"):
+		var h = area.get_parent()
+		hand =h
+	pass 
+	
 
-func _on_area_exited(area: Area3D) -> void:
-	if area == hand:
+func _on_area_3d_area_exited(area: Area3D) -> void:
+	if hand and area.get_parent() == hand && ! hand.grabbed:
 		hand = null
 	pass # Replace with function body.
