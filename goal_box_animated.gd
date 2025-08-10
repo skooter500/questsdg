@@ -67,6 +67,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# rotate_y(delta)
 	# rotate_x(delta)
+	
+	if hand && hand.grabbed:
+		global_position = lerp(global_position, hand.global_position, delta * 5)
 	pass
 
 func add_frames_from_path(sprite_frames: SpriteFrames, path: String):
@@ -87,3 +90,18 @@ func add_frames_from_path(sprite_frames: SpriteFrames, path: String):
 			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path: " + path)
+
+var hand = null
+
+func _on_area_entered(area: Area3D) -> void:
+	if area.name.contains("hand"):
+		hand = area
+	pass 
+	
+# Replace with function body.
+
+
+func _on_area_exited(area: Area3D) -> void:
+	if area == hand:
+		hand = null
+	pass # Replace with function body.

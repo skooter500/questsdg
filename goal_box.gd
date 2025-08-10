@@ -81,14 +81,16 @@ func _process(delta: float) -> void:
 	# rotate_y(delta)
 	# rotate_x(delta)
 	
-	if inside && (left.selected || right.selected):
+	if inside && hand.selected:
 		fade_out()		
 	pass
 
+var hand
 
 func _on_area_entered(area: Area3D) -> void:	
 	if area.name.contains("hand"):
 		play_sound()
+		hand = area
 		var t = create_tween() \
 			.set_ease(Tween.EASE_IN_OUT) \
 			.set_trans(Tween.TRANS_QUINT)
@@ -108,6 +110,7 @@ func _on_area_exited(area: Area3D) -> void:
 		return
 	if area.name.contains("hand"):
 		play_sound()
+		hand = null
 		var t = create_tween() \
 			.set_ease(Tween.EASE_IN_OUT) \
 			.set_trans(Tween.TRANS_QUINT)
