@@ -69,7 +69,7 @@ func fade_out():
 		
 		
 		$selected_sound.pitch_scale = 0.5
-		$selected_sound.play()
+		# $selected_sound.play()
 		#for mat in mats:
 			#fade_out_tween.tween_property(mat, "albedo_color:a", 0.0, 2.0)
 			#fade_out_tween.set_parallel(true)

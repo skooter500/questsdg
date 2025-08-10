@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=55 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -21,20 +21,29 @@
 [ext_resource type="Texture2D" uid="uid://c4wdugn8nqwsr" path="res://goals/E-WEB-Goal-08.png" id="10_ykxp3"]
 [ext_resource type="Texture2D" uid="uid://ch5ldi5mlxetk" path="res://goals/E-WEB-Goal-11.png" id="11_0k8yu"]
 [ext_resource type="Texture2D" uid="uid://yrkevmxuio66" path="res://goals/E-WEB-Goal-02.png" id="11_b11sm"]
+[ext_resource type="AudioStream" uid="uid://dgbl2d112mlbd" path="res://sounds/ai sounds/staff-canteen-background-33214.mp3" id="12_6f7tj"]
 [ext_resource type="Texture2D" uid="uid://d1n0828jvlp8c" path="res://goals/E-WEB-Goal-12.png" id="12_hiucn"]
+[ext_resource type="AudioStream" uid="uid://bu8m01rl0e06q" path="res://sounds/ai sounds/running-on-gravel-301880.mp3" id="13_6f7tj"]
 [ext_resource type="Texture2D" uid="uid://dx70jn77fea38" path="res://goals/E-WEB-Goal-13.png" id="13_k6its"]
 [ext_resource type="Texture2D" uid="uid://cse8qbjky4vee" path="res://goals/E-WEB-Goal-14.png" id="14_2dw41"]
+[ext_resource type="AudioStream" uid="uid://bouddr0e5ff36" path="res://sounds/ai sounds/classroom-background-54177.mp3" id="14_6f7tj"]
 [ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="15_k6its"]
 [ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
+[ext_resource type="AudioStream" uid="uid://jrwcgdxkf1ij" path="res://sounds/ai sounds/tap-water-98206.mp3" id="16_j5gtg"]
+[ext_resource type="AudioStream" uid="uid://d1m6bhf3qido2" path="res://sounds/ai sounds/windmill-26886.mp3" id="17_jpnay"]
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
+[ext_resource type="AudioStream" uid="uid://s5oj77r1j0sd" path="res://sounds/ai sounds/factory-ambience-131855.mp3" id="19_u4y7u"]
+[ext_resource type="AudioStream" uid="uid://cugqyhut5u8bf" path="res://sounds/ai sounds/construction-interior-tall-building-50151.mp3" id="19_v6rpk"]
+[ext_resource type="AudioStream" uid="uid://dgcn2u1ec5l2c" path="res://sounds/ai sounds/city-ambience-121693.mp3" id="20_1hang"]
+[ext_resource type="AudioStream" uid="uid://8qwttvd6jvkj" path="res://sounds/ai sounds/recycling-can-return-55990.mp3" id="21_jxdac"]
 [ext_resource type="AudioStream" uid="uid://crk61a5k8qbu5" path="res://sounds/ambient-wave-48-tribute-17243.mp3" id="22_6h1ut"]
+[ext_resource type="AudioStream" uid="uid://dt2jgdiun50ah" path="res://sounds/ai sounds/sound-effect-seagulls-157829.mp3" id="22_fqo83"]
+[ext_resource type="AudioStream" uid="uid://b0xsl6sqnhku1" path="res://sounds/ai sounds/underwater-sounds-376891.mp3" id="23_u4y7u"]
+[ext_resource type="AudioStream" uid="uid://b478denpfxtcx" path="res://sounds/ai sounds/african-savanna-2-23769.mp3" id="24_e2pu3"]
 [ext_resource type="Script" uid="uid://c05cqxnf0g8ke" path="res://darren_stuff/plesiosaurus.gd" id="30_f5i4p"]
 [ext_resource type="AudioStream" uid="uid://bxlttqrnt54q2" path="res://sounds/ai sounds/goal1.mp3" id="30_j5gtg"]
 [ext_resource type="AudioStream" uid="uid://b7srdxjskh8p0" path="res://sounds/ai sounds/goal2.mp3" id="32_v6rpk"]
-[ext_resource type="AudioStream" uid="uid://c3237k7afjrn7" path="res://sounds/ai sounds/goal3.mp3" id="33_1hang"]
-[ext_resource type="AudioStream" uid="uid://be3ag3ryj0pev" path="res://sounds/ai sounds/goal3b.mp3" id="34_jxdac"]
 [ext_resource type="AudioStream" uid="uid://cioq37183pvqq" path="res://sounds/ai sounds/goal4.mp3" id="35_fqo83"]
-[ext_resource type="AudioStream" uid="uid://dtppiegnekuna" path="res://sounds/ai sounds/goal4b.mp3" id="36_u4y7u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ige8k"]
 resource_name = "Material.001"
@@ -1248,7 +1257,7 @@ hand_pose_set = ExtResource("7_077gh")
 [node name="goals" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21558, 1.54676, -0.389979)
 script = ExtResource("2_2dw41")
-sounds = Array[AudioStream]([ExtResource("30_j5gtg"), ExtResource("32_v6rpk"), ExtResource("33_1hang"), ExtResource("34_jxdac"), ExtResource("35_fqo83"), ExtResource("36_u4y7u"), null, null, null, null, null, null, null, null, null, null, null])
+sounds = Array[AudioStream]([ExtResource("30_j5gtg"), ExtResource("12_6f7tj"), ExtResource("13_6f7tj"), ExtResource("14_6f7tj"), ExtResource("35_fqo83"), ExtResource("16_j5gtg"), ExtResource("17_jpnay"), ExtResource("19_v6rpk"), ExtResource("19_u4y7u"), ExtResource("32_v6rpk"), ExtResource("20_1hang"), ExtResource("21_jxdac"), ExtResource("22_fqo83"), ExtResource("23_u4y7u"), ExtResource("24_e2pu3"), null, null])
 
 [node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("2_sasra")

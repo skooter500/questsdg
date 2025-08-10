@@ -18,7 +18,11 @@ func bounce_in():
 		fade_tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
 		fade_tween.tween_property(self, "scale", Vector3.ONE,2)
 		$selected_sound.pitch_scale = 0.6
-		$selected_sound.play()
+		# $selected_sound.play()
+		theme_sound.volume_db = -100
+		fade_tween.set_parallel(true)
+		fade_tween.tween_property(theme_sound, "volume_db", -46.021, 2)
+		-46.021
 			# Optional: Hide the mesh when fade completes
 		# fade_tween.finished.connect(make_invisible)
 

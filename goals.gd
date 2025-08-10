@@ -20,8 +20,9 @@ func load_ani_boxes():
 			ani_box.add_child(sound)
 			sound.stream = sounds[i]
 			sound.position = Vector3.ZERO
-			sound.volume_linear = 0.01
-			sound.attenuation_model = AudioStreamPlayer3D.ATTENUATION_INVERSE_DISTANCE
+			sound.max_distance = 1
+			# sound.volume_linear = 0.005
+			sound.attenuation_model = AudioStreamPlayer3D.ATTENUATION_INVERSE_SQUARE_DISTANCE
 			sound.autoplay = true
 		ani_boxes.push_back(ani_box)
 		print("Loaded " + str(i))

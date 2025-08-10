@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu8m01rl0e06q"
+path="res://.godot/imported/running-on-gravel-301880.mp3-8d3da07986b7cd6e6ac9d8bb4f272fbd.mp3str"
+
+[deps]
+
+source_file="res://sounds/ai sounds/running-on-gravel-301880.mp3"
+dest_files=["res://.godot/imported/running-on-gravel-301880.mp3-8d3da07986b7cd6e6ac9d8bb4f272fbd.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

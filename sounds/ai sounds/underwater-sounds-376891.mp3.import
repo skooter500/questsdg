@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0xsl6sqnhku1"
+path="res://.godot/imported/underwater-sounds-376891.mp3-67889392f9cf7c968182b15ad2919af3.mp3str"
+
+[deps]
+
+source_file="res://sounds/ai sounds/underwater-sounds-376891.mp3"
+dest_files=["res://.godot/imported/underwater-sounds-376891.mp3-67889392f9cf7c968182b15ad2919af3.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://s5oj77r1j0sd"
+path="res://.godot/imported/factory-ambience-131855.mp3-f562c4c8827f2e9abf92f6761447ef3a.mp3str"
+
+[deps]
+
+source_file="res://sounds/ai sounds/factory-ambience-131855.mp3"
+dest_files=["res://.godot/imported/factory-ambience-131855.mp3-f562c4c8827f2e9abf92f6761447ef3a.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
