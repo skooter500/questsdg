@@ -11,7 +11,14 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:	
+	if the_box:
+		if grabbed:
+			var to_target = global_position - the_box.global_position
+			the_box.apply_central_force(to_target)
+	if not inside  && not grabbed:
+		the_box = null
+	
 	pass
 
 
@@ -30,4 +37,19 @@ func _on_hand_pose_detector_pose_ended(p_name: String) -> void:
 		selected = false
 	if p_name == "Index Pinch":
 		grabbed = false
+	pass # Replace with function body.
+
+var the_box = null
+
+func _on_right_hand_area_entered(area: Area3D) -> void:
+	if area.is_in_group("ani_box"):
+		the_box = area.get_parent()
+		inside = true
+	pass # Replace with function body.
+
+var inside = false
+
+func _on_right_hand_area_exited(area: Area3D) -> void:
+	if area == the_box:
+		inside = false
 	pass # Replace with function body.

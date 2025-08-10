@@ -2,6 +2,8 @@ extends Node3D
 
 var ani_boxes = []
 
+@export var sounds:Array[AudioStream] 
+
 var ani_box_scene = preload("res://goal_box_animated.tscn")
 
 func load_ani_boxes():
@@ -10,6 +12,17 @@ func load_ani_boxes():
 		var ani_box = ani_box_scene.instantiate()
 		ani_box.goal_num1 = i + 1
 		ani_box.load_frames()
+		
+		if i < sounds.size():
+			var sound:AudioStreamPlayer3D = AudioStreamPlayer3D.new()
+			sound.visible = true
+			ani_box.theme_sound = sound
+			ani_box.add_child(sound)
+			sound.stream = sounds[i]
+			sound.position = Vector3.ZERO
+			sound.volume_linear = 0.01
+			sound.attenuation_model = AudioStreamPlayer3D.ATTENUATION_INVERSE_DISTANCE
+			sound.autoplay = true
 		ani_boxes.push_back(ani_box)
 		print("Loaded " + str(i))
 		

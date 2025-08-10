@@ -22,6 +22,8 @@ func bounce_in():
 			# Optional: Hide the mesh when fade completes
 		# fade_tween.finished.connect(make_invisible)
 
+var theme_sound:AudioStreamPlayer3D
+
 func load_frames():
 	anim0Frames = SpriteFrames.new()
 	anim1Frames = SpriteFrames.new()
@@ -70,20 +72,8 @@ func _process(delta: float) -> void:
 	# rotate_x(delta)
 	# print("hand " + str(hand))
 	
-	if hand:
-		if hand.grabbed:
-			grabbing = true
-		else:
-			grabbing = false
-	if grabbing:
-		var v = hand.global_position - global_position
-		apply_central_force(v)
-		# var v = hand.global_position - global_position(0, 0, -10))
-		# ition =) lerp(global_position, hand.vtion, delta * # 10)
-	pass
+		pass
 
-var grabbing	
-var inside = false
 func add_frames_from_path(sprite_frames: SpriteFrames, path: String):
 	var dir = DirAccess.open(path)
 	if dir:
@@ -106,18 +96,3 @@ func add_frames_from_path(sprite_frames: SpriteFrames, path: String):
 var hand = null
 
 # Replace with function body.
-
-func _on_area_3d_area_entered(area: Area3D) -> void:
-	if area.name.contains("hand"):
-		var h = area.get_parent()
-		hand =h
-		inside = true
-	pass 
-	
-
-func _on_area_3d_area_exited(area: Area3D) -> void:
-	if area.get_parent() == hand:
-		inside = false
-		if ! hand.grabbed:
-			hand = null
-	pass # Replace with function body.

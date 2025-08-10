@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=46 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -29,6 +29,12 @@
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
 [ext_resource type="AudioStream" uid="uid://crk61a5k8qbu5" path="res://sounds/ambient-wave-48-tribute-17243.mp3" id="22_6h1ut"]
 [ext_resource type="Script" uid="uid://c05cqxnf0g8ke" path="res://darren_stuff/plesiosaurus.gd" id="30_f5i4p"]
+[ext_resource type="AudioStream" uid="uid://bxlttqrnt54q2" path="res://sounds/ai sounds/goal1.mp3" id="30_j5gtg"]
+[ext_resource type="AudioStream" uid="uid://b7srdxjskh8p0" path="res://sounds/ai sounds/goal2.mp3" id="32_v6rpk"]
+[ext_resource type="AudioStream" uid="uid://c3237k7afjrn7" path="res://sounds/ai sounds/goal3.mp3" id="33_1hang"]
+[ext_resource type="AudioStream" uid="uid://be3ag3ryj0pev" path="res://sounds/ai sounds/goal3b.mp3" id="34_jxdac"]
+[ext_resource type="AudioStream" uid="uid://cioq37183pvqq" path="res://sounds/ai sounds/goal4.mp3" id="35_fqo83"]
+[ext_resource type="AudioStream" uid="uid://dtppiegnekuna" path="res://sounds/ai sounds/goal4b.mp3" id="36_u4y7u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ige8k"]
 resource_name = "Material.001"
@@ -1240,8 +1246,9 @@ hand_tracker_name = "/user/hand_tracker/right"
 hand_pose_set = ExtResource("7_077gh")
 
 [node name="goals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40118, 1.33562, -0.947991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21558, 1.54676, -0.389979)
 script = ExtResource("2_2dw41")
+sounds = Array[AudioStream]([ExtResource("30_j5gtg"), ExtResource("32_v6rpk"), ExtResource("33_1hang"), ExtResource("34_jxdac"), ExtResource("35_fqo83"), ExtResource("36_u4y7u"), null, null, null, null, null, null, null, null, null, null, null])
 
 [node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("2_sasra")
@@ -1319,6 +1326,9 @@ autoplay = true
 [connection signal="animation_finished" from="plesiosaurus/AnimationPlayer" to="plesiosaurus" method="_on_animation_player_animation_finished"]
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]
+[connection signal="area_entered" from="XROrigin3D/left/left_hand" to="XROrigin3D/left" method="_on_right_hand_area_entered"]
+[connection signal="area_entered" from="XROrigin3D/right/right_hand" to="XROrigin3D/right" method="_on_right_hand_area_entered"]
+[connection signal="area_exited" from="XROrigin3D/right/right_hand" to="XROrigin3D/right" method="_on_right_hand_area_exited"]
 [connection signal="pose_ended" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_started"]
 

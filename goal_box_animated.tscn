@@ -11,7 +11,7 @@ size = Vector3(0.2, 0.2, 0.2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_n4etf"]
 size = Vector3(0.198706, 0.198889, 0.195898)
 
-[node name="goal_box_animated" type="RigidBody3D"]
+[node name="goal_box_animated" type="RigidBody3D" groups=["ani_box"]]
 mass = 0.5
 linear_damp = 0.5
 script = ExtResource("1_5fbwa")
@@ -27,7 +27,7 @@ volume_db = 80.0
 stream = ExtResource("5_8s77m")
 volume_db = -26.0
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." groups=["ani_box"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000256343, -0.00166626, -0.000292974)
@@ -68,6 +68,3 @@ script = ExtResource("215_ys8l3")
 transform = Transform3D(-1.74846e-07, 0, 4, 0, 4, 0, -4, 0, -1.74846e-07, 0.5, 0, 0)
 pixel_size = 0.001
 script = ExtResource("215_ys8l3")
-
-[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
-[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
