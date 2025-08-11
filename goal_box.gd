@@ -8,15 +8,8 @@ var mats = []
 
 @export var goal:int = 1
 
-var ani_box_scene = preload("res://goal_box_animated.tscn")
 
 var ani_box
-
-func load_ani_box():
-	ani_box = ani_box_scene.instantiate()
-	ani_box.load_sprites()
-	print("Goal " + str(goal) + " loaded")
-		
 
 func set_texture(mesh:MeshInstance3D):
 	var mat:StandardMaterial3D = mesh.get_surface_override_material(0)
