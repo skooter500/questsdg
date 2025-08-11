@@ -16,9 +16,8 @@ func _physics_process(delta: float) -> void:
 		if grabbed:
 			var to_target = global_position - the_box.global_position
 			the_box.apply_central_force(to_target)
-	if not inside  && not grabbed:
-		the_box = null
-	
+	if not inside && not grabbed:
+		the_box = null	
 	pass
 
 
@@ -50,6 +49,6 @@ func _on_right_hand_area_entered(area: Area3D) -> void:
 var inside = false
 
 func _on_right_hand_area_exited(area: Area3D) -> void:
-	if area == the_box:
+	if area.get_parent() == the_box:
 		inside = false
 	pass # Replace with function body.

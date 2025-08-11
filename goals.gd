@@ -12,6 +12,9 @@ func spawn_box(i):
 		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)		
 	var box = goal_boxes[i]
 	box.scale = Vector3.ZERO
+	var a:AudioStreamPlayer3D = box.get_node("AudioStreamPlayer3D")
+	a.pitch_scale = randf_range(0.5, 1.5)
+	box.get_node("AudioStreamPlayer3D").play()
 	var interval = 0.3
 	t.tween_property(box, "scale", Vector3.ONE, interval)		
 	
