@@ -43,7 +43,7 @@ speed_scale = 5.0
 script = ExtResource("215_ys8l3")
 
 [node name="bott" type="AnimatedSprite3D" parent="Area3D/scaler"]
-transform = Transform3D(4, 0, 0, 0, -1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0.5, 0)
+transform = Transform3D(4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 0, -0.5, 0)
 pixel_size = 0.001
 speed_scale = 5.0
 script = ExtResource("215_ys8l3")
@@ -54,7 +54,7 @@ pixel_size = 0.001
 script = ExtResource("215_ys8l3")
 
 [node name="top" type="AnimatedSprite3D" parent="Area3D/scaler"]
-transform = Transform3D(4, 0, 0, 0, -1.74846e-07, 4, 0, -4, -1.74846e-07, 0, -0.5, 0)
+transform = Transform3D(4, 0, 0, 0, -1.74846e-07, -4, 0, 4, -1.74846e-07, 0, 0.5, 0)
 pixel_size = 0.001
 script = ExtResource("215_ys8l3")
 

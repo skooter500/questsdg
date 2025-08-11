@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=57 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -681,6 +681,8 @@ glow_enabled = true
 [sub_resource type="SphereShape3D" id="SphereShape3D_pvxhv"]
 radius = 0.05
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rf3s6"]
+
 [node name="test_scene" type="Node3D"]
 script = ExtResource("1_uhqqe")
 
@@ -1333,6 +1335,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977309, 0.484867, 0)
 stream = ExtResource("22_6h1ut")
 volume_db = -40.93
 autoplay = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_rf3s6")
 
 [connection signal="animation_finished" from="plesiosaurus/AnimationPlayer" to="plesiosaurus" method="_on_animation_player_animation_finished"]
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]

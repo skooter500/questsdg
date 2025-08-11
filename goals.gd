@@ -1,10 +1,20 @@
 extends Node3D
 
 var ani_boxes = []
+var goal_boxes = []
 
 @export var sounds:Array[AudioStream] 
 
 var ani_box_scene = preload("res://goal_box_animated.tscn")
+
+func spawn_box(i):
+	var t = create_tween() \
+		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)		
+	var box = goal_boxes[i]
+	box.scale = Vector3.ZERO
+	var interval = 0.3
+	t.tween_property(box, "scale", Vector3.ONE, interval)		
+	
 
 func load_ani_boxes(start, end):
 	for i in range(start, end):
@@ -26,30 +36,31 @@ func load_ani_boxes(start, end):
 			sound.autoplay = true
 		ani_boxes.push_back(ani_box)
 		print("Loaded " + str(i))
+		call_deferred("spawn_box", i)
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
 	
-	var thread = Thread.new()
-	thread.start(load_ani_boxes.bind(0, 8))
-	
-	var thread1 = Thread.new()
-	thread1.start(load_ani_boxes.bind(8, 17))
 	var cols = 6
 	var gap = 0.3
 	var row = 0
 	var col = 0
-	var interval = 0.3
-	var t = create_tween() \
-		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)		
+	
+	
 	for child:Node3D in get_children():
+		goal_boxes.push_back(child)
 		child.scale = Vector3.ZERO
 		child.position = Vector3(col * gap, row * gap, 0)
-		t.tween_property(child, "scale", Vector3.ONE, interval)		
 		col += 1
 		if col == 6:
 			col = 0
-			row = row - 1 		
+			row = row - 1 
+	
+	var thread = Thread.new()
+	thread.start(load_ani_boxes.bind(0, 8))
+	
+	
+				
 	pass # Replace with function body.
 
 	
