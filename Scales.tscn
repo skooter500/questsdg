@@ -18,6 +18,16 @@ albedo_color = Color(1.15514e-06, 0, 0.891678, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mg5fl"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_rehd7"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.1, 0.1, 0.1)
+
 [sub_resource type="Animation" id="Animation_3rwnv"]
 resource_name = "Scale_Growth"
 length = 4.0
@@ -35,16 +45,6 @@ tracks/1/path = NodePath("Transform")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 4, 1, 0, 0.0321394, 0)
-
-[sub_resource type="Animation" id="Animation_rehd7"]
-length = 0.001
-tracks/0/type = "scale_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Transform")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.1, 0.1, 0.1)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sa870"]
 _data = {

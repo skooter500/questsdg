@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=32 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -19,9 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="15_k6its"]
 [ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
-[ext_resource type="ArrayMesh" uid="uid://jxxw53dwo5fw" path="res://Models/TUD_Campus2 v2.obj" id="20_g6y4b"]
-[ext_resource type="ArrayMesh" uid="uid://dvo6odknkbog4" path="res://Models/Blanchardstown/maps3d-2025-08-07_07-58-57.obj" id="26_b11sm"]
-[ext_resource type="ArrayMesh" uid="uid://bc51irimb70eg" path="res://Models/Tallaght/maps3d-2025-08-07_07-59-20.obj" id="27_mfkbt"]
+[ext_resource type="ArrayMesh" uid="uid://bdw502cy6b2wt" path="res://Models/Tallaght_TUDublin_Floor v2.obj" id="20_6h1ut"]
+[ext_resource type="ArrayMesh" uid="uid://rihrso13ylki" path="res://Models/Blanchardstown_TUDublin_Floor v3.obj" id="21_6m80x"]
+[ext_resource type="ArrayMesh" uid="uid://df377yaxmo5f" path="res://Models/TUD_Campus2 v16.obj" id="22_cqn77"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -49,6 +49,15 @@ material = SubResource("StandardMaterial3D_077gh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfkbt"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22oil"]
+albedo_color = Color(0.241156, 0.241156, 0.241156, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7tmn"]
+albedo_color = Color(0.239216, 0.239216, 0.239216, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b11sm"]
+albedo_color = Color(0.239216, 0.239216, 0.239216, 1)
+
 [node name="test_scene" type="Node3D"]
 script = ExtResource("1_uhqqe")
 
@@ -60,7 +69,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
-transform = Transform3D(0.999701, -0.00063956, -0.0244238, 0, 0.999657, -0.026177, 0.0244322, 0.0261691, 0.999359, 0.0661561, -0.605542, 1.55045)
+transform = Transform3D(0.999701, -0.00063956, -0.0244238, 0, 0.999657, -0.026177, 0.0244322, 0.0261691, 0.999359, 0.0180558, -0.651806, -0.297861)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
@@ -124,18 +133,6 @@ image = ExtResource("16_2dw41")
 
 [node name="goal_box17" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("17_ykxp3")
-
-[node name="Grangegorman" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.1, 8.74228e-09, 3.82137e-16, 0, -4.37114e-09, 0.1, 8.74228e-09, 0.1, 4.37114e-09, -0.0145044, 0, -2.19954)
-mesh = ExtResource("20_g6y4b")
-
-[node name="Blanchardstown" type="MeshInstance3D" parent="."]
-transform = Transform3D(-6.55671e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.55671e-09, -11.2598, 0, 4.85132)
-mesh = ExtResource("26_b11sm")
-
-[node name="Tallaght" type="MeshInstance3D" parent="."]
-transform = Transform3D(-6.55671e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.55671e-09, 13.277, 0, 5.11612)
-mesh = ExtResource("27_mfkbt")
 
 [node name="GoalTextParent" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88353, 0, -5.1475)
@@ -400,3 +397,18 @@ trust
 ● Inclusive policies such as support for disabled entrepreneurship and gender
 equity in staffing reflect institutional commitment to fairness and justice within the
 university"
+
+[node name="TallaghtFloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.670544, 0, -0.166361)
+mesh = ExtResource("20_6h1ut")
+surface_material_override/0 = SubResource("StandardMaterial3D_22oil")
+
+[node name="BlanchardstownFloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.829449, 0, -0.16783)
+mesh = ExtResource("21_6m80x")
+surface_material_override/0 = SubResource("StandardMaterial3D_p7tmn")
+
+[node name="GrangegormanFloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0161305, 0, -0.60333)
+mesh = ExtResource("22_cqn77")
+surface_material_override/0 = SubResource("StandardMaterial3D_b11sm")
