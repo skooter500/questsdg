@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=56 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://5sggqhc8uux2" path="res://goal_box.tscn" id="3_coq8p"]
 [ext_resource type="Texture2D" uid="uid://b8t0sw4dcc84u" path="res://darren_stuff/plesiosaurus_PleasouourSkin.png" id="3_wpm1j"]
 [ext_resource type="Texture2D" uid="uid://p8putbgjitl6" path="res://goals/E-WEB-Goal-03.png" id="4_njel3"]
+[ext_resource type="Script" uid="uid://bbey0wli3q6jp" path="res://xr_camera_3d.gd" id="4_rf3s6"]
 [ext_resource type="Texture2D" uid="uid://k1c7jpvbeutp" path="res://goals/E-WEB-Goal-04.png" id="5_vr1i5"]
 [ext_resource type="PackedScene" uid="uid://df5hynbooj1uj" path="res://addons/hand_pose_detector/hand_pose_detector.tscn" id="6_mfkbt"]
 [ext_resource type="Texture2D" uid="uid://bb7ay212glga4" path="res://goals/E-WEB-Goal-05.png" id="6_rpuu0"]
@@ -1209,6 +1210,7 @@ shadow_enabled = true
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
+script = ExtResource("4_rf3s6")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
 
@@ -1255,7 +1257,7 @@ hand_tracker_name = "/user/hand_tracker/right"
 hand_pose_set = ExtResource("7_077gh")
 
 [node name="goals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21558, 1.54676, -0.389979)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21558, 1.23709, -2.44548)
 script = ExtResource("2_2dw41")
 sounds = Array[AudioStream]([ExtResource("11_6f7tj"), ExtResource("12_6f7tj"), ExtResource("13_6f7tj"), ExtResource("14_6f7tj"), ExtResource("15_6f7tj"), ExtResource("16_j5gtg"), ExtResource("17_jpnay"), ExtResource("19_v6rpk"), ExtResource("19_u4y7u"), ExtResource("32_v6rpk"), ExtResource("20_1hang"), ExtResource("21_jxdac"), ExtResource("22_fqo83"), ExtResource("23_u4y7u"), ExtResource("24_e2pu3"), null, null])
 

@@ -4,7 +4,6 @@ var fade_tween:Tween = null
 
 var sprites = []
 var mats = []
-
 var anim0Frames:SpriteFrames
 var anim1Frames:SpriteFrames
 
