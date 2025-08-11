@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=38 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -22,9 +22,12 @@
 [ext_resource type="ArrayMesh" path="res://Models/Tallaght_TUDublin_Floor v2.obj" id="20_6h1ut"]
 [ext_resource type="ArrayMesh" path="res://Models/Blanchardstown_TUDublin_Floor v3.obj" id="21_6m80x"]
 [ext_resource type="ArrayMesh" uid="uid://dqsdtbq11wh72" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Buildings.obj" id="21_22oil"]
+[ext_resource type="ArrayMesh" uid="uid://dsvw1hx5thygm" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Library v2.obj" id="22_b11sm"]
 [ext_resource type="ArrayMesh" path="res://Models/TUD_Campus2 v16.obj" id="22_cqn77"]
 [ext_resource type="ArrayMesh" uid="uid://dk46vpqvevrd4" path="res://Models/Tallaght/Tallaght_TUDublin_Buildings.obj" id="23_p7tmn"]
 [ext_resource type="ArrayMesh" uid="uid://0fhxx2i8gi4u" path="res://Models/Grangegorman/Grangegorman_TUDublin_Buildings.obj" id="25_b11sm"]
+[ext_resource type="ArrayMesh" uid="uid://rldoxr3j6fp6" path="res://Models/Tallaght/Tallaght_TUDublin_Library v2.obj" id="25_mfkbt"]
+[ext_resource type="ArrayMesh" uid="uid://deosv41rpdunv" path="res://Models/Grangegorman/Grangegorman_TUDublin_Geothermal v2.obj" id="26_p7tmn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -414,6 +417,11 @@ transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 
 mesh = ExtResource("21_22oil")
 skeleton = NodePath("../..")
 
+[node name="BlanchardstownLibrary" type="MeshInstance3D" parent="Blanchardstown"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.828491, 0, -0.164682)
+mesh = ExtResource("22_b11sm")
+skeleton = NodePath("../..")
+
 [node name="Tallaght" type="Node3D" parent="."]
 
 [node name="TallaghtFloor" type="MeshInstance3D" parent="Tallaght"]
@@ -423,8 +431,13 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_22oil")
 
 [node name="TallaghtBuildings" type="MeshInstance3D" parent="Tallaght"]
-transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 3.67052e-24, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.669872, -3.30985e-15, -0.168875)
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 3.67052e-24, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.669872, -0.000693373, -0.168875)
 mesh = ExtResource("23_p7tmn")
+skeleton = NodePath("../..")
+
+[node name="TallaghtLibrary" type="MeshInstance3D" parent="Tallaght"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.667126, 0.00459319, -0.166787)
+mesh = ExtResource("25_mfkbt")
 skeleton = NodePath("../..")
 
 [node name="Grangegorman" type="Node3D" parent="."]
@@ -438,4 +451,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_b11sm")
 [node name="GrangegormanBuildings" type="MeshInstance3D" parent="Grangegorman"]
 transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0213376, 2.23517e-08, -0.591914)
 mesh = ExtResource("25_b11sm")
+skeleton = NodePath("../..")
+
+[node name="GrangegormanGeothermal" type="MeshInstance3D" parent="Grangegorman"]
+transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0134919, 0, -0.599371)
+mesh = ExtResource("26_p7tmn")
 skeleton = NodePath("../..")
