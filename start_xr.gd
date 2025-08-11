@@ -21,27 +21,27 @@ func enable_passthrough() -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Grass/AnimationPlayer.play("grass_growing")
-	$Crane/AnimationPlayer.play("Crane_Rotation")
-	$Book/AnimationPlayer.play("Book_Rise")
-	$Book/AnimationPlayer.queue("Book Rotation")
-	$Trees/Tree/AnimationPlayer.play("Tree_Growth")
-	$Trees/Tree2/AnimationPlayer.play("Tree_Growth")
-	$Trees/Tree3/AnimationPlayer.play("Tree_Growth")
-	$UNFlag/AnimationPlayer.play("Flag_Wave")
-	$Scales/AnimationPlayer.play("Scale_Growth")
-	
-	await get_tree().create_timer(3.0).timeout
-	var my_scene = load("res://Cloud.tscn")
-	var instance = my_scene.instantiate()
-	add_child(instance)
-	instance.position = Vector3(2.628, 1.5, -0.314)
-	var anim_player = instance.get_node("AnimationPlayer")
-	anim_player.play("Cloud_Movement")
-	
-	await get_tree().create_timer(5.0).timeout
-	var rain_particles = instance.get_node("RainParticles")
-	rain_particles.emitting = true
+	#$Grass/AnimationPlayer.play("grass_growing")
+	#$Crane/AnimationPlayer.play("Crane_Rotation")
+	#$Book/AnimationPlayer.play("Book_Rise")
+	#$Book/AnimationPlayer.queue("Book Rotation")
+	#$Trees/Tree/AnimationPlayer.play("Tree_Growth")
+	#$Trees/Tree2/AnimationPlayer.play("Tree_Growth")
+	#$Trees/Tree3/AnimationPlayer.play("Tree_Growth")
+	#$UNFlag/AnimationPlayer.play("Flag_Wave")
+	#$Scales/AnimationPlayer.play("Scale_Growth")
+	#
+	#await get_tree().create_timer(3.0).timeout
+	#var my_scene = load("res://Cloud.tscn")
+	#var instance = my_scene.instantiate()
+	#add_child(instance)
+	#instance.position = Vector3(2.628, 1.5, -0.314)
+	#var anim_player = instance.get_node("AnimationPlayer")
+	#anim_player.play("Cloud_Movement")
+	#
+	#await get_tree().create_timer(5.0).timeout
+	#var rain_particles = instance.get_node("RainParticles")
+	#rain_particles.emitting = true
 
 
 	xr_interface = XRServer.primary_interface	
