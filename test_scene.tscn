@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=44 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -54,6 +54,33 @@ material = SubResource("StandardMaterial3D_077gh")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfkbt"]
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qgi0"]
+albedo_color = Color(0.154876, 0.154876, 0.154876, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kp7o"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fq6b"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oy8sc"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nf64"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxsde"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5xgu"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rygqd"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8k62k"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
 
 [node name="test_scene" type="Node3D"]
 script = ExtResource("1_uhqqe")
@@ -401,16 +428,19 @@ university"
 transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.829449, 0, -0.16783)
 mesh = ExtResource("20_mfkbt")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qgi0")
 
 [node name="BlanchardstownBuildings" type="MeshInstance3D" parent="Blanchardstown"]
 transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.83, 0, -0.168)
 mesh = ExtResource("21_22oil")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_7kp7o")
 
 [node name="BlanchardstownLibrary" type="MeshInstance3D" parent="Blanchardstown"]
 transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.828491, 0, -0.164682)
 mesh = ExtResource("22_b11sm")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8fq6b")
 
 [node name="Tallaght" type="Node3D" parent="."]
 
@@ -418,16 +448,19 @@ skeleton = NodePath("../..")
 transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.670544, 0, -0.166361)
 mesh = ExtResource("23_077gh")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_oy8sc")
 
 [node name="TallaghtBuildings" type="MeshInstance3D" parent="Tallaght"]
 transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 3.67052e-24, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.669872, -0.000693373, -0.168875)
 mesh = ExtResource("23_p7tmn")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2nf64")
 
 [node name="TallaghtLibrary" type="MeshInstance3D" parent="Tallaght"]
 transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.667126, 0.00459319, -0.166787)
 mesh = ExtResource("25_mfkbt")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sxsde")
 
 [node name="Grangegorman" type="Node3D" parent="."]
 
@@ -435,13 +468,16 @@ skeleton = NodePath("../..")
 transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0161305, 0, -0.60333)
 mesh = ExtResource("26_5qgi0")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_r5xgu")
 
 [node name="GrangegormanBuildings" type="MeshInstance3D" parent="Grangegorman"]
 transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0213376, 2.23517e-08, -0.591914)
 mesh = ExtResource("25_b11sm")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_rygqd")
 
 [node name="GrangegormanGeothermal" type="MeshInstance3D" parent="Grangegorman"]
 transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0134919, 0, -0.599371)
 mesh = ExtResource("26_p7tmn")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8k62k")
