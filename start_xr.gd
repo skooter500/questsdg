@@ -42,6 +42,12 @@ func _ready() -> void:
 	#await get_tree().create_timer(5.0).timeout
 	#var rain_particles = instance.get_node("RainParticles")
 	#rain_particles.emitting = true
+	
+	
+	
+	#var tween = get_tree().create_tween()
+	#tween.tween_property($Blanchardstown/BlanchardstownFloor, "", Color.RED, 10)
+	#tween.tween_callback($Blanchardstown/BlanchardstownFloor.queue_free)
 
 
 	xr_interface = XRServer.primary_interface	
