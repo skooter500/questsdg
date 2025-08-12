@@ -60,8 +60,11 @@ func _ready() -> void:
 	var tween = get_tree().create_tween()
 	tween.tween_property(mat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
 	
-	$Blanchardstown/Grass/AnimationPlayer.play("grass_growing")
-	
+	$Blanchardstown/Trees/Tree/AnimationPlayer.play("Tree_Growth")
+	$Blanchardstown/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
+	$Blanchardstown/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
+	$Blanchardstown/Trees/Tree4/AnimationPlayer.play("Tree_Growth")
+	$Blanchardstown/Trees/Tree5/AnimationPlayer.play("Tree_Growth")
 	
 	
 	pass # Replace with function body.

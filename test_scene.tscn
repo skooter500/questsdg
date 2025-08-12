@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=45 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -22,6 +22,7 @@
 [ext_resource type="ArrayMesh" uid="uid://rihrso13ylki" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Floor v3.obj" id="20_mfkbt"]
 [ext_resource type="ArrayMesh" uid="uid://dqsdtbq11wh72" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Buildings.obj" id="21_22oil"]
 [ext_resource type="ArrayMesh" uid="uid://dsvw1hx5thygm" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Library v2.obj" id="22_b11sm"]
+[ext_resource type="PackedScene" uid="uid://b00u5k8csutu6" path="res://Tree.tscn" id="23_5qgi0"]
 [ext_resource type="ArrayMesh" uid="uid://bdw502cy6b2wt" path="res://Models/Tallaght/Tallaght_TUDublin_Floor v2.obj" id="23_077gh"]
 [ext_resource type="ArrayMesh" uid="uid://dk46vpqvevrd4" path="res://Models/Tallaght/Tallaght_TUDublin_Buildings.obj" id="23_p7tmn"]
 [ext_resource type="ArrayMesh" uid="uid://0fhxx2i8gi4u" path="res://Models/Grangegorman/Grangegorman_TUDublin_Buildings.obj" id="25_b11sm"]
@@ -441,6 +442,23 @@ transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 
 mesh = ExtResource("22_b11sm")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8fq6b")
+
+[node name="Trees" type="Node3D" parent="Blanchardstown"]
+
+[node name="Tree" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.751652, -0.049576, -0.262746)
+
+[node name="Tree2" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.966757, -0.0410213, -0.160394)
+
+[node name="Tree3" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 1.08874, -0.0369363, -0.359387)
+
+[node name="Tree4" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.0720277, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720277, 1.17631, -0.0350274, 0.105026)
+
+[node name="Tree5" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.756381, -0.0450302, 0.155504)
 
 [node name="Tallaght" type="Node3D" parent="."]
 
