@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://brgw2wktsrl2k"]
+[gd_scene load_steps=6 format=3 uid="uid://brgw2wktsrl2k"]
 
 [ext_resource type="PackedScene" uid="uid://hoiy56ou21ca" path="res://Models/Crane/tower_crane.glb" id="1_pait3"]
 
@@ -33,9 +33,35 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "scale_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sketchfab_Scene")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.01, 0.01, 0.01)
+
+[sub_resource type="Animation" id="Animation_5nx05"]
+resource_name = "Crane_Growth"
+length = 5.0
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sketchfab_Scene")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0.01, 0.01, 0.01, 5, 1, 0.1, 0.1, 0.1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sketchfab_Scene")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 5, 1, 0, 0.454845, 0)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5nx05"]
 _data = {
+&"Crane_Growth": SubResource("Animation_5nx05"),
 &"Crane_Rotation": SubResource("Animation_pait3"),
 &"RESET": SubResource("Animation_w0v8j")
 }
@@ -43,7 +69,7 @@ _data = {
 [node name="Crane" type="Node3D"]
 
 [node name="Sketchfab_Scene" parent="." instance=ExtResource("1_pait3")]
-transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

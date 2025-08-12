@@ -80,6 +80,9 @@ func _ready() -> void:
 	$Tallaght/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
 	$Tallaght/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
 	
+	$Grangegorman/Crane/AnimationPlayer.play("Crane_Growth")
+	$Grangegorman/Crane/AnimationPlayer.queue("Crane_Rotation")
+	
 	
 	pass # Replace with function body.
 
