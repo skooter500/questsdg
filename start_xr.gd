@@ -38,3 +38,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
+
+
+func _on_hand_pose_detector_pose_ended(p_name: String) -> void:
+	pass # Replace with function body.
