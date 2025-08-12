@@ -32,20 +32,21 @@ emission_energy_multiplier = 1.42
 
 [sub_resource type="Animation" id="Animation_3rgt5"]
 resource_name = "Flag_Wave"
+length = 4.0
 tracks/0/type = "scale_3d"
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath("Transform")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 2, 2, 2, 1, 1, 5, 5, 5)
+tracks/0/keys = PackedFloat32Array(0, 1, 2, 2, 2, 4, 1, 10, 10, 10)
 tracks/1/type = "position_3d"
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/path = NodePath("Transform")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.62583, 0, 1, 1, 0, 3.78697, 0)
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.62583, 0, 4, 1, 0, 6.8175, 0)
 
 [sub_resource type="Animation" id="Animation_8f0ln"]
 length = 0.001

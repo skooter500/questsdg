@@ -97,6 +97,8 @@ func _ready() -> void:
 	$Blanchardstown/Book/AnimationPlayer.play("Book_Rise")
 	$Blanchardstown/Book/AnimationPlayer.queue("Book Rotation")
 	
+	$Tallaght/UNFlag/AnimationPlayer.play("Flag_Wave")
+	
 	
 	pass # Replace with function body.
 
