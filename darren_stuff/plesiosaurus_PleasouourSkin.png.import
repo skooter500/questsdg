@@ -3,9 +3,10 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8t0sw4dcc84u"
+path.s3tc="res://.godot/imported/plesiosaurus_PleasouourSkin.png-af314561c9e7cb06dccd0fae45e86186.s3tc.ctex"
 path.etc2="res://.godot/imported/plesiosaurus_PleasouourSkin.png-af314561c9e7cb06dccd0fae45e86186.etc2.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://darren_stuff/plesiosaurus_PleasouourSkin.png"
-dest_files=["res://.godot/imported/plesiosaurus_PleasouourSkin.png-af314561c9e7cb06dccd0fae45e86186.etc2.ctex"]
+dest_files=["res://.godot/imported/plesiosaurus_PleasouourSkin.png-af314561c9e7cb06dccd0fae45e86186.s3tc.ctex", "res://.godot/imported/plesiosaurus_PleasouourSkin.png-af314561c9e7cb06dccd0fae45e86186.etc2.ctex"]
 
 [params]
 

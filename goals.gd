@@ -60,7 +60,7 @@ func _ready() -> void:
 			row = row - 1 
 	
 	var thread = Thread.new()
-	thread.start(load_ani_boxes.bind(0, 8))
+	thread.start(load_ani_boxes.bind(0, 17))
 	
 	
 				
