@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=47 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -22,7 +22,6 @@
 [ext_resource type="ArrayMesh" uid="uid://rihrso13ylki" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Floor v3.obj" id="20_mfkbt"]
 [ext_resource type="ArrayMesh" uid="uid://dqsdtbq11wh72" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Buildings.obj" id="21_22oil"]
 [ext_resource type="ArrayMesh" uid="uid://dsvw1hx5thygm" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Library v2.obj" id="22_b11sm"]
-[ext_resource type="PackedScene" uid="uid://b00u5k8csutu6" path="res://Tree.tscn" id="23_5qgi0"]
 [ext_resource type="ArrayMesh" uid="uid://bdw502cy6b2wt" path="res://Models/Tallaght/Tallaght_TUDublin_Floor v2.obj" id="23_077gh"]
 [ext_resource type="ArrayMesh" uid="uid://dk46vpqvevrd4" path="res://Models/Tallaght/Tallaght_TUDublin_Buildings.obj" id="23_p7tmn"]
 [ext_resource type="PackedScene" uid="uid://dafqy6t1e5spc" path="res://Book.tscn" id="24_7kp7o"]
@@ -429,7 +428,7 @@ university"
 [node name="Blanchardstown" type="Node3D" parent="."]
 
 [node name="BlanchardstownFloor" type="MeshInstance3D" parent="Blanchardstown"]
-transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.829449, 0, -0.16783)
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.829449, -0.00147844, -0.16783)
 mesh = ExtResource("20_mfkbt")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_5qgi0")
@@ -445,23 +444,6 @@ transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 
 mesh = ExtResource("22_b11sm")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8fq6b")
-
-[node name="Trees" type="Node3D" parent="Blanchardstown"]
-
-[node name="Tree" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.751652, -0.049576, -0.262746)
-
-[node name="Tree2" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.966757, -0.0410213, -0.160394)
-
-[node name="Tree3" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 1.08874, -0.0369363, -0.359387)
-
-[node name="Tree4" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.0720277, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720277, 1.17631, -0.0350274, 0.105026)
-
-[node name="Tree5" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.756381, -0.0450302, 0.155504)
 
 [node name="Book" parent="Blanchardstown" instance=ExtResource("24_7kp7o")]
 transform = Transform3D(0.155409, 0, -0.125888, 0, 0.2, 0, 0.125888, 0, 0.155409, 0.870812, 0.0150625, -0.0180729)
@@ -486,17 +468,6 @@ mesh = ExtResource("25_mfkbt")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_sxsde")
 
-[node name="Trees" type="Node3D" parent="Tallaght"]
-
-[node name="Tree" parent="Tallaght/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.126263, 0, 0.272135, 0, 0.3, 0, -0.272135, 0, 0.126263, -0.578679, -0.0499798, 0.0941061)
-
-[node name="Tree2" parent="Tallaght/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.126263, 0, 0.272135, 0, 0.3, 0, -0.272135, 0, 0.126263, -0.704907, -0.0468917, -0.0639941)
-
-[node name="Tree3" parent="Tallaght/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.126263, 0, 0.272135, 0, 0.3, 0, -0.272135, 0, 0.126263, -0.736894, -0.0451768, -0.447179)
-
 [node name="Book" parent="Tallaght" instance=ExtResource("24_7kp7o")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.609112, 0.0212389, -0.232262)
 
@@ -519,17 +490,6 @@ transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 
 mesh = ExtResource("26_p7tmn")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8k62k")
-
-[node name="Trees" type="Node3D" parent="Grangegorman"]
-
-[node name="Tree" parent="Grangegorman/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.302326, -0.0496498, -0.430691)
-
-[node name="Tree2" parent="Grangegorman/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.206662, 0, -0.217464, 0, 0.3, 0, 0.217464, 0, 0.206662, -0.170909, -0.0475575, -0.520056)
-
-[node name="Tree3" parent="Grangegorman/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(-0.254437, 0, -0.15894, 0, 0.3, 0, 0.15894, 0, -0.254437, -0.0521919, -0.0475575, -0.531497)
 
 [node name="Crane" parent="Grangegorman" instance=ExtResource("30_5qgi0")]
 transform = Transform3D(0.028089, 0, -0.0105361, 0, 0.03, 0, 0.0105361, 0, 0.028089, -0.276337, 0.00969274, -0.804909)

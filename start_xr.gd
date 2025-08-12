@@ -56,6 +56,8 @@ func _ready() -> void:
 		get_viewport().use_xr = true
 		enable_passthrough()	
 		
+		
+	#Tweens for the floors of each cammpus to change color
 	var blanchMat = $Blanchardstown/BlanchardstownFloor.get_surface_override_material(0)
 	var blanchTween = get_tree().create_tween()
 	blanchTween.tween_property(blanchMat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
@@ -68,6 +70,7 @@ func _ready() -> void:
 	var grangeTween = get_tree().create_tween()
 	grangeTween.tween_property(grangeMat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
 	
+	#Tweens for the libraries and geothermal building to change color
 	var tallaghtLibMat = $Tallaght/TallaghtLibrary.get_surface_override_material(0)
 	var tallaghtLibTween = get_tree().create_tween()
 	tallaghtLibTween.tween_property(tallaghtLibMat, "albedo_color", Color(0.78, 0.663, 0.235), 20).set_trans(Tween.TRANS_QUAD)
@@ -76,27 +79,36 @@ func _ready() -> void:
 	var blanchLibTween = get_tree().create_tween()
 	blanchLibTween.tween_property(blanchLibMat, "albedo_color", Color(0.78, 0.663, 0.235), 20).set_trans(Tween.TRANS_QUAD)
 	
-	$Blanchardstown/Trees/Tree/AnimationPlayer.play("Tree_Growth")
-	$Blanchardstown/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
-	$Blanchardstown/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
-	$Blanchardstown/Trees/Tree4/AnimationPlayer.play("Tree_Growth")
-	$Blanchardstown/Trees/Tree5/AnimationPlayer.play("Tree_Growth")
-	$Grangegorman/Trees/Tree/AnimationPlayer.play("Tree_Growth")
-	$Grangegorman/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
-	$Grangegorman/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
-	$Tallaght/Trees/Tree/AnimationPlayer.play("Tree_Growth")
-	$Tallaght/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
-	$Tallaght/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
+	var grangeGeoMat = $Grangegorman/GrangegormanGeothermal.get_surface_override_material(0)
+	var grangeGeoTween = get_tree().create_tween()
+	grangeGeoTween.tween_property(grangeGeoMat, "albedo_color", Color(0.78, 0.663, 0.235), 20).set_trans(Tween.TRANS_QUAD)
 	
+	
+	#Tweens for changing the building colors on each campus
+	var blanchBuildMat = $Blanchardstown/BlanchardstownBuildings.get_surface_override_material(0)
+	var blanchBuildTween = get_tree().create_tween()
+	blanchBuildTween.tween_property(blanchBuildMat, "albedo_color", Color(0.49, 0.337, 0.22), 20).set_trans(Tween.TRANS_QUAD)
+	
+	var tallaghtBuildMat = $Tallaght/TallaghtBuildings.get_surface_override_material(0)
+	var tallaghtBuildTween = get_tree().create_tween()
+	tallaghtBuildTween.tween_property(tallaghtBuildMat, "albedo_color", Color(0.49, 0.337, 0.22), 20).set_trans(Tween.TRANS_QUAD)
+	
+	var grangeBuildMat = $Grangegorman/GrangegormanBuildings.get_surface_override_material(0)
+	var grangeBuildTween = get_tree().create_tween()
+	grangeBuildTween.tween_property(grangeBuildMat, "albedo_color", Color(0.49, 0.337, 0.22), 20).set_trans(Tween.TRANS_QUAD)
+	
+	#Crane Animation Players	
 	$Grangegorman/Crane/AnimationPlayer.play("Crane_Growth")
 	$Grangegorman/Crane/AnimationPlayer.queue("Crane_Rotation")
 	
+	#Book Animation Players
 	$Tallaght/Book/AnimationPlayer.play("Book_Rise")
 	$Tallaght/Book/AnimationPlayer.queue("Book Rotation")
 	
 	$Blanchardstown/Book/AnimationPlayer.play("Book_Rise")
 	$Blanchardstown/Book/AnimationPlayer.queue("Book Rotation")
 	
+	#Flag Animation Player
 	$Grangegorman/UNFlag/AnimationPlayer.play("Flag_Wave")
 	
 	
