@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=47 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b00u5k8csutu6" path="res://Tree.tscn" id="23_5qgi0"]
 [ext_resource type="ArrayMesh" uid="uid://bdw502cy6b2wt" path="res://Models/Tallaght/Tallaght_TUDublin_Floor v2.obj" id="23_077gh"]
 [ext_resource type="ArrayMesh" uid="uid://dk46vpqvevrd4" path="res://Models/Tallaght/Tallaght_TUDublin_Buildings.obj" id="23_p7tmn"]
+[ext_resource type="PackedScene" uid="uid://dafqy6t1e5spc" path="res://Book.tscn" id="24_7kp7o"]
 [ext_resource type="ArrayMesh" uid="uid://0fhxx2i8gi4u" path="res://Models/Grangegorman/Grangegorman_TUDublin_Buildings.obj" id="25_b11sm"]
 [ext_resource type="ArrayMesh" uid="uid://rldoxr3j6fp6" path="res://Models/Tallaght/Tallaght_TUDublin_Library v2.obj" id="25_mfkbt"]
 [ext_resource type="ArrayMesh" uid="uid://df377yaxmo5f" path="res://Models/Grangegorman/TUD_Campus2 v16.obj" id="26_5qgi0"]
@@ -461,6 +462,9 @@ transform = Transform3D(0.0720277, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.07202
 [node name="Tree5" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
 transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.756381, -0.0450302, 0.155504)
 
+[node name="Book" parent="Blanchardstown" instance=ExtResource("24_7kp7o")]
+transform = Transform3D(0.155409, 0, -0.125888, 0, 0.2, 0, 0.125888, 0, 0.155409, 0.870812, 0.0150625, -0.0180729)
+
 [node name="Tallaght" type="Node3D" parent="."]
 
 [node name="TallaghtFloor" type="MeshInstance3D" parent="Tallaght"]
@@ -491,6 +495,9 @@ transform = Transform3D(0.126263, 0, 0.272135, 0, 0.3, 0, -0.272135, 0, 0.126263
 
 [node name="Tree3" parent="Tallaght/Trees" instance=ExtResource("23_5qgi0")]
 transform = Transform3D(0.126263, 0, 0.272135, 0, 0.3, 0, -0.272135, 0, 0.126263, -0.736894, -0.0451768, -0.447179)
+
+[node name="Book" parent="Tallaght" instance=ExtResource("24_7kp7o")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.609112, 0.0212389, -0.232262)
 
 [node name="Grangegorman" type="Node3D" parent="."]
 

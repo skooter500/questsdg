@@ -68,6 +68,14 @@ func _ready() -> void:
 	var grangeTween = get_tree().create_tween()
 	grangeTween.tween_property(grangeMat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
 	
+	var tallaghtLibMat = $Tallaght/TallaghtLibrary.get_surface_override_material(0)
+	var tallaghtLibTween = get_tree().create_tween()
+	tallaghtLibTween.tween_property(tallaghtLibMat, "albedo_color", Color(0.78, 0.663, 0.235), 20).set_trans(Tween.TRANS_QUAD)
+	
+	var blanchLibMat = $Blanchardstown/BlanchardstownLibrary.get_surface_override_material(0)
+	var blanchLibTween = get_tree().create_tween()
+	blanchLibTween.tween_property(blanchLibMat, "albedo_color", Color(0.78, 0.663, 0.235), 20).set_trans(Tween.TRANS_QUAD)
+	
 	$Blanchardstown/Trees/Tree/AnimationPlayer.play("Tree_Growth")
 	$Blanchardstown/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
 	$Blanchardstown/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
@@ -82,6 +90,12 @@ func _ready() -> void:
 	
 	$Grangegorman/Crane/AnimationPlayer.play("Crane_Growth")
 	$Grangegorman/Crane/AnimationPlayer.queue("Crane_Rotation")
+	
+	$Tallaght/Book/AnimationPlayer.play("Book_Rise")
+	$Tallaght/Book/AnimationPlayer.queue("Book Rotation")
+	
+	$Blanchardstown/Book/AnimationPlayer.play("Book_Rise")
+	$Blanchardstown/Book/AnimationPlayer.queue("Book Rotation")
 	
 	
 	pass # Replace with function body.
