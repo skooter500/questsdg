@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dkcbjvor5pu4r"]
+[gd_scene load_steps=48 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -19,7 +19,19 @@
 [ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="15_k6its"]
 [ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
-[ext_resource type="ArrayMesh" uid="uid://jxxw53dwo5fw" path="res://Models/TUD_Campus2 v2.obj" id="20_g6y4b"]
+[ext_resource type="ArrayMesh" uid="uid://rihrso13ylki" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Floor v3.obj" id="20_mfkbt"]
+[ext_resource type="ArrayMesh" uid="uid://dqsdtbq11wh72" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Buildings.obj" id="21_22oil"]
+[ext_resource type="ArrayMesh" uid="uid://dsvw1hx5thygm" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Library v2.obj" id="22_b11sm"]
+[ext_resource type="PackedScene" uid="uid://b00u5k8csutu6" path="res://Tree.tscn" id="23_5qgi0"]
+[ext_resource type="ArrayMesh" uid="uid://bdw502cy6b2wt" path="res://Models/Tallaght/Tallaght_TUDublin_Floor v2.obj" id="23_077gh"]
+[ext_resource type="ArrayMesh" uid="uid://dk46vpqvevrd4" path="res://Models/Tallaght/Tallaght_TUDublin_Buildings.obj" id="23_p7tmn"]
+[ext_resource type="PackedScene" uid="uid://dafqy6t1e5spc" path="res://Book.tscn" id="24_7kp7o"]
+[ext_resource type="ArrayMesh" uid="uid://0fhxx2i8gi4u" path="res://Models/Grangegorman/Grangegorman_TUDublin_Buildings.obj" id="25_b11sm"]
+[ext_resource type="ArrayMesh" uid="uid://rldoxr3j6fp6" path="res://Models/Tallaght/Tallaght_TUDublin_Library v2.obj" id="25_mfkbt"]
+[ext_resource type="ArrayMesh" uid="uid://df377yaxmo5f" path="res://Models/Grangegorman/TUD_Campus2 v16.obj" id="26_5qgi0"]
+[ext_resource type="ArrayMesh" uid="uid://deosv41rpdunv" path="res://Models/Grangegorman/Grangegorman_TUDublin_Geothermal v2.obj" id="26_p7tmn"]
+[ext_resource type="PackedScene" uid="uid://baroo3ypmv8tw" path="res://UN_Flag.tscn" id="28_8fq6b"]
+[ext_resource type="PackedScene" uid="uid://brgw2wktsrl2k" path="res://Crane.tscn" id="30_5qgi0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -36,6 +48,44 @@ ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_077gh"]
+albedo_color = Color(0, 0, 0, 1)
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_mfkbt"]
+material = SubResource("StandardMaterial3D_077gh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfkbt"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qgi0"]
+albedo_color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kp7o"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fq6b"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oy8sc"]
+albedo_color = Color(0.190762, 0.190762, 0.190762, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nf64"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxsde"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5xgu"]
+albedo_color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rygqd"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8k62k"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
 [node name="test_scene" type="Node3D"]
 script = ExtResource("1_uhqqe")
 
@@ -47,6 +97,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(0.999701, -0.00063956, -0.0244238, 0, 0.999657, -0.026177, 0.0244322, 0.0261691, 0.999359, 0.0180558, -0.651806, -0.297861)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
@@ -111,6 +162,377 @@ image = ExtResource("16_2dw41")
 [node name="goal_box17" parent="goals" instance=ExtResource("3_coq8p")]
 image = ExtResource("17_ykxp3")
 
-[node name="TudCampus2V2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.1, 8.74228e-09, 3.82137e-16, 0, -4.37114e-09, 0.1, 8.74228e-09, 0.1, 4.37114e-09, -0.0145044, 0, -2.19954)
-mesh = ExtResource("20_g6y4b")
+[node name="GoalTextParent" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88353, 0, -5.1475)
+
+[node name="Goal1Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -1.6771, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal1Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -1.05207, 1.31708, -2.29749)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal1Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● TU Dublin launched a Self‑Employment Course for People with Disabilities, to
+support economic inclusion and reduce the risk of poverty in this under‑employed
+group
+● The Sustainability Action Lab includes societal engagement projects that deliver
+community benefit through student-led social innovation, enhancing local
+livelihoods and equity"
+
+[node name="Goal2Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.19465, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal2Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal2Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● TU provides community garden spaces on its campuses that foster organic food
+growing, education in sustainable agriculture, and community well‑being
+These gardens also offer hands‑on learning and access to fresh produce for
+students and local partners through engagement initiatives"
+
+[node name="Goal3Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.40736, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal3Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal3Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● The community gardens support health and wellbeing through gardening
+activities and outdoor learning that promote physical and mental health
+● TU Dublin’s Green‑Campus programme includes initiatives to improve air quality
+and reduce pollution exposure across campuses"
+
+[node name="Goal4Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.36827, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal4Text"]
+transform = Transform3D(6.5, 0, 0, 0, 2, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal4Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+text = "● TU Dublin’s Strategic Intent 2030 embeds SDG 4 by ensuring all programmes
+include sustainability learning outcomes and literacy tools like Sulitest and the
+Sustainability Education Toolkit
+The Sustainability Education Toolkit, launched in June 2023, enables staff to map
+curricula to SDG outcomes and join Communities of Practice for embedding
+sustainability across disciplines
+● The SDG Literacy Community of Practice empowers faculty and students across
+all five Faculties to co-create learning opportunities tied to SDGs"
+
+[node name="Goal5Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.51861, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal5Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal5Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● Within the School of Computer Science, TU Dublin’s SUCCESS programme has
+increased female academic staff to 36% and achieved zero turnover among
+female staff in recent years through targeted recruitment, support and culture
+change"
+
+[node name="Goal6Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.56049, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal6Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal6Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● Community gardens include composting and water‑management systems to
+teach sustainable water use and soil regeneration practices in a campus setting"
+
+[node name="Goal7Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.41737, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal7Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal7Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● TU Dublin is pioneering Ireland’s first low‑carbon district heating system (Tallaght
+Campus), reusing Amazon data‑centre waste heat to supply campus and local
+buildings
+● At its Grangegorman Campus, TU is developing a deep‑bore geothermal heating
+system, replacing gas boilers with renewable heat, the first project of its kind in
+Ireland"
+
+[node name="Goal8Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.36915, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal8Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal8Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● TU Dublin supports entrepreneurship training for people with disabilities,
+addressing barriers and opening pathways to self‑employment and economic
+participation
+● The Sustainability Action Lab connects students with NGOs, public bodies, and
+industry partners to co‑create practical sustainability solutions—generating work
+skills and social enterprise opportunities"
+
+[node name="Goal9Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.67374, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal9Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal9Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● TU's Tallaght district heating partnership involves infrastructure innovation using
+waste heat from industry (data centre) to power local buildings
+● The Grangegorman geothermal project pushes forward renewable infrastructure
+development in Ireland, promoting scalable green energy solutions
+"
+
+[node name="Goal10Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.70417, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal10Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal10Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● The disability‑focused self‑employment programme directly addresses
+socioeconomic inequalities faced by people with disabilities
+● TU Dublin’s inclusive design and community‑based projects support equitable
+access and civic participation for disadvantaged groups
+"
+
+[node name="Goal11Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.66364, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal11Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal11Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● The development of Grangegorman campus prioritizes heritage conservation,
+reuse of existing structures, and high‑quality pedestrian spaces accessible to all
+● TU Dublin was ranked 33rd worldwide for SDG 11 in the Times Higher Education
+Impact Rankings, acknowledging its integrated urban development actions
+"
+
+[node name="Goal12Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.23955, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal12Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal12Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● The university’s Green-Campus programme, which received the Green Flag,
+organized waste reduction, recycling, litter‑control, and energy‑efficiency
+campaigns across campuses
+● SDG‑themed open education resources provided via the SDG Literacy
+programme include a focus on SDG 12: Responsible Consumption and
+Production
+"
+
+[node name="Goal13Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.21144, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal13Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.7, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal13Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.6, 0, 0, 0, 1, 0, 0, 0)
+text = "● TU’s energy projects — district heating and geothermal systems — reduce
+campus CO₂ emissions by hundreds of tonnes annually and support national
+climate goals
+● The Resilient Design Curricula in architecture embeds climate‑responsive design
+principles to prepare graduates to address housing and climate crises
+● TU Dublin placed in the top 100 (ranked 87th) globally for SDG 13 in THE Impact
+Rankings"
+
+[node name="Goal14Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.26434, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal14Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal14Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● Although not explicitly mentioned in posts found, TU’s biodiversity and
+environmental reviews as part of Green‑Campus (e.g. nature interventions) may
+support ecological awareness, including water ecosystems as part of campus
+biodiversity programmes"
+
+[node name="Goal15Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -2.23475, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal15Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal15Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, 0, 0, 0)
+text = "● TU Dublin campuses collaborate with local municipality biodiversity action plans
+to improve green spaces, encouraging campus‐based interventions for nature
+restoration
+● Community gardens also foster biodiversity and land stewardship through
+organic planting and native species education
+"
+
+[node name="Goal16Text" type="Node3D" parent="GoalTextParent"]
+transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, 1.70718, 1.72698, -3.47882)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GoalTextParent/Goal16Text"]
+transform = Transform3D(6.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -0.253925, 1.24593, -2.13555)
+mesh = SubResource("QuadMesh_mfkbt")
+surface_material_override/0 = SubResource("StandardMaterial3D_mfkbt")
+
+[node name="Label3D" type="Label3D" parent="GoalTextParent/Goal16Text/MeshInstance3D"]
+transform = Transform3D(0.15, 0, 0, 0, 0.7, 0, 0, 0, 1, -2.21431e-05, -0.00382483, 0.00157976)
+text = "● TU’s Sustainability Action Lab fosters governance and institutional partnerships
+involving civil society and academia to build sustainable decision‑making and civil
+trust
+● Inclusive policies such as support for disabled entrepreneurship and gender
+equity in staffing reflect institutional commitment to fairness and justice within the
+university"
+
+[node name="Blanchardstown" type="Node3D" parent="."]
+
+[node name="BlanchardstownFloor" type="MeshInstance3D" parent="Blanchardstown"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.829449, 0, -0.16783)
+mesh = ExtResource("20_mfkbt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5qgi0")
+
+[node name="BlanchardstownBuildings" type="MeshInstance3D" parent="Blanchardstown"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.83, 0, -0.168)
+mesh = ExtResource("21_22oil")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_7kp7o")
+
+[node name="BlanchardstownLibrary" type="MeshInstance3D" parent="Blanchardstown"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.828491, 0, -0.164682)
+mesh = ExtResource("22_b11sm")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8fq6b")
+
+[node name="Trees" type="Node3D" parent="Blanchardstown"]
+
+[node name="Tree" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.751652, -0.049576, -0.262746)
+
+[node name="Tree2" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.966757, -0.0410213, -0.160394)
+
+[node name="Tree3" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 1.08874, -0.0369363, -0.359387)
+
+[node name="Tree4" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.0720277, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720277, 1.17631, -0.0350274, 0.105026)
+
+[node name="Tree5" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.756381, -0.0450302, 0.155504)
+
+[node name="Book" parent="Blanchardstown" instance=ExtResource("24_7kp7o")]
+transform = Transform3D(0.155409, 0, -0.125888, 0, 0.2, 0, 0.125888, 0, 0.155409, 0.870812, 0.0150625, -0.0180729)
+
+[node name="Tallaght" type="Node3D" parent="."]
+
+[node name="TallaghtFloor" type="MeshInstance3D" parent="Tallaght"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.670544, 0, -0.166361)
+mesh = ExtResource("23_077gh")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_oy8sc")
+
+[node name="TallaghtBuildings" type="MeshInstance3D" parent="Tallaght"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 3.67052e-24, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.669872, -0.000693373, -0.168875)
+mesh = ExtResource("23_p7tmn")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2nf64")
+
+[node name="TallaghtLibrary" type="MeshInstance3D" parent="Tallaght"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.667126, 0.00459319, -0.166787)
+mesh = ExtResource("25_mfkbt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sxsde")
+
+[node name="Trees" type="Node3D" parent="Tallaght"]
+
+[node name="Tree" parent="Tallaght/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.126263, 0, 0.272135, 0, 0.3, 0, -0.272135, 0, 0.126263, -0.578679, -0.0499798, 0.0941061)
+
+[node name="Tree2" parent="Tallaght/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.126263, 0, 0.272135, 0, 0.3, 0, -0.272135, 0, 0.126263, -0.704907, -0.0468917, -0.0639941)
+
+[node name="Tree3" parent="Tallaght/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.126263, 0, 0.272135, 0, 0.3, 0, -0.272135, 0, 0.126263, -0.736894, -0.0451768, -0.447179)
+
+[node name="Book" parent="Tallaght" instance=ExtResource("24_7kp7o")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.609112, 0.0212389, -0.232262)
+
+[node name="Grangegorman" type="Node3D" parent="."]
+
+[node name="GrangegormanFloor" type="MeshInstance3D" parent="Grangegorman"]
+transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0161305, 0, -0.60333)
+mesh = ExtResource("26_5qgi0")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_r5xgu")
+
+[node name="GrangegormanBuildings" type="MeshInstance3D" parent="Grangegorman"]
+transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0213376, 2.23517e-08, -0.591914)
+mesh = ExtResource("25_b11sm")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_rygqd")
+
+[node name="GrangegormanGeothermal" type="MeshInstance3D" parent="Grangegorman"]
+transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0134919, 0, -0.599371)
+mesh = ExtResource("26_p7tmn")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8k62k")
+
+[node name="Trees" type="Node3D" parent="Grangegorman"]
+
+[node name="Tree" parent="Grangegorman/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.302326, -0.0496498, -0.430691)
+
+[node name="Tree2" parent="Grangegorman/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.206662, 0, -0.217464, 0, 0.3, 0, 0.217464, 0, 0.206662, -0.170909, -0.0475575, -0.520056)
+
+[node name="Tree3" parent="Grangegorman/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(-0.254437, 0, -0.15894, 0, 0.3, 0, 0.15894, 0, -0.254437, -0.0521919, -0.0475575, -0.531497)
+
+[node name="Crane" parent="Grangegorman" instance=ExtResource("30_5qgi0")]
+transform = Transform3D(0.028089, 0, -0.0105361, 0, 0.03, 0, 0.0105361, 0, 0.028089, -0.276337, 0.00969274, -0.804909)
+
+[node name="UNFlag" parent="Grangegorman" instance=ExtResource("28_8fq6b")]
+transform = Transform3D(0.0499726, 0, 0.00165427, 0, 0.05, 0, -0.00165427, 0, 0.0499726, -0.0276241, -0.0317868, -0.872098)

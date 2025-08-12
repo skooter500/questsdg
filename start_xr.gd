@@ -21,6 +21,30 @@ func enable_passthrough() -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#$Grass/AnimationPlayer.play("grass_growing")
+	#$Crane/AnimationPlayer.play("Crane_Rotation")
+	#$Book/AnimationPlayer.play("Book_Rise")
+	#$Book/AnimationPlayer.queue("Book Rotation")
+	#$Trees/Tree/AnimationPlayer.play("Tree_Growth")
+	#$Trees/Tree2/AnimationPlayer.play("Tree_Growth")
+	#$Trees/Tree3/AnimationPlayer.play("Tree_Growth")
+	#$UNFlag/AnimationPlayer.play("Flag_Wave")
+	#$Scales/AnimationPlayer.play("Scale_Growth")
+	#
+	#await get_tree().create_timer(3.0).timeout
+	#var my_scene = load("res://Cloud.tscn")
+	#var instance = my_scene.instantiate()
+	#add_child(instance)
+	#instance.position = Vector3(2.628, 1.5, -0.314)
+	#var anim_player = instance.get_node("AnimationPlayer")
+	#anim_player.play("Cloud_Movement")
+	#
+	#await get_tree().create_timer(5.0).timeout
+	#var rain_particles = instance.get_node("RainParticles")
+	#rain_particles.emitting = true
+	
+	
+
 	xr_interface = XRServer.primary_interface	
 	if xr_interface and xr_interface.is_initialized():
 		print("OpenXR initialised successfully")
@@ -31,6 +55,51 @@ func _ready() -> void:
 		# Change our main viewport to output to the HMD
 		get_viewport().use_xr = true
 		enable_passthrough()	
+		
+	var blanchMat = $Blanchardstown/BlanchardstownFloor.get_surface_override_material(0)
+	var blanchTween = get_tree().create_tween()
+	blanchTween.tween_property(blanchMat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
+	
+	var tallaghtMat = $Tallaght/TallaghtFloor.get_surface_override_material(0)
+	var tallaghtTween = get_tree().create_tween()
+	tallaghtTween.tween_property(tallaghtMat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
+	
+	var grangeMat = $Grangegorman/GrangegormanFloor.get_surface_override_material(0)
+	var grangeTween = get_tree().create_tween()
+	grangeTween.tween_property(grangeMat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
+	
+	var tallaghtLibMat = $Tallaght/TallaghtLibrary.get_surface_override_material(0)
+	var tallaghtLibTween = get_tree().create_tween()
+	tallaghtLibTween.tween_property(tallaghtLibMat, "albedo_color", Color(0.78, 0.663, 0.235), 20).set_trans(Tween.TRANS_QUAD)
+	
+	var blanchLibMat = $Blanchardstown/BlanchardstownLibrary.get_surface_override_material(0)
+	var blanchLibTween = get_tree().create_tween()
+	blanchLibTween.tween_property(blanchLibMat, "albedo_color", Color(0.78, 0.663, 0.235), 20).set_trans(Tween.TRANS_QUAD)
+	
+	$Blanchardstown/Trees/Tree/AnimationPlayer.play("Tree_Growth")
+	$Blanchardstown/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
+	$Blanchardstown/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
+	$Blanchardstown/Trees/Tree4/AnimationPlayer.play("Tree_Growth")
+	$Blanchardstown/Trees/Tree5/AnimationPlayer.play("Tree_Growth")
+	$Grangegorman/Trees/Tree/AnimationPlayer.play("Tree_Growth")
+	$Grangegorman/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
+	$Grangegorman/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
+	$Tallaght/Trees/Tree/AnimationPlayer.play("Tree_Growth")
+	$Tallaght/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
+	$Tallaght/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
+	
+	$Grangegorman/Crane/AnimationPlayer.play("Crane_Growth")
+	$Grangegorman/Crane/AnimationPlayer.queue("Crane_Rotation")
+	
+	$Tallaght/Book/AnimationPlayer.play("Book_Rise")
+	$Tallaght/Book/AnimationPlayer.queue("Book Rotation")
+	
+	$Blanchardstown/Book/AnimationPlayer.play("Book_Rise")
+	$Blanchardstown/Book/AnimationPlayer.queue("Book Rotation")
+	
+	$Grangegorman/UNFlag/AnimationPlayer.play("Flag_Wave")
+	
+	
 	pass # Replace with function body.
 
 

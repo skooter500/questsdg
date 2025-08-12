@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://baroo3ypmv8tw"]
+
+[ext_resource type="Texture2D" uid="uid://caxde2y1ntf5i" path="res://Models/UNFlag.png" id="1_3rgt5"]
+[ext_resource type="Shader" uid="uid://5dk5ixqkwmur" path="res://Flag.gdshader" id="1_t4b3n"]
+[ext_resource type="Script" uid="uid://cmp1ox01fqpmh" path="res://Flag.gd" id="2_uhetj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qh54m"]
+render_priority = 0
+shader = ExtResource("1_t4b3n")
+shader_parameter/time = 0.0
+shader_parameter/wave_strength = 0.2
+shader_parameter/wave_speed = 2.0
+shader_parameter/wave_freq = 4.0
+shader_parameter/flag_texture = ExtResource("1_3rgt5")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wmski"]
+material = SubResource("ShaderMaterial_qh54m")
+size = Vector2(0.2, 0.2)
+subdivide_width = 20
+subdivide_depth = 10
+orientation = 2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3rgt5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8f0ln"]
+albedo_color = Color(0.666569, 0.666569, 0.666569, 1)
+metallic = 0.01
+metallic_specular = 1.0
+emission_enabled = true
+emission = Color(0.29219, 0.29219, 0.29219, 1)
+emission_energy_multiplier = 1.42
+
+[sub_resource type="Animation" id="Animation_3rgt5"]
+resource_name = "Flag_Wave"
+length = 4.0
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 2, 2, 2, 4, 1, 10, 10, 10)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transform")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0.62583, 0, 4, 1, 0, 6.8175, 0)
+
+[sub_resource type="Animation" id="Animation_8f0ln"]
+length = 0.001
+tracks/0/type = "scale_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transform")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 2, 2, 2)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8f0ln"]
+_data = {
+&"Flag_Wave": SubResource("Animation_3rgt5"),
+&"RESET": SubResource("Animation_8f0ln")
+}
+
+[node name="UNFlag" type="Node3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="Transform" type="Node3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.62583, 0)
+
+[node name="Flag" type="MeshInstance3D" parent="Transform"]
+mesh = SubResource("PlaneMesh_wmski")
+skeleton = NodePath("../..")
+script = ExtResource("2_uhetj")
+
+[node name="Pole" type="MeshInstance3D" parent="Transform"]
+transform = Transform3D(0.02, 0, 0, 0, 0.3, 0, 0, 0, 0.02, -0.102035, -0.197805, 0)
+mesh = SubResource("CylinderMesh_3rgt5")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8f0ln")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8f0ln")
+}

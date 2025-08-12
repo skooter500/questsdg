@@ -1,0 +1,60 @@
+# Wavefront .mtl file  -  created by SpaceDraw
+
+# File created: 19-09-25, 17:17
+
+newmtl standard-7726
+Ns 97.0
+d 1.0
+Tr 0.0
+illum 2
+Ka 1.0 0.88229996 0.8235 
+Kd 1.0 0.88229996 0.8235 
+Ks 0.50189996 0.50189996 0.50189996 
+Ke 0.0 0.0 0.0 
+
+newmtl Book Pages
+Ns 20.0
+d 1.0
+Tr 0.0
+illum 2
+Ka 1.0 1.0 1.0 
+Kd 1.0 1.0 1.0 
+Ks 0.50189996 0.50189996 0.50189996 
+Ke 0.0 0.0 0.0 
+map_Ka Book Pages.png
+map_Kd Book Pages.png
+
+newmtl Book Pages_20190925081047
+Ns 20.0
+d 1.0
+Tr 0.0
+illum 2
+Ka 1.0 1.0 1.0 
+Kd 1.0 1.0 1.0 
+Ks 0.50189996 0.50189996 0.50189996 
+Ke 0.0 0.0 0.0 
+map_Ka Book Pages_20190925081047.png
+map_Kd Book Pages_20190925081047.png
+
+newmtl standard-16570042
+Ns 97.0
+d 1.0
+Tr 0.0
+illum 2
+Ka 0.0117 0.1607 0.27449998 
+Kd 0.0117 0.1607 0.27449998 
+Ks 0.50189996 0.50189996 0.50189996 
+Ke 0.0 0.0 0.0 
+
+newmtl Book Cover_20190925084415
+Ns 128.0
+d 1.0
+Tr 0.0
+illum 2
+Ka 1.0 1.0 1.0 
+Kd 1.0 1.0 1.0 
+Ks 0.50189996 0.50189996 0.50189996 
+Ke 0.0 0.0 0.0 
+map_Ka Book Cover_20190925084415.png
+map_Kd Book Cover_20190925084415.png
+

@@ -1,0 +1,176 @@
+[gd_scene load_steps=5 format=3 uid="uid://0nr7g2mvj4vx"]
+
+[ext_resource type="PackedScene" uid="uid://bs10a0rwwidun" path="res://Models/grass.glb" id="1_7oqlf"]
+
+[sub_resource type="Animation" id="Animation_po8e2"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Grass1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -0.143604, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Grass2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -0.0579023, -0.140583, 0.649547)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Grass3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, -0.144444, 1.01386)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Grass4")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0.522133, -0.158802, 1.14843)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Grass5")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.599254, -0.15505, 0.625757)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Grass6")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, 0.510608, -0.149407, -0.0138884)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Grass7")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 1.03046, -0.141987, 0)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Grass8")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 1.04082, -0.171324, 0.591929)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Grass9")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 1.00799, -0.17832, 1.08487)
+
+[sub_resource type="Animation" id="Animation_d2gna"]
+resource_name = "grass_growing"
+length = 3.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Grass1")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -1.86155, -0.143604, -1.12487, 0.333333, 1, -1.86155, 0.0895786, -1.12487)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Grass2")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, -1.21983, -0.141566, 1.39742, 0.333333, 1, -1.21983, -0.141566, 1.39742, 0.666667, 1, -1.22, 0.09, 1.397)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Grass3")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, -0.144444, -1.61493, 0.666667, 1, 0, -0.144444, -1.61493, 1, 1, 0, 0.09, -1.615)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Grass4")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 2.89342, -0.158802, -0.95214, 1, 1, 2.89342, -0.158802, -0.95214, 1.33333, 1, 2.893, 0.09, -0.952)
+tracks/4/type = "position_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Grass5")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0.41757, -0.15505, 2.50508, 1.33333, 1, 0.41757, -0.15505, 2.50508, 1.66667, 1, 0.418, 0.09, 2.505)
+tracks/5/type = "position_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Grass6")
+tracks/5/interp = 2
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0, 1, -0.631565, -0.149407, -0.0138884, 1.66667, 1, -0.631565, -0.149407, -0.0138884, 2, 1, -0.632, 0.09, -0.014)
+tracks/6/type = "position_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Grass7")
+tracks/6/interp = 2
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat32Array(0, 1, 1.03046, -0.141987, -0.504424, 2, 1, 1.03046, -0.141987, -0.504424, 2.33333, 1, 1.03, 0.09, -0.504)
+tracks/7/type = "position_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Grass8")
+tracks/7/interp = 2
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat32Array(0, 1, 1.7819, -0.171324, 1.71052, 2.33333, 1, 1.7819, -0.171324, 1.71052, 2.66667, 1, 1.782, 0.09, 1.711)
+tracks/8/type = "position_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Grass9")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat32Array(0, 1, 0.421481, -0.17832, 1.08487, 2.66667, 1, 0.421481, -0.17832, 1.08487, 3, 1, 0.421, 0.09, 1.085)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_btrte"]
+_data = {
+&"RESET": SubResource("Animation_po8e2"),
+&"grass_growing": SubResource("Animation_d2gna")
+}
+
+[node name="Grass" type="Node3D"]
+
+[node name="Grass1" parent="." instance=ExtResource("1_7oqlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.143604, 0)
+
+[node name="Grass2" parent="." instance=ExtResource("1_7oqlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0579023, -0.140583, 0.649547)
+
+[node name="Grass3" parent="." instance=ExtResource("1_7oqlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.144444, 1.01386)
+
+[node name="Grass4" parent="." instance=ExtResource("1_7oqlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.522133, -0.158802, 1.14843)
+
+[node name="Grass5" parent="." instance=ExtResource("1_7oqlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.599254, -0.15505, 0.625757)
+
+[node name="Grass6" parent="." instance=ExtResource("1_7oqlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.510608, -0.149407, -0.0138884)
+
+[node name="Grass7" parent="." instance=ExtResource("1_7oqlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.03046, -0.141987, 0)
+
+[node name="Grass8" parent="." instance=ExtResource("1_7oqlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04082, -0.171324, 0.591929)
+
+[node name="Grass9" parent="." instance=ExtResource("1_7oqlf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00799, -0.17832, 1.08487)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_btrte")
+}
