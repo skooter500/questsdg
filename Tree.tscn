@@ -1,34 +1,25 @@
 [gd_scene load_steps=5 format=3 uid="uid://b00u5k8csutu6"]
 
-[ext_resource type="PackedScene" uid="uid://ckteswuqa0c1x" path="res://Models/Tree/oak_trees.glb" id="1_nbyt5"]
+[ext_resource type="PackedScene" uid="uid://bhxv2s67c5f2f" path="res://Models/tree_cone_dark.fbx" id="1_nbyt5"]
 
 [sub_resource type="Animation" id="Animation_72j6q"]
 length = 0.001
-tracks/0/type = "scale_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sketchfab_Scene")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.1, 0.1, 0.1)
 
 [sub_resource type="Animation" id="Animation_dn7q5"]
 resource_name = "Tree_Growth"
-length = 10.0
-tracks/0/type = "scale_3d"
+length = 5.0
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sketchfab_Scene")
+tracks/0/path = NodePath("tree_cone_dark/tree_cone_dark:mesh")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0.05, 0.05, 0.05, 10, 1, 0.3, 0.3, 0.3)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sketchfab_Scene")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 10, 1, 0, 0.0581309, 0)
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fxwtr"]
 _data = {
@@ -38,8 +29,8 @@ _data = {
 
 [node name="Tree" type="Node3D"]
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("1_nbyt5")]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+[node name="tree_cone_dark" parent="." instance=ExtResource("1_nbyt5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00744978, 0, -4.04119e-05)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
