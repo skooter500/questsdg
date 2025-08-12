@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://be3ag3ryj0pev"
+path="res://.godot/imported/goal3b.mp3-aa872abfb05079aeac11b58a1415cb4b.mp3str"
+
+[deps]
+
+source_file="res://sounds/ai sounds/goal3b.mp3"
+dest_files=["res://.godot/imported/goal3b.mp3-aa872abfb05079aeac11b58a1415cb4b.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
