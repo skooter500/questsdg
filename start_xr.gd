@@ -44,11 +44,6 @@ func _ready() -> void:
 	#rain_particles.emitting = true
 	
 	
-	
-	#var tween = get_tree().create_tween()
-	#tween.tween_property($Blanchardstown/BlanchardstownFloor, "", Color.RED, 10)
-	#tween.tween_callback($Blanchardstown/BlanchardstownFloor.queue_free)
-
 
 	xr_interface = XRServer.primary_interface	
 	if xr_interface and xr_interface.is_initialized():
@@ -60,6 +55,15 @@ func _ready() -> void:
 		# Change our main viewport to output to the HMD
 		get_viewport().use_xr = true
 		enable_passthrough()	
+		
+	var mat = $Blanchardstown/BlanchardstownFloor.get_surface_override_material(0)
+	var tween = get_tree().create_tween()
+	tween.tween_property(mat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
+	
+	$Blanchardstown/Grass/AnimationPlayer.play("grass_growing")
+	
+	
+	
 	pass # Replace with function body.
 
 
