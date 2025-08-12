@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=61 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -45,6 +45,10 @@
 [ext_resource type="AudioStream" uid="uid://b478denpfxtcx" path="res://sounds/ai sounds/african-savanna-2-23769.mp3" id="24_e2pu3"]
 [ext_resource type="Script" uid="uid://c05cqxnf0g8ke" path="res://darren_stuff/plesiosaurus.gd" id="30_f5i4p"]
 [ext_resource type="AudioStream" uid="uid://b7srdxjskh8p0" path="res://sounds/ai sounds/goal2.mp3" id="32_v6rpk"]
+[ext_resource type="PackedScene" uid="uid://dfql2d7ci6mjq" path="res://darren_assets/plesiosaurusbake.glb" id="46_73ssi"]
+[ext_resource type="PackedScene" uid="uid://nbwm55kua0ox" path="res://darren_assets/sharkosausamin.glb" id="46_cnsht"]
+[ext_resource type="Script" uid="uid://dea8odumxlhkk" path="res://darren_assets/sharkosausamin.gd" id="47_c0oai"]
+[ext_resource type="Script" uid="uid://cfg4g2y16wuym" path="res://darren_assets/plesiosaurusbake.gd" id="47_ommoy"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ige8k"]
 resource_name = "Material.001"
@@ -1341,6 +1345,37 @@ autoplay = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_rf3s6")
 
+[node name="sharkosausamin" parent="." instance=ExtResource("46_cnsht")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 1.44412, -1.48273)
+script = ExtResource("47_c0oai")
+
+[node name="Skeleton3D" parent="sharkosausamin/Armature" index="0"]
+bones/1/rotation = Quaternion(0.0080189, -7.26517e-06, 7.1946e-06, 0.999968)
+bones/2/rotation = Quaternion(0.0108322, -1.45139e-07, -1.1624e-07, 0.999941)
+bones/2/scale = Vector3(0.999998, 0.999998, 0.999998)
+bones/3/rotation = Quaternion(-0.0736748, -1.85874e-07, -1.475e-07, 0.997282)
+bones/3/scale = Vector3(0.999981, 0.999985, 0.999981)
+bones/4/rotation = Quaternion(0.0234647, -4.30447e-07, -5.80431e-08, 0.999725)
+bones/5/rotation = Quaternion(0.036902, -5.73869e-07, -2.03483e-07, 0.999319)
+bones/6/rotation = Quaternion(0.0217112, -3.27915e-07, 1.71929e-07, 0.999764)
+bones/7/rotation = Quaternion(-0.0158992, 2.55668e-07, 5.67347e-07, 0.999874)
+bones/8/rotation = Quaternion(-0.160452, -0.000101528, 0.000674139, 0.987044)
+bones/9/rotation = Quaternion(-0.159332, 0.000105838, -0.000604711, 0.987225)
+bones/10/rotation = Quaternion(-0.0518844, -0.0446047, 0.642218, 0.763462)
+bones/11/rotation = Quaternion(-0.0614206, 0.0238298, -0.360762, 0.930328)
+bones/12/rotation = Quaternion(-0.0450208, 0.00747636, -0.159197, 0.986191)
+bones/14/rotation = Quaternion(-0.0563331, 0.0477829, -0.636263, 0.767927)
+bones/15/rotation = Quaternion(-0.0511859, -0.00651566, 0.131675, 0.989949)
+bones/29/rotation = Quaternion(-0.692833, 8.84112e-10, 8.84112e-10, 0.721098)
+bones/30/rotation = Quaternion(8.84112e-10, 0.692833, 0.721098, -8.84112e-10)
+bones/31/rotation = Quaternion(0.999932, -4.01199e-08, -3.73058e-08, -0.01167)
+bones/32/rotation = Quaternion(0.00477351, -0.00477345, 0.707091, 0.707091)
+bones/35/rotation = Quaternion(0.00477339, 0.00477344, -0.707091, 0.707091)
+
+[node name="plesiosaurusbake" parent="." instance=ExtResource("46_73ssi")]
+transform = Transform3D(-2.18557e-09, 0, 0.05, 0, 0.05, 0, -0.05, 0, -2.18557e-09, 0, 1.15571, -2.36395)
+script = ExtResource("47_ommoy")
+
 [connection signal="animation_finished" from="plesiosaurus/AnimationPlayer" to="plesiosaurus" method="_on_animation_player_animation_finished"]
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]
@@ -1352,3 +1387,5 @@ shape = SubResource("WorldBoundaryShape3D_rf3s6")
 
 [editable path="XROrigin3D/left/LeftHandHumanoid2"]
 [editable path="XROrigin3D/right/RightHandHumanoid2"]
+[editable path="sharkosausamin"]
+[editable path="plesiosaurusbake"]
