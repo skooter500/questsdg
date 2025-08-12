@@ -480,6 +480,17 @@ mesh = ExtResource("25_mfkbt")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_sxsde")
 
+[node name="Trees" type="Node3D" parent="Tallaght"]
+
+[node name="Tree" parent="Tallaght/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.126263, 0, 0.272135, 0, 0.3, 0, -0.272135, 0, 0.126263, -0.578679, -0.0576953, 0.0941061)
+
+[node name="Tree2" parent="Tallaght/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.126263, 0, 0.272135, 0, 0.3, 0, -0.272135, 0, 0.126263, -0.704907, -0.0468917, -0.0639941)
+
+[node name="Tree3" parent="Tallaght/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.126263, 0, 0.272135, 0, 0.3, 0, -0.272135, 0, 0.126263, -0.736894, -0.0451768, -0.447179)
+
 [node name="Grangegorman" type="Node3D" parent="."]
 
 [node name="GrangegormanFloor" type="MeshInstance3D" parent="Grangegorman"]
@@ -499,3 +510,14 @@ transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 
 mesh = ExtResource("26_p7tmn")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8k62k")
+
+[node name="Trees" type="Node3D" parent="Grangegorman"]
+
+[node name="Tree" parent="Grangegorman/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.302326, -0.0496498, -0.430691)
+
+[node name="Tree2" parent="Grangegorman/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(0.206662, 0, -0.217464, 0, 0.3, 0, 0.217464, 0, 0.206662, -0.170909, -0.0475575, -0.520056)
+
+[node name="Tree3" parent="Grangegorman/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(-0.254437, 0, -0.15894, 0, 0.3, 0, 0.15894, 0, -0.254437, -0.0521919, -0.0475575, -0.531497)

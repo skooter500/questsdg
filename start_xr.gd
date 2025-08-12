@@ -56,15 +56,29 @@ func _ready() -> void:
 		get_viewport().use_xr = true
 		enable_passthrough()	
 		
-	var mat = $Blanchardstown/BlanchardstownFloor.get_surface_override_material(0)
-	var tween = get_tree().create_tween()
-	tween.tween_property(mat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
+	var blanchMat = $Blanchardstown/BlanchardstownFloor.get_surface_override_material(0)
+	var blanchTween = get_tree().create_tween()
+	blanchTween.tween_property(blanchMat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
+	
+	var tallaghtMat = $Tallaght/TallaghtFloor.get_surface_override_material(0)
+	var tallaghtTween = get_tree().create_tween()
+	tallaghtTween.tween_property(tallaghtMat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
+	
+	var grangeMat = $Grangegorman/GrangegormanFloor.get_surface_override_material(0)
+	var grangeTween = get_tree().create_tween()
+	grangeTween.tween_property(grangeMat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
 	
 	$Blanchardstown/Trees/Tree/AnimationPlayer.play("Tree_Growth")
 	$Blanchardstown/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
 	$Blanchardstown/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
 	$Blanchardstown/Trees/Tree4/AnimationPlayer.play("Tree_Growth")
 	$Blanchardstown/Trees/Tree5/AnimationPlayer.play("Tree_Growth")
+	$Grangegorman/Trees/Tree/AnimationPlayer.play("Tree_Growth")
+	$Grangegorman/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
+	$Grangegorman/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
+	$Tallaght/Trees/Tree/AnimationPlayer.play("Tree_Growth")
+	$Tallaght/Trees/Tree2/AnimationPlayer.play("Tree_Growth")
+	$Tallaght/Trees/Tree3/AnimationPlayer.play("Tree_Growth")
 	
 	
 	pass # Replace with function body.
