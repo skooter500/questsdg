@@ -48,12 +48,12 @@
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
-[sub_resource type="Sky" id="Sky_uhqqe"]
+[sub_resource type="Sky" id="Sky_e2pu3"]
 sky_material = SubResource("ProceduralSkyMaterial_6adnx")
 
 [sub_resource type="Environment" id="Environment_ia1lp"]
 background_mode = 1
-sky = SubResource("Sky_uhqqe")
+sky = SubResource("Sky_e2pu3")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
 tonemap_mode = 2
@@ -64,7 +64,7 @@ radius = 0.05
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rf3s6"]
 
-[node name="test_scene" type="Node3D"]
+[node name="cubes_scene" type="Node3D"]
 script = ExtResource("1_uhqqe")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -76,9 +76,10 @@ shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" node_paths=PackedStringArray("spawn_in_front")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
 script = ExtResource("4_rf3s6")
+spawn_in_front = NodePath("../../goals")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
 
