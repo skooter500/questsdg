@@ -51,7 +51,10 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_corov")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nodus"]
-albedo_color = Color(0, 0.117647, 0.164706, 1)
+albedo_color = Color(0, 0.568218, 0.738091, 1)
+emission_enabled = true
+emission = Color(0, 0.568218, 0.738091, 1)
+emission_energy_multiplier = 1.2
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u8448"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -82,7 +85,7 @@ script = ExtResource("1_hlpdx")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.055)
 
 [node name="Shape1" type="MeshInstance3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0498911, 0.175, -0.187)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0498911, 0.458907, -0.187)
 mesh = SubResource("ArrayMesh_lr4ds")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_nodus")
