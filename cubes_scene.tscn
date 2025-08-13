@@ -132,7 +132,7 @@ shadow_enabled = true
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" node_paths=PackedStringArray("spawn_in_front")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
 script = ExtResource("4_rf3s6")
-spawn_in_front = NodePath("../../goals")
+spawn_in_front = NodePath("../../tu dub")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
 
@@ -178,84 +178,6 @@ hand_tracker = &"/user/hand_tracker/right"
 hand_tracker_name = "/user/hand_tracker/right"
 hand_pose_set = ExtResource("7_077gh")
 
-[node name="goals" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21558, 1.23709, -2.44548)
-script = ExtResource("2_2dw41")
-sounds = Array[AudioStream]([ExtResource("11_6f7tj"), ExtResource("12_6f7tj"), ExtResource("13_6f7tj"), ExtResource("14_6f7tj"), ExtResource("15_6f7tj"), ExtResource("16_j5gtg"), ExtResource("17_jpnay"), ExtResource("19_v6rpk"), ExtResource("19_u4y7u"), ExtResource("32_v6rpk"), ExtResource("20_1hang"), ExtResource("21_jxdac"), ExtResource("22_fqo83"), ExtResource("23_u4y7u"), ExtResource("24_e2pu3"), null, null])
-
-[node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("2_sasra")
-
-[node name="goal_box2" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("11_b11sm")
-goal = 2
-
-[node name="goal_box3" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("4_njel3")
-goal = 3
-
-[node name="goal_box4" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("5_vr1i5")
-goal = 4
-
-[node name="goal_box5" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("6_rpuu0")
-goal = 5
-
-[node name="goal_box6" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("7_oo8pe")
-goal = 6
-
-[node name="goal_box7" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("8_4gito")
-goal = 7
-
-[node name="goal_box8" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("10_ykxp3")
-goal = 8
-
-[node name="goal_box9" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("9_fbuy2")
-goal = 9
-
-[node name="goal_box10" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("10_fbuy2")
-goal = 10
-
-[node name="goal_box11" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("11_0k8yu")
-goal = 11
-
-[node name="goal_box12" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("12_hiucn")
-goal = 12
-
-[node name="goal_box13" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("13_k6its")
-goal = 13
-
-[node name="goal_box14" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("14_2dw41")
-goal = 14
-
-[node name="goal_box15" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("15_k6its")
-goal = 15
-
-[node name="goal_box16" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("16_2dw41")
-goal = 16
-
-[node name="goal_box17" parent="goals" instance=ExtResource("3_coq8p")]
-image = ExtResource("17_ykxp3")
-goal = 17
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="goals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977309, 0.484867, 0)
-stream = ExtResource("22_6h1ut")
-volume_db = -40.93
-autoplay = true
-
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -264,16 +186,96 @@ shape = SubResource("WorldBoundaryShape3D_rf3s6")
 [node name="tu dub" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.055)
 
+[node name="goals" type="Node3D" parent="tu dub"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4094, 0.478272, 0.689333)
+visible = false
+script = ExtResource("2_2dw41")
+sounds = Array[AudioStream]([ExtResource("11_6f7tj"), ExtResource("12_6f7tj"), ExtResource("13_6f7tj"), ExtResource("14_6f7tj"), ExtResource("15_6f7tj"), ExtResource("16_j5gtg"), ExtResource("17_jpnay"), ExtResource("19_v6rpk"), ExtResource("19_u4y7u"), ExtResource("32_v6rpk"), ExtResource("20_1hang"), ExtResource("21_jxdac"), ExtResource("22_fqo83"), ExtResource("23_u4y7u"), ExtResource("24_e2pu3"), null, null])
+
+[node name="goal_box" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("2_sasra")
+
+[node name="goal_box2" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("11_b11sm")
+goal = 2
+
+[node name="goal_box3" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("4_njel3")
+goal = 3
+
+[node name="goal_box4" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("5_vr1i5")
+goal = 4
+
+[node name="goal_box5" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("6_rpuu0")
+goal = 5
+
+[node name="goal_box6" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("7_oo8pe")
+goal = 6
+
+[node name="goal_box7" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("8_4gito")
+goal = 7
+
+[node name="goal_box8" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("10_ykxp3")
+goal = 8
+
+[node name="goal_box9" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("9_fbuy2")
+goal = 9
+
+[node name="goal_box10" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("10_fbuy2")
+goal = 10
+
+[node name="goal_box11" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("11_0k8yu")
+goal = 11
+
+[node name="goal_box12" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("12_hiucn")
+goal = 12
+
+[node name="goal_box13" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("13_k6its")
+goal = 13
+
+[node name="goal_box14" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("14_2dw41")
+goal = 14
+
+[node name="goal_box15" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("15_k6its")
+goal = 15
+
+[node name="goal_box16" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("16_2dw41")
+goal = 16
+
+[node name="goal_box17" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("17_ykxp3")
+goal = 17
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tu dub/goals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977309, 0.484867, 0)
+stream = ExtResource("22_6h1ut")
+volume_db = -40.93
+autoplay = true
+
+[node name="maps" parent="tu dub" instance=ExtResource("45_73ssi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 2.58079)
+
 [node name="Shape1" type="MeshInstance3D" parent="tu dub"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0498911, 0.458907, -0.187)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0498911, 0.458907, 0.456604)
 mesh = SubResource("ArrayMesh_ommoy")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cnsht")
 
 [node name="color_wheel" parent="tu dub" instance=ExtResource("44_rf3s6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000561632, 0, 0.0738525)
-
-[node name="maps" parent="." instance=ExtResource("45_73ssi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000561632, 0, 1.19773)
 
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]

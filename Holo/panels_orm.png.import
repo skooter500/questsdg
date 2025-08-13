@@ -3,17 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dirrs5a0kskl6"
-path.s3tc="res://.godot/imported/panels_orm.png-a77e1c83030a0079dc5ed7dc5620d898.s3tc.ctex"
 path.etc2="res://.godot/imported/panels_orm.png-a77e1c83030a0079dc5ed7dc5620d898.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Holo/panels_orm.png"
-dest_files=["res://.godot/imported/panels_orm.png-a77e1c83030a0079dc5ed7dc5620d898.s3tc.ctex", "res://.godot/imported/panels_orm.png-a77e1c83030a0079dc5ed7dc5620d898.etc2.ctex"]
+dest_files=["res://.godot/imported/panels_orm.png-a77e1c83030a0079dc5ed7dc5620d898.etc2.ctex"]
 
 [params]
 
