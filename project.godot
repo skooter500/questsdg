@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Sustainability"
-run/main_scene="uid://bol1dc0pyta2f"
+run/main_scene="uid://dde8gfmqarlgt"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[gui]
+
+theme/custom="uid://dyroetfulq0o6"
 
 [rendering]
 
