@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwvab7ynx7hls"
-path.s3tc="res://.godot/imported/sharkosausamin_BlurStripe.png-6e6e353001a6c63273c636b9424deaf7.s3tc.ctex"
 path.etc2="res://.godot/imported/sharkosausamin_BlurStripe.png-6e6e353001a6c63273c636b9424deaf7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -16,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://darren_assets/sharkosausamin_BlurStripe.png"
-dest_files=["res://.godot/imported/sharkosausamin_BlurStripe.png-6e6e353001a6c63273c636b9424deaf7.s3tc.ctex", "res://.godot/imported/sharkosausamin_BlurStripe.png-6e6e353001a6c63273c636b9424deaf7.etc2.ctex"]
+dest_files=["res://.godot/imported/sharkosausamin_BlurStripe.png-6e6e353001a6c63273c636b9424deaf7.etc2.ctex"]
 
 [params]
 
