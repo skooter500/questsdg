@@ -46,18 +46,20 @@
 [ext_resource type="PackedScene" uid="uid://bmbo1gv835vbw" path="res://color_wheel.tscn" id="44_rf3s6"]
 [ext_resource type="PackedScene" uid="uid://ds4f1hq2mdy1e" path="res://maps.tscn" id="45_73ssi"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rf3s6"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
-[sub_resource type="Sky" id="Sky_e2pu3"]
-sky_material = SubResource("ProceduralSkyMaterial_6adnx")
+[sub_resource type="Sky" id="Sky_uhqqe"]
+sky_material = SubResource("ProceduralSkyMaterial_rf3s6")
 
-[sub_resource type="Environment" id="Environment_ia1lp"]
+[sub_resource type="Environment" id="Environment_73ssi"]
 background_mode = 1
-sky = SubResource("Sky_e2pu3")
+sky = SubResource("Sky_uhqqe")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 1.29
+reflected_light_source = 2
 tonemap_mode = 2
 glow_enabled = true
 
@@ -115,11 +117,11 @@ emission_energy_multiplier = 1.2
 
 [node name="cubes_scene" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_73ssi")
+
 [node name="start_passthrough" type="Node" parent="."]
 script = ExtResource("1_e2pu3")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_ia1lp")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
