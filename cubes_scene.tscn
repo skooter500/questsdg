@@ -1,6 +1,5 @@
-[gd_scene load_steps=49 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=48 format=3 uid="uid://bol1dc0pyta2f"]
 
-[ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
 [ext_resource type="Script" uid="uid://dttcldpevggnp" path="res://hand.gd" id="2_p7tmn"]
 [ext_resource type="PackedScene" uid="uid://cjcehqrfoxav3" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="2_pvxhv"]
@@ -65,7 +64,6 @@ radius = 0.05
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rf3s6"]
 
 [node name="cubes_scene" type="Node3D"]
-script = ExtResource("1_uhqqe")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ia1lp")

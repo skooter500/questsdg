@@ -15,5 +15,5 @@ func _ready() -> void:
 	spawn_in_front.global_position = in_front
 	
 	var y_rotation = global_basis.get_euler().y
-	spawn_in_front.global_basis = Basis(Vector3.UP, y_rotation + PI)
+	spawn_in_front.global_basis = Basis(Vector3.UP, y_rotation)
 	

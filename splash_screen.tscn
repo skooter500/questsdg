@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=4 uid="uid://bd0onywu2rdto"]
+[gd_scene load_steps=19 format=4 uid="uid://bd0onywu2rdto"]
 
+[ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_hlpdx"]
 [ext_resource type="PackedScene" uid="uid://bmbo1gv835vbw" path="res://color_wheel.tscn" id="1_oc6rp"]
 [ext_resource type="Script" uid="uid://bbey0wli3q6jp" path="res://xr_camera_3d.gd" id="2_hlpdx"]
 [ext_resource type="Script" uid="uid://dttcldpevggnp" path="res://hand.gd" id="3_b1scc"]
@@ -74,17 +75,20 @@ radius = 0.05
 
 [node name="splash_screen" type="Node3D"]
 
+[node name="start_passthrough" type="Node" parent="."]
+script = ExtResource("1_hlpdx")
+
 [node name="tu dub" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.120942, 1.19155, -1.0552)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.055)
 
 [node name="Shape1" type="MeshInstance3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0549479, 0.174505, -0.186716)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0498911, 0.175, -0.187)
 mesh = SubResource("ArrayMesh_lr4ds")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_nodus")
 
 [node name="color_wheel" parent="tu dub" instance=ExtResource("1_oc6rp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0439839, 0, 0.0738525)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000561632, 0, 0.0738525)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_d1egr")
