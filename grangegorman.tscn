@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://buildings.tres" id="4_pfrt4"]
 [ext_resource type="ArrayMesh" uid="uid://deosv41rpdunv" path="res://Models/Grangegorman/Grangegorman_TUDublin_Geothermal v2.obj" id="5_37sl6"]
 [ext_resource type="PackedScene" uid="uid://dtportfpmcatj" path="res://campus_assets/tree_oak.glb" id="6_hb085"]
+[ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://highlight_color.tres" id="6_txc67"]
 [ext_resource type="PackedScene" uid="uid://n6th6xfkxsfa" path="res://campus_assets/tree_fat.glb" id="7_les21"]
 [ext_resource type="PackedScene" uid="uid://c5e1syu8c33sj" path="res://campus_assets/tree_pineDefaultA.glb" id="8_rm0dq"]
 [ext_resource type="PackedScene" uid="uid://cix58fugtilpv" path="res://campus_assets/tree_simple.glb" id="9_7exnu"]
@@ -13,9 +14,6 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_bfk7x"]
 size = Vector3(0.9, 0.01, 0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8k62k"]
-albedo_color = Color(0.847059, 0.0666667, 0.34902, 1)
 
 [node name="Grangegorman" type="Node3D"]
 transform = Transform3D(0.98945, 0, -0.144874, 0, 1, 0, 0.144874, 0, 0.98945, 0, 0, 0)
@@ -42,72 +40,72 @@ surface_material_override/0 = ExtResource("4_pfrt4")
 transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0134919, 0, -0.599371)
 mesh = ExtResource("5_37sl6")
 skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_8k62k")
+surface_material_override/0 = ExtResource("6_txc67")
 
-[node name="Node3D2" type="Node3D" parent="GrangegormanGeothermal"]
+[node name="trees" type="Node3D" parent="GrangegormanGeothermal"]
 transform = Transform3D(-100, 0, 8.58307e-06, 8.58307e-06, -4.37114e-06, 100, 3.41061e-13, 100, 4.37114e-06, -1.34919, 59.9371, 3.8147e-06)
 
-[node name="tree_oak2" parent="GrangegormanGeothermal/Node3D2" instance=ExtResource("6_hb085")]
+[node name="tree_oak2" parent="GrangegormanGeothermal/trees" instance=ExtResource("6_hb085")]
 transform = Transform3D(0.0296835, -1.54409e-17, 0.00434622, -5.31362e-18, 0.03, 1.0694e-16, -0.00434622, -1.05457e-16, 0.0296835, -0.0458721, 0.0290251, -0.806934)
 
-[node name="tree_fat2" parent="GrangegormanGeothermal/Node3D2" instance=ExtResource("7_les21")]
+[node name="tree_fat2" parent="GrangegormanGeothermal/trees" instance=ExtResource("7_les21")]
 transform = Transform3D(0.019789, -1.02939e-17, 0.00289748, -3.54241e-18, 0.02, 7.12932e-17, -0.00289748, -7.03046e-17, 0.019789, 0.12867, 0.0207183, -0.833261)
 
-[node name="tree_oak3" parent="GrangegormanGeothermal/Node3D2" instance=ExtResource("6_hb085")]
+[node name="tree_oak3" parent="GrangegormanGeothermal/trees" instance=ExtResource("6_hb085")]
 transform = Transform3D(0.03, -1.54409e-17, 0, 1.02352e-17, 0.03, 1.06581e-16, 0, -1.05457e-16, 0.03, 0.175228, 0.0213436, -0.815306)
 
-[node name="tree_pineDefaultA2" parent="GrangegormanGeothermal/Node3D2" instance=ExtResource("8_rm0dq")]
+[node name="tree_pineDefaultA2" parent="GrangegormanGeothermal/trees" instance=ExtResource("8_rm0dq")]
 transform = Transform3D(0.0296835, -1.54409e-17, 0.00434622, -5.31362e-18, 0.03, 1.0694e-16, -0.00434622, -1.05457e-16, 0.0296835, 0.174995, 0.0192756, -0.844261)
 
-[node name="tree_simple2" parent="GrangegormanGeothermal/Node3D2" instance=ExtResource("9_7exnu")]
+[node name="tree_simple2" parent="GrangegormanGeothermal/trees" instance=ExtResource("9_7exnu")]
 transform = Transform3D(0.0296835, -1.54409e-17, 0.00434622, -5.31362e-18, 0.03, 1.0694e-16, -0.00434622, -1.05457e-16, 0.0296835, 4.83755, 0.025, -0.808048)
 
-[node name="Node3D" type="Node3D" parent="."]
+[node name="labels" type="Node3D" parent="."]
 
-[node name="3dlabel" parent="Node3D" instance=ExtResource("10_kdocq")]
+[node name="3dlabel" parent="labels" instance=ExtResource("10_kdocq")]
 transform = Transform3D(1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, -0.0565589, 0.0905084, -0.860306)
 
-[node name="3dlabel3" parent="Node3D" instance=ExtResource("10_kdocq")]
+[node name="3dlabel3" parent="labels" instance=ExtResource("10_kdocq")]
 transform = Transform3D(1, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1, -0.0182231, 0.208835, -0.598483)
 text = "Grangegorman Campus"
 
-[node name="3dlabel2" parent="Node3D" instance=ExtResource("10_kdocq")]
+[node name="3dlabel2" parent="labels" instance=ExtResource("10_kdocq")]
 transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, -0.170813, 0.0905084, -0.832291)
 text = "Library
 Student Services
 "
 
-[node name="3dlabel4" parent="Node3D" instance=ExtResource("10_kdocq")]
+[node name="3dlabel4" parent="labels" instance=ExtResource("10_kdocq")]
 transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.0478316, 0.0905084, -0.770241)
 text = "Greenway Hub
 "
 
-[node name="3dlabel5" parent="Node3D" instance=ExtResource("10_kdocq")]
+[node name="3dlabel5" parent="labels" instance=ExtResource("10_kdocq")]
 transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.230139, 0.0905084, -0.633141)
 text = "Clock Tower
 "
 
-[node name="3dlabel6" parent="Node3D" instance=ExtResource("10_kdocq")]
+[node name="3dlabel6" parent="labels" instance=ExtResource("10_kdocq")]
 transform = Transform3D(1, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1, 0.248621, 0.0905084, -0.506919)
 text = "East Quad
 "
 
-[node name="3dlabel7" parent="Node3D" instance=ExtResource("10_kdocq")]
+[node name="3dlabel7" parent="labels" instance=ExtResource("10_kdocq")]
 transform = Transform3D(1, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1, 0.119924, 0.0905084, -0.659402)
 text = "Rathdown House
 "
 
-[node name="3dlabel8" parent="Node3D" instance=ExtResource("10_kdocq")]
+[node name="3dlabel8" parent="labels" instance=ExtResource("10_kdocq")]
 transform = Transform3D(1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, 1, 0.110481, 0.0905084, -0.584594)
 text = "St. Laurence's
 "
 
-[node name="3dlabel9" parent="Node3D" instance=ExtResource("10_kdocq")]
+[node name="3dlabel9" parent="labels" instance=ExtResource("10_kdocq")]
 transform = Transform3D(1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, 1, -0.395603, 0.0905084, -0.767483)
 text = "Geothermal
 "
 
-[node name="3dlabel10" parent="Node3D" instance=ExtResource("10_kdocq")]
+[node name="3dlabel10" parent="labels" instance=ExtResource("10_kdocq")]
 transform = Transform3D(1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, 1, -0.158887, 0.0905084, -0.488045)
 text = "Sports Fields
 "

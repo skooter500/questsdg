@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6qqmbnvwtfpw"]
+
+[ext_resource type="ArrayMesh" uid="uid://dl0ukpnb1oyxk" path="res://Models/Bolton/BoltonStreet_TUDublin_Floor v3.obj" id="1_c0ou2"]
+[ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://ground_trans.tres" id="2_qibew"]
+[ext_resource type="ArrayMesh" uid="uid://cdee6wmly63vb" path="res://Models/Bolton/BoltonStreet_TUDublin_Campus v2.obj" id="3_v065s"]
+[ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://buildings.tres" id="4_17d1n"]
+[ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://highlight_color.tres" id="5_rbfvt"]
+[ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://3_dlabel.tscn" id="6_o187t"]
+
+[node name="Bolton" type="Node3D"]
+transform = Transform3D(0.975955, 0, -0.217973, 0, 1, 0, 0.217973, 0, 0.975955, 0, 0, 0)
+
+[node name="BoltonStreetFloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.000904396, -0.000426695, -1.86514e-11, 0, -4.37114e-11, 0.001, -0.000426695, -0.000904396, -3.95324e-11, -0.446543, 0, -0.963419)
+mesh = ExtResource("1_c0ou2")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_qibew")
+
+[node name="BoltonStreetCampus" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.000904083, -0.000427358, -1.86804e-11, 0, -4.37114e-11, 0.001, -0.000427358, -0.000904083, -3.95187e-11, -0.447, 0.000707775, -0.963)
+mesh = ExtResource("3_v065s")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_17d1n")
+surface_material_override/1 = ExtResource("5_rbfvt")
+surface_material_override/2 = ExtResource("4_17d1n")
+
+[node name="3dlabel3" parent="." instance=ExtResource("6_o187t")]
+transform = Transform3D(1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, -0.420945, 0.208835, -0.858459)
+text = "Bolton St. Campus"
