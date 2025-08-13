@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=46 format=3 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_uhqqe"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -30,8 +30,6 @@
 [ext_resource type="ArrayMesh" uid="uid://rldoxr3j6fp6" path="res://Models/Tallaght/Tallaght_TUDublin_Library v2.obj" id="25_mfkbt"]
 [ext_resource type="ArrayMesh" uid="uid://df377yaxmo5f" path="res://Models/Grangegorman/TUD_Campus2 v16.obj" id="26_5qgi0"]
 [ext_resource type="ArrayMesh" uid="uid://deosv41rpdunv" path="res://Models/Grangegorman/Grangegorman_TUDublin_Geothermal v2.obj" id="26_p7tmn"]
-[ext_resource type="PackedScene" uid="uid://baroo3ypmv8tw" path="res://UN_Flag.tscn" id="28_8fq6b"]
-[ext_resource type="PackedScene" uid="uid://brgw2wktsrl2k" path="res://Crane.tscn" id="30_5qgi0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -446,23 +444,6 @@ mesh = ExtResource("22_b11sm")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8fq6b")
 
-[node name="Trees" type="Node3D" parent="Blanchardstown"]
-
-[node name="Tree" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.751652, -0.049576, -0.262746)
-
-[node name="Tree2" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.966757, -0.0410213, -0.160394)
-
-[node name="Tree3" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 1.08874, -0.0369363, -0.359387)
-
-[node name="Tree4" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.0720277, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720277, 1.17631, -0.0350274, 0.105026)
-
-[node name="Tree5" parent="Blanchardstown/Trees" instance=ExtResource("23_5qgi0")]
-transform = Transform3D(0.0720278, 0, -0.291225, 0, 0.3, 0, 0.291225, 0, 0.0720278, 0.756381, -0.0450302, 0.155504)
-
 [node name="Book" parent="Blanchardstown" instance=ExtResource("24_7kp7o")]
 transform = Transform3D(0.155409, 0, -0.125888, 0, 0.2, 0, 0.125888, 0, 0.155409, 0.870812, 0.0150625, -0.0180729)
 
@@ -530,9 +511,3 @@ transform = Transform3D(0.206662, 0, -0.217464, 0, 0.3, 0, 0.217464, 0, 0.206662
 
 [node name="Tree3" parent="Grangegorman/Trees" instance=ExtResource("23_5qgi0")]
 transform = Transform3D(-0.254437, 0, -0.15894, 0, 0.3, 0, 0.15894, 0, -0.254437, -0.0521919, -0.0475575, -0.531497)
-
-[node name="Crane" parent="Grangegorman" instance=ExtResource("30_5qgi0")]
-transform = Transform3D(0.028089, 0, -0.0105361, 0, 0.03, 0, 0.0105361, 0, 0.028089, -0.276337, 0.00969274, -0.804909)
-
-[node name="UNFlag" parent="Grangegorman" instance=ExtResource("28_8fq6b")]
-transform = Transform3D(0.0499726, 0, 0.00165427, 0, 0.05, 0, -0.00165427, 0, 0.0499726, -0.0276241, -0.0317868, -0.872098)
