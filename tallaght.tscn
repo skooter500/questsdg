@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuiqwsnic02ki"]
+
+[ext_resource type="ArrayMesh" uid="uid://csyrogweajq6b" path="res://Models/Tallaght/Tallaght_TUDublin_Floor v4.obj" id="1_lxkgc"]
+[ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://ground_trans.tres" id="2_5dcod"]
+[ext_resource type="ArrayMesh" uid="uid://dk46vpqvevrd4" path="res://Models/Tallaght/Tallaght_TUDublin_Buildings.obj" id="3_88ada"]
+[ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://buildings.tres" id="4_geve6"]
+[ext_resource type="ArrayMesh" uid="uid://rldoxr3j6fp6" path="res://Models/Tallaght/Tallaght_TUDublin_Library v2.obj" id="5_cn02r"]
+[ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://highlight_color.tres" id="6_yp40j"]
+[ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://3_dlabel.tscn" id="7_jo728"]
+
+[node name="Tallaght" type="Node3D"]
+transform = Transform3D(0.997321, 0, -0.0731512, 0, 1, 0, 0.0731512, 0, 0.997321, 0, 0, 0)
+
+[node name="TallaghtFloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.91038e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 2.91038e-10, 1.73472e-17, -0.0189328, 0, -0.213828)
+mesh = ExtResource("1_lxkgc")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_5dcod")
+
+[node name="TallaghtBuildings" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.91038e-10, 0.01, 4.37114e-10, 3.67052e-24, -4.37114e-10, 0.01, 0.01, 2.91038e-10, 1.73472e-17, -0.0178048, -0.000693373, -0.216703)
+mesh = ExtResource("3_88ada")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_geve6")
+
+[node name="TallaghtLibrary" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.91038e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 2.91038e-10, 1.73472e-17, -0.0150588, 0.00459319, -0.214615)
+mesh = ExtResource("5_cn02r")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("6_yp40j")
+
+[node name="3dlabel" parent="." instance=ExtResource("7_jo728")]
+transform = Transform3D(1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0.00639815, 0.0905084, -0.217932)
+text = "Library"
+
+[node name="3dlabel3" parent="." instance=ExtResource("7_jo728")]
+transform = Transform3D(1, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1, 0.0158969, 0.208835, -0.133302)
+text = "Tallaght Campus"

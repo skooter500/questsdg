@@ -3,16 +3,17 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0xnm3l28rj4"
+path.s3tc="res://.godot/imported/frame_125.png-2f96b53784d117be4a0e8cdb0e36f122.s3tc.ctex"
 path.etc2="res://.godot/imported/frame_125.png-2f96b53784d117be4a0e8cdb0e36f122.etc2.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://goals/Goal-1/Goal 1/1_SDG_MakeEveryDayCount_Gifs_GDU_frames/frame_125.png"
-dest_files=["res://.godot/imported/frame_125.png-2f96b53784d117be4a0e8cdb0e36f122.etc2.ctex"]
+dest_files=["res://.godot/imported/frame_125.png-2f96b53784d117be4a0e8cdb0e36f122.s3tc.ctex", "res://.godot/imported/frame_125.png-2f96b53784d117be4a0e8cdb0e36f122.etc2.ctex"]
 
 [params]
 

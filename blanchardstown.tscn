@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://buifie6p2dugp"]
+
+[ext_resource type="ArrayMesh" uid="uid://dqsdtbq11wh72" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Buildings.obj" id="1_jhfdp"]
+[ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://buildings.tres" id="2_0v0m4"]
+[ext_resource type="ArrayMesh" uid="uid://bkyomhn322ra7" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Floor v5.obj" id="3_ygaia"]
+[ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://ground_trans.tres" id="4_5jves"]
+[ext_resource type="ArrayMesh" uid="uid://dsvw1hx5thygm" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Library v2.obj" id="5_ivlhj"]
+[ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://highlight_color.tres" id="6_os5d3"]
+[ext_resource type="PackedScene" uid="uid://b00u5k8csutu6" path="res://Tree.tscn" id="8_1whjv"]
+[ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://3_dlabel.tscn" id="9_8wyci"]
+
+[node name="Blanchardstown" type="Node3D"]
+transform = Transform3D(0.990346, 0, 0.13862, 0, 1, 0, -0.13862, 0, 0.990346, 0, 0, 0)
+
+[node name="BlanchardstownBuildings" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.83, 0, -0.168)
+mesh = ExtResource("1_jhfdp")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_0v0m4")
+
+[node name="BlanchardstownFloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.829378, -0.000725642, -0.167676)
+mesh = ExtResource("3_ygaia")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("4_5jves")
+
+[node name="BlanchardstownLibrary" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.828491, 0, -0.164682)
+mesh = ExtResource("5_ivlhj")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("6_os5d3")
+
+[node name="blanchTrees" parent="." instance=ExtResource("8_1whjv")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.698515, 0.0127181, -0.25932)
+
+[node name="MultiMeshInstance3D" parent="blanchTrees" index="0"]
+num_trees = 70
+
+[node name="blanchTrees2" parent="." instance=ExtResource("8_1whjv")]
+transform = Transform3D(0.00997191, -0.000748917, 0, 0.000748917, 0.00997191, 0, 0, 0, 0.01, 0.987015, 0.0243213, -0.422743)
+
+[node name="MultiMeshInstance3D" parent="blanchTrees2" index="0"]
+num_trees = 120
+area_size = Vector3(20, 0, 10)
+
+[node name="3dlabel3" parent="." instance=ExtResource("9_8wyci")]
+transform = Transform3D(1, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1, 0.821995, 0.208835, -0.175405)
+text = "Blanchardstown Campus"
+
+[editable path="blanchTrees"]
+[editable path="blanchTrees2"]

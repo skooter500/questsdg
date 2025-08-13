@@ -1,21 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://b00u5k8csutu6"]
 
-[sub_resource type="Animation" id="Animation_72j6q"]
-length = 0.001
+[ext_resource type="ArrayMesh" uid="uid://dxgmgyq7et6rq" path="res://Models/tree_default_dark.obj" id="1_dn7q5"]
+[ext_resource type="Script" uid="uid://b8ujom6pmvshd" path="res://tree_spawner.gd" id="2_72j6q"]
 
-[sub_resource type="Animation" id="Animation_dn7q5"]
-resource_name = "Tree_Growth"
-length = 10.0
+[sub_resource type="MultiMesh" id="MultiMesh_fxwtr"]
+instance_count = 30
+mesh = ExtResource("1_dn7q5")
+buffer = PackedFloat32Array(2, 3, 0.44, 0.73, 0.98, 1, 0.00888889, 0.0967742, 0, 3, 0.44, 0.73, 0.98, 1, 0, 0.0967742, 2.13397, 2.5, 0.44, 0.73, 0.98, 1, 0.00948433, 0.0806452, 0.401924, 1.5, 0.44, 0.73, 0.98, 1, 0.00178633, 0.0483871, 2.5, 2.13397, 0.44, 0.73, 0.98, 1, 0.0111111, 0.0688379, 1.5, 0.401924, 0.44, 0.73, 0.98, 1, 0.00666667, 0.0129653, 3, 2, 0.44, 0.73, 0.98, 1, 0.0133333, 0.0645161, 3, 0, 0.44, 0.73, 0.98, 1, 0.0133333, 0, 222, 2, 0.44, 0.73, 0.98, 1, 0.986667, 0.0645161, 222, 0, 0.44, 0.73, 0.98, 1, 0.986667, 0, 222.5, 2.13397, 0.44, 0.73, 0.98, 1, 0.988889, 0.0688379, 223.5, 0.401924, 0.44, 0.73, 0.98, 1, 0.993333, 0.0129653, 222.866, 2.5, 0.44, 0.73, 0.98, 1, 0.990516, 0.0806452, 224.598, 1.5, 0.44, 0.73, 0.98, 1, 0.998214, 0.0483871, 223, 3, 0.44, 0.73, 0.98, 1, 0.991111, 0.0967742, 225, 3, 0.44, 0.73, 0.98, 1, 1, 0.0967742, 223, 28, 0.44, 0.73, 0.98, 1, 0.991111, 0.903226, 225, 28, 0.44, 0.73, 0.98, 1, 1, 0.903226, 222.866, 28.5, 0.44, 0.73, 0.98, 1, 0.990516, 0.919355, 224.598, 29.5, 0.44, 0.73, 0.98, 1, 0.998214, 0.951613, 222.5, 28.866, 0.44, 0.73, 0.98, 1, 0.988889, 0.931162, 223.5, 30.5981, 0.44, 0.73, 0.98, 1, 0.993333, 0.987035, 222, 29, 0.44, 0.73, 0.98, 1, 0.986667, 0.935484, 222, 31, 0.44, 0.73, 0.98, 1, 0.986667, 1, 3, 29, 0.44, 0.73, 0.98, 1, 0.0133333, 0.935484, 3, 31, 0.44, 0.73, 0.98, 1, 0.0133333, 1, 2.5, 28.866, 0.44, 0.73, 0.98, 1, 0.0111111, 0.931162, 1.5, 30.5981, 0.44, 0.73, 0.98, 1, 0.00666666, 0.987035, 2.13397, 28.5, 0.44, 0.73, 0.98, 1, 0.00948433, 0.919355, 0.401924, 29.5, 0.44, 0.73, 0.98, 1, 0.00178633, 0.951613)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxwtr"]
-_data = {
-&"RESET": SubResource("Animation_72j6q"),
-&"Tree_Growth": SubResource("Animation_dn7q5")
-}
+[node name="Trees" type="Node3D"]
 
-[node name="Tree" type="Node3D"]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_fxwtr")
-}
+[node name="MultiMeshInstance3D" type="MultiMeshInstance3D" parent="."]
+multimesh = SubResource("MultiMesh_fxwtr")
+script = ExtResource("2_72j6q")
+num_trees = 30
+area_size = Vector3(10, 0, 10)

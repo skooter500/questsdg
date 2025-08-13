@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Sustainability"
-run/main_scene="uid://bu7bgx1kx1kc5"
+run/main_scene="uid://bol1dc0pyta2f"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
+
+[gui]
+
+theme/custom_font="uid://bj0nihy4bcae2"
+theme/default_font_multichannel_signed_distance_field=true
 
 [physics]
 
