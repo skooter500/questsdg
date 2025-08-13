@@ -70,6 +70,10 @@ func _ready() -> void:
 	var grangeTween = get_tree().create_tween()
 	grangeTween.tween_property(grangeMat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
 	
+	var boltonMat = $Bolton/BoltonStreetFloor.get_surface_override_material(0)
+	var boltonTween = get_tree().create_tween()
+	boltonTween.tween_property(boltonMat, "albedo_color", Color(0.158, 0.298, 0.074), 20).set_trans(Tween.TRANS_QUAD)
+	
 	#Tweens for the libraries and geothermal building to change color
 	var tallaghtLibMat = $Tallaght/TallaghtLibrary.get_surface_override_material(0)
 	var tallaghtLibTween = get_tree().create_tween()
@@ -81,7 +85,7 @@ func _ready() -> void:
 	
 	var grangeGeoMat = $Grangegorman/GrangegormanGeothermal.get_surface_override_material(0)
 	var grangeGeoTween = get_tree().create_tween()
-	grangeGeoTween.tween_property(grangeGeoMat, "albedo_color", Color(0.78, 0.663, 0.235), 20).set_trans(Tween.TRANS_QUAD)
+	grangeGeoTween.tween_property(grangeGeoMat, "albedo_color", Color(0.577, 0.159, 0.128), 20).set_trans(Tween.TRANS_QUAD)
 	
 	
 	#Tweens for changing the building colors on each campus
@@ -97,9 +101,18 @@ func _ready() -> void:
 	var grangeBuildTween = get_tree().create_tween()
 	grangeBuildTween.tween_property(grangeBuildMat, "albedo_color", Color(0.49, 0.337, 0.22), 20).set_trans(Tween.TRANS_QUAD)
 	
-	#Crane Animation Players	
-	$Grangegorman/Crane/AnimationPlayer.play("Crane_Growth")
-	$Grangegorman/Crane/AnimationPlayer.queue("Crane_Rotation")
+	var boltonBuildMat0 = $Bolton/BoltonStreetCampus.get_surface_override_material(0)
+	var boltonBuildMat1 = $Bolton/BoltonStreetCampus.get_surface_override_material(1)
+	var boltonBuildMat2 = $Bolton/BoltonStreetCampus.get_surface_override_material(2)
+	var boltonBuildTween0 = get_tree().create_tween()
+	var boltonBuildTween1 = get_tree().create_tween()
+	var boltonBuildTween2 = get_tree().create_tween()
+	boltonBuildTween0.tween_property(boltonBuildMat0, "albedo_color", Color(0.49, 0.337, 0.22), 20).set_trans(Tween.TRANS_QUAD)
+	boltonBuildTween1.tween_property(boltonBuildMat1, "albedo_color", Color(0.025, 0.568, 0.647), 20).set_trans(Tween.TRANS_QUAD)
+	boltonBuildTween2.tween_property(boltonBuildMat2, "albedo_color", Color(0.49, 0.337, 0.22), 20).set_trans(Tween.TRANS_QUAD)
+	
+	
+
 	
 	#Book Animation Players
 	$Tallaght/Book/AnimationPlayer.play("Book_Rise")
