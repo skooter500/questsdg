@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dde8gfmqarlgt"]
+[gd_scene load_steps=53 format=3 uid="uid://dde8gfmqarlgt"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_8x2ae"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_sg2b2"]
@@ -28,8 +28,10 @@
 [ext_resource type="ArrayMesh" uid="uid://dk46vpqvevrd4" path="res://Models/Tallaght/Tallaght_TUDublin_Buildings.obj" id="26_7qkgy"]
 [ext_resource type="ArrayMesh" uid="uid://rldoxr3j6fp6" path="res://Models/Tallaght/Tallaght_TUDublin_Library v2.obj" id="27_gqk7b"]
 [ext_resource type="ArrayMesh" uid="uid://chvg4aftfq8f1" path="res://Models/Grangegorman/Grangegorman_TUDublin_Floor_Thin.obj" id="28_co63y"]
+[ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://ground_trans.tres" id="29_sg2b2"]
 [ext_resource type="ArrayMesh" uid="uid://0fhxx2i8gi4u" path="res://Models/Grangegorman/Grangegorman_TUDublin_Buildings.obj" id="29_x8f3f"]
 [ext_resource type="ArrayMesh" uid="uid://deosv41rpdunv" path="res://Models/Grangegorman/Grangegorman_TUDublin_Geothermal v2.obj" id="30_b62sv"]
+[ext_resource type="PackedScene" uid="uid://dtportfpmcatj" path="res://campus_assets/tree_oak.glb" id="31_8x2ae"]
 [ext_resource type="ArrayMesh" uid="uid://dl0ukpnb1oyxk" path="res://Models/Bolton/BoltonStreet_TUDublin_Floor v3.obj" id="32_pkn3i"]
 [ext_resource type="ArrayMesh" uid="uid://cdee6wmly63vb" path="res://Models/Bolton/BoltonStreet_TUDublin_Campus v2.obj" id="33_rp52f"]
 
@@ -45,6 +47,7 @@ background_mode = 1
 sky = SubResource("Sky_uhqqe")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 1.29
 tonemap_mode = 2
 glow_enabled = true
 
@@ -77,14 +80,11 @@ albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxsde"]
 albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5xgu"]
-albedo_color = Color(0.270588, 0.796078, 0.521569, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rygqd"]
-albedo_color = Color(0.992157, 0.905882, 0.298039, 1)
+albedo_color = Color(1, 0.737255, 0.258824, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8k62k"]
-albedo_color = Color(0.94902, 0.733333, 0.0196078, 1)
+albedo_color = Color(0.847059, 0.0666667, 0.34902, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chy0g"]
 albedo_color = Color(0.192157, 0.192157, 0.192157, 1)
@@ -525,7 +525,7 @@ transform = Transform3D(0.98945, 0, -0.144874, 0, 1, 0, 0.144874, 0, 0.98945, 0.
 transform = Transform3D(-0.01, 1.50996e-09, 6.60024e-17, 0, -4.37114e-10, 0.01, 1.50996e-09, 0.01, 4.37114e-10, -0.016, 0, -0.603)
 mesh = ExtResource("28_co63y")
 skeleton = NodePath("../../Blanchardstown")
-surface_material_override/0 = SubResource("StandardMaterial3D_r5xgu")
+surface_material_override/0 = ExtResource("29_sg2b2")
 
 [node name="GrangegormanBuildings" type="MeshInstance3D" parent="Grangegorman"]
 transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0213376, 2.23517e-08, -0.591914)
@@ -539,13 +539,6 @@ mesh = ExtResource("30_b62sv")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_8k62k")
 
-[node name="grangeTrees" parent="Grangegorman" instance=ExtResource("24_57klf")]
-transform = Transform3D(0.00999818, -0.000190404, 1.08542e-12, 0.000190342, 0.00999491, -0.000255837, 4.87124e-06, 0.000255791, 0.00999673, -0.192012, 0.0202032, -0.508667)
-
-[node name="MultiMeshInstance3D" parent="Grangegorman/grangeTrees" index="0"]
-num_trees = 200
-area_size = Vector3(20, 0, 20)
-
 [node name="SubViewport" type="SubViewport" parent="Grangegorman"]
 
 [node name="Label" type="Label" parent="Grangegorman/SubViewport"]
@@ -556,6 +549,11 @@ Engineering
 Science
 Maths
 Computer Science"
+
+[node name="tree_oak2" parent="Grangegorman" instance=ExtResource("31_8x2ae")]
+transform = Transform3D(0.0296835, 0, 0.00434622, 0, 0.03, 0, -0.00434622, 0, 0.0296835, -0.0458721, 0.0290251, -0.806934)
+
+[node name="GridMap" type="GridMap" parent="Grangegorman"]
 
 [node name="Bolton" type="Node3D" parent="."]
 transform = Transform3D(0.975955, 0, -0.217973, 0, 1, 0, 0.217973, 0, 0.975955, -0.139854, 0, 0.111389)
@@ -587,5 +585,4 @@ area_size = Vector3(1, 0, 1)
 [editable path="Blanchardstown/blanchTrees2"]
 [editable path="Tallaght/tallaghtTrees"]
 [editable path="Tallaght/tallaghtTrees2"]
-[editable path="Grangegorman/grangeTrees"]
 [editable path="Bolton/boltonTrees"]
