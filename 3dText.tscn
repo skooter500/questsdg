@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpfvajt18aa5p"]
+
+[ext_resource type="Script" uid="uid://322wjwdrv0ki" path="res://sub_viewport.gd" id="1_5m4cc"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jx36c"]
+viewport_path = NodePath("SubViewport")
+
+[node name="3dtext" type="Sprite2D"]
+texture = SubResource("ViewportTexture_jx36c")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+disable_3d = true
+use_xr = true
+msaa_3d = 1
+size = Vector2i(0, 0)
+script = ExtResource("1_5m4cc")
+
+[node name="Label" type="Label" parent="SubViewport"]
+offset_right = 40.0
+offset_bottom = 31.0
+text = "Central Quad"

@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://dyroetfulq0o6"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://dyroetfulq0o6"]
 
 [ext_resource type="FontFile" uid="uid://0jk2p2kfmllu" path="res://fonts/Hyperspace Bold.otf" id="1_byume"]
+[ext_resource type="FontFile" uid="uid://bj0nihy4bcae2" path="res://fonts/Qube.ttf" id="2_4diy7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4d3n"]
 content_margin_left = 4.0
@@ -72,8 +73,8 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [resource]
-default_font = ExtResource("1_byume")
-default_font_size = 60
+default_font = ExtResource("2_4diy7")
+default_font_size = 30
 Button/colors/font_color = Color(0.35, 1, 0, 1)
 Button/colors/font_focus_color = Color(0.35, 1, 0, 1)
 Button/colors/font_hover_color = Color(0.35, 1, 0, 1)
