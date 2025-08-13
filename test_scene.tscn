@@ -557,15 +557,24 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_chy0g")
 
 [node name="BoltonStreetCampus" type="MeshInstance3D" parent="Bolton"]
-transform = Transform3D(0.000904083, -0.000427358, -1.86804e-11, 0, -4.37114e-11, 0.001, -0.000427358, -0.000904083, -3.95187e-11, -0.447, 4.6216e-05, -0.963)
+transform = Transform3D(0.000904083, -0.000427358, -1.86804e-11, 0, -4.37114e-11, 0.001, -0.000427358, -0.000904083, -3.95187e-11, -0.447, 0.000707775, -0.963)
 mesh = ExtResource("33_2nf64")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_pknf1")
 surface_material_override/1 = SubResource("StandardMaterial3D_b6ixm")
 surface_material_override/2 = SubResource("StandardMaterial3D_lvjxf")
 
+[node name="boltonTrees" parent="Bolton" instance=ExtResource("32_8fq6b")]
+transform = Transform3D(0.00975955, 0, 0.00217973, 0, 0.01, 0, -0.00217973, 0, 0.00975955, -0.469348, 0.0121509, -0.973277)
+
+[node name="MultiMeshInstance3D" parent="Bolton/boltonTrees" index="0"]
+transform = Transform3D(0.467251, 0, -0.884125, 0, 1, 0, 0.884125, 0, 0.467251, 0.952198, 0.408333, 0.892456)
+num_trees = 5
+area_size = Vector3(1, 0, 1)
+
 [editable path="Blanchardstown/blanchTrees"]
 [editable path="Blanchardstown/blanchTrees2"]
 [editable path="Tallaght/tallaghtTrees"]
 [editable path="Tallaght/tallaghtTrees2"]
 [editable path="Grangegorman/grangeTrees"]
+[editable path="Bolton/boltonTrees"]

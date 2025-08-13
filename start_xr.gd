@@ -108,7 +108,7 @@ func _ready() -> void:
 	var boltonBuildTween1 = get_tree().create_tween()
 	var boltonBuildTween2 = get_tree().create_tween()
 	boltonBuildTween0.tween_property(boltonBuildMat0, "albedo_color", Color(0.49, 0.337, 0.22), 20).set_trans(Tween.TRANS_QUAD)
-	boltonBuildTween1.tween_property(boltonBuildMat1, "albedo_color", Color(0.025, 0.568, 0.647), 20).set_trans(Tween.TRANS_QUAD)
+	boltonBuildTween1.tween_property(boltonBuildMat1, "albedo_color", Color(0.49, 0.337, 0.22), 20).set_trans(Tween.TRANS_QUAD)
 	boltonBuildTween2.tween_property(boltonBuildMat2, "albedo_color", Color(0.49, 0.337, 0.22), 20).set_trans(Tween.TRANS_QUAD)
 	
 	
