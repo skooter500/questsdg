@@ -19,16 +19,16 @@
 [ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="15_k6its"]
 [ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
-[ext_resource type="ArrayMesh" uid="uid://rihrso13ylki" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Floor v3.obj" id="20_mfkbt"]
+[ext_resource type="ArrayMesh" uid="uid://bkyomhn322ra7" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Floor v5.obj" id="21_7kp7o"]
 [ext_resource type="ArrayMesh" uid="uid://dqsdtbq11wh72" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Buildings.obj" id="21_22oil"]
 [ext_resource type="ArrayMesh" uid="uid://dsvw1hx5thygm" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Library v2.obj" id="22_b11sm"]
-[ext_resource type="ArrayMesh" uid="uid://bdw502cy6b2wt" path="res://Models/Tallaght/Tallaght_TUDublin_Floor v2.obj" id="23_077gh"]
 [ext_resource type="ArrayMesh" uid="uid://dk46vpqvevrd4" path="res://Models/Tallaght/Tallaght_TUDublin_Buildings.obj" id="23_p7tmn"]
 [ext_resource type="PackedScene" uid="uid://dafqy6t1e5spc" path="res://Book.tscn" id="24_7kp7o"]
+[ext_resource type="ArrayMesh" uid="uid://csyrogweajq6b" path="res://Models/Tallaght/Tallaght_TUDublin_Floor v4.obj" id="24_8fq6b"]
 [ext_resource type="ArrayMesh" uid="uid://0fhxx2i8gi4u" path="res://Models/Grangegorman/Grangegorman_TUDublin_Buildings.obj" id="25_b11sm"]
 [ext_resource type="ArrayMesh" uid="uid://rldoxr3j6fp6" path="res://Models/Tallaght/Tallaght_TUDublin_Library v2.obj" id="25_mfkbt"]
-[ext_resource type="ArrayMesh" uid="uid://df377yaxmo5f" path="res://Models/Grangegorman/TUD_Campus2 v16.obj" id="26_5qgi0"]
 [ext_resource type="ArrayMesh" uid="uid://deosv41rpdunv" path="res://Models/Grangegorman/Grangegorman_TUDublin_Geothermal v2.obj" id="26_p7tmn"]
+[ext_resource type="ArrayMesh" uid="uid://chvg4aftfq8f1" path="res://Models/Grangegorman/Grangegorman_TUDublin_Floor_Thin.obj" id="27_7kp7o"]
 [ext_resource type="PackedScene" uid="uid://baroo3ypmv8tw" path="res://UN_Flag.tscn" id="28_8fq6b"]
 [ext_resource type="PackedScene" uid="uid://brgw2wktsrl2k" path="res://Crane.tscn" id="30_5qgi0"]
 
@@ -58,17 +58,17 @@ material = SubResource("StandardMaterial3D_077gh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfkbt"]
 albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qgi0"]
-albedo_color = Color(0.192157, 0.192157, 0.192157, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kp7o"]
 albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akknq"]
+albedo_color = Color(0.192157, 0.192157, 0.192157, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fq6b"]
 albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oy8sc"]
-albedo_color = Color(0.190762, 0.190762, 0.190762, 1)
+albedo_color = Color(0.192157, 0.192157, 0.192157, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nf64"]
 albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
@@ -427,17 +427,17 @@ university"
 
 [node name="Blanchardstown" type="Node3D" parent="."]
 
-[node name="BlanchardstownFloor" type="MeshInstance3D" parent="Blanchardstown"]
-transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.829449, -0.00147844, -0.16783)
-mesh = ExtResource("20_mfkbt")
-skeleton = NodePath("../..")
-surface_material_override/0 = SubResource("StandardMaterial3D_5qgi0")
-
 [node name="BlanchardstownBuildings" type="MeshInstance3D" parent="Blanchardstown"]
 transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.83, 0, -0.168)
 mesh = ExtResource("21_22oil")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_7kp7o")
+
+[node name="BlanchardstownFloor" type="MeshInstance3D" parent="Blanchardstown"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.829378, -0.000725642, -0.167676)
+mesh = ExtResource("21_7kp7o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_akknq")
 
 [node name="BlanchardstownLibrary" type="MeshInstance3D" parent="Blanchardstown"]
 transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.828491, 0, -0.164682)
@@ -451,8 +451,8 @@ transform = Transform3D(0.155409, 0, -0.125888, 0, 0.2, 0, 0.125888, 0, 0.155409
 [node name="Tallaght" type="Node3D" parent="."]
 
 [node name="TallaghtFloor" type="MeshInstance3D" parent="Tallaght"]
-transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.670544, 0, -0.166361)
-mesh = ExtResource("23_077gh")
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.671, 0, -0.166)
+mesh = ExtResource("24_8fq6b")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_oy8sc")
 
@@ -474,9 +474,9 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.609112, 0.0212389, -
 [node name="Grangegorman" type="Node3D" parent="."]
 
 [node name="GrangegormanFloor" type="MeshInstance3D" parent="Grangegorman"]
-transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0161305, 0, -0.60333)
-mesh = ExtResource("26_5qgi0")
-skeleton = NodePath("../..")
+transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.016, 0, -0.603)
+mesh = ExtResource("27_7kp7o")
+skeleton = NodePath("../../Blanchardstown")
 surface_material_override/0 = SubResource("StandardMaterial3D_r5xgu")
 
 [node name="GrangegormanBuildings" type="MeshInstance3D" parent="Grangegorman"]
