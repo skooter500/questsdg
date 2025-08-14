@@ -7,15 +7,16 @@ var goal_boxes = []
 
 var ani_box_scene = preload("res://goal_box_animated.tscn")
 
+
 func spawn_box(i):
 	var t = create_tween() \
 		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)		
 	var box = goal_boxes[i]
 	box.scale = Vector3.ZERO
 	var a:AudioStreamPlayer3D = box.get_node("AudioStreamPlayer3D")
-	a.pitch_scale = randf_range(0.5, 1.5)
+	a.pitch_scale = randf_range(0.9, 1.5)
 	box.get_node("AudioStreamPlayer3D").play()
-	var interval = 0.3
+	var interval = 0.5
 	t.tween_property(box, "scale", Vector3.ONE, interval)		
 	
 
@@ -39,7 +40,12 @@ func load_ani_boxes(start, end):
 			sound.autoplay = true
 		ani_boxes.push_back(ani_box)
 		print("Loaded " + str(i))
-		call_deferred("spawn_box", i)
+		# call_deferred("spawn_box", i)
+		
+func spawn_boxes():
+	for i in goal_boxes.size():
+		spawn_box(i)
+		await get_tree().create_timer(0.6).timeout
 		
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	

@@ -32,6 +32,8 @@ func make_invisible():
 	monitorable = false 
 	
 	self.queue_free()
+	$"../../goals".spawn_boxes()
+	$"../Shape1".visible = false
 	
 func fade_out():
 	if fade_out_tween:
