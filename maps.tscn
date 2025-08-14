@@ -8,13 +8,13 @@
 [node name="maps" type="Node3D"]
 
 [node name="Blanchardstown" parent="." instance=ExtResource("1_ijopf")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.774, 0.5, -0.767)
+transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, -0.774, 0.5, -0.767)
 
 [node name="Tallaght" parent="." instance=ExtResource("2_ayc3u")]
-transform = Transform3D(-0.99956, 0, 0.0296662, 0, 1, 0, -0.0296662, 0, -0.99956, -0.089, 0.5, -0.569)
+transform = Transform3D(-1.19947, 0, 0.0355995, 0, 1.2, 0, -0.0355995, 0, -1.19947, -0.089, 0.5, -0.569)
 
 [node name="Grangegorman" parent="." instance=ExtResource("3_51l6s")]
-transform = Transform3D(0.98945, 0, -0.144874, 0, 1, 0, 0.144874, 0, 0.98945, 0.007, 0.5, -1.831)
+transform = Transform3D(1.18734, 0, -0.173849, 0, 1.2, 0, 0.173849, 0, 1.18734, 0.007, 0.5, -1.831)
 
 [node name="GrangegormanBuildings" parent="Grangegorman" index="2"]
 skeleton = NodePath("../../..")
@@ -23,6 +23,6 @@ skeleton = NodePath("../../..")
 skeleton = NodePath("../../..")
 
 [node name="Bolton" parent="." instance=ExtResource("4_br04b")]
-transform = Transform3D(-0.197657, 0, -0.980271, 0, 1, 0, 0.980271, 0, -0.197657, 0.068, 0.5, -1.462)
+transform = Transform3D(-0.237189, 0, -1.17633, 0, 1.2, 0, 1.17633, 0, -0.237189, 0.068, 0.5, -1.462)
 
 [editable path="Grangegorman"]
