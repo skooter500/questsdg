@@ -9,15 +9,17 @@ extends XRNode3D
 func _ready() -> void:
 	pass # Replace with function body.
 
-
+var force = Vector3.ZERO
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:	
 	if the_box:
 		if grabbed:
 			var to_target = global_position - the_box.global_position
-			the_box.apply_central_force(to_target)
+			force = lerp(force, to_target, delta * 3)
+			the_box.apply_central_force(force)
 	if not inside && not grabbed:
 		the_box = null	
+		force = Vector3.ZERO
 	pass
 
 

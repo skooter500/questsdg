@@ -184,10 +184,10 @@ hand_pose_set = ExtResource("7_077gh")
 shape = SubResource("WorldBoundaryShape3D_rf3s6")
 
 [node name="tu dub" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23156, -1.055)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.232, 0)
 
 [node name="goals" type="Node3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.629996, 0.665991, 0.523085)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.454144, 0.665991, -0.686178)
 script = ExtResource("2_2dw41")
 sounds = Array[AudioStream]([ExtResource("11_6f7tj"), ExtResource("12_6f7tj"), ExtResource("13_6f7tj"), ExtResource("14_6f7tj"), ExtResource("15_6f7tj"), ExtResource("16_j5gtg"), ExtResource("17_jpnay"), ExtResource("19_v6rpk"), ExtResource("19_u4y7u"), ExtResource("32_v6rpk"), ExtResource("20_1hang"), ExtResource("21_jxdac"), ExtResource("22_fqo83"), ExtResource("23_u4y7u"), ExtResource("24_e2pu3"), null, null])
 
@@ -266,16 +266,16 @@ volume_db = -40.93
 autoplay = true
 
 [node name="maps" parent="tu dub" instance=ExtResource("45_73ssi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.742757, 2.58079)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.182883, -0.742757, 0.155741)
 
 [node name="Shape1" type="MeshInstance3D" parent="tu dub"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0498911, 0.458907, 0.456604)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.125961, 0.458907, -0.752659)
 mesh = SubResource("ArrayMesh_ommoy")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cnsht")
 
 [node name="color_wheel" parent="tu dub" instance=ExtResource("44_rf3s6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000561632, 0, 1.19773)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175291, 0, -0.0115329)
 
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]

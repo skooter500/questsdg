@@ -21,7 +21,6 @@ func bounce_in():
 		theme_sound.volume_db = -100
 		fade_tween.set_parallel(true)
 		fade_tween.tween_property(theme_sound, "volume_db", -46.021, 2)
-		-46.021
 			# Optional: Hide the mesh when fade completes
 		# fade_tween.finished.connect(make_invisible)
 
