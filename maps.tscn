@@ -8,7 +8,7 @@
 [node name="maps" type="Node3D"]
 
 [node name="Blanchardstown" parent="." instance=ExtResource("1_ijopf")]
-transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -0.774, 0.5, -0.767)
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, -0.896314, 0.5, -0.32535)
 
 [node name="Tallaght" parent="." instance=ExtResource("2_ayc3u")]
 transform = Transform3D(-1.49934, 0, 0.0444994, 0, 1.5, 0, -0.0444994, 0, -1.49934, -0.089, 0.5, -0.569)
