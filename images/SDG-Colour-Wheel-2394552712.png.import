@@ -3,16 +3,17 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7fvvq1wbotwf"
+path.s3tc="res://.godot/imported/SDG-Colour-Wheel-2394552712.png-cfe83a9e8fff6e72f2e4f5a461ac024d.s3tc.ctex"
 path.etc2="res://.godot/imported/SDG-Colour-Wheel-2394552712.png-cfe83a9e8fff6e72f2e4f5a461ac024d.etc2.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://images/SDG-Colour-Wheel-2394552712.png"
-dest_files=["res://.godot/imported/SDG-Colour-Wheel-2394552712.png-cfe83a9e8fff6e72f2e4f5a461ac024d.etc2.ctex"]
+dest_files=["res://.godot/imported/SDG-Colour-Wheel-2394552712.png-cfe83a9e8fff6e72f2e4f5a461ac024d.s3tc.ctex", "res://.godot/imported/SDG-Colour-Wheel-2394552712.png-cfe83a9e8fff6e72f2e4f5a461ac024d.etc2.ctex"]
 
 [params]
 
