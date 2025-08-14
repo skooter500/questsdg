@@ -6,7 +6,7 @@ var distance_in_front = -2
 
 func _ready() -> void:
 	await get_tree().process_frame
-	var y = spawn_in_front.y
+	var y = spawn_in_front.global_position.y
 	print("Head pos" + str(global_position))
 	var in_front = global_position + (global_basis.z * distance_in_front)
 	in_front.y = y

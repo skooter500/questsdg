@@ -46,28 +46,6 @@
 [ext_resource type="PackedScene" uid="uid://bmbo1gv835vbw" path="res://color_wheel.tscn" id="44_rf3s6"]
 [ext_resource type="PackedScene" uid="uid://ds4f1hq2mdy1e" path="res://maps.tscn" id="45_73ssi"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rf3s6"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-
-[sub_resource type="Sky" id="Sky_uhqqe"]
-sky_material = SubResource("ProceduralSkyMaterial_rf3s6")
-
-[sub_resource type="Environment" id="Environment_73ssi"]
-background_mode = 1
-sky = SubResource("Sky_uhqqe")
-ambient_light_source = 2
-ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 1.29
-reflected_light_source = 2
-tonemap_mode = 2
-glow_enabled = true
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_pvxhv"]
-radius = 0.05
-
-[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rf3s6"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6tl8n"]
 resource_name = "01 - Default"
 cull_mode = 2
@@ -115,73 +93,29 @@ emission_enabled = true
 emission = Color(0, 0.568218, 0.738091, 1)
 emission_energy_multiplier = 1.2
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rf3s6"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_uhqqe"]
+sky_material = SubResource("ProceduralSkyMaterial_rf3s6")
+
+[sub_resource type="Environment" id="Environment_73ssi"]
+background_mode = 1
+sky = SubResource("Sky_uhqqe")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 1.29
+reflected_light_source = 2
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pvxhv"]
+radius = 0.05
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rf3s6"]
+
 [node name="cubes_scene" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_73ssi")
-
-[node name="start_passthrough" type="Node" parent="."]
-script = ExtResource("1_e2pu3")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
-[node name="XROrigin3D" type="XROrigin3D" parent="."]
-
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" node_paths=PackedStringArray("spawn_in_front")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
-script = ExtResource("4_rf3s6")
-spawn_in_front = NodePath("../../tu dub")
-
-[node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
-
-[node name="left" type="XRNode3D" parent="XROrigin3D"]
-tracker = &"/user/hand_tracker/left"
-show_when_tracked = true
-script = ExtResource("2_p7tmn")
-
-[node name="HandPoseDetector" type="Node" parent="XROrigin3D/left"]
-script = ExtResource("3_b11sm")
-hand_pose_set = ExtResource("7_077gh")
-metadata/_custom_type_script = "uid://dya4sxc8awaw0"
-
-[node name="left_hand" type="Area3D" parent="XROrigin3D/left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0680579, 0.159387)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/left_hand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
-shape = SubResource("SphereShape3D_pvxhv")
-
-[node name="LeftHandHumanoid2" parent="XROrigin3D/left" instance=ExtResource("2_pvxhv")]
-
-[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1"]
-
-[node name="right" type="XRNode3D" parent="XROrigin3D"]
-tracker = &"/user/hand_tracker/right"
-show_when_tracked = true
-script = ExtResource("2_p7tmn")
-
-[node name="right_hand" type="Area3D" parent="XROrigin3D/right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0676188, 0.159387)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/right_hand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
-shape = SubResource("SphereShape3D_pvxhv")
-
-[node name="RightHandHumanoid2" parent="XROrigin3D/right" instance=ExtResource("3_6h1ut")]
-
-[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="0"]
-hand_tracker = &"/user/hand_tracker/right"
-
-[node name="HandPoseDetector" parent="XROrigin3D/right" instance=ExtResource("6_mfkbt")]
-hand_tracker_name = "/user/hand_tracker/right"
-hand_pose_set = ExtResource("7_077gh")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-shape = SubResource("WorldBoundaryShape3D_rf3s6")
 
 [node name="tu dub" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.232, 0)
@@ -276,6 +210,72 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cnsht")
 
 [node name="color_wheel" parent="tu dub" instance=ExtResource("44_rf3s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175291, 0, -0.0115329)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_73ssi")
+
+[node name="start_passthrough" type="Node" parent="."]
+script = ExtResource("1_e2pu3")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" node_paths=PackedStringArray("spawn_in_front")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
+script = ExtResource("4_rf3s6")
+spawn_in_front = NodePath("../../tu dub")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
+
+[node name="left" type="XRNode3D" parent="XROrigin3D"]
+tracker = &"/user/hand_tracker/left"
+show_when_tracked = true
+script = ExtResource("2_p7tmn")
+
+[node name="HandPoseDetector" type="Node" parent="XROrigin3D/left"]
+script = ExtResource("3_b11sm")
+hand_pose_set = ExtResource("7_077gh")
+metadata/_custom_type_script = "uid://dya4sxc8awaw0"
+
+[node name="left_hand" type="Area3D" parent="XROrigin3D/left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0680579, 0.159387)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/left_hand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
+shape = SubResource("SphereShape3D_pvxhv")
+
+[node name="LeftHandHumanoid2" parent="XROrigin3D/left" instance=ExtResource("2_pvxhv")]
+
+[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1"]
+
+[node name="right" type="XRNode3D" parent="XROrigin3D"]
+tracker = &"/user/hand_tracker/right"
+show_when_tracked = true
+script = ExtResource("2_p7tmn")
+
+[node name="right_hand" type="Area3D" parent="XROrigin3D/right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0676188, 0.159387)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/right_hand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
+shape = SubResource("SphereShape3D_pvxhv")
+
+[node name="RightHandHumanoid2" parent="XROrigin3D/right" instance=ExtResource("3_6h1ut")]
+
+[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="0"]
+hand_tracker = &"/user/hand_tracker/right"
+
+[node name="HandPoseDetector" parent="XROrigin3D/right" instance=ExtResource("6_mfkbt")]
+hand_tracker_name = "/user/hand_tracker/right"
+hand_pose_set = ExtResource("7_077gh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_rf3s6")
 
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]
