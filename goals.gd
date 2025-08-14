@@ -43,7 +43,7 @@ func load_ani_boxes(start, end):
 		# call_deferred("spawn_box", i)
 		
 func spawn_boxes():
-	for i in goal_boxes.size():
+	for i in 17:
 		spawn_box(i)
 		await get_tree().create_timer(0.6).timeout
 		

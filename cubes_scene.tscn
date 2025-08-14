@@ -187,7 +187,7 @@ shape = SubResource("WorldBoundaryShape3D_rf3s6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1.055)
 
 [node name="goals" type="Node3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4094, 0.478272, 0.689333)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.629996, 0.665991, 1.17584)
 script = ExtResource("2_2dw41")
 sounds = Array[AudioStream]([ExtResource("11_6f7tj"), ExtResource("12_6f7tj"), ExtResource("13_6f7tj"), ExtResource("14_6f7tj"), ExtResource("15_6f7tj"), ExtResource("16_j5gtg"), ExtResource("17_jpnay"), ExtResource("19_v6rpk"), ExtResource("19_u4y7u"), ExtResource("32_v6rpk"), ExtResource("20_1hang"), ExtResource("21_jxdac"), ExtResource("22_fqo83"), ExtResource("23_u4y7u"), ExtResource("24_e2pu3"), null, null])
 
