@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://1n8kjh5wxngf"]
+
+[ext_resource type="PackedScene" uid="uid://sjl4c2tb28wf" path="res://Models/Aungier St/maps3d-2025-08-19_19-46-30.glb" id="1_c3q2p"]
+
+[node name="maps3d-2025-08-19_19-46-30" instance=ExtResource("1_c3q2p")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
