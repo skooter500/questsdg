@@ -3,7 +3,6 @@ class_name Hand
 extends XRNode3D
 
 @export var selected = false
-@export var grabbed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,14 +11,7 @@ func _ready() -> void:
 var force = Vector3.ZERO
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:	
-	if the_box:
-		if grabbed:
-			var to_target = global_position - the_box.global_position
-			force = lerp(force, to_target, delta * 3)
-			the_box.apply_central_force(force)
-	if not inside && not grabbed:
-		the_box = null	
-		force = Vector3.ZERO
+	
 	pass
 
 
@@ -27,8 +19,6 @@ func _on_hand_pose_detector_pose_started(p_name: String) -> void:
 	print(p_name + " started")
 	if p_name == "ThumbsUp":
 		selected = true
-	if p_name == "Index Pinch":
-		grabbed = true
 	pass # Replace with function body.
 
 
@@ -36,8 +26,6 @@ func _on_hand_pose_detector_pose_ended(p_name: String) -> void:
 	print(p_name + " ended")
 	if p_name == "ThumbsUp":
 		selected = false
-	if p_name == "Index Pinch":
-		grabbed = false
 	pass # Replace with function body.
 
 var the_box = null

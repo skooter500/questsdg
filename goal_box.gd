@@ -88,14 +88,15 @@ var hand
 
 func _on_area_entered(area: Area3D) -> void:	
 	if area.name.contains("hand"):
-		play_sound()
-		hand = area.get_parent()
-		var t = create_tween() \
-			.set_ease(Tween.EASE_IN_OUT) \
-			.set_trans(Tween.TRANS_QUINT)
-		scale = Vector3.ONE
-		t.tween_property(self, "scale", big_scale, 1)
-		inside = true
+		if ! area.get_parent().selected:
+			play_sound()
+			hand = area.get_parent()
+			var t = create_tween() \
+				.set_ease(Tween.EASE_IN_OUT) \
+				.set_trans(Tween.TRANS_QUINT)
+			scale = Vector3.ONE
+			t.tween_property(self, "scale", big_scale, 1)
+			inside = true
 	pass # Replace with function body.
 
 var big_scale = Vector3(1.25, 1.25, 1.25)

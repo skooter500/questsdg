@@ -22,15 +22,10 @@
 [ext_resource type="Texture2D" uid="uid://d2b0flvvgola7" path="res://goals/E-WEB-Goal-10.png" id="10_fbuy2"]
 [ext_resource type="Texture2D" uid="uid://c4wdugn8nqwsr" path="res://goals/E-WEB-Goal-08.png" id="10_ykxp3"]
 [ext_resource type="Texture2D" uid="uid://ch5ldi5mlxetk" path="res://goals/E-WEB-Goal-11.png" id="11_0k8yu"]
-[ext_resource type="AudioStream" uid="uid://jv4x7qsafgv4" path="res://sounds/iron-money-coins-sound-of-money-falling-coins-11987.mp3" id="11_6f7tj"]
 [ext_resource type="Texture2D" uid="uid://yrkevmxuio66" path="res://goals/E-WEB-Goal-02.png" id="11_b11sm"]
-[ext_resource type="AudioStream" uid="uid://dgbl2d112mlbd" path="res://sounds/ai sounds/staff-canteen-background-33214.mp3" id="12_6f7tj"]
 [ext_resource type="Texture2D" uid="uid://d1n0828jvlp8c" path="res://goals/E-WEB-Goal-12.png" id="12_hiucn"]
-[ext_resource type="AudioStream" uid="uid://bu8m01rl0e06q" path="res://sounds/ai sounds/running-on-gravel-301880.mp3" id="13_6f7tj"]
 [ext_resource type="Texture2D" uid="uid://dx70jn77fea38" path="res://goals/E-WEB-Goal-13.png" id="13_k6its"]
 [ext_resource type="Texture2D" uid="uid://cse8qbjky4vee" path="res://goals/E-WEB-Goal-14.png" id="14_2dw41"]
-[ext_resource type="AudioStream" uid="uid://bouddr0e5ff36" path="res://sounds/ai sounds/classroom-background-54177.mp3" id="14_6f7tj"]
-[ext_resource type="AudioStream" uid="uid://0mdu5m0hcg7a" path="res://sounds/ytmp3free.cc_mary-mcaleese-talks-to-diis-on-ideas-that-can-change-our-lives-youtubemp3free.org.mp3" id="15_6f7tj"]
 [ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="15_k6its"]
 [ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
 [ext_resource type="AudioStream" uid="uid://jrwcgdxkf1ij" path="res://sounds/ai sounds/tap-water-98206.mp3" id="16_j5gtg"]
@@ -45,7 +40,12 @@
 [ext_resource type="AudioStream" uid="uid://b0xsl6sqnhku1" path="res://sounds/ai sounds/underwater-sounds-376891.mp3" id="23_u4y7u"]
 [ext_resource type="AudioStream" uid="uid://b478denpfxtcx" path="res://sounds/ai sounds/african-savanna-2-23769.mp3" id="24_e2pu3"]
 [ext_resource type="AudioStream" uid="uid://b7srdxjskh8p0" path="res://sounds/ai sounds/goal2.mp3" id="32_v6rpk"]
+[ext_resource type="AudioStream" uid="uid://dsmxkmoiy3lhx" path="res://Voices/sdg 1 emily.mp3" id="37_dbnba"]
 [ext_resource type="PackedScene" uid="uid://bdllxnud8sodo" path="res://goal_box_animated.tscn" id="38_dqovh"]
+[ext_resource type="AudioStream" uid="uid://caf2cxncs7t5y" path="res://Voices/sdg 2 emily.mp3" id="38_w5ut5"]
+[ext_resource type="AudioStream" uid="uid://ccynsond5b4q0" path="res://Voices/sdg 3.mp3" id="39_l8wyt"]
+[ext_resource type="AudioStream" uid="uid://cp75tpmqxbs6f" path="res://Voices/sdg 4.mp3" id="40_4gmfy"]
+[ext_resource type="AudioStream" uid="uid://d21xltfe0748c" path="res://Voices/sdg 5.mp3" id="41_0gxsn"]
 [ext_resource type="Texture2D" uid="uid://c4bt31a34xfcx" path="res://goals/Goal-2/Goal 2/2_SDG_MakeEveryDayCount_Gifs_GDU.png" id="41_rhdcm"]
 [ext_resource type="Texture2D" uid="uid://b72r7cfwdv0kp" path="res://goals/Goal-2/Goal 2/E_GIF_02.png" id="42_er6et"]
 [ext_resource type="Texture2D" uid="uid://dxw13ec4wnu7c" path="res://goals/Goal-3/Goal 3/3_SDG_MakeEveryDayCount_Gifs_GDU.png" id="43_m2enk"]
@@ -61794,10 +61794,11 @@ height = 0.2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.232, 0)
 
 [node name="ani_goals" type="Node3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16915, 0.665991, 0.0288273)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597696, 0.328747, -0.277604)
 
 [node name="goal_box_animated" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.23005)
+visible = false
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_cvb0r")
@@ -61950,9 +61951,9 @@ sprite_frames = SubResource("SpriteFrames_f1okg")
 sprite_frames = SubResource("SpriteFrames_y7q83")
 
 [node name="goals" type="Node3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16915, 0.665991, 0.0288273)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597696, 0.328747, -0.277604)
 script = ExtResource("2_2dw41")
-sounds = Array[AudioStream]([ExtResource("11_6f7tj"), ExtResource("12_6f7tj"), ExtResource("13_6f7tj"), ExtResource("14_6f7tj"), ExtResource("15_6f7tj"), ExtResource("16_j5gtg"), ExtResource("17_jpnay"), ExtResource("19_v6rpk"), ExtResource("19_u4y7u"), ExtResource("32_v6rpk"), ExtResource("20_1hang"), ExtResource("21_jxdac"), ExtResource("22_fqo83"), ExtResource("23_u4y7u"), ExtResource("24_e2pu3"), null, null])
+sounds = Array[AudioStream]([ExtResource("37_dbnba"), ExtResource("38_w5ut5"), ExtResource("39_l8wyt"), ExtResource("40_4gmfy"), ExtResource("41_0gxsn"), ExtResource("16_j5gtg"), ExtResource("17_jpnay"), ExtResource("19_v6rpk"), ExtResource("19_u4y7u"), ExtResource("32_v6rpk"), ExtResource("20_1hang"), ExtResource("21_jxdac"), ExtResource("22_fqo83"), ExtResource("23_u4y7u"), ExtResource("24_e2pu3"), null, null])
 
 [node name="goal_box" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
 visible = false
@@ -62040,16 +62041,16 @@ image = ExtResource("17_ykxp3")
 goal = 17
 
 [node name="maps" parent="tu dub" instance=ExtResource("45_73ssi")]
-transform = Transform3D(-0.993296, 0, -0.115596, 0, 1, 0, 0.115596, 0, -0.993296, -0.182883, -0.742757, 0.155741)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25742, -0.742757, 0.462172)
 
 [node name="tu_dub_logo" type="MeshInstance3D" parent="tu dub"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.720196, 0.458907, -0.188919)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00861353, 0.0450164, -0.354558)
 mesh = SubResource("ArrayMesh_ommoy")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cnsht")
 
 [node name="color_wheel" parent="tu dub" instance=ExtResource("44_rf3s6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.664778, 0, 0.390239)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00605768, 0, 0.315702)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tu dub"]
 stream = ExtResource("22_6h1ut")

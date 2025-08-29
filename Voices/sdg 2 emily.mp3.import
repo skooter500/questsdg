@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://caf2cxncs7t5y"
+path="res://.godot/imported/sdg 2 emily.mp3-b9201d3d8c2c224f167529fbff5688fd.mp3str"
+
+[deps]
+
+source_file="res://Voices/sdg 2 emily.mp3"
+dest_files=["res://.godot/imported/sdg 2 emily.mp3-b9201d3d8c2c224f167529fbff5688fd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

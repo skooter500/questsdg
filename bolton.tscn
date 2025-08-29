@@ -25,5 +25,5 @@ surface_material_override/1 = ExtResource("5_rbfvt")
 surface_material_override/2 = ExtResource("4_17d1n")
 
 [node name="3dlabel3" parent="." instance=ExtResource("6_o187t")]
-transform = Transform3D(1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, -0.420945, 0.208835, -0.858459)
+transform = Transform3D(1, 0, -4.47035e-08, 0, 1, 0, 4.47035e-08, 0, 1, -0.49817, 0.208835, -0.947468)
 text = "Bolton St. Campus"

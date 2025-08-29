@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsmxkmoiy3lhx"
+path="res://.godot/imported/sdg 1 emily.mp3-c374b1bb458bca327136ec5d1b1d7a6a.mp3str"
+
+[deps]
+
+source_file="res://Voices/sdg 1 emily.mp3"
+dest_files=["res://.godot/imported/sdg 1 emily.mp3-c374b1bb458bca327136ec5d1b1d7a6a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

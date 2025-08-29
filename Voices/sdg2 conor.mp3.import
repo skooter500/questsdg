@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ptcro4nmo25i"
+path="res://.godot/imported/sdg2 conor.mp3-805c7931cb9456583e23fed895719f65.mp3str"
+
+[deps]
+
+source_file="res://Voices/sdg2 conor.mp3"
+dest_files=["res://.godot/imported/sdg2 conor.mp3-805c7931cb9456583e23fed895719f65.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
