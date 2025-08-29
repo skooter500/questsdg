@@ -1,4 +1,4 @@
-[gd_scene load_steps=8890 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=8891 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_e2pu3"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -61782,6 +61782,10 @@ glow_enabled = true
 [sub_resource type="SphereShape3D" id="SphereShape3D_pvxhv"]
 radius = 0.05
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dbnba"]
+radius = 0.05
+height = 0.2
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rf3s6"]
 
 [node name="cubes_scene" type="Node3D"]
@@ -61790,7 +61794,7 @@ radius = 0.05
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.232, 0)
 
 [node name="ani_goals" type="Node3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.454144, 0.665991, -0.686178)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16915, 0.665991, 0.0288273)
 
 [node name="goal_box_animated" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.23005)
@@ -61946,7 +61950,7 @@ sprite_frames = SubResource("SpriteFrames_f1okg")
 sprite_frames = SubResource("SpriteFrames_y7q83")
 
 [node name="goals" type="Node3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.454144, 0.665991, -0.686178)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16915, 0.665991, 0.0288273)
 script = ExtResource("2_2dw41")
 sounds = Array[AudioStream]([ExtResource("11_6f7tj"), ExtResource("12_6f7tj"), ExtResource("13_6f7tj"), ExtResource("14_6f7tj"), ExtResource("15_6f7tj"), ExtResource("16_j5gtg"), ExtResource("17_jpnay"), ExtResource("19_v6rpk"), ExtResource("19_u4y7u"), ExtResource("32_v6rpk"), ExtResource("20_1hang"), ExtResource("21_jxdac"), ExtResource("22_fqo83"), ExtResource("23_u4y7u"), ExtResource("24_e2pu3"), null, null])
 
@@ -62039,13 +62043,13 @@ goal = 17
 transform = Transform3D(-0.993296, 0, -0.115596, 0, 1, 0, 0.115596, 0, -0.993296, -0.182883, -0.742757, 0.155741)
 
 [node name="tu_dub_logo" type="MeshInstance3D" parent="tu dub"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.125961, 0.458907, -0.752659)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.720196, 0.458907, -0.188919)
 mesh = SubResource("ArrayMesh_ommoy")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cnsht")
 
 [node name="color_wheel" parent="tu dub" instance=ExtResource("44_rf3s6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175291, 0, -0.0115329)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.664778, 0, 0.390239)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tu dub"]
 stream = ExtResource("22_6h1ut")
@@ -62061,6 +62065,7 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681795, 0, 1.14191)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" node_paths=PackedStringArray("spawn_in_front")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
@@ -62090,7 +62095,13 @@ shape = SubResource("SphereShape3D_pvxhv")
 
 [node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1"]
 
+[node name="collider" type="CharacterBody3D" parent="XROrigin3D/left"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/collider"]
+shape = SubResource("CapsuleShape3D_dbnba")
+
 [node name="right" type="XRNode3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.382027, 0, -0.143927)
 tracker = &"/user/hand_tracker/right"
 show_when_tracked = true
 script = ExtResource("2_p7tmn")
@@ -62110,6 +62121,11 @@ hand_tracker = &"/user/hand_tracker/right"
 [node name="HandPoseDetector" parent="XROrigin3D/right" instance=ExtResource("6_mfkbt")]
 hand_tracker_name = "/user/hand_tracker/right"
 hand_pose_set = ExtResource("7_077gh")
+
+[node name="collider" type="CharacterBody3D" parent="XROrigin3D/right"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/collider"]
+shape = SubResource("CapsuleShape3D_dbnba")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
