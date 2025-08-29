@@ -61790,6 +61790,7 @@ radius = 0.05
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.232, 0)
 
 [node name="ani_goals" type="Node3D" parent="tu dub"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.454144, 0.665991, -0.686178)
 
 [node name="goal_box_animated" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.23005)

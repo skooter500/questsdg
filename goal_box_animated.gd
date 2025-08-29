@@ -10,6 +10,15 @@ var anim1Frames:SpriteFrames
 @export var goal_num1:int = 2
 
 func bounce_in():
+	
+	$Area3D/scaler/front.play("default")
+	$Area3D/scaler/bott.play("default")
+	$Area3D/scaler/left.play("default")
+	$Area3D/scaler/top.play("default")
+	$Area3D/scaler/back.play("default")
+	$Area3D/scaler/right.play("default")
+	
+	
 	if fade_tween:
 		return
 	else:
