@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://4kr4wm2h3pyi" path="res://color_wheel.gd" id="1_75wrd"]
 [ext_resource type="Texture2D" uid="uid://c48y108uyhb34" path="res://images/SDG-Colour-Wheel-2394552712.jpg" id="2_3m2fl"]
 [ext_resource type="Texture2D" uid="uid://blhkh3dk164x0" path="res://images/b3a71f27-052b-4076-887e-e203437a836a-4248161749.jpg" id="3_3m2fl"]
-[ext_resource type="AudioStream" uid="uid://d1hubcc2rhcgy" path="res://sounds/swoosh-07-351043.mp3" id="3_cpgls"]
 [ext_resource type="AudioStream" uid="uid://cy78ftcl5bwxt" path="res://sounds/PowerUp10.wav" id="4_1l3vm"]
+[ext_resource type="AudioStream" uid="uid://ct2aiuai2thau" path="res://sounds/Sounds/Blip01.wav" id="4_3m2fl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n4etf"]
 size = Vector3(0.198706, 0.198889, 0.195898)
@@ -83,7 +83,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_sasra")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("3_cpgls")
+stream = ExtResource("4_3m2fl")
 volume_db = 80.0
 
 [node name="selected_sound" type="AudioStreamPlayer3D" parent="."]

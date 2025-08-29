@@ -1,4 +1,4 @@
-[gd_scene load_steps=8891 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=8892 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_e2pu3"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_2dw41"]
@@ -61788,6 +61788,9 @@ height = 0.2
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rf3s6"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dbnba"]
+size = Vector3(12.5771, 1, 2001.34)
+
 [node name="cubes_scene" type="Node3D"]
 
 [node name="tu dub" type="Node3D" parent="."]
@@ -62049,11 +62052,13 @@ mesh = SubResource("ArrayMesh_ommoy")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cnsht")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tu dub/tu_dub_logo"]
+stream = ExtResource("22_6h1ut")
+volume_db = -24.971
+autoplay = true
+
 [node name="color_wheel" parent="tu dub" instance=ExtResource("44_rf3s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00605768, 0, 0.315702)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tu dub"]
-stream = ExtResource("22_6h1ut")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_73ssi")
@@ -62132,6 +62137,12 @@ shape = SubResource("CapsuleShape3D_dbnba")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_rf3s6")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("BoxShape3D_dbnba")
 
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]

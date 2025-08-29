@@ -5,9 +5,9 @@
 [ext_resource type="ArrayMesh" uid="uid://0fhxx2i8gi4u" path="res://Models/Grangegorman/Grangegorman_TUDublin_Buildings.obj" id="3_xxk5l"]
 [ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://buildings.tres" id="4_pfrt4"]
 [ext_resource type="ArrayMesh" uid="uid://deosv41rpdunv" path="res://Models/Grangegorman/Grangegorman_TUDublin_Geothermal v2.obj" id="5_37sl6"]
-[ext_resource type="PackedScene" uid="uid://dtportfpmcatj" path="res://campus_assets/tree_oak.glb" id="6_hb085"]
+[ext_resource type="PackedScene" uid="uid://b7rukl8pxhxbo" path="res://campus_assets/tree_oak.glb" id="6_hb085"]
 [ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://highlight_color.tres" id="6_txc67"]
-[ext_resource type="PackedScene" uid="uid://n6th6xfkxsfa" path="res://campus_assets/tree_fat.glb" id="7_les21"]
+[ext_resource type="PackedScene" uid="uid://co83ic4crv1ti" path="res://campus_assets/tree_fat.glb" id="7_les21"]
 [ext_resource type="PackedScene" uid="uid://c5e1syu8c33sj" path="res://campus_assets/tree_pineDefaultA.glb" id="8_rm0dq"]
 [ext_resource type="PackedScene" uid="uid://cix58fugtilpv" path="res://campus_assets/tree_simple.glb" id="9_7exnu"]
 [ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://3_dlabel.tscn" id="10_kdocq"]
@@ -109,6 +109,3 @@ text = "Geothermal
 transform = Transform3D(1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, 1, -0.158887, 0.0905084, -0.488045)
 text = "Sports Fields
 "
-
-[node name="tree_oak4" parent="." instance=ExtResource("6_hb085")]
-transform = Transform3D(0.098945, 0, 0.0144874, 0, 0.1, 0, -0.0144874, 0, 0.098945, 3.90961, 0.025, -2.77965)

@@ -67,7 +67,6 @@ func fade_out():
 		fade_out_tween.tween_property(self, "scale", Vector3.ZERO,2)
 		
 		
-		$selected_sound.pitch_scale = 0.5
 		# $selected_sound.play()
 		#for mat in mats:
 			#fade_out_tween.tween_property(mat, "albedo_color:a", 0.0, 2.0)
@@ -107,6 +106,8 @@ func play_sound():
 
 func _on_area_exited(area: Area3D) -> void:
 	if fade_out_tween:
+		return
+	if scale == Vector3.ONE:
 		return
 	if area.name.contains("hand"):
 		play_sound()
