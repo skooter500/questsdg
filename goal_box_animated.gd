@@ -27,17 +27,11 @@ func bounce_in():
 var theme_sound:AudioStreamPlayer3D
 
 func load_frames():
-	anim0Frames = SpriteFrames.new()
-	anim1Frames = SpriteFrames.new()
-	anim0Frames.add_animation("default")
-	anim1Frames.add_animation("default")
+	anim0Frames = $Area3D/scaler/front.sprite_frames
+	anim1Frames = $Area3D/scaler/bott.sprite_frames
+	# anim0Frames.add_animation("default")
+	# anim1Frames.add_animation("default")
 
-	var spritesheet0_path = "res://goals/Goal-" + str(goal_num1) + "/Goal " + str(goal_num1) + "/" + str(goal_num1) + "_SDG_MakeEveryDayCount_Gifs_GDU.png"
-	var spritesheet1_path = "res://goals/Goal-" + str(goal_num1) + "/Goal " + str(goal_num1) + "/E_GIF_" + "%02d" % goal_num1 + ".png"
-
-	add_frames_from_spritesheet(anim0Frames, spritesheet0_path, 20, 11)
-	add_frames_from_spritesheet(anim1Frames, spritesheet1_path, 25, 13)
-	
 	sprites.push_back($Area3D/scaler/front)
 	sprites.push_back($Area3D/scaler/bott)
 	sprites.push_back($Area3D/scaler/left)
@@ -75,22 +69,4 @@ func _process(delta: float) -> void:
 	# print("hand " + str(hand))
 	
 		pass
-
-func add_frames_from_spritesheet(sprite_frames: SpriteFrames, spritesheet_path: String, h_frames: int, v_frames: int):
-	var spritesheet = load(spritesheet_path)
-	if spritesheet:
-		var frame_width = spritesheet.get_width() / h_frames
-		var frame_height = spritesheet.get_height() / v_frames
-		
-		for y in range(v_frames):
-			for x in range(h_frames):
-				var atlas = AtlasTexture.new()
-				atlas.atlas = spritesheet
-				atlas.region = Rect2(x * frame_width, y * frame_height, frame_width, frame_height)
-				sprite_frames.add_frame("default", atlas)
-	else:
-		print("An error occurred when trying to load the spritesheet: " + spritesheet_path)
-
-var hand = null
-
 # Replace with function body.

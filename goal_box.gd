@@ -34,9 +34,10 @@ func _ready() -> void:
 	set_texture($scaler/top)
 	set_texture($scaler/bot)
 	
-	left = $"../../XROrigin3D/left"
-	right = $"../../XROrigin3D/right"
+	left = $"../../../XROrigin3D/left"
+	right = $"../../../XROrigin3D/right"
 	pass # Replace with function body.
+	
 
 var fade_out_tween:Tween = null
 
