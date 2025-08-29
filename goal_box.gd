@@ -50,7 +50,8 @@ func make_invisible():
 	ani_box.position = position
 	ani_box.rotation = rotation
 	self.queue_free()
-	get_parent().add_child(ani_box)
+	# get_parent().add_child(ani_box)
+	ani_box.visible = true
 	
 func fade_out():
 	if fade_out_tween:

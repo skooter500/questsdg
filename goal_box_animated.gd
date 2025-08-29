@@ -26,12 +26,14 @@ func bounce_in():
 
 var theme_sound:AudioStreamPlayer3D
 
-func load_frames():
+var lerp_target:Vector3
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	
 	anim0Frames = $Area3D/scaler/front.sprite_frames
 	anim1Frames = $Area3D/scaler/bott.sprite_frames
-	# anim0Frames.add_animation("default")
-	# anim1Frames.add_animation("default")
-
+	
 	sprites.push_back($Area3D/scaler/front)
 	sprites.push_back($Area3D/scaler/bott)
 	sprites.push_back($Area3D/scaler/left)
@@ -44,29 +46,12 @@ func load_frames():
 			sprites[i].sprite_frames = anim1Frames
 		else:
 			sprites[i].sprite_frames = anim0Frames
-
-var lerp_target:Vector3
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	
 		# sprites[i].play("default")
-	
-	#for sprite in sprites:
-		#var mat:StandardMaterial3D = sprite.get_surface_override_material(0)
-		#mat = mat.duplicate()
-		#mat.albedo_color.a = 0
-		#sprites.set_surface_override_material(0, mat)
-		#mats.push_back(mat)
 	bounce_in()
 	lerp_target = global_position
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	# rotate_y(delta)
-	# rotate_x(delta)
-	# print("hand " + str(hand))
-	
 		pass
 # Replace with function body.

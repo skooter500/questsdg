@@ -5,9 +5,6 @@ var goal_boxes = []
 
 @export var sounds:Array[AudioStream] 
 
-var ani_box_scene = preload("res://goal_box_animated.tscn")
-
-
 func spawn_box(i):
 	var t = create_tween() \
 		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)		
@@ -18,29 +15,7 @@ func spawn_box(i):
 	box.get_node("AudioStreamPlayer3D").play()
 	var interval = 0.5
 	t.tween_property(box, "scale", Vector3.ONE, interval)		
-	
 
-func load_ani_boxes(start, end):
-	for i in range(start, end):
-		print("Loading " + str(i))
-		var ani_box = ani_box_scene.instantiate()
-		ani_box.goal_num1 = i + 1
-		ani_box.load_frames()
-		
-		if i < sounds.size():
-			var sound:AudioStreamPlayer3D = AudioStreamPlayer3D.new()
-			sound.visible = true
-			ani_box.theme_sound = sound
-			ani_box.add_child(sound)
-			sound.stream = sounds[i]
-			sound.position = Vector3.ZERO
-			sound.max_distance = 1
-			# sound.volume_linear = 0.005
-			sound.attenuation_model = AudioStreamPlayer3D.ATTENUATION_INVERSE_SQUARE_DISTANCE
-			sound.autoplay = true
-		ani_boxes.push_back(ani_box)
-		print("Loaded " + str(i))
-		# call_deferred("spawn_box", i)
 		
 func spawn_boxes():
 	for i in 17:
@@ -64,9 +39,11 @@ func _ready() -> void:
 		if col == 6:
 			col = 0
 			row = row - 1 
+	for child:Node3D in $"ani_goals".get_children():
+		ani_boxes.push_back(child)
 	
-	var thread = Thread.new()
-	thread.start(load_ani_boxes.bind(0, 17))
+	#var thread = Thread.new()
+	#thread.start(load_ani_boxes.bind(0, 17))
 	
 	
 				
