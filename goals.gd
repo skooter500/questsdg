@@ -10,6 +10,7 @@ func spawn_box(i):
 		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)		
 	var box = goal_boxes[i]
 	box.scale = Vector3.ZERO
+	box.visible = true
 	var a:AudioStreamPlayer3D = box.get_node("AudioStreamPlayer3D")
 	a.pitch_scale = randf_range(0.9, 1.5)
 	box.get_node("AudioStreamPlayer3D").play()
@@ -33,15 +34,18 @@ func _ready() -> void:
 	
 	for child:Node3D in get_children():
 		goal_boxes.push_back(child)
-		child.scale = Vector3.ZERO
+		child.visible = false
 		child.position = Vector3(col * gap, row * gap, 0)
 		col += 1
 		if col == 6:
 			col = 0
 			row = row - 1 
-	for child:Node3D in $"ani_goals".get_children():
+	var i = 0
+	for child:Node3D in $"../ani_goals".get_children():
+		child.visible = false
+		child.get_node("AudioStreamPlayer3D").stream = sounds[i]
 		ani_boxes.push_back(child)
-	
+		i = i + 1
 	#var thread = Thread.new()
 	#thread.start(load_ani_boxes.bind(0, 17))
 	

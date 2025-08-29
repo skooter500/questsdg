@@ -61789,244 +61789,255 @@ radius = 0.05
 [node name="tu dub" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.232, 0)
 
+[node name="ani_goals" type="Node3D" parent="tu dub"]
+
+[node name="goal_box_animated" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.23005)
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_cvb0r")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_fxljf")
+
+[node name="goal_box_animated2" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated2/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_ibdiu")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated2/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_sps36")
+
+[node name="goal_box_animated3" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated3/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_44a1t")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated3/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_jkgvc")
+
+[node name="goal_box_animated4" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated4/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_gurcr")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated4/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_8a5ut")
+
+[node name="goal_box_animated5" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated5/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_jblyh")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated5/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_fgcl3")
+
+[node name="goal_box_animated6" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated6/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_nfdc8")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated6/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_uxgn2")
+
+[node name="goal_box_animated7" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated7/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_45rbn")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated7/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_o12m0")
+
+[node name="goal_box_animated8" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated8/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_ck25a")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated8/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_qffew")
+
+[node name="goal_box_animated9" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated9/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_gv7p8")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated9/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_7h667")
+
+[node name="goal_box_animated10" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated10/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_cfjeu")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated10/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_unxbf")
+
+[node name="goal_box_animated11" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated11/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_h31d3")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated11/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_2vf06")
+
+[node name="goal_box_animated12" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated12/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_lnqer")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated12/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_42f2y")
+
+[node name="goal_box_animated13" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated13/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_rnq7d")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated13/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_hdive")
+
+[node name="goal_box_animated14" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated14/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_whhyx")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated14/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_uo36d")
+
+[node name="goal_box_animated15" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated15/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_8u3cl")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated15/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_gft5e")
+
+[node name="goal_box_animated16" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated16/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_jllh6")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated16/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_vxnpe")
+
+[node name="goal_box_animated17" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+visible = false
+
+[node name="front" parent="tu dub/ani_goals/goal_box_animated17/Area3D/scaler" index="0"]
+sprite_frames = SubResource("SpriteFrames_f1okg")
+
+[node name="bott" parent="tu dub/ani_goals/goal_box_animated17/Area3D/scaler" index="1"]
+sprite_frames = SubResource("SpriteFrames_y7q83")
+
 [node name="goals" type="Node3D" parent="tu dub"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.454144, 0.665991, -0.686178)
 script = ExtResource("2_2dw41")
 sounds = Array[AudioStream]([ExtResource("11_6f7tj"), ExtResource("12_6f7tj"), ExtResource("13_6f7tj"), ExtResource("14_6f7tj"), ExtResource("15_6f7tj"), ExtResource("16_j5gtg"), ExtResource("17_jpnay"), ExtResource("19_v6rpk"), ExtResource("19_u4y7u"), ExtResource("32_v6rpk"), ExtResource("20_1hang"), ExtResource("21_jxdac"), ExtResource("22_fqo83"), ExtResource("23_u4y7u"), ExtResource("24_e2pu3"), null, null])
 
-[node name="ani_goals" type="Node3D" parent="tu dub/goals"]
-
-[node name="goal_box_animated" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_cvb0r")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_fxljf")
-
-[node name="goal_box_animated2" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated2/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_ibdiu")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated2/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_sps36")
-
-[node name="goal_box_animated3" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated3/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_44a1t")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated3/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_jkgvc")
-
-[node name="goal_box_animated4" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated4/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_gurcr")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated4/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_8a5ut")
-
-[node name="goal_box_animated5" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated5/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_jblyh")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated5/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_fgcl3")
-
-[node name="goal_box_animated6" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated6/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_nfdc8")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated6/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_uxgn2")
-
-[node name="goal_box_animated7" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated7/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_45rbn")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated7/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_o12m0")
-
-[node name="goal_box_animated8" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated8/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_ck25a")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated8/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_qffew")
-
-[node name="goal_box_animated9" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated9/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_gv7p8")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated9/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_7h667")
-
-[node name="goal_box_animated10" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated10/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_cfjeu")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated10/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_unxbf")
-
-[node name="goal_box_animated11" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated11/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_h31d3")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated11/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_2vf06")
-
-[node name="goal_box_animated12" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated12/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_lnqer")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated12/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_42f2y")
-
-[node name="goal_box_animated13" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated13/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_rnq7d")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated13/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_hdive")
-
-[node name="goal_box_animated14" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated14/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_whhyx")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated14/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_uo36d")
-
-[node name="goal_box_animated15" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated15/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_8u3cl")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated15/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_gft5e")
-
-[node name="goal_box_animated16" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated16/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_jllh6")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated16/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_vxnpe")
-
-[node name="goal_box_animated17" parent="tu dub/goals/ani_goals" instance=ExtResource("38_dqovh")]
-visible = false
-
-[node name="front" parent="tu dub/goals/ani_goals/goal_box_animated17/Area3D/scaler" index="0"]
-sprite_frames = SubResource("SpriteFrames_f1okg")
-
-[node name="bott" parent="tu dub/goals/ani_goals/goal_box_animated17/Area3D/scaler" index="1"]
-sprite_frames = SubResource("SpriteFrames_y7q83")
-
 [node name="goal_box" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("2_sasra")
 
 [node name="goal_box2" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("11_b11sm")
 goal = 2
 
 [node name="goal_box3" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("4_njel3")
 goal = 3
 
 [node name="goal_box4" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("5_vr1i5")
 goal = 4
 
 [node name="goal_box5" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("6_rpuu0")
 goal = 5
 
 [node name="goal_box6" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("7_oo8pe")
 goal = 6
 
 [node name="goal_box7" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("8_4gito")
 goal = 7
 
 [node name="goal_box8" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("10_ykxp3")
 goal = 8
 
 [node name="goal_box9" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("9_fbuy2")
 goal = 9
 
 [node name="goal_box10" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("10_fbuy2")
 goal = 10
 
 [node name="goal_box11" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("11_0k8yu")
 goal = 11
 
 [node name="goal_box12" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("12_hiucn")
 goal = 12
 
 [node name="goal_box13" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("13_k6its")
 goal = 13
 
 [node name="goal_box14" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("14_2dw41")
 goal = 14
 
 [node name="goal_box15" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("15_k6its")
 goal = 15
 
 [node name="goal_box16" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+visible = false
 image = ExtResource("16_2dw41")
 goal = 16
 
 [node name="goal_box17" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00394344)
+visible = false
 image = ExtResource("17_ykxp3")
 goal = 17
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tu dub/goals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.977309, 0.484867, 0)
-stream = ExtResource("22_6h1ut")
-volume_db = -40.93
-autoplay = true
 
 [node name="maps" parent="tu dub" instance=ExtResource("45_73ssi")]
 transform = Transform3D(-0.993296, 0, -0.115596, 0, 1, 0, 0.115596, 0, -0.993296, -0.182883, -0.742757, 0.155741)
 
-[node name="Shape1" type="MeshInstance3D" parent="tu dub"]
+[node name="tu_dub_logo" type="MeshInstance3D" parent="tu dub"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.125961, 0.458907, -0.752659)
 mesh = SubResource("ArrayMesh_ommoy")
 skeleton = NodePath("")
@@ -62034,6 +62045,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cnsht")
 
 [node name="color_wheel" parent="tu dub" instance=ExtResource("44_rf3s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175291, 0, -0.0115329)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tu dub"]
+stream = ExtResource("22_6h1ut")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_73ssi")
@@ -62109,22 +62123,22 @@ shape = SubResource("WorldBoundaryShape3D_rf3s6")
 [connection signal="pose_ended" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_started"]
 
-[editable path="tu dub/goals/ani_goals/goal_box_animated"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated2"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated3"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated4"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated5"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated6"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated7"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated8"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated9"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated10"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated11"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated12"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated13"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated14"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated15"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated16"]
-[editable path="tu dub/goals/ani_goals/goal_box_animated17"]
+[editable path="tu dub/ani_goals/goal_box_animated"]
+[editable path="tu dub/ani_goals/goal_box_animated2"]
+[editable path="tu dub/ani_goals/goal_box_animated3"]
+[editable path="tu dub/ani_goals/goal_box_animated4"]
+[editable path="tu dub/ani_goals/goal_box_animated5"]
+[editable path="tu dub/ani_goals/goal_box_animated6"]
+[editable path="tu dub/ani_goals/goal_box_animated7"]
+[editable path="tu dub/ani_goals/goal_box_animated8"]
+[editable path="tu dub/ani_goals/goal_box_animated9"]
+[editable path="tu dub/ani_goals/goal_box_animated10"]
+[editable path="tu dub/ani_goals/goal_box_animated11"]
+[editable path="tu dub/ani_goals/goal_box_animated12"]
+[editable path="tu dub/ani_goals/goal_box_animated13"]
+[editable path="tu dub/ani_goals/goal_box_animated14"]
+[editable path="tu dub/ani_goals/goal_box_animated15"]
+[editable path="tu dub/ani_goals/goal_box_animated16"]
+[editable path="tu dub/ani_goals/goal_box_animated17"]
 [editable path="XROrigin3D/left/LeftHandHumanoid2"]
 [editable path="XROrigin3D/right/RightHandHumanoid2"]

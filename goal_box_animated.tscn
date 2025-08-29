@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdllxnud8sodo"]
+[gd_scene load_steps=6 format=3 uid="uid://bdllxnud8sodo"]
 
 [ext_resource type="Script" uid="uid://bpatk7f43t115" path="res://goal_box_animated.gd" id="1_5fbwa"]
 [ext_resource type="AudioStream" uid="uid://d1hubcc2rhcgy" path="res://sounds/swoosh-07-351043.mp3" id="4_5gxx3"]
-[ext_resource type="AudioStream" uid="uid://cy78ftcl5bwxt" path="res://sounds/PowerUp10.wav" id="5_8s77m"]
 [ext_resource type="Script" uid="uid://ne3leq4jnnd8" path="res://animated_sprite_3d.gd" id="215_ys8l3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_80lwv"]
@@ -22,10 +21,6 @@ shape = SubResource("BoxShape3D_80lwv")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("4_5gxx3")
 volume_db = 80.0
-
-[node name="selected_sound" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("5_8s77m")
-volume_db = -26.0
 
 [node name="Area3D" type="Area3D" parent="." groups=["ani_box"]]
 

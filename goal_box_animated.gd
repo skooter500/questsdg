@@ -16,9 +16,8 @@ func bounce_in():
 		scale = Vector3.ZERO
 		fade_tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
 		fade_tween.tween_property(self, "scale", Vector3.ONE,2)
-		$selected_sound.pitch_scale = 0.6
-		# $selected_sound.play()
-		# theme_sound.volume_db = -100
+		theme_sound.volume_db = -100
+		theme_sound.play()
 		fade_tween.set_parallel(true)
 		fade_tween.tween_property(theme_sound, "volume_db", -46.021, 2)
 			# Optional: Hide the mesh when fade completes
@@ -47,8 +46,11 @@ func _ready() -> void:
 		else:
 			sprites[i].sprite_frames = anim0Frames
 		# sprites[i].play("default")
-	bounce_in()
+	
 	lerp_target = global_position
+	
+	theme_sound = $AudioStreamPlayer3D
+	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
