@@ -18,7 +18,7 @@ func bounce_in():
 		fade_tween.tween_property(self, "scale", Vector3.ONE,2)
 		$selected_sound.pitch_scale = 0.6
 		# $selected_sound.play()
-		theme_sound.volume_db = -100
+		# theme_sound.volume_db = -100
 		fade_tween.set_parallel(true)
 		fade_tween.tween_property(theme_sound, "volume_db", -46.021, 2)
 			# Optional: Hide the mesh when fade completes
@@ -29,14 +29,14 @@ var theme_sound:AudioStreamPlayer3D
 func load_frames():
 	anim0Frames = SpriteFrames.new()
 	anim1Frames = SpriteFrames.new()
-	# anim0Frames.add_animation("default")
-	# anim1Frames.add_animation("default")
+	anim0Frames.add_animation("default")
+	anim1Frames.add_animation("default")
 
-	var path0 = "res://goals/Goal-" + str(goal_num1) + "/Goal " + str(goal_num1) + "/" + str(goal_num1) + "_SDG_MakeEveryDayCount_Gifs_GDU_frames/"
-	var path1 = "res://goals/Goal-" + str(goal_num1) + "/Goal " + str(goal_num1) + "/E_GIF_" + "%02d" % goal_num1 + "_frames/"
+	var spritesheet0_path = "res://goals/Goal-" + str(goal_num1) + "/Goal " + str(goal_num1) + "/" + str(goal_num1) + "_SDG_MakeEveryDayCount_Gifs_GDU.png"
+	var spritesheet1_path = "res://goals/Goal-" + str(goal_num1) + "/Goal " + str(goal_num1) + "/E_GIF_" + "%02d" % goal_num1 + ".png"
 
-	add_frames_from_path(anim0Frames, path0)
-	add_frames_from_path(anim1Frames, path1)
+	add_frames_from_spritesheet(anim0Frames, spritesheet0_path, 20, 11)
+	add_frames_from_spritesheet(anim1Frames, spritesheet1_path, 25, 13)
 	
 	sprites.push_back($Area3D/scaler/front)
 	sprites.push_back($Area3D/scaler/bott)
@@ -76,24 +76,20 @@ func _process(delta: float) -> void:
 	
 		pass
 
-func add_frames_from_path(sprite_frames: SpriteFrames, path: String):
-	var dir = DirAccess.open(path)
-	if dir:
-		var files = dir.get_files()
-		for file_name in files:
-			if file_name.ends_with(".png"):
-				var texture = load(path + file_name)
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			# print(file_name)
-			if file_name.ends_with('.png.import') :
-				file_name = file_name.left(len(file_name) - len('.import'))
-				var texture = load(path + "/" + file_name)
-				sprite_frames.add_frame("default", texture)
-			file_name = dir.get_next()
+func add_frames_from_spritesheet(sprite_frames: SpriteFrames, spritesheet_path: String, h_frames: int, v_frames: int):
+	var spritesheet = load(spritesheet_path)
+	if spritesheet:
+		var frame_width = spritesheet.get_width() / h_frames
+		var frame_height = spritesheet.get_height() / v_frames
+		
+		for y in range(v_frames):
+			for x in range(h_frames):
+				var atlas = AtlasTexture.new()
+				atlas.atlas = spritesheet
+				atlas.region = Rect2(x * frame_width, y * frame_height, frame_width, frame_height)
+				sprite_frames.add_frame("default", atlas)
 	else:
-		print("An error occurred when trying to access the path: " + path)
+		print("An error occurred when trying to load the spritesheet: " + spritesheet_path)
 
 var hand = null
 

@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Sustainability"
+config/name="Quest: SDG"
 run/main_scene="uid://bol1dc0pyta2f"
 config/features=PackedStringArray("4.4", "Mobile")
-config/icon="res://icon.svg"
+config/icon="res://images/new logo1.png"
 
 [gui]
 
