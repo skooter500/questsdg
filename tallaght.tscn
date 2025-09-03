@@ -30,8 +30,12 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("6_yp40j")
 
 [node name="3dlabel" parent="." instance=ExtResource("7_jo728")]
-transform = Transform3D(1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0.00180834, 0.0905084, -0.280508)
-text = "Library"
+transform = Transform3D(1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0.0577249, 0.0905084, -0.159726)
+text = "Sports, Science
+Health & Recreation
+
+"
+font_size = 32
 
 [node name="3dlabel3" parent="." instance=ExtResource("7_jo728")]
 transform = Transform3D(1, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1, 0.00260075, 0.208835, -0.314578)

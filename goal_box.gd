@@ -34,8 +34,8 @@ func _ready() -> void:
 	set_texture($scaler/top)
 	set_texture($scaler/bot)
 	
-	left = $"../../../XROrigin3D/left"
-	right = $"../../../XROrigin3D/right"
+	left = $"../../../XROrigin3D/left/left"
+	right = $"../../../XROrigin3D/right/right"
 	pass # Replace with function body.
 	
 
