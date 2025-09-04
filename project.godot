@@ -37,6 +37,7 @@ anti_aliasing/quality/msaa_3d=3
 [xr]
 
 openxr/enabled=true
+openxr/default_action_map="res://questsdg/openxr_action_map.tres"
 openxr/environment_blend_mode=2
 openxr/startup_alert=false
 openxr/extensions/hand_tracking=true

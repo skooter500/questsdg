@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b00u5k8csutu6"]
 
 [ext_resource type="ArrayMesh" uid="uid://dxgmgyq7et6rq" path="res://Models/tree_default_dark.obj" id="1_dn7q5"]
-[ext_resource type="Script" uid="uid://b8ujom6pmvshd" path="res://tree_spawner.gd" id="2_72j6q"]
+[ext_resource type="Script" uid="uid://b8ujom6pmvshd" path="res://questsdg/tree_spawner.gd" id="2_72j6q"]
 
 [sub_resource type="MultiMesh" id="MultiMesh_fxwtr"]
 instance_count = 30

@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://baroo3ypmv8tw"]
 
-[ext_resource type="Texture2D" uid="uid://caxde2y1ntf5i" path="res://Models/UNFlag.png" id="1_3rgt5"]
-[ext_resource type="Shader" uid="uid://5dk5ixqkwmur" path="res://Flag.gdshader" id="1_t4b3n"]
-[ext_resource type="Script" uid="uid://cmp1ox01fqpmh" path="res://Flag.gd" id="2_uhetj"]
+[ext_resource type="Texture2D" path="res://Models/UNFlag.png" id="1_3rgt5"]
+[ext_resource type="Shader" uid="uid://5dk5ixqkwmur" path="res://questsdg/Flag.gdshader" id="1_t4b3n"]
+[ext_resource type="Script" uid="uid://cmp1ox01fqpmh" path="res://questsdg/Flag.gd" id="2_uhetj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qh54m"]
 render_priority = 0

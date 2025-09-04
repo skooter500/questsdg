@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://5sggqhc8uux2"]
 
-[ext_resource type="Script" uid="uid://de0stoyp4vqi2" path="res://goal_box.gd" id="1_n4etf"]
+[ext_resource type="Script" uid="uid://de0stoyp4vqi2" path="res://questsdg/goal_box.gd" id="1_n4etf"]
 [ext_resource type="AudioStream" uid="uid://ct2aiuai2thau" path="res://sounds/Sounds/Blip01.wav" id="3_0iafl"]
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="3_nldhb"]
 

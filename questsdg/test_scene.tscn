@@ -1,40 +1,46 @@
-[gd_scene load_steps=27 format=3 uid="uid://dde8gfmqarlgt"]
+[gd_scene load_steps=46 format=3 uid="uid://bol1dc0pyta2f"]
 
-[ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_8x2ae"]
-[ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://goals.gd" id="2_sg2b2"]
-[ext_resource type="PackedScene" uid="uid://5sggqhc8uux2" path="res://goal_box.tscn" id="3_bfk7x"]
-[ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="4_okxco"]
-[ext_resource type="Texture2D" uid="uid://p8putbgjitl6" path="res://goals/E-WEB-Goal-03.png" id="5_ys0rj"]
-[ext_resource type="Texture2D" uid="uid://k1c7jpvbeutp" path="res://goals/E-WEB-Goal-04.png" id="6_uq0ek"]
-[ext_resource type="Texture2D" uid="uid://bb7ay212glga4" path="res://goals/E-WEB-Goal-05.png" id="7_qs3id"]
-[ext_resource type="Texture2D" uid="uid://dhhgj3m8gvcir" path="res://goals/E-WEB-Goal-06.png" id="8_kgyqj"]
-[ext_resource type="Texture2D" uid="uid://dgb8pq8idsch3" path="res://goals/E-WEB-Goal-07.png" id="9_37x04"]
-[ext_resource type="Texture2D" uid="uid://c4wdugn8nqwsr" path="res://goals/E-WEB-Goal-08.png" id="10_te23q"]
-[ext_resource type="Texture2D" uid="uid://ct42pjwfwvjn0" path="res://goals/E-WEB-Goal-09.png" id="11_t7pmj"]
-[ext_resource type="Texture2D" uid="uid://d2b0flvvgola7" path="res://goals/E-WEB-Goal-10.png" id="12_rv4wf"]
-[ext_resource type="Texture2D" uid="uid://ch5ldi5mlxetk" path="res://goals/E-WEB-Goal-11.png" id="13_dqcvm"]
-[ext_resource type="Texture2D" uid="uid://d1n0828jvlp8c" path="res://goals/E-WEB-Goal-12.png" id="14_pi1dl"]
-[ext_resource type="Texture2D" uid="uid://dx70jn77fea38" path="res://goals/E-WEB-Goal-13.png" id="15_06wky"]
-[ext_resource type="Texture2D" uid="uid://cse8qbjky4vee" path="res://goals/E-WEB-Goal-14.png" id="16_0mipf"]
-[ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="17_7gnhl"]
-[ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="18_t7dbb"]
-[ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="19_iq57p"]
-[ext_resource type="PackedScene" uid="uid://ds4f1hq2mdy1e" path="res://maps.tscn" id="20_xjsjl"]
+[ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_uhqqe"]
+[ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://questsdg/goals.gd" id="2_2dw41"]
+[ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="2_sasra"]
+[ext_resource type="PackedScene" uid="uid://5sggqhc8uux2" path="res://questsdg/goal_box.tscn" id="3_coq8p"]
+[ext_resource type="Texture2D" uid="uid://p8putbgjitl6" path="res://goals/E-WEB-Goal-03.png" id="4_njel3"]
+[ext_resource type="Texture2D" uid="uid://k1c7jpvbeutp" path="res://goals/E-WEB-Goal-04.png" id="5_vr1i5"]
+[ext_resource type="Texture2D" uid="uid://bb7ay212glga4" path="res://goals/E-WEB-Goal-05.png" id="6_rpuu0"]
+[ext_resource type="Texture2D" uid="uid://dhhgj3m8gvcir" path="res://goals/E-WEB-Goal-06.png" id="7_oo8pe"]
+[ext_resource type="Texture2D" uid="uid://dgb8pq8idsch3" path="res://goals/E-WEB-Goal-07.png" id="8_4gito"]
+[ext_resource type="Texture2D" uid="uid://ct42pjwfwvjn0" path="res://goals/E-WEB-Goal-09.png" id="9_fbuy2"]
+[ext_resource type="Texture2D" uid="uid://d2b0flvvgola7" path="res://goals/E-WEB-Goal-10.png" id="10_fbuy2"]
+[ext_resource type="Texture2D" uid="uid://c4wdugn8nqwsr" path="res://goals/E-WEB-Goal-08.png" id="10_ykxp3"]
+[ext_resource type="Texture2D" uid="uid://ch5ldi5mlxetk" path="res://goals/E-WEB-Goal-11.png" id="11_0k8yu"]
+[ext_resource type="Texture2D" uid="uid://d1n0828jvlp8c" path="res://goals/E-WEB-Goal-12.png" id="12_hiucn"]
+[ext_resource type="Texture2D" uid="uid://dx70jn77fea38" path="res://goals/E-WEB-Goal-13.png" id="13_k6its"]
+[ext_resource type="Texture2D" uid="uid://cse8qbjky4vee" path="res://goals/E-WEB-Goal-14.png" id="14_2dw41"]
+[ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="15_k6its"]
+[ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
+[ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
+[ext_resource type="ArrayMesh" uid="uid://bkyomhn322ra7" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Floor v5.obj" id="21_7kp7o"]
+[ext_resource type="ArrayMesh" uid="uid://dqsdtbq11wh72" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Buildings.obj" id="21_22oil"]
+[ext_resource type="ArrayMesh" uid="uid://dsvw1hx5thygm" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Library v2.obj" id="22_b11sm"]
+[ext_resource type="ArrayMesh" uid="uid://dk46vpqvevrd4" path="res://Models/Tallaght/Tallaght_TUDublin_Buildings.obj" id="23_p7tmn"]
+[ext_resource type="PackedScene" path="res://Book.tscn" id="24_7kp7o"]
+[ext_resource type="ArrayMesh" uid="uid://csyrogweajq6b" path="res://Models/Tallaght/Tallaght_TUDublin_Floor v4.obj" id="24_8fq6b"]
+[ext_resource type="ArrayMesh" uid="uid://0fhxx2i8gi4u" path="res://Models/Grangegorman/Grangegorman_TUDublin_Buildings.obj" id="25_b11sm"]
+[ext_resource type="ArrayMesh" uid="uid://rldoxr3j6fp6" path="res://Models/Tallaght/Tallaght_TUDublin_Library v2.obj" id="25_mfkbt"]
+[ext_resource type="ArrayMesh" uid="uid://deosv41rpdunv" path="res://Models/Grangegorman/Grangegorman_TUDublin_Geothermal v2.obj" id="26_p7tmn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6adnx"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
 
-[sub_resource type="Sky" id="Sky_xjsjl"]
+[sub_resource type="Sky" id="Sky_uhqqe"]
 sky_material = SubResource("ProceduralSkyMaterial_6adnx")
 
 [sub_resource type="Environment" id="Environment_ia1lp"]
 background_mode = 1
-sky = SubResource("Sky_xjsjl")
+sky = SubResource("Sky_uhqqe")
 ambient_light_source = 2
 ambient_light_color = Color(1, 1, 1, 1)
-ambient_light_energy = 1.29
-reflected_light_source = 2
 tonemap_mode = 2
 glow_enabled = true
 
@@ -49,8 +55,47 @@ material = SubResource("StandardMaterial3D_077gh")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mfkbt"]
 albedo_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7kp7o"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akknq"]
+albedo_color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8fq6b"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oy8sc"]
+albedo_color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nf64"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxsde"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5xgu"]
+albedo_color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rygqd"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8k62k"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chy0g"]
+albedo_color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pknf1"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b6ixm"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lvjxf"]
+albedo_color = Color(0.152941, 0.152941, 0.152941, 1)
+
 [node name="test_scene" type="Node3D"]
-script = ExtResource("1_8x2ae")
+script = ExtResource("1_uhqqe")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ia1lp")
@@ -64,7 +109,6 @@ transform = Transform3D(0.999701, -0.00063956, -0.0244238, 0, 0.999657, -0.02617
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
-near = 0.001
 
 [node name="XRController3D" type="XRController3D" parent="XROrigin3D"]
 tracker = &"left_hand"
@@ -74,61 +118,60 @@ tracker = &"right_hand"
 
 [node name="goals" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80759, 1.63909, -1.29878)
-script = ExtResource("2_sg2b2")
+script = ExtResource("2_2dw41")
 
-[node name="goal_box" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("4_okxco")
+[node name="goal_box" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("2_sasra")
 
-[node name="goal_box2" parent="goals" instance=ExtResource("3_bfk7x")]
+[node name="goal_box2" parent="goals" instance=ExtResource("3_coq8p")]
 
-[node name="goal_box3" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("5_ys0rj")
+[node name="goal_box3" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("4_njel3")
 
-[node name="goal_box4" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("6_uq0ek")
+[node name="goal_box4" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("5_vr1i5")
 
-[node name="goal_box5" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("7_qs3id")
+[node name="goal_box5" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("6_rpuu0")
 
-[node name="goal_box6" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("8_kgyqj")
+[node name="goal_box6" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("7_oo8pe")
 
-[node name="goal_box7" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("9_37x04")
+[node name="goal_box7" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("8_4gito")
 
-[node name="goal_box8" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("10_te23q")
+[node name="goal_box8" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("10_ykxp3")
 
-[node name="goal_box9" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("11_t7pmj")
+[node name="goal_box9" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("9_fbuy2")
 
-[node name="goal_box10" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("12_rv4wf")
+[node name="goal_box10" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("10_fbuy2")
 
-[node name="goal_box11" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("13_dqcvm")
+[node name="goal_box11" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("11_0k8yu")
 
-[node name="goal_box12" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("14_pi1dl")
+[node name="goal_box12" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("12_hiucn")
 
-[node name="goal_box13" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("15_06wky")
+[node name="goal_box13" parent="goals" instanceaudio_stream=ExtResource("3_coq8p")]
+image = ExtResource("13_k6its")
 
-[node name="goal_box14" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("16_0mipf")
+[node name="goal_box14" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("14_2dw41")
 
-[node name="goal_box15" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("17_7gnhl")
+[node name="goal_box15" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("15_k6its")
 
-[node name="goal_box16" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("18_t7dbb")
+[node name="goal_box16" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("16_2dw41")
 
-[node name="goal_box17" parent="goals" instance=ExtResource("3_bfk7x")]
-image = ExtResource("19_iq57p")
+[node name="goal_box17" parent="goals" instance=ExtResource("3_coq8p")]
+image = ExtResource("17_ykxp3")
 
 [node name="GoalTextParent" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0197518, 0, 6.10668)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88353, 0, -5.1475)
 
 [node name="Goal1Text" type="Node3D" parent="GoalTextParent"]
 transform = Transform3D(0.919828, 0, 0.392321, 0, 1, 0, -0.392321, 0, 0.919828, -1.6771, 1.72698, -3.47882)
@@ -391,4 +434,100 @@ trust
 equity in staffing reflect institutional commitment to fairness and justice within the
 university"
 
-[node name="maps" parent="." instance=ExtResource("20_xjsjl")]
+[node name="Blanchardstown" type="Node3D" parent="."]
+transform = Transform3D(0.990346, 0, 0.13862, 0, 1, 0, -0.13862, 0, 0.990346, 0.283157, 0, 0.0679414)
+
+[node name="BlanchardstownBuildings" type="MeshInstance3D" parent="Blanchardstown"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.83, 0, -0.168)
+mesh = ExtResource("21_22oil")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_7kp7o")
+
+[node name="BlanchardstownFloor" type="MeshInstance3D" parent="Blanchardstown"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.829378, -0.000725642, -0.167676)
+mesh = ExtResource("21_7kp7o")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_akknq")
+
+[node name="BlanchardstownLibrary" type="MeshInstance3D" parent="Blanchardstown"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, 0.828491, 0, -0.164682)
+mesh = ExtResource("22_b11sm")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8fq6b")
+
+[node name="Book" parent="Blanchardstown" instance=ExtResource("24_7kp7o")]
+transform = Transform3D(0.155409, 0, -0.125888, 0, 0.2, 0, 0.125888, 0, 0.155409, 0.870812, 0.0150625, -0.0180729)
+
+[node name="Tallaght" type="Node3D" parent="."]
+transform = Transform3D(0.997321, 0, -0.0731512, 0, 1, 0, 0.0731512, 0, 0.997321, -0.0765003, 0, 0.0110534)
+
+[node name="TallaghtFloor" type="MeshInstance3D" parent="Tallaght"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.671, 0, -0.166)
+mesh = ExtResource("24_8fq6b")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_oy8sc")
+
+[node name="TallaghtBuildings" type="MeshInstance3D" parent="Tallaght"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 3.67052e-24, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.669872, -0.000693373, -0.168875)
+mesh = ExtResource("23_p7tmn")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_2nf64")
+
+[node name="TallaghtLibrary" type="MeshInstance3D" parent="Tallaght"]
+transform = Transform3D(-4.37114e-10, 0.01, 4.37114e-10, 0, -4.37114e-10, 0.01, 0.01, 4.37114e-10, 1.91069e-17, -0.667126, 0.00459319, -0.166787)
+mesh = ExtResource("25_mfkbt")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_sxsde")
+
+[node name="Book" parent="Tallaght" instance=ExtResource("24_7kp7o")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.609112, 0.0212389, -0.232262)
+
+[node name="tallaghtTrees" parent="Tallaght" instance=ExtResource("32_8fq6b")]
+transform = Transform3D(0.00999145, -0.000413525, 0, 0.000413525, 0.00999145, 0, 0, 0, 0.01, -0.570029, 0.011227, 0.045119)
+
+[node name="MultiMeshInstance3D" parent="Tallaght/tallaghtTrees" index="0"]
+transform = Transform3D(1, -3.72529e-09, 0, 3.72529e-09, 1, 0, 0, 0, 1, 0.449211, -0.520463, 0)
+num_trees = 60
+area_size = Vector3(9, 0, 10)
+
+[node name="tallaghtTrees2" parent="Tallaght" instance=ExtResource("32_8fq6b")]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -0.727405, 0.0168332, -0.429854)
+
+[node name="MultiMeshInstance3D" parent="Tallaght/tallaghtTrees2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.17146)
+num_trees = 40
+area_size = Vector3(7, 0, 8)
+
+[node name="Grangegorman" type="Node3D" parent="."]
+transform = Transform3D(0.98945, 0, -0.144874, 0, 1, 0, 0.144874, 0, 0.98945, 0.339382, 0, -0.376734)
+
+[node name="GrangegormanFloor" type="MeshInstance3D" parent="Grangegorman"]
+transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.016, 0, -0.603)
+mesh = ExtResource("27_7kp7o")
+skeleton = NodePath("../../Blanchardstown")
+surface_material_override/0 = SubResource("StandardMaterial3D_r5xgu")
+
+[node name="GrangegormanBuildings" type="MeshInstance3D" parent="Grangegorman"]
+transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0213376, 2.23517e-08, -0.591914)
+mesh = ExtResource("25_b11sm")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_rygqd")
+
+[node name="GrangegormanGeothermal" type="MeshInstance3D" parent="Grangegorman"]
+transform = Transform3D(-0.01, 8.74228e-10, 3.82137e-17, 0, -4.37114e-10, 0.01, 8.74228e-10, 0.01, 4.37114e-10, -0.0134919, 0, -0.599371)
+mesh = ExtResource("26_p7tmn")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8k62k")
+
+[node name="UNFlag" parent="Grangegorman" instance=ExtResource("28_8fq6b")]
+transform = Transform3D(0.0499726, 0, 0.00165427, 0, 0.05, 0, -0.00165427, 0, 0.0499726, -0.0276241, -0.0317868, -0.872098)
+
+[node name="grangeTrees" parent="Grangegorman" instance=ExtResource("32_8fq6b")]
+transform = Transform3D(0.00999818, -0.000190404, 1.08542e-12, 0.000190342, 0.00999491, -0.000255837, 4.87124e-06, 0.000255791, 0.00999673, -0.192012, 0.0202032, -0.508667)
+
+[node name="MultiMeshInstance3D" parent="Grangegorman/grangeTrees" index="0"]
+num_trees = 200
+area_size = Vector3(20, 0, 20)
+
+[node name="Tree3" parent="Grangegorman/Trees" instance=ExtResource("23_5qgi0")]
+transform = Transform3D(-0.254437, 0, -0.15894, 0, 0.3, 0, 0.15894, 0, -0.254437, -0.0521919, -0.0475575, -0.531497)

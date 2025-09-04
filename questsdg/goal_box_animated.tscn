@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdllxnud8sodo"]
 
-[ext_resource type="Script" uid="uid://bpatk7f43t115" path="res://goal_box_animated.gd" id="1_5fbwa"]
-[ext_resource type="Script" uid="uid://ne3leq4jnnd8" path="res://animated_sprite_3d.gd" id="215_ys8l3"]
+[ext_resource type="Script" uid="uid://bpatk7f43t115" path="res://questsdg/goal_box_animated.gd" id="1_5fbwa"]
+[ext_resource type="Script" uid="uid://ne3leq4jnnd8" path="res://questsdg/animated_sprite_3d.gd" id="215_ys8l3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_80lwv"]
 size = Vector3(0.2, 0.2, 0.2)

@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6qqmbnvwtfpw"]
 
 [ext_resource type="ArrayMesh" uid="uid://dl0ukpnb1oyxk" path="res://Models/Bolton/BoltonStreet_TUDublin_Floor v3.obj" id="1_c0ou2"]
-[ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://ground_trans.tres" id="2_qibew"]
+[ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://questsdg/ground_trans.tres" id="2_qibew"]
 [ext_resource type="ArrayMesh" uid="uid://cdee6wmly63vb" path="res://Models/Bolton/BoltonStreet_TUDublin_Campus v2.obj" id="3_v065s"]
-[ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://buildings.tres" id="4_17d1n"]
-[ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://highlight_color.tres" id="5_rbfvt"]
-[ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://3_dlabel.tscn" id="6_o187t"]
+[ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://questsdg/buildings.tres" id="4_17d1n"]
+[ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://questsdg/highlight_color.tres" id="5_rbfvt"]
+[ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://questsdg/3_dlabel.tscn" id="6_o187t"]
 
 [node name="Bolton" type="Node3D"]
 transform = Transform3D(0.975955, 0, -0.217973, 0, 1, 0, 0.217973, 0, 0.975955, 0, 0, 0)

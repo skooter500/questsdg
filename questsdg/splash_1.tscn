@@ -1,15 +1,15 @@
 [gd_scene load_steps=20 format=4 uid="uid://bu7bgx1kx1kc5"]
 
-[ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://start_xr.gd" id="1_7brl7"]
-[ext_resource type="PackedScene" uid="uid://bmbo1gv835vbw" path="res://color_wheel.tscn" id="1_y8e5b"]
-[ext_resource type="Script" uid="uid://bbey0wli3q6jp" path="res://xr_camera_3d.gd" id="2_uerfi"]
-[ext_resource type="Script" uid="uid://dttcldpevggnp" path="res://hand.gd" id="3_0480o"]
+[ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_7brl7"]
+[ext_resource type="PackedScene" uid="uid://bmbo1gv835vbw" path="res://questsdg/color_wheel.tscn" id="1_y8e5b"]
+[ext_resource type="Script" uid="uid://bbey0wli3q6jp" path="res://questsdg/xr_camera_3d.gd" id="2_uerfi"]
+[ext_resource type="Script" uid="uid://dttcldpevggnp" path="res://questsdg/hand.gd" id="3_0480o"]
 [ext_resource type="Script" uid="uid://dya4sxc8awaw0" path="res://addons/hand_pose_detector/hand_pose_detector.gd" id="4_mfs7u"]
 [ext_resource type="Resource" uid="uid://ckjd0xa2a240p" path="res://addons/hand_pose_detector/poses/standard_pose_set.tres" id="5_inkab"]
 [ext_resource type="PackedScene" uid="uid://bvmb02eqtho4k" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="6_nd0c5"]
 [ext_resource type="PackedScene" uid="uid://djws4718cwitw" path="res://addons/hand_pose_detector/hands/RightHandHumanoid.gltf" id="7_b3o26"]
 [ext_resource type="PackedScene" uid="uid://df5hynbooj1uj" path="res://addons/hand_pose_detector/hand_pose_detector.tscn" id="8_0wm87"]
-[ext_resource type="PackedScene" uid="uid://ds4f1hq2mdy1e" path="res://maps.tscn" id="10_1v4mc"]
+[ext_resource type="PackedScene" uid="uid://ds4f1hq2mdy1e" path="res://questsdg/maps.tscn" id="10_1v4mc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6tl8n"]
 resource_name = "01 - Default"

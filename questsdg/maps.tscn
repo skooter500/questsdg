@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://ds4f1hq2mdy1e"]
 
 [ext_resource type="PackedScene" uid="uid://1n8kjh5wxngf" path="res://Models/Aungier St/aungier.tscn" id="1_ayc3u"]
-[ext_resource type="PackedScene" uid="uid://buifie6p2dugp" path="res://blanchardstown.tscn" id="1_ijopf"]
-[ext_resource type="PackedScene" uid="uid://cuiqwsnic02ki" path="res://tallaght.tscn" id="2_ayc3u"]
-[ext_resource type="PackedScene" uid="uid://b8px3jnda3ab" path="res://grangegorman.tscn" id="3_51l6s"]
-[ext_resource type="PackedScene" uid="uid://c6qqmbnvwtfpw" path="res://bolton.tscn" id="4_br04b"]
+[ext_resource type="PackedScene" uid="uid://buifie6p2dugp" path="res://questsdg/blanchardstown.tscn" id="1_ijopf"]
+[ext_resource type="PackedScene" uid="uid://cuiqwsnic02ki" path="res://questsdg/tallaght.tscn" id="2_ayc3u"]
+[ext_resource type="PackedScene" uid="uid://b8px3jnda3ab" path="res://questsdg/grangegorman.tscn" id="3_51l6s"]
+[ext_resource type="PackedScene" uid="uid://c6qqmbnvwtfpw" path="res://questsdg/bolton.tscn" id="4_br04b"]
 
 [node name="maps" type="Node3D"]
 

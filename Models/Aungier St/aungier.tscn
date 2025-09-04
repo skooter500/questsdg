@@ -1,11 +1,11 @@
 [gd_scene load_steps=166 format=4 uid="uid://1n8kjh5wxngf"]
 
 [ext_resource type="Texture2D" uid="uid://ca64f45lq6yai" path="res://Models/Aungier St/maps3d-2025-08-19_19-46-30__assets_sidetextures_cork_side_Base_color image.jpg" id="1_ukcw8"]
-[ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://ground_trans.tres" id="2_80mno"]
+[ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://questsdg/ground_trans.tres" id="2_80mno"]
 [ext_resource type="Texture2D" uid="uid://ttis2f2bg7yj" path="res://Models/Aungier St/maps3d-2025-08-19_19-46-30_groundTexture image.jpg" id="3_3sc8b"]
-[ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://buildings.tres" id="4_bmukv"]
-[ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://highlight_color.tres" id="5_3qh2r"]
-[ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://3_dlabel.tscn" id="6_3sc8b"]
+[ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://questsdg/buildings.tres" id="4_bmukv"]
+[ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://questsdg/highlight_color.tres" id="5_3qh2r"]
+[ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://questsdg/3_dlabel.tscn" id="6_3sc8b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2v4np"]
 resource_name = "side"

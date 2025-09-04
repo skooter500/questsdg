@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://cuiqwsnic02ki"]
 
 [ext_resource type="ArrayMesh" uid="uid://csyrogweajq6b" path="res://Models/Tallaght/Tallaght_TUDublin_Floor v4.obj" id="1_lxkgc"]
-[ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://ground_trans.tres" id="2_5dcod"]
+[ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://questsdg/ground_trans.tres" id="2_5dcod"]
 [ext_resource type="ArrayMesh" uid="uid://dk46vpqvevrd4" path="res://Models/Tallaght/Tallaght_TUDublin_Buildings.obj" id="3_88ada"]
-[ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://buildings.tres" id="4_geve6"]
+[ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://questsdg/buildings.tres" id="4_geve6"]
 [ext_resource type="ArrayMesh" uid="uid://rldoxr3j6fp6" path="res://Models/Tallaght/Tallaght_TUDublin_Library v2.obj" id="5_cn02r"]
-[ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://highlight_color.tres" id="6_yp40j"]
-[ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://3_dlabel.tscn" id="7_jo728"]
+[ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://questsdg/highlight_color.tres" id="6_yp40j"]
+[ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://questsdg/3_dlabel.tscn" id="7_jo728"]
 
 [node name="Tallaght" type="Node3D"]
 transform = Transform3D(0.997321, 0, -0.0731512, 0, 1, 0, 0.0731512, 0, 0.997321, 0, 0, 0)
