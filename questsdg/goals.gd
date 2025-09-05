@@ -9,6 +9,7 @@ func spawn_box(i):
 	var box = goal_boxes[i]
 	box.scale = Vector3.ZERO
 	box.visible = true
+	box.monitoring = true
 	var a:AudioStreamPlayer3D = box.get_node("AudioStreamPlayer3D")
 	a.pitch_scale = randf_range(0.9, 1.5)
 	box.get_node("AudioStreamPlayer3D").play()

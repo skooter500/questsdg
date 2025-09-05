@@ -36,6 +36,7 @@ func _ready() -> void:
 	
 	left = $"../../../XROrigin3D/left"
 	right = $"../../../XROrigin3D/right"
+	monitoring = false
 	pass # Replace with function body.
 	
 

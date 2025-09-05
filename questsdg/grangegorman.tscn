@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8px3jnda3ab"]
+[gd_scene load_steps=14 format=3 uid="uid://b8px3jnda3ab"]
 
 [ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://questsdg/ground_trans.tres" id="1_7d5fs"]
 [ext_resource type="ArrayMesh" uid="uid://chvg4aftfq8f1" path="res://Models/Grangegorman/Grangegorman_TUDublin_Floor_Thin.obj" id="2_txc67"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c5e1syu8c33sj" path="res://campus_assets/tree_pineDefaultA.glb" id="8_rm0dq"]
 [ext_resource type="PackedScene" uid="uid://cix58fugtilpv" path="res://campus_assets/tree_simple.glb" id="9_7exnu"]
 [ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://questsdg/3_dlabel.tscn" id="10_kdocq"]
+[ext_resource type="PackedScene" uid="uid://disklyhxjm4pr" path="res://questsdg/playlist_looper.tscn" id="12_ow2hi"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bfk7x"]
 size = Vector3(0.9, 0.01, 0.5)
@@ -86,8 +87,13 @@ text = "Clock Tower
 "
 
 [node name="3dlabel6" parent="labels" instance=ExtResource("10_kdocq")]
-transform = Transform3D(1, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1, 0.248621, 0.0905084, -0.506919)
+transform = Transform3D(1, 0, -1.3411e-07, 0, 1, 0, 1.3411e-07, 0, 1, 0.252158, 0.121026, -0.482763)
 text = "East Quad
+"
+
+[node name="3dlabel11" parent="labels" instance=ExtResource("10_kdocq")]
+transform = Transform3D(1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, 1, 0.254369, 0.0905084, -0.467665)
+text = "Concert Hall
 "
 
 [node name="3dlabel7" parent="labels" instance=ExtResource("10_kdocq")]
@@ -109,3 +115,6 @@ text = "Geothermal
 transform = Transform3D(1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, 1, -0.158887, 0.0905084, -0.488045)
 text = "Sports Fields
 "
+
+[node name="playlist_looper" parent="." instance=ExtResource("12_ow2hi")]
+transform = Transform3D(1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0.207152, 0.0178528, -0.524867)
