@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5a3fmyh6oj4q"
+path="res://.godot/imported/TU Dublin Conservatoire Presents Ode to Joy on Europe Day.mp3-5b36ff7de1ca3f164c805b8a15a9f07b.mp3str"
+
+[deps]
+
+source_file="res://campus_sounds/TU Dublin Conservatoire Presents Ode to Joy on Europe Day.mp3"
+dest_files=["res://.godot/imported/TU Dublin Conservatoire Presents Ode to Joy on Europe Day.mp3-5b36ff7de1ca3f164c805b8a15a9f07b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

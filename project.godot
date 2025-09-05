@@ -19,6 +19,11 @@ config/icon="res://images/new logo1.png"
 
 XrSimulator="res://addons/xr-simulator/XRSimulator.tscn"
 
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
 [gui]
 
 theme/custom_font="uid://bj0nihy4bcae2"
