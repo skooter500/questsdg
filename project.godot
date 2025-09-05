@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Quest: SDG"
-run/main_scene="uid://bol1dc0pyta2f"
+run/main_scene="uid://bm3rnwx5wv8tx"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://images/new logo1.png"
 
