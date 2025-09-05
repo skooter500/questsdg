@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ceufwu0ucjrvk"
+path="res://.godot/imported/sdg 7.mp3-1673a9988c754d651a111492e6216d58.mp3str"
+
+[deps]
+
+source_file="res://Voices/sdg 7.mp3"
+dest_files=["res://.godot/imported/sdg 7.mp3-1673a9988c754d651a111492e6216d58.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

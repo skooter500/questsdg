@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cryk0j5qv2gin"
+path="res://.godot/imported/sdg 15.mp3-2168ecb0c26156358d08fefc99eb44f1.mp3str"
+
+[deps]
+
+source_file="res://Voices/sdg 15.mp3"
+dest_files=["res://.godot/imported/sdg 15.mp3-2168ecb0c26156358d08fefc99eb44f1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

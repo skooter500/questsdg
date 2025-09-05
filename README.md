@@ -1,6 +1,6 @@
 # Quest: SDG
 
-An immersive experience where you can learn about the UN SDG Goals and TU Dublin projects that support the SDG's. 
+An immersive experience where you can learn about the UN SDG's and TU Dublin projects that support the SDG's. 
 
 - Created in Godot
 - Runs on Quest 3 and Quest 3S

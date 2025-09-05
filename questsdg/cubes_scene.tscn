@@ -1,4 +1,4 @@
-[gd_scene load_steps=8892 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=8905 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://questsdg/goals.gd" id="2_2dw41"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://p8putbgjitl6" path="res://goals/E-WEB-Goal-03.png" id="4_njel3"]
 [ext_resource type="Script" uid="uid://bbey0wli3q6jp" path="res://questsdg/xr_camera_3d.gd" id="4_rf3s6"]
 [ext_resource type="Texture2D" uid="uid://cts4gd4xelpvy" path="res://goals/Goal-1/Goal 1/E_GIF_01.png" id="5_jsd5u"]
+[ext_resource type="AudioStream" uid="uid://ptcro4nmo25i" path="res://Voices/sdg2 conor.mp3" id="5_of1wo"]
 [ext_resource type="Texture2D" uid="uid://k1c7jpvbeutp" path="res://goals/E-WEB-Goal-04.png" id="5_vr1i5"]
 [ext_resource type="PackedScene" uid="uid://df5hynbooj1uj" path="res://addons/hand_pose_detector/hand_pose_detector.tscn" id="6_mfkbt"]
 [ext_resource type="Texture2D" uid="uid://bb7ay212glga4" path="res://goals/E-WEB-Goal-05.png" id="6_rpuu0"]
@@ -29,34 +30,46 @@
 [ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="15_k6its"]
 [ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
 [ext_resource type="AudioStream" uid="uid://jrwcgdxkf1ij" path="res://sounds/ai sounds/tap-water-98206.mp3" id="16_j5gtg"]
+[ext_resource type="AudioStream" uid="uid://bditc7x33kcnv" path="res://Voices/sdg 6.mp3" id="17_hklfp"]
 [ext_resource type="AudioStream" uid="uid://d1m6bhf3qido2" path="res://sounds/ai sounds/windmill-26886.mp3" id="17_jpnay"]
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
 [ext_resource type="AudioStream" uid="uid://s5oj77r1j0sd" path="res://sounds/ai sounds/factory-ambience-131855.mp3" id="19_u4y7u"]
 [ext_resource type="AudioStream" uid="uid://cugqyhut5u8bf" path="res://sounds/ai sounds/construction-interior-tall-building-50151.mp3" id="19_v6rpk"]
 [ext_resource type="AudioStream" uid="uid://dgcn2u1ec5l2c" path="res://sounds/ai sounds/city-ambience-121693.mp3" id="20_1hang"]
+[ext_resource type="AudioStream" uid="uid://ceufwu0ucjrvk" path="res://Voices/sdg 7.mp3" id="20_6i7vg"]
 [ext_resource type="AudioStream" uid="uid://8qwttvd6jvkj" path="res://sounds/ai sounds/recycling-can-return-55990.mp3" id="21_jxdac"]
 [ext_resource type="AudioStream" uid="uid://crk61a5k8qbu5" path="res://sounds/ambient-wave-48-tribute-17243.mp3" id="22_6h1ut"]
 [ext_resource type="AudioStream" uid="uid://dt2jgdiun50ah" path="res://sounds/ai sounds/sound-effect-seagulls-157829.mp3" id="22_fqo83"]
+[ext_resource type="AudioStream" uid="uid://crgqxvoudjshl" path="res://Voices/sdg 8.mp3" id="23_8g3gk"]
 [ext_resource type="AudioStream" uid="uid://b0xsl6sqnhku1" path="res://sounds/ai sounds/underwater-sounds-376891.mp3" id="23_u4y7u"]
 [ext_resource type="AudioStream" uid="uid://b478denpfxtcx" path="res://sounds/ai sounds/african-savanna-2-23769.mp3" id="24_e2pu3"]
+[ext_resource type="AudioStream" uid="uid://cmdpwtfachxta" path="res://Voices/sdg 9.mp3" id="26_nbm02"]
+[ext_resource type="AudioStream" uid="uid://6btr8h2lyp7u" path="res://Voices/sdg 10.mp3" id="29_2e66e"]
+[ext_resource type="AudioStream" uid="uid://daj5g8b7d8s0k" path="res://Voices/sdg 11.mp3" id="32_pb0gg"]
 [ext_resource type="AudioStream" uid="uid://b7srdxjskh8p0" path="res://sounds/ai sounds/goal2.mp3" id="32_v6rpk"]
+[ext_resource type="AudioStream" uid="uid://bhbaiig0iorsr" path="res://Voices/sdg 12.mp3" id="35_na1ck"]
 [ext_resource type="AudioStream" uid="uid://dsmxkmoiy3lhx" path="res://Voices/sdg 1 emily.mp3" id="37_dbnba"]
 [ext_resource type="PackedScene" uid="uid://bdllxnud8sodo" path="res://questsdg/goal_box_animated.tscn" id="38_dqovh"]
+[ext_resource type="AudioStream" uid="uid://dt8ldyuj5n7nv" path="res://Voices/sdg 13.mp3" id="38_vrleg"]
 [ext_resource type="AudioStream" uid="uid://caf2cxncs7t5y" path="res://Voices/sdg 2 emily.mp3" id="38_w5ut5"]
 [ext_resource type="AudioStream" uid="uid://ccynsond5b4q0" path="res://Voices/sdg 3.mp3" id="39_l8wyt"]
 [ext_resource type="AudioStream" uid="uid://cp75tpmqxbs6f" path="res://Voices/sdg 4.mp3" id="40_4gmfy"]
 [ext_resource type="AudioStream" uid="uid://d21xltfe0748c" path="res://Voices/sdg 5.mp3" id="41_0gxsn"]
+[ext_resource type="AudioStream" uid="uid://dtqrsamg553rw" path="res://Voices/sdg 14.mp3" id="41_ngcjm"]
 [ext_resource type="Texture2D" uid="uid://c4bt31a34xfcx" path="res://goals/Goal-2/Goal 2/2_SDG_MakeEveryDayCount_Gifs_GDU.png" id="41_rhdcm"]
 [ext_resource type="Texture2D" uid="uid://b72r7cfwdv0kp" path="res://goals/Goal-2/Goal 2/E_GIF_02.png" id="42_er6et"]
 [ext_resource type="Texture2D" uid="uid://dxw13ec4wnu7c" path="res://goals/Goal-3/Goal 3/3_SDG_MakeEveryDayCount_Gifs_GDU.png" id="43_m2enk"]
 [ext_resource type="Texture2D" uid="uid://b78btybf85pbj" path="res://goals/Goal-3/Goal 3/E_GIF_03.png" id="44_bbrx0"]
+[ext_resource type="AudioStream" uid="uid://cryk0j5qv2gin" path="res://Voices/sdg 15.mp3" id="44_opn0n"]
 [ext_resource type="PackedScene" uid="uid://bmbo1gv835vbw" path="res://questsdg/color_wheel.tscn" id="44_rf3s6"]
 [ext_resource type="PackedScene" uid="uid://ds4f1hq2mdy1e" path="res://questsdg/maps.tscn" id="45_73ssi"]
 [ext_resource type="Texture2D" uid="uid://dbeytby7r733b" path="res://goals/Goal-4/Goal 4/4_SDG_MakeEveryDayCount_Gifs_GDU.png" id="45_axqpm"]
 [ext_resource type="Texture2D" uid="uid://c0p3sb3kk0xy7" path="res://goals/Goal-4/Goal 4/E_GIF_04.png" id="46_8y3yv"]
 [ext_resource type="Texture2D" uid="uid://cvslcxfbh326g" path="res://goals/Goal-5/Goal 5/5_SDG_MakeEveryDayCount_Gifs_GDU.png" id="47_8vv8c"]
+[ext_resource type="AudioStream" uid="uid://iug7osy2xxq4" path="res://Voices/sdg 16.mp3" id="47_b3qb8"]
 [ext_resource type="Texture2D" uid="uid://bfbhq5127fmsl" path="res://goals/Goal-5/Goal 5/E_GIF_05.png" id="48_xhyan"]
 [ext_resource type="Texture2D" uid="uid://crkpq25ycpy85" path="res://goals/Goal-6/Goal 6/6_SDG_MakeEveryDayCount_Gifs_GDU.png" id="49_iv28d"]
+[ext_resource type="AudioStream" uid="uid://um5s1035jycj" path="res://Voices/sdg 17.mp3" id="50_62rmx"]
 [ext_resource type="Texture2D" uid="uid://cqtvn1v3yvmbw" path="res://goals/Goal-6/Goal 6/E_GIF_06.png" id="50_ul5gb"]
 [ext_resource type="Texture2D" uid="uid://b1uddu7soqfht" path="res://goals/Goal-17/Goal 17/17_SDG_MakeEveryDayCount_Gifs_GDU.png" id="51_8vv8c"]
 [ext_resource type="Texture2D" uid="uid://uduejfron10x" path="res://goals/Goal-15/Goal 15/15_SDG_MakeEveryDayCount_Gifs_GDU.png" id="51_cnlok"]
@@ -61803,6 +61816,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597696, 0.328747, -0.27760
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.23005)
 visible = false
 
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated" index="1"]
+stream = ExtResource("37_dbnba")
+
 [node name="front" parent="tu dub/ani_goals/goal_box_animated/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_cvb0r")
 
@@ -61811,6 +61827,9 @@ sprite_frames = SubResource("SpriteFrames_fxljf")
 
 [node name="goal_box_animated2" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
+
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated2" index="1"]
+stream = ExtResource("5_of1wo")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated2/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_ibdiu")
@@ -61821,6 +61840,9 @@ sprite_frames = SubResource("SpriteFrames_sps36")
 [node name="goal_box_animated3" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated3" index="1"]
+stream = ExtResource("39_l8wyt")
+
 [node name="front" parent="tu dub/ani_goals/goal_box_animated3/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_44a1t")
 
@@ -61829,6 +61851,9 @@ sprite_frames = SubResource("SpriteFrames_jkgvc")
 
 [node name="goal_box_animated4" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
+
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated4" index="1"]
+stream = ExtResource("40_4gmfy")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated4/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_gurcr")
@@ -61839,6 +61864,9 @@ sprite_frames = SubResource("SpriteFrames_8a5ut")
 [node name="goal_box_animated5" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated5" index="1"]
+stream = ExtResource("41_0gxsn")
+
 [node name="front" parent="tu dub/ani_goals/goal_box_animated5/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_jblyh")
 
@@ -61847,6 +61875,9 @@ sprite_frames = SubResource("SpriteFrames_fgcl3")
 
 [node name="goal_box_animated6" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
+
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated6" index="1"]
+stream = ExtResource("17_hklfp")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated6/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_nfdc8")
@@ -61857,6 +61888,9 @@ sprite_frames = SubResource("SpriteFrames_uxgn2")
 [node name="goal_box_animated7" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated7" index="1"]
+stream = ExtResource("20_6i7vg")
+
 [node name="front" parent="tu dub/ani_goals/goal_box_animated7/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_45rbn")
 
@@ -61865,6 +61899,9 @@ sprite_frames = SubResource("SpriteFrames_o12m0")
 
 [node name="goal_box_animated8" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
+
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated8" index="1"]
+stream = ExtResource("23_8g3gk")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated8/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_ck25a")
@@ -61875,6 +61912,9 @@ sprite_frames = SubResource("SpriteFrames_qffew")
 [node name="goal_box_animated9" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated9" index="1"]
+stream = ExtResource("26_nbm02")
+
 [node name="front" parent="tu dub/ani_goals/goal_box_animated9/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_gv7p8")
 
@@ -61883,6 +61923,9 @@ sprite_frames = SubResource("SpriteFrames_7h667")
 
 [node name="goal_box_animated10" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
+
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated10" index="1"]
+stream = ExtResource("29_2e66e")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated10/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_cfjeu")
@@ -61893,6 +61936,9 @@ sprite_frames = SubResource("SpriteFrames_unxbf")
 [node name="goal_box_animated11" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated11" index="1"]
+stream = ExtResource("32_pb0gg")
+
 [node name="front" parent="tu dub/ani_goals/goal_box_animated11/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_h31d3")
 
@@ -61901,6 +61947,9 @@ sprite_frames = SubResource("SpriteFrames_2vf06")
 
 [node name="goal_box_animated12" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
+
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated12" index="1"]
+stream = ExtResource("35_na1ck")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated12/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_lnqer")
@@ -61911,6 +61960,9 @@ sprite_frames = SubResource("SpriteFrames_42f2y")
 [node name="goal_box_animated13" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated13" index="1"]
+stream = ExtResource("38_vrleg")
+
 [node name="front" parent="tu dub/ani_goals/goal_box_animated13/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_rnq7d")
 
@@ -61919,6 +61971,9 @@ sprite_frames = SubResource("SpriteFrames_hdive")
 
 [node name="goal_box_animated14" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
+
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated14" index="1"]
+stream = ExtResource("41_ngcjm")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated14/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_whhyx")
@@ -61929,6 +61984,9 @@ sprite_frames = SubResource("SpriteFrames_uo36d")
 [node name="goal_box_animated15" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated15" index="1"]
+stream = ExtResource("44_opn0n")
+
 [node name="front" parent="tu dub/ani_goals/goal_box_animated15/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_8u3cl")
 
@@ -61938,6 +61996,9 @@ sprite_frames = SubResource("SpriteFrames_gft5e")
 [node name="goal_box_animated16" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated16" index="1"]
+stream = ExtResource("47_b3qb8")
+
 [node name="front" parent="tu dub/ani_goals/goal_box_animated16/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_jllh6")
 
@@ -61946,6 +62007,9 @@ sprite_frames = SubResource("SpriteFrames_vxnpe")
 
 [node name="goal_box_animated17" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
+
+[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated17" index="1"]
+stream = ExtResource("50_62rmx")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated17/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_f1okg")
@@ -62072,6 +62136,31 @@ shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
+[node name="left" type="XRController3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.487883, 1.64534, 0)
+tracker = &"left_hand"
+script = ExtResource("2_p7tmn")
+
+[node name="HandPoseDetector" type="Node" parent="XROrigin3D/left"]
+script = ExtResource("3_b11sm")
+hand_pose_set = ExtResource("7_077gh")
+metadata/_custom_type_script = "uid://dya4sxc8awaw0"
+
+[node name="left_hand" type="Area3D" parent="XROrigin3D/left"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/left_hand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
+shape = SubResource("SphereShape3D_pvxhv")
+
+[node name="LeftHandHumanoid2" parent="XROrigin3D/left" instance=ExtResource("2_pvxhv")]
+
+[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1"]
+
+[node name="collider" type="CharacterBody3D" parent="XROrigin3D/left"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/collider"]
+shape = SubResource("CapsuleShape3D_dbnba")
+
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" node_paths=PackedStringArray("spawn_in_front")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6356, 0.665969)
 script = ExtResource("4_rf3s6")
@@ -62079,84 +62168,41 @@ spawn_in_front = NodePath("../../tu dub")
 
 [node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
 
-[node name="left" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.487883, 1.64534, 0)
-tracker = &"left_hand"
-
-[node name="left" type="XRNode3D" parent="XROrigin3D/left"]
-tracker = &"left_hand"
-show_when_tracked = true
-script = ExtResource("2_p7tmn")
-
-[node name="HandPoseDetector" type="Node" parent="XROrigin3D/left/left"]
-script = ExtResource("3_b11sm")
-hand_pose_set = ExtResource("7_077gh")
-metadata/_custom_type_script = "uid://dya4sxc8awaw0"
-
-[node name="left_hand" type="Area3D" parent="XROrigin3D/left/left"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0680579, 0.159387)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/left/left_hand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
-shape = SubResource("SphereShape3D_pvxhv")
-
-[node name="LeftHandHumanoid2" parent="XROrigin3D/left/left" instance=ExtResource("2_pvxhv")]
-
-[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1"]
-
-[node name="collider" type="CharacterBody3D" parent="XROrigin3D/left/left"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/left/collider"]
-shape = SubResource("CapsuleShape3D_dbnba")
-
 [node name="right" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.429377, 1.73574, 0)
 tracker = &"right_hand"
-
-[node name="right" type="XRNode3D" parent="XROrigin3D/right"]
-tracker = &"right_hand"
-show_when_tracked = true
 script = ExtResource("2_p7tmn")
 
-[node name="right_hand" type="Area3D" parent="XROrigin3D/right/right"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0676188, 0.159387)
+[node name="right_hand" type="Area3D" parent="XROrigin3D/right"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/right/right_hand"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/right_hand"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
 shape = SubResource("SphereShape3D_pvxhv")
 
-[node name="RightHandHumanoid2" parent="XROrigin3D/right/right" instance=ExtResource("3_6h1ut")]
+[node name="RightHandHumanoid2" parent="XROrigin3D/right" instance=ExtResource("3_6h1ut")]
 
-[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/right/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="0"]
+[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="0"]
 hand_tracker = &"/user/hand_tracker/right"
 
-[node name="HandPoseDetector" parent="XROrigin3D/right/right" instance=ExtResource("6_mfkbt")]
+[node name="HandPoseDetector" parent="XROrigin3D/right" instance=ExtResource("6_mfkbt")]
 hand_tracker_name = "/user/hand_tracker/right"
 hand_pose_set = ExtResource("7_077gh")
 
-[node name="collider" type="CharacterBody3D" parent="XROrigin3D/right/right"]
+[node name="collider" type="CharacterBody3D" parent="XROrigin3D/right"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/right/collider"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/collider"]
 shape = SubResource("CapsuleShape3D_dbnba")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="floor" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
 shape = SubResource("WorldBoundaryShape3D_rf3s6")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+[node name="rooff" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rooff"]
 shape = SubResource("BoxShape3D_dbnba")
-
-[connection signal="pose_ended" from="XROrigin3D/left/left/HandPoseDetector" to="XROrigin3D/left/left" method="_on_hand_pose_detector_pose_ended"]
-[connection signal="pose_started" from="XROrigin3D/left/left/HandPoseDetector" to="XROrigin3D/left/left" method="_on_hand_pose_detector_pose_started"]
-[connection signal="area_entered" from="XROrigin3D/left/left/left_hand" to="XROrigin3D/left/left" method="_on_right_hand_area_entered"]
-[connection signal="area_entered" from="XROrigin3D/right/right/right_hand" to="XROrigin3D/right/right" method="_on_right_hand_area_entered"]
-[connection signal="area_exited" from="XROrigin3D/right/right/right_hand" to="XROrigin3D/right/right" method="_on_right_hand_area_exited"]
-[connection signal="pose_ended" from="XROrigin3D/right/right/HandPoseDetector" to="XROrigin3D/right/right" method="_on_hand_pose_detector_pose_ended"]
-[connection signal="pose_started" from="XROrigin3D/right/right/HandPoseDetector" to="XROrigin3D/right/right" method="_on_hand_pose_detector_pose_started"]
 
 [editable path="tu dub/ani_goals/goal_box_animated"]
 [editable path="tu dub/ani_goals/goal_box_animated2"]
@@ -62175,5 +62221,5 @@ shape = SubResource("BoxShape3D_dbnba")
 [editable path="tu dub/ani_goals/goal_box_animated15"]
 [editable path="tu dub/ani_goals/goal_box_animated16"]
 [editable path="tu dub/ani_goals/goal_box_animated17"]
-[editable path="XROrigin3D/left/left/LeftHandHumanoid2"]
-[editable path="XROrigin3D/right/right/RightHandHumanoid2"]
+[editable path="XROrigin3D/left/LeftHandHumanoid2"]
+[editable path="XROrigin3D/right/RightHandHumanoid2"]
