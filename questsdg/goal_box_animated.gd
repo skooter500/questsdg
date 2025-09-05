@@ -9,6 +9,8 @@ var anim1Frames:SpriteFrames
 
 @export var goal_num1:int = 2
 
+signal bounce  
+
 func bounce_in():
 	$Area3D.monitoring = true
 	$Area3D/scaler/front.play("default")
@@ -31,7 +33,8 @@ func bounce_in():
 		fade_tween.tween_property(theme_sound, "volume_db", -20, 2)
 			# Optional: Hide the mesh when fade completes
 		# fade_tween.finished.connect(make_invisible)
-
+	emit_signal("bounce")
+	
 var theme_sound:AudioStreamPlayer3D
 
 var lerp_target:Vector3

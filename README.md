@@ -34,6 +34,7 @@ An immersive experience where you can learn about the UN SDG's and TU Dublin pro
 14. Life Below Water 
 15. Life on Land 
 16. Peace, Justice and Strong Institutions 
+17. Patrnerships for the Goals
 
 ## Created By:
 
