@@ -2,6 +2,8 @@ extends Node3D
 
 @export var sounds:Array[AudioStream]
 
+@export var auto_play:bool = false 
+
 var i:int = 0
 
 @onready var player = $AudioStreamPlayer3D
@@ -21,6 +23,9 @@ func next():
 	
 func _ready() -> void:
 	player.finished.connect(next)
+	if auto_play:
+		play()
+		
 
 func play():
 	player.stream = sounds[i]

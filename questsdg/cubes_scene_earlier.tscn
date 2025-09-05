@@ -9,14 +9,15 @@
 [ext_resource type="Script" uid="uid://dya4sxc8awaw0" path="res://addons/hand_pose_detector/hand_pose_detector.gd" id="3_b11sm"]
 [ext_resource type="Texture2D" uid="uid://du2888t0r6sr8" path="res://goals/Goal-1/Goal 1/1_SDG_MakeEveryDayCount_Gifs_GDU.png" id="3_c0oai"]
 [ext_resource type="PackedScene" uid="uid://5sggqhc8uux2" path="res://questsdg/goal_box.tscn" id="3_coq8p"]
+[ext_resource type="AudioStream" uid="uid://jv4x7qsafgv4" path="res://sounds/iron-money-coins-sound-of-money-falling-coins-11987.mp3" id="3_flgty"]
 [ext_resource type="Texture2D" uid="uid://p8putbgjitl6" path="res://goals/E-WEB-Goal-03.png" id="4_njel3"]
 [ext_resource type="Script" uid="uid://bbey0wli3q6jp" path="res://questsdg/xr_camera_3d.gd" id="4_rf3s6"]
-[ext_resource type="AudioStream" uid="uid://ptcro4nmo25i" path="res://Voices/sdg2 conor.mp3" id="5_83dvj"]
 [ext_resource type="Texture2D" uid="uid://cts4gd4xelpvy" path="res://goals/Goal-1/Goal 1/E_GIF_01.png" id="5_jsd5u"]
 [ext_resource type="Texture2D" uid="uid://k1c7jpvbeutp" path="res://goals/E-WEB-Goal-04.png" id="5_vr1i5"]
 [ext_resource type="PackedScene" uid="uid://df5hynbooj1uj" path="res://addons/hand_pose_detector/hand_pose_detector.tscn" id="6_mfkbt"]
 [ext_resource type="Texture2D" uid="uid://bb7ay212glga4" path="res://goals/E-WEB-Goal-05.png" id="6_rpuu0"]
 [ext_resource type="Resource" uid="uid://ckjd0xa2a240p" path="res://addons/hand_pose_detector/poses/standard_pose_set.tres" id="7_077gh"]
+[ext_resource type="AudioStream" uid="uid://dgbl2d112mlbd" path="res://sounds/ai sounds/staff-canteen-background-33214.mp3" id="7_jrtm1"]
 [ext_resource type="Texture2D" uid="uid://dhhgj3m8gvcir" path="res://goals/E-WEB-Goal-06.png" id="7_oo8pe"]
 [ext_resource type="Texture2D" uid="uid://dgb8pq8idsch3" path="res://goals/E-WEB-Goal-07.png" id="8_4gito"]
 [ext_resource type="Texture2D" uid="uid://ct42pjwfwvjn0" path="res://goals/E-WEB-Goal-09.png" id="9_fbuy2"]
@@ -27,38 +28,37 @@
 [ext_resource type="Texture2D" uid="uid://d1n0828jvlp8c" path="res://goals/E-WEB-Goal-12.png" id="12_hiucn"]
 [ext_resource type="Texture2D" uid="uid://dx70jn77fea38" path="res://goals/E-WEB-Goal-13.png" id="13_k6its"]
 [ext_resource type="Texture2D" uid="uid://cse8qbjky4vee" path="res://goals/E-WEB-Goal-14.png" id="14_2dw41"]
+[ext_resource type="AudioStream" uid="uid://bouddr0e5ff36" path="res://sounds/ai sounds/classroom-background-54177.mp3" id="14_87rro"]
 [ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="15_k6its"]
 [ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
+[ext_resource type="AudioStream" uid="uid://jrwcgdxkf1ij" path="res://sounds/ai sounds/tap-water-98206.mp3" id="16_j5gtg"]
 [ext_resource type="AudioStream" uid="uid://bditc7x33kcnv" path="res://Voices/sdg 6.mp3" id="17_hpyxt"]
+[ext_resource type="AudioStream" uid="uid://d1m6bhf3qido2" path="res://sounds/ai sounds/windmill-26886.mp3" id="17_jpnay"]
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
+[ext_resource type="AudioStream" uid="uid://0mdu5m0hcg7a" path="res://sounds/ytmp3free.cc_mary-mcaleese-talks-to-diis-on-ideas-that-can-change-our-lives-youtubemp3free.org.mp3" id="18_i41rh"]
+[ext_resource type="AudioStream" uid="uid://s5oj77r1j0sd" path="res://sounds/ai sounds/factory-ambience-131855.mp3" id="19_u4y7u"]
+[ext_resource type="AudioStream" uid="uid://cugqyhut5u8bf" path="res://sounds/ai sounds/construction-interior-tall-building-50151.mp3" id="19_v6rpk"]
 [ext_resource type="AudioStream" uid="uid://ceufwu0ucjrvk" path="res://Voices/sdg 7.mp3" id="20_dixy6"]
 [ext_resource type="AudioStream" uid="uid://crk61a5k8qbu5" path="res://sounds/ambient-wave-48-tribute-17243.mp3" id="22_6h1ut"]
 [ext_resource type="AudioStream" uid="uid://crgqxvoudjshl" path="res://Voices/sdg 8.mp3" id="23_r4p17"]
 [ext_resource type="AudioStream" uid="uid://cmdpwtfachxta" path="res://Voices/sdg 9.mp3" id="26_d7fp4"]
-[ext_resource type="AudioStream" uid="uid://6btr8h2lyp7u" path="res://Voices/sdg 10.mp3" id="29_axglg"]
-[ext_resource type="AudioStream" uid="uid://daj5g8b7d8s0k" path="res://Voices/sdg 11.mp3" id="32_jstes"]
-[ext_resource type="AudioStream" uid="uid://bhbaiig0iorsr" path="res://Voices/sdg 12.mp3" id="35_rarkd"]
 [ext_resource type="AudioStream" uid="uid://dsmxkmoiy3lhx" path="res://Voices/sdg 1 emily.mp3" id="37_dbnba"]
 [ext_resource type="PackedScene" uid="uid://bdllxnud8sodo" path="res://questsdg/goal_box_animated.tscn" id="38_dqovh"]
-[ext_resource type="AudioStream" uid="uid://dt8ldyuj5n7nv" path="res://Voices/sdg 13.mp3" id="38_y1on4"]
+[ext_resource type="AudioStream" uid="uid://caf2cxncs7t5y" path="res://Voices/sdg 2 emily.mp3" id="38_w5ut5"]
 [ext_resource type="AudioStream" uid="uid://ccynsond5b4q0" path="res://Voices/sdg 3.mp3" id="39_l8wyt"]
 [ext_resource type="AudioStream" uid="uid://cp75tpmqxbs6f" path="res://Voices/sdg 4.mp3" id="40_4gmfy"]
 [ext_resource type="AudioStream" uid="uid://d21xltfe0748c" path="res://Voices/sdg 5.mp3" id="41_0gxsn"]
 [ext_resource type="Texture2D" uid="uid://c4bt31a34xfcx" path="res://goals/Goal-2/Goal 2/2_SDG_MakeEveryDayCount_Gifs_GDU.png" id="41_rhdcm"]
-[ext_resource type="AudioStream" uid="uid://dtqrsamg553rw" path="res://Voices/sdg 14.mp3" id="41_wnpci"]
 [ext_resource type="Texture2D" uid="uid://b72r7cfwdv0kp" path="res://goals/Goal-2/Goal 2/E_GIF_02.png" id="42_er6et"]
 [ext_resource type="Texture2D" uid="uid://dxw13ec4wnu7c" path="res://goals/Goal-3/Goal 3/3_SDG_MakeEveryDayCount_Gifs_GDU.png" id="43_m2enk"]
-[ext_resource type="AudioStream" uid="uid://cryk0j5qv2gin" path="res://Voices/sdg 15.mp3" id="44_8su2q"]
 [ext_resource type="Texture2D" uid="uid://b78btybf85pbj" path="res://goals/Goal-3/Goal 3/E_GIF_03.png" id="44_bbrx0"]
 [ext_resource type="PackedScene" uid="uid://bmbo1gv835vbw" path="res://questsdg/color_wheel.tscn" id="44_rf3s6"]
 [ext_resource type="PackedScene" uid="uid://ds4f1hq2mdy1e" path="res://questsdg/maps.tscn" id="45_73ssi"]
 [ext_resource type="Texture2D" uid="uid://dbeytby7r733b" path="res://goals/Goal-4/Goal 4/4_SDG_MakeEveryDayCount_Gifs_GDU.png" id="45_axqpm"]
 [ext_resource type="Texture2D" uid="uid://c0p3sb3kk0xy7" path="res://goals/Goal-4/Goal 4/E_GIF_04.png" id="46_8y3yv"]
-[ext_resource type="AudioStream" uid="uid://iug7osy2xxq4" path="res://Voices/sdg 16.mp3" id="47_0s3vr"]
 [ext_resource type="Texture2D" uid="uid://cvslcxfbh326g" path="res://goals/Goal-5/Goal 5/5_SDG_MakeEveryDayCount_Gifs_GDU.png" id="47_8vv8c"]
 [ext_resource type="Texture2D" uid="uid://bfbhq5127fmsl" path="res://goals/Goal-5/Goal 5/E_GIF_05.png" id="48_xhyan"]
 [ext_resource type="Texture2D" uid="uid://crkpq25ycpy85" path="res://goals/Goal-6/Goal 6/6_SDG_MakeEveryDayCount_Gifs_GDU.png" id="49_iv28d"]
-[ext_resource type="AudioStream" uid="uid://um5s1035jycj" path="res://Voices/sdg 17.mp3" id="50_ty5nw"]
 [ext_resource type="Texture2D" uid="uid://cqtvn1v3yvmbw" path="res://goals/Goal-6/Goal 6/E_GIF_06.png" id="50_ul5gb"]
 [ext_resource type="Texture2D" uid="uid://b1uddu7soqfht" path="res://goals/Goal-17/Goal 17/17_SDG_MakeEveryDayCount_Gifs_GDU.png" id="51_8vv8c"]
 [ext_resource type="Texture2D" uid="uid://uduejfron10x" path="res://goals/Goal-15/Goal 15/15_SDG_MakeEveryDayCount_Gifs_GDU.png" id="51_cnlok"]
@@ -61806,8 +61806,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597696, 0.328747, -0.27760
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.23005)
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated" index="1"]
-stream = ExtResource("37_dbnba")
+[node name="playlist_looper" parent="tu dub/ani_goals/goal_box_animated" index="1"]
+sounds = Array[AudioStream]([ExtResource("37_dbnba"), ExtResource("3_flgty")])
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_p4u8u")
@@ -61818,8 +61818,8 @@ sprite_frames = SubResource("SpriteFrames_w1b63")
 [node name="goal_box_animated2" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated2" index="1"]
-stream = ExtResource("5_83dvj")
+[node name="playlist_looper" parent="tu dub/ani_goals/goal_box_animated2" index="1"]
+sounds = Array[AudioStream]([ExtResource("38_w5ut5"), ExtResource("7_jrtm1")])
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated2/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_a1h62")
@@ -61830,8 +61830,8 @@ sprite_frames = SubResource("SpriteFrames_bfjxy")
 [node name="goal_box_animated3" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated3" index="1"]
-stream = ExtResource("39_l8wyt")
+[node name="playlist_looper" parent="tu dub/ani_goals/goal_box_animated3" index="1"]
+sounds = Array[AudioStream]([ExtResource("39_l8wyt")])
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated3/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_tlky0")
@@ -61842,8 +61842,8 @@ sprite_frames = SubResource("SpriteFrames_5mhuu")
 [node name="goal_box_animated4" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated4" index="1"]
-stream = ExtResource("40_4gmfy")
+[node name="playlist_looper" parent="tu dub/ani_goals/goal_box_animated4" index="1"]
+sounds = Array[AudioStream]([ExtResource("40_4gmfy"), ExtResource("14_87rro")])
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated4/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_toam5")
@@ -61854,8 +61854,8 @@ sprite_frames = SubResource("SpriteFrames_f7hc6")
 [node name="goal_box_animated5" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated5" index="1"]
-stream = ExtResource("41_0gxsn")
+[node name="playlist_looper" parent="tu dub/ani_goals/goal_box_animated5" index="1"]
+sounds = Array[AudioStream]([ExtResource("41_0gxsn"), ExtResource("18_i41rh")])
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated5/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_ybhp3")
@@ -61866,8 +61866,8 @@ sprite_frames = SubResource("SpriteFrames_cfjdm")
 [node name="goal_box_animated6" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated6" index="1"]
-stream = ExtResource("17_hpyxt")
+[node name="playlist_looper" parent="tu dub/ani_goals/goal_box_animated6" index="1"]
+sounds = Array[AudioStream]([ExtResource("17_hpyxt"), ExtResource("16_j5gtg")])
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated6/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_liulo")
@@ -61878,8 +61878,8 @@ sprite_frames = SubResource("SpriteFrames_lacbc")
 [node name="goal_box_animated7" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated7" index="1"]
-stream = ExtResource("20_dixy6")
+[node name="playlist_looper" parent="tu dub/ani_goals/goal_box_animated7" index="1"]
+sounds = Array[AudioStream]([ExtResource("20_dixy6"), ExtResource("17_jpnay")])
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated7/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_5rext")
@@ -61890,8 +61890,8 @@ sprite_frames = SubResource("SpriteFrames_8thac")
 [node name="goal_box_animated8" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated8" index="1"]
-stream = ExtResource("23_r4p17")
+[node name="playlist_looper" parent="tu dub/ani_goals/goal_box_animated8" index="1"]
+sounds = Array[AudioStream]([ExtResource("23_r4p17"), ExtResource("19_u4y7u")])
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated8/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_2mghe")
@@ -61902,8 +61902,8 @@ sprite_frames = SubResource("SpriteFrames_iealq")
 [node name="goal_box_animated9" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated9" index="1"]
-stream = ExtResource("26_d7fp4")
+[node name="playlist_looper" parent="tu dub/ani_goals/goal_box_animated9" index="1"]
+sounds = Array[AudioStream]([ExtResource("26_d7fp4"), ExtResource("19_v6rpk")])
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated9/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_ve78m")
@@ -61914,9 +61914,6 @@ sprite_frames = SubResource("SpriteFrames_31cib")
 [node name="goal_box_animated10" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated10" index="1"]
-stream = ExtResource("29_axglg")
-
 [node name="front" parent="tu dub/ani_goals/goal_box_animated10/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_csyu2")
 
@@ -61925,9 +61922,6 @@ sprite_frames = SubResource("SpriteFrames_urtq8")
 
 [node name="goal_box_animated11" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
-
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated11" index="1"]
-stream = ExtResource("32_jstes")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated11/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_u66v2")
@@ -61938,9 +61932,6 @@ sprite_frames = SubResource("SpriteFrames_p8hdc")
 [node name="goal_box_animated12" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated12" index="1"]
-stream = ExtResource("35_rarkd")
-
 [node name="front" parent="tu dub/ani_goals/goal_box_animated12/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_v4o4a")
 
@@ -61949,9 +61940,6 @@ sprite_frames = SubResource("SpriteFrames_si562")
 
 [node name="goal_box_animated13" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
-
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated13" index="1"]
-stream = ExtResource("38_y1on4")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated13/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_xg8iv")
@@ -61962,9 +61950,6 @@ sprite_frames = SubResource("SpriteFrames_oxgc7")
 [node name="goal_box_animated14" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated14" index="1"]
-stream = ExtResource("41_wnpci")
-
 [node name="front" parent="tu dub/ani_goals/goal_box_animated14/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_pwax4")
 
@@ -61973,9 +61958,6 @@ sprite_frames = SubResource("SpriteFrames_hsav1")
 
 [node name="goal_box_animated15" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
-
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated15" index="1"]
-stream = ExtResource("44_8su2q")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated15/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_ld8jp")
@@ -61986,9 +61968,6 @@ sprite_frames = SubResource("SpriteFrames_5yt1y")
 [node name="goal_box_animated16" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
 
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated16" index="1"]
-stream = ExtResource("47_0s3vr")
-
 [node name="front" parent="tu dub/ani_goals/goal_box_animated16/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_a8xv8")
 
@@ -61997,9 +61976,6 @@ sprite_frames = SubResource("SpriteFrames_d28mf")
 
 [node name="goal_box_animated17" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 visible = false
-
-[node name="AudioStreamPlayer3D" parent="tu dub/ani_goals/goal_box_animated17" index="1"]
-stream = ExtResource("50_ty5nw")
 
 [node name="front" parent="tu dub/ani_goals/goal_box_animated17/Area3D/scaler" index="0"]
 sprite_frames = SubResource("SpriteFrames_128cd")

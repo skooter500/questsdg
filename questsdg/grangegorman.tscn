@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b8px3jnda3ab"]
+[gd_scene load_steps=15 format=3 uid="uid://b8px3jnda3ab"]
 
 [ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://questsdg/ground_trans.tres" id="1_7d5fs"]
 [ext_resource type="ArrayMesh" uid="uid://chvg4aftfq8f1" path="res://Models/Grangegorman/Grangegorman_TUDublin_Floor_Thin.obj" id="2_txc67"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cix58fugtilpv" path="res://campus_assets/tree_simple.glb" id="9_7exnu"]
 [ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://questsdg/3_dlabel.tscn" id="10_kdocq"]
 [ext_resource type="PackedScene" uid="uid://disklyhxjm4pr" path="res://questsdg/playlist_looper.tscn" id="12_ow2hi"]
+[ext_resource type="AudioStream" uid="uid://5a3fmyh6oj4q" path="res://campus_sounds/TU Dublin Conservatoire Presents Ode to Joy on Europe Day.mp3" id="13_n0hbk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bfk7x"]
 size = Vector3(0.9, 0.01, 0.5)
@@ -118,3 +119,5 @@ text = "Sports Fields
 
 [node name="playlist_looper" parent="." instance=ExtResource("12_ow2hi")]
 transform = Transform3D(1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0.207152, 0.0178528, -0.524867)
+sounds = Array[AudioStream]([ExtResource("13_n0hbk")])
+auto_play = true

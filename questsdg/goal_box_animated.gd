@@ -26,7 +26,7 @@ func bounce_in():
 		fade_tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
 		fade_tween.tween_property(self, "scale", Vector3.ONE,2)
 		theme_sound.volume_db = -100
-		theme_sound.play()
+		$playlist_looper.play()
 		fade_tween.set_parallel(true)
 		fade_tween.tween_property(theme_sound, "volume_db", -20, 2)
 			# Optional: Hide the mesh when fade completes
@@ -58,7 +58,7 @@ func _ready() -> void:
 	
 	lerp_target = global_position
 	
-	theme_sound = $AudioStreamPlayer3D
+	theme_sound = $playlist_looper/AudioStreamPlayer3D
 	
 	pass # Replace with function body.
 
