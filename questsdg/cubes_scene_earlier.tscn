@@ -1,4 +1,4 @@
-[gd_scene load_steps=8894 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8898 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://questsdg/goals.gd" id="2_2dw41"]
@@ -82,6 +82,10 @@
 [ext_resource type="Texture2D" uid="uid://ufj5qklowrin" path="res://goals/Goal-13/Goal 13/E_GIF_13.png" id="56_ufim6"]
 [ext_resource type="Texture2D" uid="uid://cuo5wkhj0hfpt" path="res://goals/Goal-14/Goal 14/14_SDG_MakeEveryDayCount_Gifs_GDU.png" id="57_kojkm"]
 [ext_resource type="Texture2D" uid="uid://dufit3ewu4h7j" path="res://goals/Goal-14/Goal 14/E_GIF_14.png" id="58_flujy"]
+[ext_resource type="Material" uid="uid://j8dm7t25nhpu" path="res://shaders/grid.tres" id="82_nte7u"]
+[ext_resource type="Script" uid="uid://dgnag6yx6rwgq" path="res://questsdg/playlist_looper.gd" id="83_8qmgi"]
+[ext_resource type="AudioStream" uid="uid://5a3fmyh6oj4q" path="res://campus_sounds/TU Dublin Conservatoire Presents Ode to Joy on Europe Day.mp3" id="85_kwntv"]
+[ext_resource type="AudioStream" uid="uid://cnjv0qnudg2hf" path="res://campus_sounds/Uilleann Pipes Lessons at TUDublin.mp3" id="86_hscs4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wf4a"]
 atlas = ExtResource("3_c0oai")
@@ -62176,6 +62180,9 @@ shape = SubResource("SphereShape3D_pvxhv")
 [node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="0"]
 hand_tracker = &"/user/hand_tracker/right"
 
+[node name="RightHandHumanoidMesh" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("82_nte7u")
+
 [node name="HandPoseDetector" parent="XROrigin3D/right" instance=ExtResource("6_mfkbt")]
 hand_tracker_name = "/user/hand_tracker/right"
 hand_pose_set = ExtResource("7_077gh")
@@ -62195,6 +62202,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 shape = SubResource("BoxShape3D_dbnba")
+
+[node name="playlist_looper" type="Node3D" parent="."]
+script = ExtResource("83_8qmgi")
+sounds = Array[AudioStream]([ExtResource("20_dixy6"), ExtResource("85_kwntv"), ExtResource("86_hscs4")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="playlist_looper"]
 
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
 [connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]
