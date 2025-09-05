@@ -51,7 +51,6 @@ func make_invisible():
 	ani_box.rotation = rotation
 	ani_box.visible = true
 	ani_box.get_node
-	ani_box.theme_sound.stream = get_parent().sounds[goal - 1]
 	ani_box.bounce_in()
 	self.queue_free()
 	# get_parent().add_child(ani_box)

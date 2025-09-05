@@ -3,8 +3,6 @@ extends Node3D
 var ani_boxes = []
 var goal_boxes = []
 
-@export var sounds:Array[AudioStream] 
-
 func spawn_box(i):
 	var t = create_tween() \
 		.set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)		
@@ -43,7 +41,7 @@ func _ready() -> void:
 	var i = 0
 	for child:Node3D in $"../ani_goals".get_children():
 		child.visible = false
-		child.get_node("AudioStreamPlayer3D").stream = sounds[i]
+		# child.get_node("AudioStreamPlayer3D").stream = sounds[i]
 		ani_boxes.push_back(child)
 		i = i + 1
 	#var thread = Thread.new()

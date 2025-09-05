@@ -1,4 +1,4 @@
-[gd_scene load_steps=8905 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8894 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://questsdg/goals.gd" id="2_2dw41"]
@@ -29,28 +29,17 @@
 [ext_resource type="Texture2D" uid="uid://cse8qbjky4vee" path="res://goals/E-WEB-Goal-14.png" id="14_2dw41"]
 [ext_resource type="Texture2D" uid="uid://cuevvbvgm2wpf" path="res://goals/E-WEB-Goal-15.png" id="15_k6its"]
 [ext_resource type="Texture2D" uid="uid://dp4wvb4oqjifk" path="res://goals/E-WEB-Goal-16.png" id="16_2dw41"]
-[ext_resource type="AudioStream" uid="uid://jrwcgdxkf1ij" path="res://sounds/ai sounds/tap-water-98206.mp3" id="16_j5gtg"]
 [ext_resource type="AudioStream" uid="uid://bditc7x33kcnv" path="res://Voices/sdg 6.mp3" id="17_hpyxt"]
-[ext_resource type="AudioStream" uid="uid://d1m6bhf3qido2" path="res://sounds/ai sounds/windmill-26886.mp3" id="17_jpnay"]
 [ext_resource type="Texture2D" uid="uid://d1ba3qfb3qa30" path="res://goals/E-WEB-Goal-17.png" id="17_ykxp3"]
-[ext_resource type="AudioStream" uid="uid://s5oj77r1j0sd" path="res://sounds/ai sounds/factory-ambience-131855.mp3" id="19_u4y7u"]
-[ext_resource type="AudioStream" uid="uid://cugqyhut5u8bf" path="res://sounds/ai sounds/construction-interior-tall-building-50151.mp3" id="19_v6rpk"]
-[ext_resource type="AudioStream" uid="uid://dgcn2u1ec5l2c" path="res://sounds/ai sounds/city-ambience-121693.mp3" id="20_1hang"]
 [ext_resource type="AudioStream" uid="uid://ceufwu0ucjrvk" path="res://Voices/sdg 7.mp3" id="20_dixy6"]
-[ext_resource type="AudioStream" uid="uid://8qwttvd6jvkj" path="res://sounds/ai sounds/recycling-can-return-55990.mp3" id="21_jxdac"]
 [ext_resource type="AudioStream" uid="uid://crk61a5k8qbu5" path="res://sounds/ambient-wave-48-tribute-17243.mp3" id="22_6h1ut"]
-[ext_resource type="AudioStream" uid="uid://dt2jgdiun50ah" path="res://sounds/ai sounds/sound-effect-seagulls-157829.mp3" id="22_fqo83"]
 [ext_resource type="AudioStream" uid="uid://crgqxvoudjshl" path="res://Voices/sdg 8.mp3" id="23_r4p17"]
-[ext_resource type="AudioStream" uid="uid://b0xsl6sqnhku1" path="res://sounds/ai sounds/underwater-sounds-376891.mp3" id="23_u4y7u"]
-[ext_resource type="AudioStream" uid="uid://b478denpfxtcx" path="res://sounds/ai sounds/african-savanna-2-23769.mp3" id="24_e2pu3"]
 [ext_resource type="AudioStream" uid="uid://cmdpwtfachxta" path="res://Voices/sdg 9.mp3" id="26_d7fp4"]
 [ext_resource type="AudioStream" uid="uid://6btr8h2lyp7u" path="res://Voices/sdg 10.mp3" id="29_axglg"]
 [ext_resource type="AudioStream" uid="uid://daj5g8b7d8s0k" path="res://Voices/sdg 11.mp3" id="32_jstes"]
-[ext_resource type="AudioStream" uid="uid://b7srdxjskh8p0" path="res://sounds/ai sounds/goal2.mp3" id="32_v6rpk"]
 [ext_resource type="AudioStream" uid="uid://bhbaiig0iorsr" path="res://Voices/sdg 12.mp3" id="35_rarkd"]
 [ext_resource type="AudioStream" uid="uid://dsmxkmoiy3lhx" path="res://Voices/sdg 1 emily.mp3" id="37_dbnba"]
 [ext_resource type="PackedScene" uid="uid://bdllxnud8sodo" path="res://questsdg/goal_box_animated.tscn" id="38_dqovh"]
-[ext_resource type="AudioStream" uid="uid://caf2cxncs7t5y" path="res://Voices/sdg 2 emily.mp3" id="38_w5ut5"]
 [ext_resource type="AudioStream" uid="uid://dt8ldyuj5n7nv" path="res://Voices/sdg 13.mp3" id="38_y1on4"]
 [ext_resource type="AudioStream" uid="uid://ccynsond5b4q0" path="res://Voices/sdg 3.mp3" id="39_l8wyt"]
 [ext_resource type="AudioStream" uid="uid://cp75tpmqxbs6f" path="res://Voices/sdg 4.mp3" id="40_4gmfy"]
@@ -62020,7 +62009,6 @@ sprite_frames = SubResource("SpriteFrames_msxeo")
 [node name="goals" type="Node3D" parent="tu dub"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597696, 0.328747, -0.277604)
 script = ExtResource("2_2dw41")
-sounds = Array[AudioStream]([ExtResource("37_dbnba"), ExtResource("38_w5ut5"), ExtResource("39_l8wyt"), ExtResource("40_4gmfy"), ExtResource("41_0gxsn"), ExtResource("16_j5gtg"), ExtResource("17_jpnay"), ExtResource("19_v6rpk"), ExtResource("19_u4y7u"), ExtResource("32_v6rpk"), ExtResource("20_1hang"), ExtResource("21_jxdac"), ExtResource("22_fqo83"), ExtResource("23_u4y7u"), ExtResource("24_e2pu3"), null, null])
 
 [node name="goal_box" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
 visible = false
