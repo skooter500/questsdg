@@ -23,7 +23,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dqsdtbq11wh72" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Buildings.obj" id="21_22oil"]
 [ext_resource type="ArrayMesh" uid="uid://dsvw1hx5thygm" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Library v2.obj" id="22_b11sm"]
 [ext_resource type="ArrayMesh" uid="uid://dk46vpqvevrd4" path="res://Models/Tallaght/Tallaght_TUDublin_Buildings.obj" id="23_p7tmn"]
-[ext_resource type="PackedScene" path="res://Book.tscn" id="24_7kp7o"]
+[ext_resource type="PackedScene" uid="uid://bpfvajt18aa5p" path="res://questsdg/3dText.tscn" id="24_7kp7o"]
 [ext_resource type="ArrayMesh" uid="uid://csyrogweajq6b" path="res://Models/Tallaght/Tallaght_TUDublin_Floor v4.obj" id="24_8fq6b"]
 [ext_resource type="ArrayMesh" uid="uid://0fhxx2i8gi4u" path="res://Models/Grangegorman/Grangegorman_TUDublin_Buildings.obj" id="25_b11sm"]
 [ext_resource type="ArrayMesh" uid="uid://rldoxr3j6fp6" path="res://Models/Tallaght/Tallaght_TUDublin_Library v2.obj" id="25_mfkbt"]

@@ -17,7 +17,7 @@ config/icon="res://images/new logo1.png"
 
 [autoload]
 
-XrSimulator="*res://addons/xr-simulator/XRSimulator.tscn"
+XrSimulator="res://addons/xr-simulator/XRSimulator.tscn"
 
 [gui]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8905 format=4 uid="uid://bol1dc0pyta2f"]
+[gd_scene load_steps=8904 format=4 uid="uid://bol1dc0pyta2f"]
 
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://questsdg/goals.gd" id="2_2dw41"]
@@ -61792,17 +61792,13 @@ reflected_light_source = 2
 tonemap_mode = 2
 glow_enabled = true
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_pvxhv"]
-radius = 0.05
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dbnba"]
-radius = 0.05
-height = 0.2
-
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rf3s6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dbnba"]
 size = Vector3(12.5771, 1, 2001.34)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nbm02"]
+radius = 0.05
 
 [node name="cubes_scene" type="Node3D"]
 
@@ -62134,65 +62130,6 @@ script = ExtResource("1_e2pu3")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="XROrigin3D" type="XROrigin3D" parent="."]
-
-[node name="left" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.487883, 1.64534, 0)
-tracker = &"left_hand"
-script = ExtResource("2_p7tmn")
-
-[node name="HandPoseDetector" type="Node" parent="XROrigin3D/left"]
-script = ExtResource("3_b11sm")
-hand_pose_set = ExtResource("7_077gh")
-metadata/_custom_type_script = "uid://dya4sxc8awaw0"
-
-[node name="left_hand" type="Area3D" parent="XROrigin3D/left"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/left_hand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
-shape = SubResource("SphereShape3D_pvxhv")
-
-[node name="LeftHandHumanoid2" parent="XROrigin3D/left" instance=ExtResource("2_pvxhv")]
-
-[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1"]
-
-[node name="collider" type="CharacterBody3D" parent="XROrigin3D/left"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/collider"]
-shape = SubResource("CapsuleShape3D_dbnba")
-
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" node_paths=PackedStringArray("spawn_in_front")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6356, 0.665969)
-script = ExtResource("4_rf3s6")
-spawn_in_front = NodePath("../../tu dub")
-
-[node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
-
-[node name="right" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.429377, 1.73574, 0)
-tracker = &"right_hand"
-script = ExtResource("2_p7tmn")
-
-[node name="right_hand" type="Area3D" parent="XROrigin3D/right"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/right_hand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
-shape = SubResource("SphereShape3D_pvxhv")
-
-[node name="RightHandHumanoid2" parent="XROrigin3D/right" instance=ExtResource("3_6h1ut")]
-
-[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="0"]
-hand_tracker = &"/user/hand_tracker/right"
-
-[node name="HandPoseDetector" parent="XROrigin3D/right" instance=ExtResource("6_mfkbt")]
-hand_tracker_name = "/user/hand_tracker/right"
-hand_pose_set = ExtResource("7_077gh")
-
-[node name="collider" type="CharacterBody3D" parent="XROrigin3D/right"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/collider"]
-shape = SubResource("CapsuleShape3D_dbnba")
-
 [node name="floor" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor"]
@@ -62203,6 +62140,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="rooff"]
 shape = SubResource("BoxShape3D_dbnba")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" node_paths=PackedStringArray("spawn_in_front")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
+script = ExtResource("4_rf3s6")
+spawn_in_front = NodePath("")
+
+[node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
+
+[node name="left" type="XRNode3D" parent="XROrigin3D"]
+tracker = &"/user/hand_tracker/left"
+show_when_tracked = true
+script = ExtResource("2_p7tmn")
+
+[node name="HandPoseDetector" type="Node" parent="XROrigin3D/left"]
+script = ExtResource("3_b11sm")
+hand_pose_set = ExtResource("7_077gh")
+metadata/_custom_type_script = "uid://dya4sxc8awaw0"
+
+[node name="left_hand" type="Area3D" parent="XROrigin3D/left"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0680579, 0.159387)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/left_hand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
+shape = SubResource("SphereShape3D_nbm02")
+
+[node name="LeftHandHumanoid2" parent="XROrigin3D/left" instance=ExtResource("2_pvxhv")]
+
+[node name="right" type="XRNode3D" parent="XROrigin3D"]
+tracker = &"/user/hand_tracker/right"
+show_when_tracked = true
+script = ExtResource("2_p7tmn")
+
+[node name="right_hand" type="Area3D" parent="XROrigin3D/right"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0676188, 0.159387)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/right_hand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
+shape = SubResource("SphereShape3D_nbm02")
+
+[node name="RightHandHumanoid2" parent="XROrigin3D/right" instance=ExtResource("3_6h1ut")]
+
+[node name="HandPoseDetector" parent="XROrigin3D/right" instance=ExtResource("6_mfkbt")]
+hand_tracker_name = "/user/hand_tracker/right"
+hand_pose_set = ExtResource("7_077gh")
+
+[connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
+[connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]
+[connection signal="area_entered" from="XROrigin3D/left/left_hand" to="XROrigin3D/left" method="_on_right_hand_area_entered"]
+[connection signal="area_entered" from="XROrigin3D/right/right_hand" to="XROrigin3D/right" method="_on_right_hand_area_entered"]
+[connection signal="area_exited" from="XROrigin3D/right/right_hand" to="XROrigin3D/right" method="_on_right_hand_area_exited"]
+[connection signal="pose_ended" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_ended"]
+[connection signal="pose_started" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_started"]
 
 [editable path="tu dub/ani_goals/goal_box_animated"]
 [editable path="tu dub/ani_goals/goal_box_animated2"]
