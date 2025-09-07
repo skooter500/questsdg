@@ -1,4 +1,4 @@
-[gd_scene load_steps=8910 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8922 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
@@ -96,8 +96,12 @@
 [ext_resource type="Texture2D" uid="uid://ufj5qklowrin" path="res://goals/Goal-13/Goal 13/E_GIF_13.png" id="56_ufim6"]
 [ext_resource type="Texture2D" uid="uid://cuo5wkhj0hfpt" path="res://goals/Goal-14/Goal 14/14_SDG_MakeEveryDayCount_Gifs_GDU.png" id="57_kojkm"]
 [ext_resource type="Texture2D" uid="uid://dufit3ewu4h7j" path="res://goals/Goal-14/Goal 14/E_GIF_14.png" id="58_flujy"]
-[ext_resource type="Material" uid="uid://j8dm7t25nhpu" path="res://shaders/grid.tres" id="82_nte7u"]
 [ext_resource type="Script" uid="uid://bwfcgojiieai2" path="res://questsdg/reset_wheel.gd" id="87_axglg"]
+[ext_resource type="Material" uid="uid://depf86lb6a4qm" path="res://questsdg/colored_glass.tres" id="96_axglg"]
+[ext_resource type="Script" uid="uid://cmw6n17mebkcx" path="res://behaviors/boid.gd" id="99_0s3vr"]
+[ext_resource type="Material" uid="uid://dohx2u81lglvd" path="res://behaviors/jet_material.tres" id="102_wnpci"]
+[ext_resource type="Script" uid="uid://b6jj7yxhu2hi1" path="res://behaviors/follow_path.gd" id="104_0s3vr"]
+[ext_resource type="PackedScene" uid="uid://ctshf28j6y5lq" path="res://Models/craft_speederD.glb" id="104_ty5nw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wf4a"]
 atlas = ExtResource("3_c0oai")
@@ -61809,6 +61813,48 @@ height = 0.2
 [sub_resource type="BoxShape3D" id="BoxShape3D_dbnba"]
 size = Vector3(12.5771, 1, 2001.34)
 
+[sub_resource type="BoxShape3D" id="2"]
+size = Vector3(0.0576172, 0.0560303, 0.0388794)
+
+[sub_resource type="Gradient" id="Gradient_em1vl"]
+offsets = PackedFloat32Array(0, 0.00249377, 0.63591, 1)
+colors = PackedColorArray(1, 0.984314, 0, 0, 1, 0, 0, 1, 1, 0.983333, 0, 1, 1, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_akxxs"]
+gradient = SubResource("Gradient_em1vl")
+use_hdr = true
+
+[sub_resource type="Curve" id="Curve_kip11"]
+_data = [Vector2(0, 0.505263), 0.0, 0.0, 0, 0, Vector2(0.355731, 0.915789), 0.0, 0.0, 0, 0, Vector2(1, 0.0421052), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_3xgau"]
+curve = SubResource("Curve_kip11")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8su2q"]
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+spread = 10.0
+initial_velocity_min = 0.2
+initial_velocity_max = 0.5
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 1.0
+linear_accel_max = 1.0
+scale_min = 0.1
+scale_curve = SubResource("CurveTexture_3xgau")
+color_ramp = SubResource("GradientTexture1D_akxxs")
+
+[sub_resource type="PrismMesh" id="PrismMesh_wnpci"]
+size = Vector3(0.01, 0.01, 0.01)
+
+[sub_resource type="Curve3D" id="Curve3D_8su2q"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.0318916, 0.000488281, -0.610488, 0, 0, 0, 0, 0, 0, 0.746826, 0.549072, -0.397657, 0, 0, 0, 0, 0, 0, 0.957704, 0.204834, -0.158546, 0, 0, 0, 0, 0, 0, 1.31744, 0, -0.201766, 0, 0, 0, 0, 0, 0, 1.45341, 0.104797, 0.134083, 0, 0, 0, 0, 0, 0, 1.21265, -0.000488281, 0.282408, 0, 0, 0, 0, 0, 0, 1.2147, -0.000854492, 0.714859, 0, 0, 0, 0, 0, 0, 1.16356, -0.0012207, 1.04025, 0, 0, 0, 0, 0, 0, 0.88845, -0.00134277, 1.23903, 0, 0, 0, 0, 0, 0, 0.289025, -0.0012207, 1.31404, 0, 0, 0, 0, 0, 0, 0.199795, -0.00158691, 1.49801, 0, 0, 0, 0, 0, 0, -0.155934, -0.00183105, 1.81254, 0, 0, 0, 0, 0, 0, -0.82654, -0.123993, 1.79498, 0, 0, 0, 0, 0, 0, -1.19806, -0.00158691, 1.429, 0, 0, 0, 0, 0, 0, -0.917692, 0.109467, 1.16295, 0, 0, 0, 0, 0, 0, -1.07243, -0.000976562, 0.744657, 0, 0, 0, 0, 0, 0, -1.48751, -0.000732422, 0.460391, 0, 0, 0, 0, 0, 0, -1.88222, 0.46228, 0.0148389, 0, 0, 0, 0, 0, 0, -1.06319, 0.170197, -0.240986, 0, 0, 0, 0, 0, 0, -0.274554, 0, -0.618003, 0, 0, 0, 0, 0, 0, -0.612085, 0.000244141, -1.01623, 0, 0, 0, 0, 0, 0, -0.119717, 0.000244141, -1.15246, 0, 0, 0, 0, 0, 0, 0.325618, 0.000244141, -1.07452, 0, 0, 0, 0, 0, 0, 0.0864336, 0, -0.7991),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 24
+
 [node name="cubes_scene" type="Node3D"]
 script = ExtResource("1_d7fp4")
 
@@ -62154,10 +62200,10 @@ transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -
 shadow_enabled = true
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.681795, 0, 1.14191)
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" node_paths=PackedStringArray("spawn_in_front")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
+near = 0.001
 script = ExtResource("4_rf3s6")
 spawn_in_front = NodePath("../../tu dub")
 
@@ -62181,6 +62227,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
 shape = SubResource("SphereShape3D_pvxhv")
 
 [node name="LeftHandHumanoid2" parent="XROrigin3D/left" instance=ExtResource("2_pvxhv")]
+
+[node name="LeftHandHumanoidMesh" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("96_axglg")
 
 [node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1"]
 
@@ -62208,7 +62257,7 @@ shape = SubResource("SphereShape3D_pvxhv")
 hand_tracker = &"/user/hand_tracker/right"
 
 [node name="RightHandHumanoidMesh" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="1"]
-surface_material_override/0 = ExtResource("82_nte7u")
+surface_material_override/0 = ExtResource("96_axglg")
 
 [node name="HandPoseDetector" parent="XROrigin3D/right" instance=ExtResource("6_mfkbt")]
 hand_tracker_name = "/user/hand_tracker/right"
@@ -62229,6 +62278,53 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
 shape = SubResource("BoxShape3D_dbnba")
+
+[node name="Boid" type="CharacterBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.247627, 1.23124, -0.460263)
+motion_mode = 1
+script = ExtResource("99_0s3vr")
+max_speed = 0.2
+banking = 2.0
+damping = 0.0
+draw_gizmos = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boid"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0.00537109, -0.0543823, -0.0117798)
+shape = SubResource("2")
+
+[node name="follow_path" type="Node" parent="Boid" node_paths=PackedStringArray("path")]
+script = ExtResource("104_0s3vr")
+path = NodePath("../../Path3D")
+waypoint_seek_distance = 0.3
+weight = 5.0
+draw_gizmos = false
+
+[node name="craft_speederD2" parent="Boid" instance=ExtResource("104_ty5nw")]
+transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, 0.100756, -0.0180049, 0.0849958)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Boid"]
+transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, 0.05, 0, -0.05, -2.18557e-09, -0.0178165, -0.000655651, -0.0503982)
+material_override = ExtResource("102_wnpci")
+amount = 500
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_8su2q")
+draw_pass_1 = SubResource("PrismMesh_wnpci")
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Boid"]
+transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, 0.05, 0, -0.05, -2.18557e-09, 0.0215936, -0.000655651, -0.0503982)
+material_override = ExtResource("102_wnpci")
+amount = 500
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_8su2q")
+draw_pass_1 = SubResource("PrismMesh_wnpci")
+
+[node name="Marker3D" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.562878, 1.27075, -0.501507)
+gizmo_extents = 0.05
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22, 0)
+curve = SubResource("Curve3D_8su2q")
 
 [connection signal="bounce" from="tu dub/ani_goals/goal_box_animated13" to="tu dub/ani_goals/goal_box_animated13/climate_action" method="_on_goal_box_animated_13_bounce"]
 [connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
