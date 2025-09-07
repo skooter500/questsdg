@@ -15,7 +15,7 @@ transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 
 transform = Transform3D(-1.49934, 0, 0.0444994, 0, 1.5, 0, -0.0444994, 0, -1.49934, 0.10753, 0.575615, 0.554818)
 
 [node name="Grangegorman" parent="." instance=ExtResource("3_51l6s")]
-transform = Transform3D(1.48418, 0, -0.217311, 0, 1.5, 0, 0.217311, 0, 1.48418, 0.20353, 0.507024, -1.30287)
+transform = Transform3D(1.48418, 0, -0.217311, 0, 1.5, 0, 0.217311, 0, 1.48418, 0.0723273, 0.507024, -0.568716)
 
 [node name="GrangegormanBuildings" parent="Grangegorman" index="2"]
 skeleton = NodePath("../../..")
