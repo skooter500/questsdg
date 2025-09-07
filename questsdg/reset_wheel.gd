@@ -34,6 +34,7 @@ func make_invisible():
 	self.queue_free()
 	get_tree().reload_current_scene()
 	Talo.events.track("Reset")
+	Talo.events.flush()
 	
 	
 func fade_out():
