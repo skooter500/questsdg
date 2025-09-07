@@ -33,6 +33,8 @@ func make_invisible():
 	
 	self.queue_free()
 	$"../goals".spawn_boxes()
+	Talo.events.track("SDG's Activated")
+	
 	
 func fade_out():
 	if fade_out_tween:

@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdllxnud8sodo"]
+[gd_scene load_steps=9 format=3 uid="uid://bdllxnud8sodo"]
 
 [ext_resource type="Script" uid="uid://bpatk7f43t115" path="res://questsdg/goal_box_animated.gd" id="1_5fbwa"]
-[ext_resource type="PackedScene" uid="uid://disklyhxjm4pr" path="res://questsdg/playlist_looper.tscn" id="2_iml76"]
+[ext_resource type="Script" uid="uid://dgnag6yx6rwgq" path="res://questsdg/playlist_looper.gd" id="2_f6fjf"]
+[ext_resource type="AudioStream" uid="uid://ceufwu0ucjrvk" path="res://Voices/sdg 7.mp3" id="3_ppmvc"]
+[ext_resource type="AudioStream" uid="uid://5a3fmyh6oj4q" path="res://campus_sounds/TU Dublin Conservatoire Presents Ode to Joy on Europe Day.mp3" id="4_uuu3t"]
+[ext_resource type="AudioStream" uid="uid://cnjv0qnudg2hf" path="res://campus_sounds/Uilleann Pipes Lessons at TUDublin.mp3" id="5_8eaft"]
 [ext_resource type="Script" uid="uid://ne3leq4jnnd8" path="res://questsdg/animated_sprite_3d.gd" id="215_ys8l3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_80lwv"]
@@ -18,7 +21,14 @@ script = ExtResource("1_5fbwa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_80lwv")
 
-[node name="playlist_looper" parent="." instance=ExtResource("2_iml76")]
+[node name="playlist_looper" type="Node3D" parent="."]
+script = ExtResource("2_f6fjf")
+sounds = Array[AudioStream]([ExtResource("3_ppmvc"), ExtResource("4_uuu3t"), ExtResource("5_8eaft")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="playlist_looper"]
+volume_db = 80.0
+max_db = 6.0
+max_distance = 1.0
 
 [node name="Area3D" type="Area3D" parent="." groups=["ani_box"]]
 

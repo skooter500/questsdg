@@ -1,5 +1,6 @@
-[gd_scene load_steps=8908 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8910 format=4 uid="uid://bm3rnwx5wv8tx"]
 
+[ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://questsdg/goals.gd" id="2_2dw41"]
 [ext_resource type="Script" uid="uid://dttcldpevggnp" path="res://questsdg/hand.gd" id="2_p7tmn"]
@@ -96,6 +97,7 @@
 [ext_resource type="Texture2D" uid="uid://cuo5wkhj0hfpt" path="res://goals/Goal-14/Goal 14/14_SDG_MakeEveryDayCount_Gifs_GDU.png" id="57_kojkm"]
 [ext_resource type="Texture2D" uid="uid://dufit3ewu4h7j" path="res://goals/Goal-14/Goal 14/E_GIF_14.png" id="58_flujy"]
 [ext_resource type="Material" uid="uid://j8dm7t25nhpu" path="res://shaders/grid.tres" id="82_nte7u"]
+[ext_resource type="Script" uid="uid://bwfcgojiieai2" path="res://questsdg/reset_wheel.gd" id="87_axglg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wf4a"]
 atlas = ExtResource("3_c0oai")
@@ -61808,6 +61810,7 @@ height = 0.2
 size = Vector3(12.5771, 1, 2001.34)
 
 [node name="cubes_scene" type="Node3D"]
+script = ExtResource("1_d7fp4")
 
 [node name="tu dub" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.232, 0)
@@ -62111,6 +62114,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00394344)
 visible = false
 image = ExtResource("17_ykxp3")
 goal = 17
+
+[node name="reset_wheel" parent="tu dub/goals" instance=ExtResource("44_rf3s6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00605768, 0, 0.315702)
+script = ExtResource("87_axglg")
+image = null
 
 [node name="maps" parent="tu dub" instance=ExtResource("45_73ssi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25742, -0.742757, 0.762648)
