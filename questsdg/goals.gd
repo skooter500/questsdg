@@ -18,7 +18,7 @@ func spawn_box(i):
 
 		
 func spawn_boxes():
-	for i in 17:
+	for i in 18:
 		spawn_box(i)
 		await get_tree().create_timer(0.6).timeout
 		

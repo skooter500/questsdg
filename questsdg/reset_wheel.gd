@@ -32,7 +32,6 @@ func make_invisible():
 	monitorable = false 
 	
 	self.queue_free()
-	$"../goals".spawn_boxes()
 	get_tree().reload_current_scene()
 	Talo.events.track("Reset")
 	
