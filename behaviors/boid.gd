@@ -88,7 +88,7 @@ static var line_thickness:float = 0.0001
 
 func on_draw_gizmos():
 
-	var len =  10 * $MeshInstance3D.scale.x
+	var len =  10
 	DebugDraw3D.draw_arrow(global_transform.origin,  global_transform.origin + transform.basis.z * len , Color(0, 0, 1), line_thickness, line_thickness)
 	DebugDraw3D.draw_arrow(global_transform.origin,  global_transform.origin + transform.basis.x * len , Color(1, 0, 0), line_thickness, line_thickness)
 	DebugDraw3D.draw_arrow(global_transform.origin,  global_transform.origin + transform.basis.y * len , Color(0, 1, 0), line_thickness, line_thickness)
@@ -161,7 +161,6 @@ func calculate():
 
 
 func _process(delta):
-	should_calculate = true
 	if draw_gizmos:
 		on_draw_gizmos()
 	if school and count_neighbors:
@@ -173,9 +172,7 @@ func _process(delta):
 func _physics_process(delta):
 	# pause = true
 	# lerp in the new forces
-	if should_calculate:
-		new_force = calculate()
-		should_calculate = false		
+	new_force = calculate()
 	force = lerp(force, new_force, delta)
 	if ! pause:
 		acceleration = force / mass

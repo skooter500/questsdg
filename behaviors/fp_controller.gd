@@ -14,10 +14,22 @@ var left:XRController3D
 var right:XRController3D
 
 
+func _input(event):
+	if event is InputEventMouseMotion and controlling:
+		rotate(Vector3.DOWN, deg_to_rad(event.relative.x * sensitivity))
+		rotate(transform.basis.x,deg_to_rad(- event.relative.y * sensitivity))
+	if event.is_action_pressed("ui_cancel"):
+		if controlling:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:			
+			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		controlling = ! controlling
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	pass # Replace with function body.
 
 @export var can_move:bool = true
