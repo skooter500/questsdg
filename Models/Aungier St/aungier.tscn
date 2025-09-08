@@ -2788,6 +2788,7 @@ surface_material_override/0 = ExtResource("5_3qh2r")
 transform = Transform3D(-0.932172, 0, -0.362015, 0, 1, 0, 0.362015, 0, -0.932172, 171.599, 121.012, -0.175405)
 pixel_size = 1.0
 text = "Aungier St Campus"
+font_size = 64
 
 [node name="building_222" type="MeshInstance3D" parent="scaler"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.4253, 0)

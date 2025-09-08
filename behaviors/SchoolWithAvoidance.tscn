@@ -71,7 +71,6 @@ draw_gizmos = false
 [node name="Avoidance" type="Node" parent="camera follower"]
 script = ExtResource("11")
 feeler_angle = 90
-feeler_length = 20
 updates_per_second = 10
 weight = 10.0
 

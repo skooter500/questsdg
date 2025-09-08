@@ -39,3 +39,4 @@ Health & Recreation
 [node name="3dlabel3" parent="." instance=ExtResource("7_jo728")]
 transform = Transform3D(1, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1, 0.00260075, 0.208835, -0.314578)
 text = "Tallaght Campus"
+font_size = 64
