@@ -80,3 +80,4 @@ openxr/extensions/hand_tracking=true
 shaders/enabled=true
 openxr/extensions/meta/passthrough=true
 openxr/extensions/meta/color_space/starting_color_space=3
+openxr/extensions/meta/hand_tracking_mesh=true

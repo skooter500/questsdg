@@ -191,5 +191,5 @@ func _physics_process(delta):
 			
 			# Implement Banking as described:
 			# https://www.cs.toronto.edu/~dt/siggraph97-course/cwr87/
-			var temp_up = global_transform.basis.y.lerp(Vector3.UP + (acceleration * banking), delta * 5.0)
+			var temp_up = global_transform.basis.y.lerp(Vector3.UP + (acceleration * banking), delta)
 			look_at(global_transform.origin - vel.normalized(), temp_up)

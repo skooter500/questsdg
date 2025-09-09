@@ -61695,7 +61695,7 @@ motion_mode = 1
 script = ExtResource("99_0s3vr")
 max_speed = 0.2
 max_force = 5
-banking = 2.0
+banking = 10.0
 damping = 0.0
 draw_gizmos = false
 
@@ -61753,7 +61753,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165009, 0.28011, 0)
 curve = SubResource("Curve3D_8su2q")
 
 [node name="ani_goals" type="Node3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597696, 0.328747, 0.182742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597696, 0.489589, 0.182742)
 
 [node name="goal_box_animated" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 1.23005)
@@ -61980,7 +61980,7 @@ sprite_frames = SubResource("SpriteFrames_128cd")
 sprite_frames = SubResource("SpriteFrames_msxeo")
 
 [node name="goals" type="Node3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597696, 0.328747, 0.182742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597696, 0.489589, 0.182742)
 script = ExtResource("2_2dw41")
 
 [node name="goal_box" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
