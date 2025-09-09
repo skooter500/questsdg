@@ -55,7 +55,8 @@ func make_invisible():
 	ani_box.bounce_in()
 	Talo.events.track("Goal " + str(goal) + " thumbs up")
 	Talo.events.flush()
-	self.queue_free()
+	inside = false
+	deactivate()
 	# get_parent().add_child(ani_box)
 	
 	
@@ -105,6 +106,10 @@ var big_scale = Vector3(1.25, 1.25, 1.25)
 func play_sound():
 	$AudioStreamPlayer3D.pitch_scale = randf_range(0.8, 1.2)
 	$AudioStreamPlayer3D.play()
+	
+func deactivate():
+	visible = false
+	$".".monitoring = false
 
 func _on_area_exited(area: Area3D) -> void:
 	if fade_out_tween:

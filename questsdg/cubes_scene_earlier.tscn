@@ -1,4 +1,4 @@
-[gd_scene load_steps=8901 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8900 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
@@ -98,7 +98,6 @@
 [ext_resource type="Texture2D" uid="uid://dufit3ewu4h7j" path="res://goals/Goal-14/Goal 14/E_GIF_14.png" id="58_flujy"]
 [ext_resource type="Script" uid="uid://bwfcgojiieai2" path="res://questsdg/reset_wheel.gd" id="87_axglg"]
 [ext_resource type="AudioStream" uid="uid://bq1lx7ft7u75y" path="res://sounds/spaceship-ambience-with-effects-21420.mp3" id="89_8su2q"]
-[ext_resource type="Script" uid="uid://lqy7lve1pfps" path="res://behaviors/fp_controller.gd" id="91_ty5nw"]
 [ext_resource type="Material" uid="uid://depf86lb6a4qm" path="res://questsdg/colored_glass.tres" id="96_axglg"]
 [ext_resource type="Script" uid="uid://cmw6n17mebkcx" path="res://behaviors/boid.gd" id="99_0s3vr"]
 [ext_resource type="Script" uid="uid://s5pb8njisohn" path="res://behaviors/avoidance.gd" id="100_8su2q"]
@@ -107,7 +106,7 @@
 [ext_resource type="PackedScene" uid="uid://ctshf28j6y5lq" path="res://Models/craft_speederD.glb" id="104_ty5nw"]
 
 [sub_resource type="BoxShape3D" id="2"]
-size = Vector3(0.0576172, 0.0560303, 0.0388794)
+size = Vector3(0.141968, 0.0560303, 0.0609894)
 
 [sub_resource type="Gradient" id="Gradient_em1vl"]
 offsets = PackedFloat32Array(0, 0.00249377, 0.63591, 1)
@@ -61690,10 +61689,6 @@ height = 0.2
 [node name="cubes_scene" type="Node3D"]
 script = ExtResource("1_d7fp4")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-visible = false
-script = ExtResource("91_ty5nw")
-
 [node name="Boid" type="CharacterBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.247627, 1.60836, -0.863971)
 motion_mode = 1
@@ -61705,7 +61700,7 @@ damping = 0.0
 draw_gizmos = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Boid"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0.00537109, -0.00756836, -0.0479126)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0.000671387, -0.00756836, 0.00498195)
 shape = SubResource("2")
 
 [node name="Avoidance" type="Node" parent="Boid"]
@@ -62201,13 +62196,9 @@ hand_pose_set = ExtResource("7_077gh")
 shape = SubResource("CapsuleShape3D_dbnba")
 
 [connection signal="bounce" from="tu dub/ani_goals/goal_box_animated15" to="tu dub/ani_goals/goal_box_animated15/climate_action" method="_on_goal_box_animated_13_bounce"]
-[connection signal="pose_ended" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_ended"]
-[connection signal="pose_started" from="XROrigin3D/left/HandPoseDetector" to="XROrigin3D/left" method="_on_hand_pose_detector_pose_started"]
 [connection signal="area_entered" from="XROrigin3D/left/left_hand" to="XROrigin3D/left" method="_on_right_hand_area_entered"]
 [connection signal="area_entered" from="XROrigin3D/right/right_hand" to="XROrigin3D/right" method="_on_right_hand_area_entered"]
 [connection signal="area_exited" from="XROrigin3D/right/right_hand" to="XROrigin3D/right" method="_on_right_hand_area_exited"]
-[connection signal="pose_ended" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_ended"]
-[connection signal="pose_started" from="XROrigin3D/right/HandPoseDetector" to="XROrigin3D/right" method="_on_hand_pose_detector_pose_started"]
 
 [editable path="tu dub/ani_goals/goal_box_animated"]
 [editable path="tu dub/ani_goals/goal_box_animated2"]

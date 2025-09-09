@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwlibvlt5t2q"]
+
+[ext_resource type="PackedScene" uid="uid://bmbo1gv835vbw" path="res://questsdg/color_wheel.tscn" id="1_noarx"]
+[ext_resource type="Script" uid="uid://bwfcgojiieai2" path="res://questsdg/reset_wheel.gd" id="2_a0tk4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="reset_wheel" parent="." instance=ExtResource("1_noarx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00605768, 0, 0.315702)
+visible = false
+script = ExtResource("2_a0tk4")

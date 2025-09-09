@@ -13,6 +13,8 @@ func spawn_box(i):
 	var a:AudioStreamPlayer3D = box.get_node("AudioStreamPlayer3D")
 	a.pitch_scale = randf_range(0.9, 1.5)
 	box.get_node("AudioStreamPlayer3D").play()
+	box.monitoring = true
+	box.monitorable = true
 	var interval = 0.5
 	t.tween_property(box, "scale", Vector3.ONE, interval)		
 
@@ -22,15 +24,13 @@ func spawn_boxes():
 		spawn_box(i)
 		await get_tree().create_timer(0.6).timeout
 		
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:	
-	
+func reset_positions():
 	var cols = 6
 	var gap = 0.3
 	var row = 0
 	var col = 0
 	
-	
+	goal_boxes.clear()
 	for child:Node3D in get_children():
 		goal_boxes.push_back(child)
 		child.visible = false
@@ -39,12 +39,20 @@ func _ready() -> void:
 		if col == 6:
 			col = 0
 			row = row - 1 
+		child.monitoring = false
+		child.monitorable = false
+	
 	var i = 0
+	ani_boxes.clear()
 	for child:Node3D in $"../ani_goals".get_children():
 		child.visible = false
 		# child.get_node("AudioStreamPlayer3D").stream = sounds[i]
 		ani_boxes.push_back(child)
-		i = i + 1
+		i = i + 1		
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:	
+	
+	reset_positions()
 	#var thread = Thread.new()
 	#thread.start(load_ani_boxes.bind(0, 17))
 	

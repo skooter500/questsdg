@@ -6,6 +6,8 @@ extends XRNode3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$HandPoseDetector.connect("pose_started", _on_hand_pose_detector_pose_started)
+	$HandPoseDetector.connect("pose_ended", _on_hand_pose_detector_pose_ended)
 	pass # Replace with function body.
 
 var force = Vector3.ZERO
