@@ -26,13 +26,28 @@ func _ready() -> void:
 
 var fade_out_tween:Tween = null
 
+func deactivate():
+	visible = false
+	monitoring = false
+	monitorable = false
+	position = Vector3(1000, -1000, 1000)
+	
+
+func activate():
+	visible = true
+	monitoring = true
+	monitorable = true
+	position = Vector3(0.006, 0, 0.618)
+	scale = Vector3.ONE
+	
+
 func make_invisible():
 	fade_out_tween = null
-	monitoring = false        # Stops detecting other bodies entering/exiting
-	monitorable = false 
-	
-	self.queue_free()
 	$"../goals".spawn_boxes()
+	inside = false
+	Talo.events.track("SDG's Activated")
+	deactivate()
+	
 	
 func fade_out():
 	if fade_out_tween:

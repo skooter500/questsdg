@@ -9,8 +9,13 @@ var anim1Frames:SpriteFrames
 
 @export var goal_num1:int = 2
 
+signal bounce  
+
+func make_invisible():
+	fade_tween = null
+
 func bounce_in():
-	
+	$Area3D.monitoring = true
 	$Area3D/scaler/front.play("default")
 	$Area3D/scaler/bott.play("default")
 	$Area3D/scaler/left.play("default")
@@ -26,19 +31,21 @@ func bounce_in():
 		fade_tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
 		fade_tween.tween_property(self, "scale", Vector3.ONE,2)
 		theme_sound.volume_db = -100
-		theme_sound.play()
+		$playlist_looper.play()
 		fade_tween.set_parallel(true)
 		fade_tween.tween_property(theme_sound, "volume_db", -20, 2)
+		
 			# Optional: Hide the mesh when fade completes
-		# fade_tween.finished.connect(make_invisible)
-
+		fade_tween.finished.connect(make_invisible)
+	emit_signal("bounce")
+	
 var theme_sound:AudioStreamPlayer3D
 
 var lerp_target:Vector3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	$Area3D.monitoring = false
 	anim0Frames = $Area3D/scaler/front.sprite_frames
 	anim1Frames = $Area3D/scaler/bott.sprite_frames
 	
@@ -58,7 +65,7 @@ func _ready() -> void:
 	
 	lerp_target = global_position
 	
-	theme_sound = $AudioStreamPlayer3D
+	theme_sound = $playlist_looper/AudioStreamPlayer3D
 	
 	pass # Replace with function body.
 

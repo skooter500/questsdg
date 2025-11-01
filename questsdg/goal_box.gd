@@ -36,6 +36,7 @@ func _ready() -> void:
 	
 	left = $"../../../XROrigin3D/left"
 	right = $"../../../XROrigin3D/right"
+	monitoring = false
 	pass # Replace with function body.
 	
 
@@ -52,7 +53,10 @@ func make_invisible():
 	ani_box.visible = true
 	ani_box.get_node
 	ani_box.bounce_in()
-	self.queue_free()
+	Talo.events.track("Goal " + str(goal) + " thumbs up")
+	Talo.events.flush()
+	inside = false
+	deactivate()
 	# get_parent().add_child(ani_box)
 	
 	
@@ -99,9 +103,20 @@ func _on_area_entered(area: Area3D) -> void:
 
 var big_scale = Vector3(1.25, 1.25, 1.25)
 
+var can_play = true
+
 func play_sound():
-	$AudioStreamPlayer3D.pitch_scale = randf_range(0.8, 1.2)
-	$AudioStreamPlayer3D.play()
+	if can_play:
+		$AudioStreamPlayer3D.pitch_scale = randf_range(0.8, 1.2)
+		$AudioStreamPlayer3D.play()
+		can_play = false
+		await get_tree().create_timer(0.1).timeout
+		can_play = true
+		
+	
+func deactivate():
+	visible = false
+	$".".monitoring = false
 
 func _on_area_exited(area: Area3D) -> void:
 	if fade_out_tween:
@@ -117,4 +132,5 @@ func _on_area_exited(area: Area3D) -> void:
 		scale = big_scale
 		t.tween_property(self, "scale", Vector3.ONE, 1)
 		inside = false
+
 	pass # Replace with function body.

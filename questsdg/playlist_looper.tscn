@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://disklyhxjm4pr"]
+
+[ext_resource type="Script" uid="uid://dgnag6yx6rwgq" path="res://questsdg/playlist_looper.gd" id="1_3pd2n"]
+[ext_resource type="AudioStream" uid="uid://ceufwu0ucjrvk" path="res://Voices/sdg 7.mp3" id="2_xuxjp"]
+[ext_resource type="AudioStream" uid="uid://5a3fmyh6oj4q" path="res://campus_sounds/TU Dublin Conservatoire Presents Ode to Joy on Europe Day.mp3" id="3_j1yth"]
+[ext_resource type="AudioStream" uid="uid://cnjv0qnudg2hf" path="res://campus_sounds/Uilleann Pipes Lessons at TUDublin.mp3" id="4_4aapj"]
+
+[node name="playlist_looper" type="Node3D"]
+script = ExtResource("1_3pd2n")
+sounds = Array[AudioStream]([ExtResource("2_xuxjp"), ExtResource("3_j1yth"), ExtResource("4_4aapj")])
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = 80.0
+max_db = 6.0
+max_distance = 1.0

@@ -5,8 +5,7 @@
 [node name="3dlabel" type="Label3D"]
 transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, 0, 0, 0)
 pixel_size = 0.0005
-modulate = Color(0, 0.984314, 0, 1)
+modulate = Color(0.1261, 0.85748, 0.97, 1)
 text = "Central Quad"
-font_size = 64
 outline_size = 0
 script = ExtResource("1_rpq55")
