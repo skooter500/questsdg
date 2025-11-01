@@ -61753,7 +61753,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165009, 0.28011, 0)
 curve = SubResource("Curve3D_8su2q")
 
 [node name="ani_goals" type="Node3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597696, 0.664648, 0.182742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75106, 0.426777, 0.0763259)
 
 [node name="goal_box_animated" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 1.23005)
@@ -61980,7 +61980,7 @@ sprite_frames = SubResource("SpriteFrames_128cd")
 sprite_frames = SubResource("SpriteFrames_msxeo")
 
 [node name="goals" type="Node3D" parent="tu dub"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.597696, 0.664648, 0.182742)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75106, 0.426777, 0.0763259)
 script = ExtResource("2_2dw41")
 
 [node name="goal_box" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
@@ -62083,7 +62083,7 @@ multimesh = null
 multimesh = null
 
 [node name="tu_dub_logo" type="MeshInstance3D" parent="tu dub"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0867636, 0.406792, -0.05193)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0867636, 0.331675, -0.05193)
 mesh = SubResource("ArrayMesh_8fby4")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qrbae")

@@ -11,6 +11,9 @@ var anim1Frames:SpriteFrames
 
 signal bounce  
 
+func make_invisible():
+	fade_tween = null
+
 func bounce_in():
 	$Area3D.monitoring = true
 	$Area3D/scaler/front.play("default")
@@ -31,8 +34,9 @@ func bounce_in():
 		$playlist_looper.play()
 		fade_tween.set_parallel(true)
 		fade_tween.tween_property(theme_sound, "volume_db", -20, 2)
+		
 			# Optional: Hide the mesh when fade completes
-		# fade_tween.finished.connect(make_invisible)
+		fade_tween.finished.connect(make_invisible)
 	emit_signal("bounce")
 	
 var theme_sound:AudioStreamPlayer3D

@@ -103,9 +103,16 @@ func _on_area_entered(area: Area3D) -> void:
 
 var big_scale = Vector3(1.25, 1.25, 1.25)
 
+var can_play = true
+
 func play_sound():
-	$AudioStreamPlayer3D.pitch_scale = randf_range(0.8, 1.2)
-	$AudioStreamPlayer3D.play()
+	if can_play:
+		$AudioStreamPlayer3D.pitch_scale = randf_range(0.8, 1.2)
+		$AudioStreamPlayer3D.play()
+		can_play = false
+		await get_tree().create_timer(0.1).timeout
+		can_play = true
+		
 	
 func deactivate():
 	visible = false
@@ -125,4 +132,5 @@ func _on_area_exited(area: Area3D) -> void:
 		scale = big_scale
 		t.tween_property(self, "scale", Vector3.ONE, 1)
 		inside = false
+
 	pass # Replace with function body.

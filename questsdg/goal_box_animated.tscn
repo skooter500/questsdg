@@ -14,9 +14,9 @@ size = Vector3(0.2, 0.2, 0.2)
 size = Vector3(0.198706, 0.198889, 0.195898)
 
 [node name="goal_box_animated" type="RigidBody3D" groups=["ani_box"]]
-mass = 5.0
-linear_damp = 1.0
-angular_damp = 1.0
+mass = 10.0
+linear_damp = 5.0
+angular_damp = 5.0
 script = ExtResource("1_5fbwa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
