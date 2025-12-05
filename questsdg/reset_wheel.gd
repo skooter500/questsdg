@@ -43,6 +43,7 @@ func make_invisible():
 	$"../../color_wheel".activate()
 	$"..".reset_positions()
 	$"../../godot_plushy".position = Vector3(0.165, -0.102, 0.632)
+	$"../../godot_plushy".rotation = Vector3(0, 0, 0)
 	Talo.events.track("Reset")
 	Talo.events.flush()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8903 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8904 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
@@ -101,6 +101,7 @@
 [ext_resource type="Material" uid="uid://depf86lb6a4qm" path="res://questsdg/colored_glass.tres" id="96_axglg"]
 [ext_resource type="PackedScene" uid="uid://bbyhi45exl1kd" path="res://godot_plush/godot_plushie_animated.glb" id="96_ty5nw"]
 [ext_resource type="Script" uid="uid://cmuq6af1qq8pk" path="res://questsdg/godot_dude.gd" id="97_p4u8u"]
+[ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://questsdg/3_dlabel.tscn" id="98_w1b63"]
 [ext_resource type="Script" uid="uid://cmw6n17mebkcx" path="res://behaviors/boid.gd" id="99_0s3vr"]
 [ext_resource type="Script" uid="uid://s5pb8njisohn" path="res://behaviors/avoidance.gd" id="100_8su2q"]
 [ext_resource type="Material" uid="uid://dohx2u81lglvd" path="res://behaviors/jet_material.tres" id="102_wnpci"]
@@ -62151,6 +62152,38 @@ script = ExtResource("97_p4u8u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10439405, 0)
 shape = SubResource("SphereShape3D_p4u8u")
 
+[node name="Credits2" parent="tu dub" instance=ExtResource("98_w1b63")]
+transform = Transform3D(0.6468694, 0, -0.7626008, 0, 1, 0, 0.7626008, 0, 0.6468694, 0.9158054, 0.2595799, -1.1520331)
+text = "Created with:
+Godot Engine
+Blender
+FOSS
+
+Download & contribute:
+https://github.com/skooter500/questsdg
+https://skooter500.itch.io/quest-sdg"
+font_size = 64
+horizontal_alignment = 0
+
+[node name="Credits" parent="tu dub" instance=ExtResource("98_w1b63")]
+transform = Transform3D(0.5834704, 0, 0.8121344, 0, 1, 0, -0.8121344, 0, 0.5834704, -1.5190226, 0, -0.8006011)
+text = "Credits
+
+Faculty of Digital and Data:
+Dr Bryan Duggan
+Darren Fitzpatrick
+Mateo Alves
+Garrett Recker
+
+TU Dublin Sustainability Education:
+Dr Brian Gormley
+Olivia Freeman
+Paul Duffy
+Lucia Walsh
+Kenneth Boyle"
+font_size = 64
+horizontal_alignment = 0
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_73ssi")
 
@@ -62270,5 +62303,7 @@ shape = SubResource("CapsuleShape3D_dbnba")
 [editable path="tu dub/maps/Grangegorman/labels/3dlabel3"]
 [editable path="tu dub/maps/Bolton"]
 [editable path="tu dub/godot_plushy/godot_plushie_animated"]
+[editable path="tu dub/Credits2"]
+[editable path="tu dub/Credits"]
 [editable path="XROrigin3D/left/LeftHandHumanoid2"]
 [editable path="XROrigin3D/right/RightHandHumanoid2"]
