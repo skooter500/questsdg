@@ -62166,8 +62166,8 @@ font_size = 64
 horizontal_alignment = 0
 
 [node name="Credits" parent="tu dub" instance=ExtResource("98_w1b63")]
-transform = Transform3D(0.5834704, 0, 0.8121344, 0, 1, 0, -0.8121344, 0, 0.5834704, -1.5190226, 0, -0.8006011)
-text = "Credits
+transform = Transform3D(0.5834704, 0, 0.8121344, 0, 1, 0, -0.8121344, 0, 0.5834704, -1.5190226, 0.10329819, -0.8006011)
+text = "Credits:
 
 Faculty of Digital and Data:
 Dr Bryan Duggan
@@ -62180,7 +62180,14 @@ Dr Brian Gormley
 Olivia Freeman
 Paul Duffy
 Lucia Walsh
-Kenneth Boyle"
+Kenneth Boyle
+
+TU Dublin Conservatoire:
+Odhrán O Casaide
+Mark Redmond
+Ciaran Hanrahan
+Thomas Doorley
+Neil Duignam"
 font_size = 64
 horizontal_alignment = 0
 
