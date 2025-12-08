@@ -1,4 +1,4 @@
-[gd_scene load_steps=8904 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8905 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
@@ -49,6 +49,7 @@
 [ext_resource type="AudioStream" uid="uid://6btr8h2lyp7u" path="res://Voices/sdg 10.mp3" id="29_axglg"]
 [ext_resource type="AudioStream" uid="uid://daj5g8b7d8s0k" path="res://Voices/sdg 11.mp3" id="32_jstes"]
 [ext_resource type="AudioStream" uid="uid://bhbaiig0iorsr" path="res://Voices/sdg 12.mp3" id="35_rarkd"]
+[ext_resource type="PackedScene" uid="uid://dopy8agnoqcd7" path="res://questsdg/sdg_7_manager.tscn" id="36_a1h62"]
 [ext_resource type="AudioStream" uid="uid://dsmxkmoiy3lhx" path="res://Voices/sdg 1 emily.mp3" id="37_dbnba"]
 [ext_resource type="PackedScene" uid="uid://bdllxnud8sodo" path="res://questsdg/goal_box_animated.tscn" id="38_dqovh"]
 [ext_resource type="AudioStream" uid="uid://caf2cxncs7t5y" path="res://Voices/sdg 2 emily.mp3" id="38_w5ut5"]
@@ -61852,6 +61853,8 @@ sprite_frames = SubResource("SpriteFrames_5rext")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated7/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_8thac")
 
+[node name="sdg7_manager" parent="tu dub/ani_goals/goal_box_animated7" instance=ExtResource("36_a1h62")]
+
 [node name="goal_box_animated8" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
@@ -62277,6 +62280,7 @@ hand_pose_set = ExtResource("7_077gh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/collider"]
 shape = SubResource("CapsuleShape3D_dbnba")
 
+[connection signal="bounce" from="tu dub/ani_goals/goal_box_animated7" to="tu dub/ani_goals/goal_box_animated7/sdg7_manager" method="_on_goal_box_animated_7_bounce"]
 [connection signal="bounce" from="tu dub/ani_goals/goal_box_animated15" to="tu dub/ani_goals/goal_box_animated15/climate_action" method="_on_goal_box_animated_13_bounce"]
 [connection signal="animation_finished" from="tu dub/godot_plushy/godot_plushie_animated/AnimationPlayer" to="tu dub/godot_plushy/godot_plushie_animated/AnimationPlayer" method="_on_animation_finished"]
 [connection signal="area_entered" from="XROrigin3D/left/left_hand" to="XROrigin3D/left" method="_on_right_hand_area_entered"]
