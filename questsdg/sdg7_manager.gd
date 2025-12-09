@@ -23,14 +23,16 @@ func spawn_assets() -> void:
 		push_warning("SDG7: no spawn points set")
 		return
 
-	# We just use the first renewable asset (your wind_turbine.tscn)
 	var scene: PackedScene = renewable_assets[0]
 
 	for point in spawn_points:
+		if point == null:
+			continue
+
 		var instance := scene.instantiate() as Node3D
 		point.add_child(instance)
 
-		# Align the turbine with the spawn point
+		# Align turbine with the spawn point
 		instance.global_transform = point.global_transform
 
 		spawned.append(instance)
