@@ -1,5 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://djmiqqs04sehe"]
+[gd_scene load_steps=3 format=3 uid="uid://djmiqqs04sehe"]
 
 [ext_resource type="PackedScene" uid="uid://kfdmoj3snq34" path="res://questsdg/sdg7_assets/wind_turbine.glb" id="1_ps5cd"]
+[ext_resource type="Script" uid="uid://cccs5ym3rqgde" path="res://questsdg/sdg7_assets/wind_turbine.gd" id="2_8lalm"]
 
 [node name="wind_turbine" instance=ExtResource("1_ps5cd")]
+script = ExtResource("2_8lalm")
