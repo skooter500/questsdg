@@ -39,6 +39,9 @@ func make_invisible():
 	for child in $"../../goals".get_children():
 		child.visible = false
 		child.position = Vector3(-1000, -1000, -1000)
+		
+	# Lets us despawn our sdg7 assets so they are only active while the cube is.  
+	$"../../ani_goals/goal_box_animated7/sdg7_manager".clear_assets()
 	#
 	$"../../color_wheel".activate()
 	$"..".reset_positions()

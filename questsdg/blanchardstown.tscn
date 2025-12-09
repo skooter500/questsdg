@@ -47,5 +47,18 @@ area_size = Vector3(20, 0, 10)
 transform = Transform3D(1, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1, 0.821995, 0.208835, -0.175405)
 text = "Blanchardstown Campus"
 
+[node name="sdg_spawn_points" type="Node3D" parent="."]
+
+[node name="sdg7" type="Node3D" parent="sdg_spawn_points"]
+
+[node name="wind_turbine_spawn1" type="Node3D" parent="sdg_spawn_points/sdg7"]
+transform = Transform3D(0.961425, 0, 0.27506685, 0, 1, 0, -0.27506685, 0, 0.961425, 1.1977233, 0.15036885, -0.48963368)
+
+[node name="wind_turbine_spawn2" type="Node3D" parent="sdg_spawn_points/sdg7"]
+transform = Transform3D(0.96126163, 0, 0.27563733, 0, 1, 0, -0.27563733, 0, 0.96126163, 1.17367, 0.1529373, -0.27187467)
+
+[node name="wind_turbine_spawn3" type="Node3D" parent="sdg_spawn_points/sdg7"]
+transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.9612617, 0.98800904, 0.14982465, -0.40130973)
+
 [editable path="blanchTrees"]
 [editable path="blanchTrees2"]

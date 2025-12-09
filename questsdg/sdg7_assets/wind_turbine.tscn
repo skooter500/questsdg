@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://djmiqqs04sehe"]
+
+[ext_resource type="PackedScene" uid="uid://kfdmoj3snq34" path="res://questsdg/sdg7_assets/wind_turbine.glb" id="1_ps5cd"]
+[ext_resource type="Script" uid="uid://cccs5ym3rqgde" path="res://questsdg/sdg7_assets/wind_turbine.gd" id="2_8lalm"]
+[ext_resource type="AudioStream" uid="uid://boryxt6e03swg" path="res://questsdg/sdg7_assets/wind-sound.mp3" id="3_ig3bo"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ig3bo"]
+radius = 0.09
+
+[node name="wind_turbine" instance=ExtResource("1_ps5cd")]
+script = ExtResource("2_8lalm")
+
+[node name="WindSound" type="AudioStreamPlayer3D" parent="." index="1"]
+stream = ExtResource("3_ig3bo")
+unit_size = 1.0
+max_distance = 2.0
+
+[node name="InteractArea" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" index="0"]
+shape = SubResource("SphereShape3D_ig3bo")
+
+[connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
+[connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]

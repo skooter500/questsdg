@@ -1,4 +1,4 @@
-[gd_scene load_steps=8905 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8906 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
@@ -108,6 +108,7 @@
 [ext_resource type="Material" uid="uid://dohx2u81lglvd" path="res://behaviors/jet_material.tres" id="102_wnpci"]
 [ext_resource type="Script" uid="uid://b6jj7yxhu2hi1" path="res://behaviors/follow_path.gd" id="104_0s3vr"]
 [ext_resource type="PackedScene" uid="uid://ctshf28j6y5lq" path="res://Models/craft_speederD.glb" id="104_ty5nw"]
+[ext_resource type="PackedScene" uid="uid://djmiqqs04sehe" path="res://questsdg/sdg7_assets/wind_turbine.tscn" id="109_bfjxy"]
 
 [sub_resource type="BoxShape3D" id="2"]
 size = Vector3(0.141968, 0.0560303, 0.0609894)
@@ -61853,7 +61854,9 @@ sprite_frames = SubResource("SpriteFrames_5rext")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated7/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_8thac")
 
-[node name="sdg7_manager" parent="tu dub/ani_goals/goal_box_animated7" instance=ExtResource("36_a1h62")]
+[node name="sdg7_manager" parent="tu dub/ani_goals/goal_box_animated7" node_paths=PackedStringArray("spawn_points") instance=ExtResource("36_a1h62")]
+renewable_assets = Array[PackedScene]([ExtResource("109_bfjxy")])
+spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn1"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn2"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn3")]
 
 [node name="goal_box_animated8" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
@@ -62126,26 +62129,6 @@ angular_damp = 5.0
 
 [node name="godot_plushie_animated" parent="tu dub/godot_plushy" instance=ExtResource("96_ty5nw")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
-
-[node name="Skeleton3D" parent="tu dub/godot_plushy/godot_plushie_animated/Armature" index="0"]
-bones/0/position = Vector3(-4.7441544e-09, 0.15483436, 0)
-bones/0/scale = Vector3(1, 1.0917958, 1)
-bones/1/position = Vector3(-0.5535997, -0.64620894, -1.4332383e-07)
-bones/1/rotation = Quaternion(-0.7043076, 0.06285381, 0.7043079, -0.062854424)
-bones/2/rotation = Quaternion(1.5310142e-08, 5.002556e-07, -0.14667474, 0.9891848)
-bones/3/rotation = Quaternion(2.2101689e-07, -8.220096e-07, 0.5683017, 0.8228203)
-bones/4/rotation = Quaternion(0.6404197, -0.29977113, -0.64041954, -0.29977113)
-bones/5/rotation = Quaternion(0.6221701, -2.1585109e-07, 2.3733334e-07, 0.7828822)
-bones/6/rotation = Quaternion(0.03899031, 7.189151e-08, -1.8611944e-07, 0.9992396)
-bones/7/rotation = Quaternion(0.2455966, -1.3855903e-08, 1.8101172e-09, 0.96937215)
-bones/8/position = Vector3(0.5535997, -0.64620894, -1.420082e-07)
-bones/8/rotation = Quaternion(0.7043076, 0.06285381, 0.7043079, 0.062854424)
-bones/9/rotation = Quaternion(1.5310142e-08, -5.002556e-07, 0.14667474, 0.9891848)
-bones/10/rotation = Quaternion(2.2101689e-07, 8.220096e-07, -0.5683017, 0.8228203)
-bones/11/rotation = Quaternion(0.6404197, 0.29977113, 0.64041954, -0.29977113)
-bones/12/rotation = Quaternion(0.6221701, 2.1585112e-07, -2.3733334e-07, 0.7828822)
-bones/13/rotation = Quaternion(0.038990326, -7.18915e-08, 1.8611944e-07, 0.9992396)
-bones/14/rotation = Quaternion(0.2455966, 1.3855907e-08, -1.8101127e-09, 0.96937215)
 
 [node name="AnimationPlayer" parent="tu dub/godot_plushy/godot_plushie_animated" index="1"]
 speed_scale = 0.05

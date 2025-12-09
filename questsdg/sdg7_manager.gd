@@ -15,14 +15,29 @@ func _on_goal_box_animated_7_bounce() -> void:
 func spawn_assets() -> void:
 	clear_assets()
 
-	print("Spawning SDG 7 test asset")
+	if renewable_assets.is_empty():
+		push_warning("SDG7: no renewable assets set in Inspector")
+		return
 
-	var cube := MeshInstance3D.new()
-	cube.mesh = BoxMesh.new()
-	add_child(cube)
-	cube.position = Vector3(0, 1.5, -2)
+	if spawn_points.is_empty():
+		push_warning("SDG7: no spawn points set")
+		return
 
-	spawned.append(cube)
+	var scene: PackedScene = renewable_assets[0]
+
+	for point in spawn_points:
+		if point == null:
+			continue
+
+		var instance := scene.instantiate() as Node3D
+		point.add_child(instance)
+
+		# Align turbine with the spawn point
+		instance.global_transform = point.global_transform
+
+		spawned.append(instance)
+
+	print("SDG7: Spawned %d wind turbines" % spawned.size())
 
 func clear_assets() -> void:
 	for node in spawned:
