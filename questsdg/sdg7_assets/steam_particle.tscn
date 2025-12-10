@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://sls0htdmvd5t"]
+
+[sub_resource type="Gradient" id="Gradient_frk4d"]
+offsets = PackedFloat32Array(0, 0.7194492, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.6972473, 0.6972473, 0.6972473, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_beari"]
+gradient = SubResource("Gradient_frk4d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ncefy"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+emission_shape_scale = Vector3(0.18, 0.05, 0.18)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 28.0
+initial_velocity_min = 0.14999999
+initial_velocity_max = 0.35
+gravity = Vector3(0.01, 0.12, 0)
+scale_min = 0.08
+scale_max = 0.22
+color = Color(1.0296601, 1.0296601, 1.0296601, 1)
+color_ramp = SubResource("GradientTexture1D_beari")
+turbulence_noise_strength = 5.32
+turbulence_noise_scale = 0.62
+
+[sub_resource type="BoxMesh" id="BoxMesh_ncefy"]
+size = Vector3(0.01, 0.01, 0.01)
+
+[node name="SteamParticle" type="GPUParticles3D"]
+emitting = false
+amount = 35
+lifetime = 1.5
+speed_scale = 0.4
+process_material = SubResource("ParticleProcessMaterial_ncefy")
+draw_pass_1 = SubResource("BoxMesh_ncefy")
