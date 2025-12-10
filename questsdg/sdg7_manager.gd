@@ -1,7 +1,10 @@
 extends Node3D
 
-@export var renewable_assets: Array[PackedScene] = []
-@export var spawn_points: Array[Node3D] = []
+@export var wind_turbine_scene: PackedScene
+@export var geothermal_scene: PackedScene
+
+@export var wind_spawn_points: Array[Node3D]
+@export var geothermal_spawn_point: Node3D
 
 var spawned: Array[Node3D] = []
 
@@ -15,29 +18,31 @@ func _on_goal_box_animated_7_bounce() -> void:
 func spawn_assets() -> void:
 	clear_assets()
 
-	if renewable_assets.is_empty():
-		push_warning("SDG7: no renewable assets set in Inspector")
-		return
+	# --- Spawn Wind Turbines ---
+	if wind_turbine_scene == null:
+		push_warning("SDG7: Wind turbine scene not set")
+	else:
+		for point in wind_spawn_points:
+			if point == null:
+				continue
 
-	if spawn_points.is_empty():
-		push_warning("SDG7: no spawn points set")
-		return
+			var turbine := wind_turbine_scene.instantiate() as Node3D
+			point.add_child(turbine)
+			turbine.global_transform = point.global_transform
+			spawned.append(turbine)
 
-	var scene: PackedScene = renewable_assets[0]
+	# --- Spawn Geothermal Plant ---
+	if geothermal_scene == null:
+		push_warning("SDG7: Geothermal scene not set")
+	elif geothermal_spawn_point == null:
+		push_warning("SDG7: Geothermal spawn point not set")
+	else:
+		var geo := geothermal_scene.instantiate() as Node3D
+		geothermal_spawn_point.add_child(geo)
+		geo.global_transform = geothermal_spawn_point.global_transform
+		spawned.append(geo)
 
-	for point in spawn_points:
-		if point == null:
-			continue
-
-		var instance := scene.instantiate() as Node3D
-		point.add_child(instance)
-
-		# Align turbine with the spawn point
-		instance.global_transform = point.global_transform
-
-		spawned.append(instance)
-
-	print("SDG7: Spawned %d wind turbines" % spawned.size())
+	print("SDG7: Spawned %d total renewable assets" % spawned.size())
 
 func clear_assets() -> void:
 	for node in spawned:
