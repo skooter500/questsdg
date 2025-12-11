@@ -40,15 +40,19 @@ surface_material_override/0 = ExtResource("4_i8bkl")
 
 [node name="Steam1" parent="Pipes" index="0" instance=ExtResource("6_6bsk3")]
 transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0.09467081, 0.18035965, -0.09083644)
+emitting = false
 
 [node name="Steam2" parent="Pipes" index="1" instance=ExtResource("6_6bsk3")]
 transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0.06932053, 0.18035965, -0.09083644)
+emitting = false
 
 [node name="Steam3" parent="Pipes" index="2" instance=ExtResource("6_6bsk3")]
 transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0.010022581, 0.18035965, -0.09083644)
+emitting = false
 
 [node name="Steam4" parent="Pipes" index="3" instance=ExtResource("6_6bsk3")]
 transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -0.014757102, 0.18035965, -0.09083644)
+emitting = false
 
 [node name="ButtonRoot" type="Node3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12270546, 0.00035801157, -0.057159737)
