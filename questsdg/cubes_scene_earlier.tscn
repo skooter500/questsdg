@@ -1,8 +1,9 @@
-[gd_scene load_steps=8907 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8908 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://questsdg/goals.gd" id="2_2dw41"]
+[ext_resource type="PackedScene" uid="uid://d1s8kguqsnoko" path="res://questsdg/sdg7_assets/hydroelectric_dam.tscn" id="2_5mhuu"]
 [ext_resource type="Script" uid="uid://dttcldpevggnp" path="res://questsdg/hand.gd" id="2_p7tmn"]
 [ext_resource type="PackedScene" uid="uid://bvmb02eqtho4k" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="2_pvxhv"]
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="2_sasra"]
@@ -61855,11 +61856,13 @@ sprite_frames = SubResource("SpriteFrames_5rext")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated7/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_8thac")
 
-[node name="sdg7_manager" parent="tu dub/ani_goals/goal_box_animated7" node_paths=PackedStringArray("wind_spawn_points", "geothermal_spawn_point") instance=ExtResource("36_a1h62")]
+[node name="sdg7_manager" parent="tu dub/ani_goals/goal_box_animated7" node_paths=PackedStringArray("wind_spawn_points", "geothermal_spawn_point", "hydro_spawn_point") instance=ExtResource("36_a1h62")]
 wind_turbine_scene = ExtResource("109_bfjxy")
 geothermal_scene = ExtResource("110_tlky0")
+hydro_dam_scene = ExtResource("2_5mhuu")
 wind_spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn1"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn2"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn3")]
 geothermal_spawn_point = NodePath("../../../maps/Grangegorman/sdg_spawn_points/sdg7/geothermal_spawn")
+hydro_spawn_point = NodePath("../../../maps/Tallaght/sdg_spawn_points/sdg7/hydro_spawn_point")
 
 [node name="goal_box_animated8" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
@@ -62096,6 +62099,13 @@ multimesh = null
 
 [node name="MultiMeshInstance3D" parent="tu dub/maps/Blanchardstown/blanchTrees2" index="0"]
 multimesh = null
+
+[node name="sdg_spawn_points" type="Node3D" parent="tu dub/maps/Tallaght" index="5"]
+
+[node name="sdg7" type="Node3D" parent="tu dub/maps/Tallaght/sdg_spawn_points"]
+
+[node name="hydro_spawn_point" type="Node3D" parent="tu dub/maps/Tallaght/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.036288287, 0, 0.14554437, 0, 0.15, 0, -0.14554437, 0, 0.036288287, 0.471, 0, -0.256)
 
 [node name="sdg_spawn_points" type="Node3D" parent="tu dub/maps/Grangegorman" index="6"]
 

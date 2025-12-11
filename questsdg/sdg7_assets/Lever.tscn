@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://cterdstqnj1uv"]
+
+[ext_resource type="Script" uid="uid://clp4hs13uftgf" path="res://questsdg/sdg7_assets/lever.gd" id="1_00168"]
+[ext_resource type="Material" path="res://Holo/metal.tres" id="2_17w2l"]
+[ext_resource type="Material" uid="uid://b4v6vdidmm6i3" path="res://Models/gray_material.tres" id="3_qnb6v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cuido"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qnb6v"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_01e23"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_17w2l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h60k1"]
+albedo_color = Color(1, 0, 0, 1)
+metallic = 0.47
+
+[node name="LeverRoot" type="Node3D"]
+script = ExtResource("1_00168")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 0.8, 0, 0, 0, 1.5, 0, 0, 0)
+mesh = SubResource("BoxMesh_cuido")
+skeleton = NodePath("../Hinge/LeverMesh")
+surface_material_override/0 = ExtResource("3_qnb6v")
+
+[node name="Hinge" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="Hinge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1697354, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge/Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("SphereShape3D_qnb6v")
+
+[node name="LeverMesh" type="MeshInstance3D" parent="Hinge"]
+transform = Transform3D(0.3, 0, 0, 0, 2, 0, 0, 0, 0.3, 0, 2, 0)
+mesh = SubResource("CylinderMesh_01e23")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("2_17w2l")
+
+[node name="GrabableSphereMesh" type="MeshInstance3D" parent="Hinge/LeverMesh"]
+transform = Transform3D(3.3333333, 0, 0, 0, 0.5, 0, 0, 0, 3.3333333, 0.002999703, 1.0803821, 0.00549078)
+mesh = SubResource("SphereMesh_17w2l")
+surface_material_override/0 = SubResource("StandardMaterial3D_h60k1")
