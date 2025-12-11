@@ -2,9 +2,11 @@ extends Node3D
 
 @export var wind_turbine_scene: PackedScene
 @export var geothermal_scene: PackedScene
+@export var hydro_dam_scene: PackedScene
 
 @export var wind_spawn_points: Array[Node3D]
 @export var geothermal_spawn_point: Node3D
+@export var hydro_spawn_point: Node3D
 
 var spawned: Array[Node3D] = []
 
@@ -41,6 +43,17 @@ func spawn_assets() -> void:
 		geothermal_spawn_point.add_child(geo)
 		geo.global_transform = geothermal_spawn_point.global_transform
 		spawned.append(geo)
+		
+	# --- Spawn Hydroelectric Dam --- 	
+	if hydro_dam_scene == null:
+		push_warning("SDG7: Hydroelectric dam scene not set")
+	elif hydro_spawn_point == null:
+		push_warning("SDG7: Hydroelectric spawn point not set")
+	else:
+		var dam := hydro_dam_scene.instantiate() as Node3D
+		hydro_spawn_point.add_child(dam)
+		dam.global_transform = hydro_spawn_point.global_transform
+		spawned.append(dam)
 
 	print("SDG7: Spawned %d total renewable assets" % spawned.size())
 
