@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://dwqlp6vkcw31o"]
+
+[ext_resource type="FontFile" uid="uid://c7m2s77s7pxfy" path="res://fonts/Minecraft.ttf" id="1_8ijvn"]
+[ext_resource type="Script" uid="uid://c0ubq8s7hjnbs" path="res://questsdg/sdg7_assets/grange_info_billboard.gd" id="1_eourp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nwvw5"]
+size = Vector3(2, 0.1, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k1wtq"]
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_khut4"]
+shading_mode = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_m1kbw"]
+material = SubResource("StandardMaterial3D_khut4")
+size = Vector3(2, 0.1, 0.02)
+
+[node name="GrangeInfoBillboard" type="Node3D"]
+script = ExtResource("1_eourp")
+
+[node name="Title" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5549519, 0)
+text = "Geothermal Energy - Turning Underground Heat Into Electricity
+"
+font = ExtResource("1_8ijvn")
+font_size = 52
+outline_size = 25
+
+[node name="Body" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.117663026, 0)
+text = "Geothermal power harnesses thermal energy stored within the Earth’s crust, using subsurface heat to produce electricity or provide direct heating. As this energy source is continuously available, geothermal systems can deliver reliable, low-carbon baseload energy, independent of weather or daylight.
+
+Under SDG 7 – Affordable and Clean Energy, geothermal contributes to secure and sustainable energy systems by reducing reliance on fossil fuels while supporting grid stability alongside wind and solar power.
+
+At Grangegorman, initiatives such as the GEMINI project explore how smart energy systems, data-driven infrastructure, and campus-scale innovation can accelerate the transition to cleaner, more resilient energy net"
+outline_size = 20
+autowrap_mode = 2
+width = 1100.0
+
+[node name="Progress" type="Node3D" parent="."]
+
+[node name="Instructions" type="Label3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.761909, 0)
+text = "Setup the Geothermal Plant on Grangegorman
+(hint: make sure to grab the pipe and connect it to the heat pocket[below]!)"
+font_size = 20
+outline_size = 20
+
+[node name="Cell1" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2, 0)
+mesh = SubResource("BoxMesh_nwvw5")
+skeleton = NodePath("../Instructions")
+surface_material_override/0 = SubResource("StandardMaterial3D_k1wtq")
+
+[node name="Cell2" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2, 0)
+mesh = SubResource("BoxMesh_m1kbw")
+skeleton = NodePath("../Instructions")
+
+[node name="ProgressLabel" type="Label3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1687198, 0)
+text = "Geothermal Plant Setup: 0 / 2"
