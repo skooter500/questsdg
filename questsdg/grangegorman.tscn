@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b8px3jnda3ab"]
+[gd_scene load_steps=16 format=3 uid="uid://b8px3jnda3ab"]
 
 [ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://questsdg/ground_trans.tres" id="1_7d5fs"]
 [ext_resource type="ArrayMesh" uid="uid://chvg4aftfq8f1" path="res://Models/Grangegorman/Grangegorman_TUDublin_Floor_Thin.obj" id="2_txc67"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://questsdg/3_dlabel.tscn" id="10_kdocq"]
 [ext_resource type="PackedScene" uid="uid://disklyhxjm4pr" path="res://questsdg/playlist_looper.tscn" id="12_ow2hi"]
 [ext_resource type="AudioStream" uid="uid://5a3fmyh6oj4q" path="res://campus_sounds/TU Dublin Conservatoire Presents Ode to Joy on Europe Day.mp3" id="13_n0hbk"]
+[ext_resource type="AudioStream" uid="uid://bk48a5olb3gqd" path="res://questsdg/sdg7_assets/completion-noise.mp3" id="14_hxu2b"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bfk7x"]
 size = Vector3(0.9, 0.01, 0.5)
@@ -121,3 +122,21 @@ text = "Sports Fields
 transform = Transform3D(1, 0, -7.45058e-08, 0, 1, 0, 7.45058e-08, 0, 1, 0.207152, 0.0178528, -0.524867)
 sounds = Array[AudioStream]([ExtResource("13_n0hbk")])
 auto_play = true
+
+[node name="sdg_spawn_points" type="Node3D" parent="."]
+
+[node name="sdg7" type="Node3D" parent="sdg_spawn_points"]
+
+[node name="geothermal_spawn" type="Node3D" parent="sdg_spawn_points/sdg7"]
+transform = Transform3D(-0.71602297, 0, -0.698079, 0, 1, 0, 0.698079, 0, -0.71602297, -0.28296098, 0.052387476, -0.49852294)
+
+[node name="billboard_spawn" type="Node3D" parent="sdg_spawn_points/sdg7"]
+transform = Transform3D(0.25000006, 0, -1.8626451e-08, 0, 0.25, 0, 1.8626451e-08, 0, 0.25000006, 2.9802322e-08, 0.7537687, -1.0000002)
+
+[node name="CompletionSound" type="AudioStreamPlayer3D" parent="sdg_spawn_points/sdg7"]
+transform = Transform3D(1.0000002, 0, -1.4901161e-08, 0, 1, 0, 0, 0, 1.0000002, 0.0032383278, 0.029305935, -0.52787036)
+stream = ExtResource("14_hxu2b")
+volume_db = -10.0
+unit_size = 1.0
+max_db = 6.0
+max_distance = 15.0
