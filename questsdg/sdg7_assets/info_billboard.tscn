@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://blafapjwh5uke"]
+
+[ext_resource type="Script" uid="uid://cudlcahhakv0r" path="res://questsdg/sdg7_assets/info_billboard.gd" id="1_evd12"]
+[ext_resource type="FontFile" uid="uid://c7m2s77s7pxfy" path="res://fonts/Minecraft.ttf" id="2_s40r6"]
+[ext_resource type="FontFile" uid="uid://bj0nihy4bcae2" path="res://fonts/Qube.ttf" id="3_dx7if"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_64dt4"]
+size = Vector3(1, 0.1, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1mn1"]
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_127uo"]
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y352x"]
+shading_mode = 0
+
+[node name="InfoBillboard" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5485573, 0)
+script = ExtResource("1_evd12")
+
+[node name="Title" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48153174, 0)
+text = "Wind Energy - Powering a Sustainable Future
+"
+font = ExtResource("2_s40r6")
+font_size = 52
+outline_size = 25
+
+[node name="Body" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.600107, 0)
+text = "Wind energy harnesses the kinetic energy of moving air and converts it into electricity through rotating turbine blades.
+
+As the blades spin, mechanical energy is transferred to a generator, producing electrical power without the need for combustion or fuel extraction.
+
+Wind power produces no direct carbon dioxide (CO₂) emissions during operation, making it a key technology in reducing greenhouse gas emissions and combating climate change.
+
+Under the United Nations Sustainable Development Goals, SDG 7 — Affordable and Clean Energy aims to ensure access to reliable, sustainable energy for all.
+
+Expanding renewable sources such as wind energy helps reduce dependence on fossil fuels, improve air quality, and support long-term energy security."
+font_size = 33
+outline_size = 15
+autowrap_mode = 3
+width = 1100.0
+
+[node name="Progress" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.5716133, 0)
+
+[node name="Instructions" type="Label3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10263133, 0)
+text = "Activate all the windmills across the Blanchardstown campus to convert it to clean energy!
+(hint: use your hands to push air through them to kickstart!)"
+font = ExtResource("3_dx7if")
+font_size = 20
+outline_size = 20
+
+[node name="Cell1" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.4, 0)
+mesh = SubResource("BoxMesh_64dt4")
+surface_material_override/0 = SubResource("StandardMaterial3D_s1mn1")
+
+[node name="Cell2" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0)
+mesh = SubResource("BoxMesh_64dt4")
+surface_material_override/0 = SubResource("StandardMaterial3D_127uo")
+
+[node name="Cell3" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.4, 0)
+mesh = SubResource("BoxMesh_64dt4")
+surface_material_override/0 = SubResource("StandardMaterial3D_y352x")
+
+[node name="ProgressLabel" type="Label3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5707116, 0)
+text = "Wind Turbines Activated: 0 / 3"

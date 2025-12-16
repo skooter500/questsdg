@@ -1,4 +1,4 @@
-[gd_scene load_steps=8908 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8909 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
@@ -57,6 +57,7 @@
 [ext_resource type="AudioStream" uid="uid://dt8ldyuj5n7nv" path="res://Voices/sdg 13.mp3" id="38_y1on4"]
 [ext_resource type="AudioStream" uid="uid://ccynsond5b4q0" path="res://Voices/sdg 3.mp3" id="39_l8wyt"]
 [ext_resource type="AudioStream" uid="uid://cp75tpmqxbs6f" path="res://Voices/sdg 4.mp3" id="40_4gmfy"]
+[ext_resource type="PackedScene" uid="uid://blafapjwh5uke" path="res://questsdg/sdg7_assets/info_billboard.tscn" id="40_toam5"]
 [ext_resource type="AudioStream" uid="uid://d21xltfe0748c" path="res://Voices/sdg 5.mp3" id="41_0gxsn"]
 [ext_resource type="Texture2D" uid="uid://c4bt31a34xfcx" path="res://goals/Goal-2/Goal 2/2_SDG_MakeEveryDayCount_Gifs_GDU.png" id="41_rhdcm"]
 [ext_resource type="AudioStream" uid="uid://dtqrsamg553rw" path="res://Voices/sdg 14.mp3" id="41_wnpci"]
@@ -61856,13 +61857,15 @@ sprite_frames = SubResource("SpriteFrames_5rext")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated7/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_8thac")
 
-[node name="sdg7_manager" parent="tu dub/ani_goals/goal_box_animated7" node_paths=PackedStringArray("wind_spawn_points", "geothermal_spawn_point", "hydro_spawn_point") instance=ExtResource("36_a1h62")]
+[node name="sdg7_manager" parent="tu dub/ani_goals/goal_box_animated7" node_paths=PackedStringArray("wind_spawn_points", "geothermal_spawn_point", "hydro_spawn_point", "billboard_spawn_points") instance=ExtResource("36_a1h62")]
 wind_turbine_scene = ExtResource("109_bfjxy")
 geothermal_scene = ExtResource("110_tlky0")
 hydro_dam_scene = ExtResource("2_5mhuu")
 wind_spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn1"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn2"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn3")]
 geothermal_spawn_point = NodePath("../../../maps/Grangegorman/sdg_spawn_points/sdg7/geothermal_spawn")
 hydro_spawn_point = NodePath("../../../maps/Tallaght/sdg_spawn_points/sdg7/hydro_spawn_point")
+billboard_spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/billboard_spawn")]
+billboard_scenes = Array[PackedScene]([ExtResource("40_toam5")])
 
 [node name="goal_box_animated8" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)

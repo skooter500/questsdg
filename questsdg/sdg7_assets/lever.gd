@@ -17,9 +17,9 @@ var _hand: Node3D = null
 var _was_grabbed: bool = false
 var _is_grabbing: bool = false
 
-var _grab_from_on: bool = false          # were we ON or OFF when the grab started?
-var _hand_start_axis: float = 0.0        # starting hand position along X
-var _smoothed_axis: float = 0.0          # filtered axis position
+var _grab_from_on: bool = false # were we ON or OFF when the grab started?
+var _hand_start_axis: float = 0.0 # starting hand position along X
+var _smoothed_axis: float = 0.0 # filtered axis position
 
 @onready var _pivot: Node3D = $Hinge
 @onready var _area: Area3D = $Hinge/Area3D
@@ -50,7 +50,7 @@ func _on_area_exited(area: Area3D) -> void:
 
 func _process(delta: float) -> void:
 	if (_hand_inside or _is_grabbing) and _hand:
-		var grabbed_now: bool = _hand.grabbed  # from your hand script (fist pose)
+		var grabbed_now: bool = _hand.grabbed  
 
 		if grabbed_now and not _was_grabbed:
 			_start_grab()
@@ -64,7 +64,7 @@ func _process(delta: float) -> void:
 
 func _start_grab() -> void:
 	_is_grabbing = true
-	_grab_from_on = is_on   # remember which state we started in
+	_grab_from_on = is_on # remember which state we started in
 	_hand_start_axis = _hand_axis()
 	_smoothed_axis = _hand_start_axis
 
