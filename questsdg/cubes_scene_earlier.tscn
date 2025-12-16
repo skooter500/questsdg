@@ -1,4 +1,4 @@
-[gd_scene load_steps=8910 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8912 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
@@ -108,6 +108,8 @@
 [ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://questsdg/3_dlabel.tscn" id="98_w1b63"]
 [ext_resource type="Script" uid="uid://cmw6n17mebkcx" path="res://behaviors/boid.gd" id="99_0s3vr"]
 [ext_resource type="Script" uid="uid://s5pb8njisohn" path="res://behaviors/avoidance.gd" id="100_8su2q"]
+[ext_resource type="PackedScene" uid="uid://br8xhjc0selya" path="res://questsdg/sdg7_assets/tallaght_info_billboard.tscn" id="101_ybhp3"]
+[ext_resource type="AudioStream" uid="uid://bk48a5olb3gqd" path="res://questsdg/sdg7_assets/completion-noise.mp3" id="102_cfjdm"]
 [ext_resource type="Material" uid="uid://dohx2u81lglvd" path="res://behaviors/jet_material.tres" id="102_wnpci"]
 [ext_resource type="Script" uid="uid://b6jj7yxhu2hi1" path="res://behaviors/follow_path.gd" id="104_0s3vr"]
 [ext_resource type="PackedScene" uid="uid://ctshf28j6y5lq" path="res://Models/craft_speederD.glb" id="104_ty5nw"]
@@ -61865,8 +61867,8 @@ hydro_dam_scene = ExtResource("2_5mhuu")
 wind_spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn1"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn2"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn3")]
 geothermal_spawn_point = NodePath("../../../maps/Grangegorman/sdg_spawn_points/sdg7/geothermal_spawn")
 hydro_spawn_point = NodePath("../../../maps/Tallaght/sdg_spawn_points/sdg7/hydro_spawn_point")
-billboard_spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/Grangegorman/sdg_spawn_points/sdg7/billboard_spawn")]
-billboard_scenes = Array[PackedScene]([ExtResource("40_toam5"), ExtResource("41_f7hc6")])
+billboard_spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/Grangegorman/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/Tallaght/sdg_spawn_points/sdg7/billboard_spawn")]
+billboard_scenes = Array[PackedScene]([ExtResource("40_toam5"), ExtResource("41_f7hc6"), ExtResource("101_ybhp3")])
 
 [node name="goal_box_animated8" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
@@ -62109,7 +62111,18 @@ multimesh = null
 [node name="sdg7" type="Node3D" parent="tu dub/maps/Tallaght/sdg_spawn_points"]
 
 [node name="hydro_spawn_point" type="Node3D" parent="tu dub/maps/Tallaght/sdg_spawn_points/sdg7"]
-transform = Transform3D(0.036288287, 0, 0.14554437, 0, 0.15, 0, -0.14554437, 0, 0.036288287, 0.471, 0, -0.256)
+transform = Transform3D(0.03628828, 0, 0.14554437, 0, 0.15, 0, -0.14554437, 0, 0.03628828, 0.45182273, -0.009809256, -0.2554307)
+
+[node name="billboard_spawn" type="Node3D" parent="tu dub/maps/Tallaght/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.24540679, 0, -0.04770225, 0, 0.25, 0, 0.04770225, 0, 0.24540679, 0.6, 0.5, -0.9)
+
+[node name="CompletionSound" type="AudioStreamPlayer3D" parent="tu dub/maps/Tallaght/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.99999964, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 0.99999964, 0.83783644, 0, -0.1480938)
+stream = ExtResource("102_cfjdm")
+volume_db = -10.0
+unit_size = 1.0
+max_db = 6.0
+max_distance = 15.0
 
 [node name="tu_dub_logo" type="MeshInstance3D" parent="tu dub"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0867636, 0.331675, -0.05193)

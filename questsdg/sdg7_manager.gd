@@ -19,6 +19,7 @@ var _billboards: Array[Node3D] = []
 # Billboard buckets
 var _wind_billboards: Array[Node3D] = []
 var _geo_billboards: Array[Node3D] = []
+var _hydro_billboards: Array[Node3D] = [] 
 
 var _wind_target: int = 0
 var _wind_activated: int = 0
@@ -28,6 +29,11 @@ var _wind_completed: bool = false
 var _geo_step: int = 0
 const GEO_TOTAL: int = 2
 var _geo_completed: bool = false
+
+# Hydro progress: 3 steps (lever + 2 debris)
+var _hydro_step: int = 0
+const HYDRO_TOTAL: int = 3
+var _hydro_completed: bool = false
 
 
 func _ready() -> void:
@@ -51,13 +57,19 @@ func spawn_assets() -> void:
 	_geo_step = 0
 	_geo_completed = false
 
+	# Reset hydro progress
+	_hydro_step = 0
+	_hydro_completed = false
+
 	_billboards.clear()
 	_wind_billboards.clear()
 	_geo_billboards.clear()
+	_hydro_billboards.clear()
 
 	_spawn_billboards()
-	_update_wind_billboards_progress() 
-	_update_geo_billboards_progress()  
+	_update_wind_billboards_progress()
+	_update_geo_billboards_progress()
+	_update_hydro_billboards_progress()
 
 	# --- Spawn Wind Turbines ---
 	if wind_turbine_scene == null:
@@ -77,7 +89,6 @@ func spawn_assets() -> void:
 				turbine.activated.connect(_on_wind_turbine_activated)
 			else:
 				push_warning("SDG7: Spawned turbine has no 'activated' signal")
-
 
 	# --- Spawn Geothermal Plant ---
 	if geothermal_scene == null:
@@ -101,7 +112,6 @@ func spawn_assets() -> void:
 		else:
 			push_warning("SDG7: Geothermal scene missing 'geothermal_activated' signal")
 
-
 	# --- Spawn Hydroelectric Dam ---
 	if hydro_dam_scene == null:
 		push_warning("SDG7: Hydroelectric dam scene not set")
@@ -113,6 +123,17 @@ func spawn_assets() -> void:
 		dam.global_transform = hydro_spawn_point.global_transform
 		spawned.append(dam)
 
+		# Hook hydro progress -> billboards
+		if dam.has_signal("hydro_progress"):
+			dam.hydro_progress.connect(_on_hydro_progress)
+		else:
+			push_warning("SDG7: Hydroelectric dam scene missing 'hydro_progress' signal")
+
+		if dam.has_signal("hydro_completed"):
+			dam.hydro_completed.connect(_on_hydro_completed)
+		else:
+			push_warning("SDG7: Hydroelectric dam scene missing 'hydro_completed' signal")
+
 	print("SDG7: Spawned %d total renewable assets" % spawned.size())
 
 
@@ -120,6 +141,7 @@ func _spawn_billboards() -> void:
 	_billboards.clear()
 	_wind_billboards.clear()
 	_geo_billboards.clear()
+	_hydro_billboards.clear()
 
 	if billboard_spawn_points.is_empty():
 		return
@@ -150,6 +172,8 @@ func _spawn_billboards() -> void:
 		var path := String(scene.resource_path).to_lower()
 		if path.contains("grange_info_billboard"):
 			_geo_billboards.append(board)
+		elif path.contains("tallaght_info_billboard"):
+			_hydro_billboards.append(board)
 		else:
 			_wind_billboards.append(board)
 
@@ -170,6 +194,15 @@ func _update_geo_billboards_progress() -> void:
 	for board in _geo_billboards:
 		if board and board.has_method("set_progress"):
 			board.call("set_progress", _geo_step, GEO_TOTAL)
+
+
+func _update_hydro_billboards_progress() -> void:
+	if _hydro_billboards.is_empty():
+		return
+
+	for board in _hydro_billboards:
+		if board and board.has_method("set_progress"):
+			board.call("set_progress", _hydro_step, HYDRO_TOTAL)
 
 
 func _on_wind_turbine_activated(_turbine: Node3D) -> void:
@@ -217,11 +250,36 @@ func _on_geo_activated() -> void:
 			chime.play()
 
 
+func _on_hydro_progress(step: int, _total: int) -> void:
+	if _hydro_completed:
+		return
+
+	_hydro_step = clamp(step, 0, HYDRO_TOTAL)
+	_update_hydro_billboards_progress()
+	print("SDG7: Hydro progress %d/%d" % [_hydro_step, HYDRO_TOTAL])
+
+
+func _on_hydro_completed() -> void:
+	if _hydro_completed:
+		return
+
+	_hydro_completed = true
+	_hydro_step = HYDRO_TOTAL
+	_update_hydro_billboards_progress()
+	print("SDG7: Hydro completed!")
+
+	var chime := $"../../../maps/Tallaght/sdg_spawn_points/sdg7/CompletionSound"
+	if chime:
+		chime.play()
+
+
 func clear_assets() -> void:
 	for node in spawned:
 		if node and node.is_inside_tree():
 			node.queue_free()
+
 	spawned.clear()
 	_billboards.clear()
 	_wind_billboards.clear()
 	_geo_billboards.clear()
+	_hydro_billboards.clear()

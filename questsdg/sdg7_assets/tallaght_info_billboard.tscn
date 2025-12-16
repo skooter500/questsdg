@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://br8xhjc0selya"]
+
+[ext_resource type="Script" uid="uid://c1bpnjawxbhuh" path="res://questsdg/sdg7_assets/tallaght_info_billboard.gd" id="1_5nuvm"]
+[ext_resource type="FontFile" uid="uid://c7m2s77s7pxfy" path="res://fonts/Minecraft.ttf" id="1_k4krp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5nuvm"]
+size = Vector3(1, 0.1, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a64y7"]
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pq1e4"]
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27nvi"]
+shading_mode = 0
+
+[node name="tallaght_info_billboard" type="Node3D"]
+script = ExtResource("1_5nuvm")
+
+[node name="Title" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0768492, 0)
+text = "Hydroelectric Power – Harnessing Flowing Water for Clean Energy"
+font = ExtResource("1_k4krp")
+font_size = 52
+outline_size = 25
+
+[node name="Body" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15159535, 0)
+text = "Hydroelectric power converts the kinetic energy of moving water into electricity using turbines and generators. When water flows through a controlled channel, it spins turbine blades, producing reliable, low-carbon energy with very high efficiency.
+
+Unlike fossil fuel systems, hydroelectric power provides stable, dispatchable electricity and can respond quickly to changes in demand. It also supports grid resilience by working alongside wind and solar to balance renewable energy supply.
+
+Under SDG 7 – Affordable and Clean Energy, hydroelectric systems play a key role in reducing carbon emissions while delivering dependable power infrastructure that can operate for decades with minimal environmental impact when carefully managed.
+
+At the Tallaght campus, this model represents how controlled water flow, safe operation, and infrastructure maintenance are essential to generating clean electricity and protecting both people and equipment"
+font_size = 33
+outline_size = 15
+autowrap_mode = 2
+width = 1300.0
+
+[node name="Progress" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.9996991, 0)
+
+[node name="Instructions" type="Label3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28205252, 0)
+text = "Activate the Hydroelectric Dam by opening the gate to allow water to flow through!
+(hint: pull the lever and then clear the debris inside and outside the tunnel)"
+font_size = 20
+outline_size = 20
+
+[node name="Cell1" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+mesh = SubResource("BoxMesh_5nuvm")
+surface_material_override/0 = SubResource("StandardMaterial3D_a64y7")
+
+[node name="Cell2" type="MeshInstance3D" parent="Progress"]
+mesh = SubResource("BoxMesh_5nuvm")
+surface_material_override/0 = SubResource("StandardMaterial3D_pq1e4")
+
+[node name="Cell3" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_5nuvm")
+surface_material_override/0 = SubResource("StandardMaterial3D_27nvi")
+
+[node name="ProgressLabel" type="Label3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18357944, 0)
+text = "Hydroelectric System Setup: 0 / 3"
