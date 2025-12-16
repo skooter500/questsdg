@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var gate_mesh: Node3D
-@export var gate_open_offset_z: float = -1.0   # how far down the gate moves when open
+@export var gate_open_offset_z: float = -1.0  # how far the gate moves when open
 @export var gate_anim_time: float = 0.6
 
 @onready var _lever: Node3D = $LeverRoot

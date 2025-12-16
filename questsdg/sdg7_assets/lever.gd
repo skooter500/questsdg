@@ -50,7 +50,7 @@ func _on_area_exited(area: Area3D) -> void:
 
 func _process(delta: float) -> void:
 	if (_hand_inside or _is_grabbing) and _hand:
-		var grabbed_now: bool = _hand.grabbed  # from your hand script (fist pose)
+		var grabbed_now: bool = _hand.grabbed  
 
 		if grabbed_now and not _was_grabbed:
 			_start_grab()
