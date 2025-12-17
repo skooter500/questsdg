@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://ffu3fvalg7dw"]
+
+[ext_resource type="Script" uid="uid://b7tdf5v12ij5j" path="res://questsdg/sdg7_assets/bolton_info_billboard.gd" id="1_5fecy"]
+[ext_resource type="FontFile" uid="uid://c7m2s77s7pxfy" path="res://fonts/Minecraft.ttf" id="1_gk8ts"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5fecy"]
+size = Vector3(0.75, 0.1, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fecy"]
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dnbwn"]
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i6dn3"]
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p3fmx"]
+shading_mode = 0
+
+[node name="bolton_info_billboard" type="Node3D"]
+script = ExtResource("1_5fecy")
+
+[node name="Title" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7388614, 0)
+text = "Grid Switch - Integrating Renewables for Clean Energy
+"
+font = ExtResource("1_gk8ts")
+font_size = 52
+outline_size = 25
+
+[node name="Body" type="Label3D" parent="."]
+text = "Modern electricity grids must constantly balance supply and demand. As more renewable generation (wind, solar, hydro, geothermal) comes online, the grid needs smart control systems to route power, stabilise voltage and frequency, and keep energy reliable even when conditions change.
+
+Switching a grid away from fossil fuel generation can significantly reduce CO₂ emissions and air pollution, improving public health and supporting climate goals. But it’s not just about producing clean energy, it’s also about integrating it: coordinating multiple sources, prioritising low-carbon supply, and ensuring energy remains dependable for everyone.
+
+Under SDG 7 — Affordable and Clean Energy, grid modernisation is a key step: it enables renewable energy to scale, reduces reliance on fossil fuels, and helps build a more resilient, sustainable energy system"
+autowrap_mode = 2
+width = 1100.0
+
+[node name="Progress" type="Node3D" parent="."]
+
+[node name="Instructions" type="Label3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7261996, 0)
+text = "Switch the grid to clean energy: activate each renewable source on the control panel (Wind, Solar, Hydro, Geothermal).
+(hint: make sure they are setup on the other campuses first!)"
+font_size = 20
+outline_size = 20
+
+[node name="Cell1" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.12, -2.039, 0)
+mesh = SubResource("BoxMesh_5fecy")
+surface_material_override/0 = SubResource("StandardMaterial3D_5fecy")
+
+[node name="Cell2" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37, -2.039, 0)
+mesh = SubResource("BoxMesh_5fecy")
+surface_material_override/0 = SubResource("StandardMaterial3D_dnbwn")
+
+[node name="Cell3" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38, -2.039, 0)
+mesh = SubResource("BoxMesh_5fecy")
+surface_material_override/0 = SubResource("StandardMaterial3D_i6dn3")
+
+[node name="Cell4" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.13, -2.039, 0)
+mesh = SubResource("BoxMesh_5fecy")
+surface_material_override/0 = SubResource("StandardMaterial3D_p3fmx")
+
+[node name="ProgressLabel" type="Label3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.2612226, 0)
+text = "Renewable Sources Online: 0 / 4"

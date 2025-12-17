@@ -1,0 +1,186 @@
+[gd_scene load_steps=19 format=3 uid="uid://bmrj2w3qq87cr"]
+
+[ext_resource type="PackedScene" uid="uid://bc0v7t5qtd2l5" path="res://questsdg/sdg7_assets/energy-box.glb" id="1_as8a2"]
+[ext_resource type="Material" uid="uid://b4v6vdidmm6i3" path="res://Models/gray_material.tres" id="2_3p7je"]
+[ext_resource type="Material" uid="uid://dohx2u81lglvd" path="res://behaviors/jet_material.tres" id="3_84lkl"]
+[ext_resource type="Script" uid="uid://cjl6hr73p3q2p" path="res://questsdg/sdg7_assets/wind_switch.gd" id="4_15wwn"]
+[ext_resource type="AudioStream" uid="uid://ojft6iyb0q78" path="res://questsdg/sdg7_assets/accessdenied.mp3" id="5_cn4so"]
+[ext_resource type="Script" uid="uid://cs481n4fj1u35" path="res://questsdg/sdg7_assets/solar_switch.gd" id="6_3p7je"]
+[ext_resource type="Script" uid="uid://yfw4kb2t7fbv" path="res://questsdg/sdg7_assets/hydro_switch.gd" id="7_84lkl"]
+[ext_resource type="Script" uid="uid://co3opb7j1b0fk" path="res://questsdg/sdg7_assets/geo_switch.gd" id="8_15wwn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_te2ns"]
+size = Vector3(0.03, 0.03, 0.03)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3hnb"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kebue"]
+size = Vector3(0.006475586, 0.030886412, 0.030334972)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7qcn2"]
+size = Vector3(0.05, 0.05, 0.008)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo348"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7mqxx"]
+radius = 0.05
+height = 0.25
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15wwn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cn4so"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_te2ns"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kebue"]
+
+[node name="energy-box" instance=ExtResource("1_as8a2")]
+
+[node name="Electric box set" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_3p7je")
+surface_material_override/1 = ExtResource("3_84lkl")
+
+[node name="Interactions" type="Node3D" parent="." index="1"]
+
+[node name="DeniedSound" type="AudioStreamPlayer3D" parent="Interactions" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75141686, 0)
+stream = ExtResource("5_cn4so")
+
+[node name="Wind_Switch" type="Node3D" parent="Interactions" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5412021, 1.2719309, 0.370533)
+script = ExtResource("4_15wwn")
+
+[node name="ButtonRoot" type="Node3D" parent="Interactions/Wind_Switch" index="0"]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, -0.22782826, 0, 0.07783592)
+
+[node name="ButtonMesh" type="MeshInstance3D" parent="Interactions/Wind_Switch/ButtonRoot" index="0"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.020560414, -0.0017730296, -0.032982495)
+mesh = SubResource("BoxMesh_te2ns")
+surface_material_override/0 = SubResource("StandardMaterial3D_j3hnb")
+
+[node name="ButtonArea" type="Area3D" parent="Interactions/Wind_Switch/ButtonRoot" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013042435, 0, -0.024600789)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Wind_Switch/ButtonRoot/ButtonArea" index="0"]
+transform = Transform3D(-4.3711367e-08, 0, 0.99999857, 0, 0.99999857, 0, -0.99999857, 0, -4.3711367e-08, 0.007939905, -0.0012837797, 0.004746169)
+shape = SubResource("BoxShape3D_kebue")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactions/Wind_Switch/ButtonRoot" index="2"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.020189017, -0.0018531978, -0.027180567)
+mesh = SubResource("BoxMesh_7qcn2")
+surface_material_override/0 = SubResource("StandardMaterial3D_eo348")
+
+[node name="StatusLight" type="MeshInstance3D" parent="Interactions/Wind_Switch" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26550794, -0.022414207, -0.14104009)
+mesh = SubResource("CapsuleMesh_7mqxx")
+surface_material_override/0 = SubResource("StandardMaterial3D_15wwn")
+
+[node name="Label3D" type="Label3D" parent="Interactions/Wind_Switch" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026986241, 0.2652974, -0.123340964)
+text = "Wind"
+outline_size = 25
+
+[node name="Solar_Switch" type="Node3D" parent="Interactions" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07478112, 1.2719309, 0.370533)
+script = ExtResource("6_3p7je")
+
+[node name="ButtonRoot" type="Node3D" parent="Interactions/Solar_Switch" index="0"]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, -0.22782826, 0, 0.07783592)
+
+[node name="ButtonMesh" type="MeshInstance3D" parent="Interactions/Solar_Switch/ButtonRoot" index="0"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.020560414, -0.0017730296, -0.032982495)
+mesh = SubResource("BoxMesh_te2ns")
+surface_material_override/0 = SubResource("StandardMaterial3D_j3hnb")
+
+[node name="ButtonArea" type="Area3D" parent="Interactions/Solar_Switch/ButtonRoot" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013042435, 0, -0.024600789)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Solar_Switch/ButtonRoot/ButtonArea" index="0"]
+transform = Transform3D(-4.3711367e-08, 0, 0.99999857, 0, 0.99999857, 0, -0.99999857, 0, -4.3711367e-08, 0.007939905, -0.0012837797, 0.004746169)
+shape = SubResource("BoxShape3D_kebue")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactions/Solar_Switch/ButtonRoot" index="2"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.020189017, -0.0018531978, -0.027180567)
+mesh = SubResource("BoxMesh_7qcn2")
+surface_material_override/0 = SubResource("StandardMaterial3D_eo348")
+
+[node name="StatusLight" type="MeshInstance3D" parent="Interactions/Solar_Switch" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26550794, -0.022414207, -0.14104009)
+mesh = SubResource("CapsuleMesh_7mqxx")
+surface_material_override/0 = SubResource("StandardMaterial3D_cn4so")
+
+[node name="Label3D" type="Label3D" parent="Interactions/Solar_Switch" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026986241, 0.2652974, -0.123340964)
+text = "Solar"
+outline_size = 25
+
+[node name="Hydro_Switch" type="Node3D" parent="Interactions" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.541, 0.4, 0.371)
+script = ExtResource("7_84lkl")
+
+[node name="ButtonRoot" type="Node3D" parent="Interactions/Hydro_Switch" index="0"]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, -0.22782826, 0, 0.07783592)
+
+[node name="ButtonMesh" type="MeshInstance3D" parent="Interactions/Hydro_Switch/ButtonRoot" index="0"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.020560414, -0.0017730296, -0.032982495)
+mesh = SubResource("BoxMesh_te2ns")
+surface_material_override/0 = SubResource("StandardMaterial3D_j3hnb")
+
+[node name="ButtonArea" type="Area3D" parent="Interactions/Hydro_Switch/ButtonRoot" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013042435, 0, -0.024600789)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Hydro_Switch/ButtonRoot/ButtonArea" index="0"]
+transform = Transform3D(-4.3711367e-08, 0, 0.99999857, 0, 0.99999857, 0, -0.99999857, 0, -4.3711367e-08, 0.007939905, -0.0012837797, 0.004746169)
+shape = SubResource("BoxShape3D_kebue")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactions/Hydro_Switch/ButtonRoot" index="2"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.020189017, -0.0018531978, -0.027180567)
+mesh = SubResource("BoxMesh_7qcn2")
+surface_material_override/0 = SubResource("StandardMaterial3D_eo348")
+
+[node name="StatusLight" type="MeshInstance3D" parent="Interactions/Hydro_Switch" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26550794, -0.022414207, -0.14104009)
+mesh = SubResource("CapsuleMesh_7mqxx")
+surface_material_override/0 = SubResource("StandardMaterial3D_te2ns")
+
+[node name="Label3D" type="Label3D" parent="Interactions/Hydro_Switch" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026986241, 0.2652974, -0.123340964)
+text = "Hydro"
+outline_size = 25
+
+[node name="Geo_Switch" type="Node3D" parent="Interactions" index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.075, 0.4, 0.371)
+script = ExtResource("8_15wwn")
+
+[node name="ButtonRoot" type="Node3D" parent="Interactions/Geo_Switch" index="0"]
+transform = Transform3D(7.5, 0, 0, 0, 7.5, 0, 0, 0, 7.5, -0.22782826, 0, 0.07783592)
+
+[node name="ButtonMesh" type="MeshInstance3D" parent="Interactions/Geo_Switch/ButtonRoot" index="0"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0.020560414, -0.0017730296, -0.032982495)
+mesh = SubResource("BoxMesh_te2ns")
+surface_material_override/0 = SubResource("StandardMaterial3D_j3hnb")
+
+[node name="ButtonArea" type="Area3D" parent="Interactions/Geo_Switch/ButtonRoot" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013042435, 0, -0.024600789)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactions/Geo_Switch/ButtonRoot/ButtonArea" index="0"]
+transform = Transform3D(-4.3711367e-08, 0, 0.99999857, 0, 0.99999857, 0, -0.99999857, 0, -4.3711367e-08, 0.007939905, -0.0012837797, 0.004746169)
+shape = SubResource("BoxShape3D_kebue")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Interactions/Geo_Switch/ButtonRoot" index="2"]
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0.020189017, -0.0018531978, -0.027180567)
+mesh = SubResource("BoxMesh_7qcn2")
+surface_material_override/0 = SubResource("StandardMaterial3D_eo348")
+
+[node name="StatusLight" type="MeshInstance3D" parent="Interactions/Geo_Switch" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26550794, -0.022414207, -0.14104009)
+mesh = SubResource("CapsuleMesh_7mqxx")
+surface_material_override/0 = SubResource("StandardMaterial3D_kebue")
+
+[node name="Label3D" type="Label3D" parent="Interactions/Geo_Switch" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026986241, 0.2652974, -0.123340964)
+text = "Geothermal"
+font_size = 28
+outline_size = 25

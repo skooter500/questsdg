@@ -14,7 +14,7 @@ var _angle: float = 0.0
 func _ready() -> void:
 	_angle = deg_to_rad(start_angle_deg)
 
-	# Put the Sun node on the orbit arm (radius + height)
+	# Put the Sun node on the orbit arm 
 	sun.position = Vector3(orbit_radius, orbit_height, 0.0)
 
 	# Make it easy for panels to find without NodePaths
