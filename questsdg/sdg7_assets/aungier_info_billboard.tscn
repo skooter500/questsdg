@@ -1,0 +1,71 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3waa6inp8kdc"]
+
+[ext_resource type="Script" uid="uid://2f6dl2dqsu1q" path="res://questsdg/sdg7_assets/aungier_info_billboard.gd" id="1_5fwgt"]
+[ext_resource type="FontFile" uid="uid://c7m2s77s7pxfy" path="res://fonts/Minecraft.ttf" id="2_a75py"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g85j4"]
+size = Vector3(1, 0.1, 0.02)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0ynk"]
+transparency = 1
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a75py"]
+transparency = 1
+shading_mode = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g85j4"]
+transparency = 1
+shading_mode = 0
+
+[node name="aungier_info_billboard" type="Node3D"]
+script = ExtResource("1_5fwgt")
+
+[node name="Title" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5868783, 0)
+text = "Solar Energy – Capturing Sunlight for Clean Power"
+font = ExtResource("2_a75py")
+font_size = 52
+outline_size = 25
+
+[node name="Body" type="Label3D" parent="."]
+text = "Solar energy converts sunlight directly into electricity using photovoltaic (PV) cells embedded within solar panels. When sunlight strikes these cells, it generates an electric current without combustion or greenhouse gas emissions.
+
+During operation, solar power produces no direct carbon dioxide (CO₂) emissions, helping reduce dependence on fossil fuels and mitigate climate change. This makes solar energy a key technology in transitioning to low-carbon electricity systems.
+
+Solar power systems are highly adaptable and can be deployed in urban environments such as campuses and rooftops. However, their effectiveness depends not only on sunlight, but also on proper placement, orientation, and ongoing maintenance.
+
+Dust, pollution, and surface debris can significantly reduce panel efficiency by blocking light from reaching the PV cells. Regular cleaning ensures solar installations operate at maximum output and deliver long-term environmental benefits.
+
+Under the United Nations Sustainable Development Goals, SDG 7 — Affordable and Clean Energy emphasises the expansion of reliable, efficient, and sustainable renewable energy systems."
+outline_size = 15
+autowrap_mode = 2
+width = 1200.0
+
+[node name="Progress" type="Node3D" parent="."]
+
+[node name="Instructions" type="Label3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.507482, 0)
+text = "Restore the efficiency of the Solar Panels by cleaning their surfaces!
+(hint: use your hand to wipe away the dirt, restoring the surface)"
+font_size = 20
+outline_size = 20
+
+[node name="Cell1" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2.837, 0)
+mesh = SubResource("BoxMesh_g85j4")
+surface_material_override/0 = SubResource("StandardMaterial3D_d0ynk")
+
+[node name="Cell2" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.8371851, 0)
+mesh = SubResource("BoxMesh_g85j4")
+surface_material_override/0 = SubResource("StandardMaterial3D_a75py")
+
+[node name="Cell3" type="MeshInstance3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -2.837, 0)
+mesh = SubResource("BoxMesh_g85j4")
+surface_material_override/0 = SubResource("StandardMaterial3D_g85j4")
+
+[node name="ProgressLabel" type="Label3D" parent="Progress"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.0271614, 0)
+text = "Solar Panels Cleaned: 0 / 3"

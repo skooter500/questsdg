@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://chymgh6evd66l"]
+
+[ext_resource type="PackedScene" uid="uid://cbal318pv0jdx" path="res://questsdg/sdg7_assets/solar-panel.glb" id="1_1ivng"]
+[ext_resource type="Material" path="res://Holo/panels.tres" id="2_c4mkh"]
+[ext_resource type="Script" uid="uid://dymfnkspj6ij4" path="res://questsdg/sdg7_assets/solar_panel.gd" id="2_dg6dp"]
+[ext_resource type="PackedScene" uid="uid://01vi2w641lq6" path="res://questsdg/sdg7_assets/dirt.glb" id="4_dg6dp"]
+[ext_resource type="AudioStream" uid="uid://5ddhq5adgvhp" path="res://questsdg/sdg7_assets/cleaning-noise.mp3" id="5_1htft"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dg6dp"]
+top_radius = 0.003
+bottom_radius = 0.025
+height = 0.75
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1htft"]
+top_radius = 0.25
+bottom_radius = 0.25
+height = 0.02
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1htft"]
+size = Vector3(0.69018555, 0.059783936, 1)
+
+[node name="solar-panel" instance=ExtResource("1_1ivng")]
+script = ExtResource("2_dg6dp")
+
+[node name="100W_variant_02" parent="100w Solar Panel" index="0"]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Pole" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35, 0)
+mesh = SubResource("CylinderMesh_dg6dp")
+surface_material_override/0 = ExtResource("2_c4mkh")
+
+[node name="Base" type="MeshInstance3D" parent="Pole" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37116995, 0)
+mesh = SubResource("CylinderMesh_1htft")
+surface_material_override/0 = ExtResource("2_c4mkh")
+
+[node name="dirt" parent="." index="2" instance=ExtResource("4_dg6dp")]
+transform = Transform3D(0.23334524, -0.7071067, 0, 0.23334524, 0.7071067, 0, 0, 0, 0.5, -0.02502388, 0.02947122, 0)
+
+[node name="CleanArea" type="Area3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CleanArea" index="0"]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, -0.01876818, 0.013238829, 0)
+shape = SubResource("BoxShape3D_1htft")
+
+[node name="CleaningNoise" type="AudioStreamPlayer3D" parent="." index="4"]
+stream = ExtResource("5_1htft")
