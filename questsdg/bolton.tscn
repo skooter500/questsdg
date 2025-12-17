@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6qqmbnvwtfpw"]
+[gd_scene load_steps=13 format=3 uid="uid://c6qqmbnvwtfpw"]
 
 [ext_resource type="ArrayMesh" uid="uid://dl0ukpnb1oyxk" path="res://Models/Bolton/BoltonStreet_TUDublin_Floor v3.obj" id="1_c0ou2"]
 [ext_resource type="Material" uid="uid://b5r2r5h68suod" path="res://questsdg/ground_trans.tres" id="2_qibew"]
@@ -6,6 +6,38 @@
 [ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://questsdg/buildings.tres" id="4_17d1n"]
 [ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://questsdg/highlight_color.tres" id="5_rbfvt"]
 [ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://questsdg/3_dlabel.tscn" id="6_o187t"]
+[ext_resource type="PackedScene" uid="uid://sls0htdmvd5t" path="res://questsdg/sdg7_assets/steam_particle.tscn" id="7_x7kks"]
+[ext_resource type="Texture2D" uid="uid://bo30bc32k2dxl" path="res://questsdg/sdg7_assets/smoke_04.png" id="8_063xa"]
+[ext_resource type="AudioStream" uid="uid://d1k0qbl6oaxf8" path="res://questsdg/sdg7_assets/final-complete-noise.mp3" id="9_063xa"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_364yp"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+emission_shape_scale = Vector3(0.18, 0.05, 0.18)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0, 0, 0)
+spread = 129.314
+initial_velocity_min = 0.099999994
+initial_velocity_max = 0.14999999
+gravity = Vector3(0.01, 0.1, 0)
+scale_min = 0.08
+scale_max = 0.22
+turbulence_noise_strength = 5.32
+turbulence_noise_scale = 0.62
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n41fl"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.5336727, 0.5434343, 0.3980563, 1)
+albedo_texture = ExtResource("8_063xa")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_4mhrf"]
+material = SubResource("StandardMaterial3D_n41fl")
+size = Vector2(0.3, 0.3)
 
 [node name="Bolton" type="Node3D"]
 transform = Transform3D(0.975955, 0, -0.217973, 0, 1, 0, 0.217973, 0, 0.975955, 0, 0, 0)
@@ -27,3 +59,26 @@ surface_material_override/2 = ExtResource("4_17d1n")
 [node name="3dlabel3" parent="." instance=ExtResource("6_o187t")]
 transform = Transform3D(1, 0, -4.47035e-08, 0, 1, 0, 4.47035e-08, 0, 1, -0.49817, 0.208835, -0.947468)
 text = "Bolton St. Campus"
+
+[node name="sdg_spawn_assets" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44029617, 0, -0.960483)
+
+[node name="sdg7" type="Node3D" parent="sdg_spawn_assets"]
+
+[node name="grid-hub-spawn" type="Node3D" parent="sdg_spawn_assets/sdg7"]
+transform = Transform3D(0.0023524817, 0, 0.099972375, 0, 0.09999998, 0, -0.099972375, 0, 0.0023524817, -0.8280728, 0.042690128, 0.11502987)
+
+[node name="billboard_spawn" type="Node3D" parent="sdg_spawn_assets/sdg7"]
+transform = Transform3D(0.21650635, 0, 0.125, 0, 0.25, 0, -0.125, 0, 0.21650635, -0.07399833, 0.63, -0.4310959)
+
+[node name="SteamParticle" parent="sdg_spawn_assets/sdg7" instance=ExtResource("7_x7kks")]
+transform = Transform3D(0.9046264, 0, 0.42620575, 0, 1, 0, -0.42620575, 0, 0.9046264, -0.00075656176, 0.043761067, 0.00751698)
+emitting = false
+amount = 50
+lifetime = 1.0
+speed_scale = 0.1
+process_material = SubResource("ParticleProcessMaterial_364yp")
+draw_pass_1 = SubResource("QuadMesh_4mhrf")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="sdg_spawn_assets/sdg7"]
+stream = ExtResource("9_063xa")
