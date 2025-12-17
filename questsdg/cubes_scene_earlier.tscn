@@ -1,4 +1,4 @@
-[gd_scene load_steps=8912 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8915 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
@@ -67,6 +67,7 @@
 [ext_resource type="AudioStream" uid="uid://cryk0j5qv2gin" path="res://Voices/sdg 15.mp3" id="44_8su2q"]
 [ext_resource type="Texture2D" uid="uid://b78btybf85pbj" path="res://goals/Goal-3/Goal 3/E_GIF_03.png" id="44_bbrx0"]
 [ext_resource type="PackedScene" uid="uid://bmbo1gv835vbw" path="res://questsdg/color_wheel.tscn" id="44_rf3s6"]
+[ext_resource type="PackedScene" uid="uid://b3waa6inp8kdc" path="res://questsdg/sdg7_assets/aungier_info_billboard.tscn" id="45_5rext"]
 [ext_resource type="PackedScene" uid="uid://ds4f1hq2mdy1e" path="res://questsdg/maps.tscn" id="45_73ssi"]
 [ext_resource type="Texture2D" uid="uid://dbeytby7r733b" path="res://goals/Goal-4/Goal 4/4_SDG_MakeEveryDayCount_Gifs_GDU.png" id="45_axqpm"]
 [ext_resource type="Texture2D" uid="uid://c0p3sb3kk0xy7" path="res://goals/Goal-4/Goal 4/E_GIF_04.png" id="46_8y3yv"]
@@ -115,6 +116,8 @@
 [ext_resource type="PackedScene" uid="uid://ctshf28j6y5lq" path="res://Models/craft_speederD.glb" id="104_ty5nw"]
 [ext_resource type="PackedScene" uid="uid://djmiqqs04sehe" path="res://questsdg/sdg7_assets/wind_turbine.tscn" id="109_bfjxy"]
 [ext_resource type="PackedScene" uid="uid://3lghc4walc8s" path="res://questsdg/sdg7_assets/geothermal_building.tscn" id="110_tlky0"]
+[ext_resource type="PackedScene" uid="uid://nl6ljcev1alx" path="res://questsdg/sdg7_assets/sun_rig.tscn" id="116_liulo"]
+[ext_resource type="PackedScene" uid="uid://chymgh6evd66l" path="res://questsdg/sdg7_assets/solar_panel.tscn" id="117_lacbc"]
 
 [sub_resource type="BoxShape3D" id="2"]
 size = Vector3(0.141968, 0.0560303, 0.0609894)
@@ -61860,15 +61863,19 @@ sprite_frames = SubResource("SpriteFrames_5rext")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated7/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_8thac")
 
-[node name="sdg7_manager" parent="tu dub/ani_goals/goal_box_animated7" node_paths=PackedStringArray("wind_spawn_points", "geothermal_spawn_point", "hydro_spawn_point", "billboard_spawn_points") instance=ExtResource("36_a1h62")]
+[node name="sdg7_manager" parent="tu dub/ani_goals/goal_box_animated7" node_paths=PackedStringArray("wind_spawn_points", "geothermal_spawn_point", "hydro_spawn_point", "sun_rig_spawn_point", "solar_spawn_points", "billboard_spawn_points") instance=ExtResource("36_a1h62")]
 wind_turbine_scene = ExtResource("109_bfjxy")
 geothermal_scene = ExtResource("110_tlky0")
 hydro_dam_scene = ExtResource("2_5mhuu")
+sun_rig_scene = ExtResource("116_liulo")
+solar_panel_scene = ExtResource("117_lacbc")
 wind_spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn1"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn2"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn3")]
 geothermal_spawn_point = NodePath("../../../maps/Grangegorman/sdg_spawn_points/sdg7/geothermal_spawn")
 hydro_spawn_point = NodePath("../../../maps/Tallaght/sdg_spawn_points/sdg7/hydro_spawn_point")
-billboard_spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/Grangegorman/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/Tallaght/sdg_spawn_points/sdg7/billboard_spawn")]
-billboard_scenes = Array[PackedScene]([ExtResource("40_toam5"), ExtResource("41_f7hc6"), ExtResource("101_ybhp3")])
+sun_rig_spawn_point = NodePath("../../../maps/aungier/sdg_spawn_points/sdg7/sun_rig_spawn")
+solar_spawn_points = [NodePath("../../../maps/aungier/sdg_spawn_points/sdg7/solar_panel_spawn1"), NodePath("../../../maps/aungier/sdg_spawn_points/sdg7/solar_panel_spawn2"), NodePath("../../../maps/aungier/sdg_spawn_points/sdg7/solar_panel_spawn3")]
+billboard_spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/Grangegorman/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/Tallaght/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/aungier/sdg_spawn_points/sdg7/billboard_spawn")]
+billboard_scenes = Array[PackedScene]([ExtResource("40_toam5"), ExtResource("41_f7hc6"), ExtResource("101_ybhp3"), ExtResource("45_5rext")])
 
 [node name="goal_box_animated8" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
@@ -62123,6 +62130,32 @@ volume_db = -10.0
 unit_size = 1.0
 max_db = 6.0
 max_distance = 15.0
+
+[node name="sdg_spawn_points" type="Node3D" parent="tu dub/maps/aungier" index="1"]
+
+[node name="sdg7" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points"]
+
+[node name="solar_panel_spawn1" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.30741334, 0, 0.23327887)
+
+[node name="solar_panel_spawn2" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0.24480772)
+
+[node name="solar_panel_spawn3" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.38360155, 0, 0.10310221)
+
+[node name="sun_rig_spawn" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+
+[node name="CompletionSound" type="AudioStreamPlayer3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.99999964, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 0.99999964, 0.83783644, 0, -0.1480938)
+stream = ExtResource("102_cfjdm")
+volume_db = -10.0
+unit_size = 1.0
+max_db = 6.0
+max_distance = 15.0
+
+[node name="billboard_spawn" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+transform = Transform3D(-0.21650635, 0, -0.12500001, 0, 0.25, 0, 0.12500001, 0, -0.21650635, -0.15146971, 0.79999995, 0.71135926)
 
 [node name="tu_dub_logo" type="MeshInstance3D" parent="tu dub"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0867636, 0.331675, -0.05193)

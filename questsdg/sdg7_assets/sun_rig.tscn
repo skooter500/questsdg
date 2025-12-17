@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://nl6ljcev1alx"]
+
+[ext_resource type="Script" uid="uid://6c2ieuuhh7sj" path="res://questsdg/sdg7_assets/sun_orbit.gd" id="1_jtyup"]
+[ext_resource type="Texture2D" uid="uid://brkwbewk1w64" path="res://questsdg/sdg7_assets/circle_05.png" id="2_ecuqo"]
+[ext_resource type="AudioStream" uid="uid://bxasdhllanykj" path="res://questsdg/sdg7_assets/space-sun-noise.mp3" id="3_ecuqo"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_qaoyc"]
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fn7yr"]
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.6784314, 0.23921569, 0, 1)
+albedo_texture = ExtResource("2_ecuqo")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_67a6j"]
+material = SubResource("StandardMaterial3D_fn7yr")
+size = Vector2(0.5, 0.5)
+
+[node name="SunRig" type="Node3D"]
+script = ExtResource("1_jtyup")
+orbit_radius = 3.0
+orbit_height = 2.0
+orbit_speed_deg_per_sec = 3.0
+
+[node name="OrbitPivot" type="Node3D" parent="."]
+
+[node name="Sun" type="Node3D" parent="OrbitPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 0)
+
+[node name="SunParticle" type="GPUParticles3D" parent="OrbitPivot/Sun"]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_qaoyc")
+draw_pass_1 = SubResource("QuadMesh_67a6j")
+
+[node name="SunHum" type="AudioStreamPlayer3D" parent="OrbitPivot/Sun"]
+stream = ExtResource("3_ecuqo")
+
+[node name="Direciton" type="Node3D" parent="."]

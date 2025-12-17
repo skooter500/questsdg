@@ -5,10 +5,14 @@ signal wind_all_activated
 @export var wind_turbine_scene: PackedScene
 @export var geothermal_scene: PackedScene
 @export var hydro_dam_scene: PackedScene
+@export var sun_rig_scene: PackedScene
+@export var solar_panel_scene: PackedScene   
 
 @export var wind_spawn_points: Array[Node3D]
 @export var geothermal_spawn_point: Node3D
 @export var hydro_spawn_point: Node3D
+@export var sun_rig_spawn_point: Node3D
+@export var solar_spawn_points: Array[Node3D] = []   
 
 @export var billboard_spawn_points: Array[Node3D]
 @export var billboard_scenes: Array[PackedScene]
@@ -19,7 +23,8 @@ var _billboards: Array[Node3D] = []
 # Billboard buckets
 var _wind_billboards: Array[Node3D] = []
 var _geo_billboards: Array[Node3D] = []
-var _hydro_billboards: Array[Node3D] = [] 
+var _hydro_billboards: Array[Node3D] = []
+var _solar_billboards: Array[Node3D] = []   
 
 var _wind_target: int = 0
 var _wind_activated: int = 0
@@ -34,6 +39,11 @@ var _geo_completed: bool = false
 var _hydro_step: int = 0
 const HYDRO_TOTAL: int = 3
 var _hydro_completed: bool = false
+
+# Solar progress: clean N panels
+var _solar_target: int = 0               
+var _solar_cleaned: int = 0              
+var _solar_completed: bool = false       
 
 
 func _ready() -> void:
@@ -61,15 +71,22 @@ func spawn_assets() -> void:
 	_hydro_step = 0
 	_hydro_completed = false
 
+	# Reset solar progress
+	_solar_target = solar_spawn_points.size()   
+	_solar_cleaned = 0                          
+	_solar_completed = false                    
+
 	_billboards.clear()
 	_wind_billboards.clear()
 	_geo_billboards.clear()
 	_hydro_billboards.clear()
+	_solar_billboards.clear()                   
 
 	_spawn_billboards()
 	_update_wind_billboards_progress()
 	_update_geo_billboards_progress()
 	_update_hydro_billboards_progress()
+	_update_solar_billboards_progress()         
 
 	# --- Spawn Wind Turbines ---
 	if wind_turbine_scene == null:
@@ -134,6 +151,36 @@ func spawn_assets() -> void:
 		else:
 			push_warning("SDG7: Hydroelectric dam scene missing 'hydro_completed' signal")
 
+	# --- Spawn Sun Rig (Solar) ---
+	if sun_rig_scene == null:
+		push_warning("SDG7: Sun rig scene not set")
+	elif sun_rig_spawn_point == null:
+		push_warning("SDG7: Sun rig spawn point not set")
+	else:
+		var rig := sun_rig_scene.instantiate() as Node3D
+		sun_rig_spawn_point.add_child(rig)
+		rig.global_transform = sun_rig_spawn_point.global_transform
+		spawned.append(rig)
+
+	# --- Spawn Solar Panels ---
+	if solar_panel_scene == null:
+		push_warning("SDG7: Solar panel scene not set")
+	else:
+		for point in solar_spawn_points:
+			if point == null:
+				continue
+
+			var panel := solar_panel_scene.instantiate() as Node3D
+			point.add_child(panel)
+			panel.global_transform = point.global_transform
+			spawned.append(panel)
+
+			# Hook cleaning completion
+			if panel.has_signal("cleaned"):
+				panel.cleaned.connect(_on_solar_panel_cleaned)
+			else:
+				push_warning("SDG7: Solar panel scene missing 'cleaned' signal")
+
 	print("SDG7: Spawned %d total renewable assets" % spawned.size())
 
 
@@ -142,6 +189,7 @@ func _spawn_billboards() -> void:
 	_wind_billboards.clear()
 	_geo_billboards.clear()
 	_hydro_billboards.clear()
+	_solar_billboards.clear()  
 
 	if billboard_spawn_points.is_empty():
 		return
@@ -174,6 +222,8 @@ func _spawn_billboards() -> void:
 			_geo_billboards.append(board)
 		elif path.contains("tallaght_info_billboard"):
 			_hydro_billboards.append(board)
+		elif path.contains("aungier_info_billboard"):     
+			_solar_billboards.append(board)              
 		else:
 			_wind_billboards.append(board)
 
@@ -203,6 +253,15 @@ func _update_hydro_billboards_progress() -> void:
 	for board in _hydro_billboards:
 		if board and board.has_method("set_progress"):
 			board.call("set_progress", _hydro_step, HYDRO_TOTAL)
+
+
+func _update_solar_billboards_progress() -> void:   
+	if _solar_billboards.is_empty():
+		return
+
+	for board in _solar_billboards:
+		if board and board.has_method("set_progress"):
+			board.call("set_progress", _solar_cleaned, _solar_target)
 
 
 func _on_wind_turbine_activated(_turbine: Node3D) -> void:
@@ -273,6 +332,23 @@ func _on_hydro_completed() -> void:
 		chime.play()
 
 
+func _on_solar_panel_cleaned(_panel: Node3D) -> void:   
+	if _solar_completed:
+		return
+
+	_solar_cleaned += 1
+	_update_solar_billboards_progress()
+	print("SDG7: Solar panels cleaned %d/%d" % [_solar_cleaned, _solar_target])
+
+	if _solar_cleaned >= _solar_target:
+		_solar_completed = true
+		print("SDG7: Solar completed!")
+
+		var chime := $"../../../maps/aungier/sdg_spawn_points/sdg7/CompletionSound"
+		if chime:
+			chime.play()
+
+
 func clear_assets() -> void:
 	for node in spawned:
 		if node and node.is_inside_tree():
@@ -283,3 +359,4 @@ func clear_assets() -> void:
 	_wind_billboards.clear()
 	_geo_billboards.clear()
 	_hydro_billboards.clear()
+	_solar_billboards.clear()  
