@@ -531,3 +531,5 @@ func clear_assets() -> void:
 	_bolton_billboards.clear()
 
 	_energy_box = null
+	
+	_set_bolton_fog_strength(0.0, true)	

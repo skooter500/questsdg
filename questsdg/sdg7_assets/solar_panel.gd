@@ -2,10 +2,10 @@ extends Node3D
 
 signal cleaned(panel: Node3D)
 
-@export var track_turn_speed: float = 200.0
 @export var facing_yaw_offset_deg: float = 105
 
 var _sun: Node3D = null
+var _base_rot: Vector3
 
 @export var clean_time: float = 1.5
 @export var min_alpha: float = 0.0
@@ -24,6 +24,7 @@ var _hands_inside: Dictionary = {}
 
 func _ready() -> void:
 	_sun = get_tree().get_first_node_in_group("sun_node") as Node3D
+	_base_rot = global_rotation
 	_make_dirt_materials_local()
 
 	clean_area.monitoring = true
@@ -42,20 +43,15 @@ func _ready() -> void:
 
 	_apply_alpha(1.0)
 
+	if _sun:
+		_apply_sun_yaw()
 
-func _process(delta: float) -> void:
+
+func _process(_delta: float) -> void:
 	if _sun == null:
 		_sun = get_tree().get_first_node_in_group("sun_node") as Node3D
-	else:
-		var to := _sun.global_position - global_position
-		to.y = 0.0
-		if to.length() > 0.001:
-			to = to.normalized()
-			var target_yaw := atan2(to.x, to.z) + deg_to_rad(facing_yaw_offset_deg)
-
-			var r := rotation
-			r.y = lerp_angle(r.y, target_yaw, clampf(delta * track_turn_speed, 0.0, 1.0))
-			rotation = r
+	if _sun:
+		_apply_sun_yaw()
 
 	if _done:
 		return
@@ -77,7 +73,7 @@ func _process(delta: float) -> void:
 			t_out.tween_callback(Callable(squeak, "stop"))
 
 	if touching:
-		_progress += delta / max(clean_time, 0.001)
+		_progress += _delta / max(clean_time, 0.001)
 		_progress = clampf(_progress, 0.0, 1.0)
 
 		var a := lerpf(1.0, min_alpha, _progress)
@@ -85,6 +81,19 @@ func _process(delta: float) -> void:
 
 		if _progress >= 1.0:
 			_finish_clean()
+
+
+func _apply_sun_yaw() -> void:
+	var to := _sun.global_position - global_position
+	to.y = 0.0
+	if to.length() <= 0.001:
+		return
+
+	var yaw := atan2(to.x, to.z) + deg_to_rad(facing_yaw_offset_deg)
+	var r := _base_rot
+	r.y = yaw
+	global_rotation = r
+
 
 func _make_dirt_materials_local() -> void:
 	if dirt_node == null:
