@@ -580,7 +580,7 @@ const float seed_o236523 = 0.025586436;
 const float p_o236523_scale_x = 6.000000000;
 const float p_o236523_scale_y = 12.000000000;
 const float p_o236523_folds = 0.000000000;
-const float p_o236523_iterations = 5.000000000;
+const float p_o236523_iterations = 1.000000000;
 const float p_o236523_persistence = 0.350000000;
 const float p_o236534_default_in1 = 0.000000000;
 const float p_o236534_default_in2 = 0.000000000;
@@ -622,7 +622,7 @@ const float seed_o236506 = 0.212741271;
 const float p_o236506_scale_x = 16.000000000;
 const float p_o236506_scale_y = 7.000000000;
 const float p_o236506_folds = 0.000000000;
-const float p_o236506_iterations = 4.000000000;
+const float p_o236506_iterations = 2.000000000;
 const float p_o236506_persistence = 0.400000000;
 float o236502_input_d(vec2 uv, float _seed_variation_) {
 float o236506_0_1_f = fbm_2d_perlin((uv), vec2(p_o236506_scale_x, p_o236506_scale_y), int(p_o236506_folds), int(p_o236506_iterations), p_o236506_persistence, (elapsed_time*.3), (seed_o236506+fract(_seed_variation_)));

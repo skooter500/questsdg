@@ -110,10 +110,7 @@ func _on_lever_state_changed(is_on: bool) -> void:
 
 
 func _on_debris_zone_area_exited(area: Area3D, zone_id: int) -> void:
-	# Don’t count until gate is open
-	if not _gate_open:
-		return
-
+	
 	# Only count if the exiting Area3D is the debris’ GrabArea
 	if zone_id == 1:
 		if _cleared_zone1:
@@ -132,7 +129,8 @@ func _on_debris_zone_area_exited(area: Area3D, zone_id: int) -> void:
 
 	# Strength only depends on debris cleared (0..2)
 	var cleared: int = _cleared_count()
-	_apply_flow_strength(cleared)
+	if _gate_open:
+		_apply_flow_strength(cleared)
 
 	# Blades can only spin once gate is open AND debris cleared
 	_update_blades_spin()
