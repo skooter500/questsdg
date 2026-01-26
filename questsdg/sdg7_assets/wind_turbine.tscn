@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://djmiqqs04sehe"]
+
+[ext_resource type="PackedScene" uid="uid://kfdmoj3snq34" path="res://questsdg/sdg7_assets/wind_turbine.glb" id="1_ps5cd"]
+[ext_resource type="Script" uid="uid://cccs5ym3rqgde" path="res://questsdg/sdg7_assets/wind_turbine.gd" id="2_8lalm"]
+[ext_resource type="AudioStream" uid="uid://boryxt6e03swg" path="res://questsdg/sdg7_assets/wind-sound.mp3" id="3_ig3bo"]
+[ext_resource type="Material" path="res://Holo/panels.tres" id="3_tc6x0"]
+[ext_resource type="PackedScene" uid="uid://sls0htdmvd5t" path="res://questsdg/sdg7_assets/steam_particle.tscn" id="4_j6pbf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ig3bo"]
+radius = 0.09
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tc6x0"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+emission_shape_scale = Vector3(0.18, 0.05, 0.18)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, 1, 0)
+spread = 132.385
+initial_velocity_min = 0.049999997
+initial_velocity_max = 0.25
+gravity = Vector3(0.01, 0.1, 0)
+scale_min = 0.08
+scale_max = 0.22
+turbulence_noise_strength = 5.32
+turbulence_noise_scale = 0.62
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmu5q"]
+albedo_color = Color(0, 0.5294118, 0.16862746, 0.02745098)
+emission_enabled = true
+emission = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tiumw"]
+material = SubResource("StandardMaterial3D_mmu5q")
+size = Vector3(0.01, 0.01, 0.01)
+
+[node name="wind_turbine" instance=ExtResource("1_ps5cd")]
+script = ExtResource("2_8lalm")
+particles_normal_speed_scale = 0.2
+particles_boost_speed_scale = 0.5
+
+[node name="Tower" parent="." index="0"]
+surface_material_override/0 = ExtResource("3_tc6x0")
+
+[node name="Blades" parent="Tower" index="0"]
+surface_material_override/0 = ExtResource("3_tc6x0")
+
+[node name="WindSound" type="AudioStreamPlayer3D" parent="." index="1"]
+stream = ExtResource("3_ig3bo")
+unit_size = 1.0
+max_distance = 2.0
+
+[node name="InteractArea" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00023838878, 0.0004556477, 6.209314e-05)
+shape = SubResource("SphereShape3D_ig3bo")
+
+[node name="ActivatedParticles" parent="." index="3" instance=ExtResource("4_j6pbf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10580708, 0)
+emitting = false
+amount = 40
+lifetime = 0.5
+speed_scale = 0.2
+process_material = SubResource("ParticleProcessMaterial_tc6x0")
+draw_pass_1 = SubResource("BoxMesh_tiumw")
+
+[connection signal="area_entered" from="InteractArea" to="." method="_on_interact_area_area_entered"]
+[connection signal="area_exited" from="InteractArea" to="." method="_on_interact_area_area_exited"]

@@ -1,0 +1,157 @@
+[gd_scene load_steps=23 format=3 uid="uid://3lghc4walc8s"]
+
+[ext_resource type="PackedScene" uid="uid://bwl4b3ko0n23g" path="res://questsdg/sdg7_assets/geothermal_building.glb" id="1_x0i46"]
+[ext_resource type="Script" uid="uid://b2ai3vgwgggc3" path="res://questsdg/sdg7_assets/geothermal_building.gd" id="2_wi7n8"]
+[ext_resource type="Material" path="res://Holo/metal.tres" id="4_i8bkl"]
+[ext_resource type="Material" uid="uid://dyf0ku6pusund" path="res://materials/energy ball.tres" id="4_m4yah"]
+[ext_resource type="Material" path="res://Holo/panels.tres" id="5_m4yah"]
+[ext_resource type="PackedScene" uid="uid://sls0htdmvd5t" path="res://questsdg/sdg7_assets/steam_particle.tscn" id="6_6bsk3"]
+[ext_resource type="AudioStream" uid="uid://ctibbs5p1jy0c" path="res://questsdg/sdg7_assets/pump-noise-73877.mp3" id="6_i8bkl"]
+[ext_resource type="Texture2D" uid="uid://bo30bc32k2dxl" path="res://questsdg/sdg7_assets/smoke_04.png" id="8_jb67d"]
+[ext_resource type="Script" uid="uid://cbrrkwyqg771i" path="res://questsdg/sdg7_assets/pipe_connector.gd" id="9_p56ua"]
+[ext_resource type="ArrayMesh" uid="uid://bm45p7a6w8e5s" path="res://questsdg/sdg7_assets/Extractor-pipe.obj" id="10_p56ua"]
+[ext_resource type="AudioStream" uid="uid://ddrj622rebe2e" path="res://questsdg/sdg7_assets/snapsound.mp3" id="11_e2fvc"]
+[ext_resource type="AudioStream" uid="uid://ojft6iyb0q78" path="res://questsdg/sdg7_assets/accessdenied.mp3" id="12_lyble"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i8bkl"]
+size = Vector3(0.03, 0.03, 0.03)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4yah"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6bsk3"]
+size = Vector3(0.0014765626, 0.02954626, 0.030765712)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6bsk3"]
+size = Vector3(0.05, 0.05, 0.008)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdodu"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e2fvc"]
+radius = 0.1
+height = 0.5
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lyble"]
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qvxfn"]
+transparency = 1
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.93661183, 0.11602586, 0, 1)
+albedo_texture = ExtResource("8_jb67d")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_02e3h"]
+material = SubResource("StandardMaterial3D_qvxfn")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lyble"]
+radius = 0.03
+height = 0.25
+
+[node name="geothermal_building" node_paths=PackedStringArray("pipes_mesh", "button_mesh", "steam_particles") instance=ExtResource("1_x0i46")]
+script = ExtResource("2_wi7n8")
+pipes_mesh = NodePath("PipeConnector/ExtractorPipe")
+idle_material = ExtResource("4_i8bkl")
+active_material = ExtResource("4_m4yah")
+button_mesh = NodePath("ButtonRoot/ButtonMesh")
+press_distance = 0.01
+press_time = 0.2
+steam_particles = [NodePath("Pipes/Steam1"), NodePath("Pipes/Steam2"), NodePath("Pipes/Steam3"), NodePath("Pipes/Steam4")]
+pipe_connector_path = NodePath("PipeConnector")
+
+[node name="Building" parent="." index="0"]
+surface_material_override/0 = ExtResource("5_m4yah")
+
+[node name="Pipes" parent="." index="1"]
+surface_material_override/0 = ExtResource("4_i8bkl")
+
+[node name="Steam1" parent="Pipes" index="0" instance=ExtResource("6_6bsk3")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0.09467081, 0.18035965, -0.09083644)
+emitting = false
+
+[node name="Steam2" parent="Pipes" index="1" instance=ExtResource("6_6bsk3")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0.06932053, 0.18035965, -0.09083644)
+emitting = false
+
+[node name="Steam3" parent="Pipes" index="2" instance=ExtResource("6_6bsk3")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, 0.010022581, 0.18035965, -0.09083644)
+emitting = false
+
+[node name="Steam4" parent="Pipes" index="3" instance=ExtResource("6_6bsk3")]
+transform = Transform3D(0.06, 0, 0, 0, 0.06, 0, 0, 0, 0.06, -0.014757102, 0.18035965, -0.09083644)
+emitting = false
+
+[node name="ButtonRoot" type="Node3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12270546, 0.00035801157, -0.057159737)
+
+[node name="ButtonMesh" type="MeshInstance3D" parent="ButtonRoot" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02351302, -0.001773024, -0.0329825)
+mesh = SubResource("BoxMesh_i8bkl")
+surface_material_override/0 = SubResource("StandardMaterial3D_m4yah")
+
+[node name="ButtonArea" type="Area3D" parent="ButtonRoot" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013042435, 0, -0.024600789)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ButtonRoot/ButtonArea" index="0"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.011206061, -0.0019538365, -0.02020055)
+shape = SubResource("BoxShape3D_6bsk3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ButtonRoot" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023499846, -0.0018531904, -0.027180567)
+mesh = SubResource("BoxMesh_6bsk3")
+surface_material_override/0 = SubResource("StandardMaterial3D_hdodu")
+
+[node name="GeoPumpNoise" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("6_i8bkl")
+unit_size = 1.0
+max_distance = 1.5
+
+[node name="HeatPocket" type="Area3D" parent="." index="4"]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, -0.28836542, 0.066525)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HeatPocket" index="0"]
+shape = SubResource("CapsuleShape3D_e2fvc")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="HeatPocket" index="1"]
+transform = Transform3D(0.08, 0, 0, 0, 0.25, 0, 0, 0, 0.08, 0, 0, 0)
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_lyble")
+draw_pass_1 = SubResource("QuadMesh_02e3h")
+
+[node name="PipeSnapPoint" type="Marker3D" parent="." index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.019)
+
+[node name="PipeConnector" type="Node3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26592243, 0.17761122, 0.018516019)
+script = ExtResource("9_p56ua")
+snap_area_path = NodePath("../HeatPocket")
+snap_point_path = NodePath("../PipeSnapPoint")
+follow_smooth_speed = 100.0
+
+[node name="ExtractorPipe" type="MeshInstance3D" parent="PipeConnector" index="0"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0.0096309185, -0.17497171, 0.034094527)
+mesh = ExtResource("10_p56ua")
+surface_material_override/0 = ExtResource("4_i8bkl")
+
+[node name="GrabArea" type="Area3D" parent="PipeConnector" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010274917, -0.13537394, 0.02676472)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PipeConnector/GrabArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.008488923)
+shape = SubResource("CapsuleShape3D_lyble")
+
+[node name="SnapSound" type="AudioStreamPlayer3D" parent="PipeConnector" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006713748, -0.04081209, 0.023255616)
+stream = ExtResource("11_e2fvc")
+
+[node name="DeniedSound" type="AudioStreamPlayer3D" parent="." index="7"]
+stream = ExtResource("12_lyble")
+
+[connection signal="area_entered" from="ButtonRoot/ButtonArea" to="." method="_on_ButtonArea_area_entered"]
+[connection signal="area_exited" from="ButtonRoot/ButtonArea" to="." method="_on_ButtonArea_area_exited"]

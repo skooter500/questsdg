@@ -1,8 +1,9 @@
-[gd_scene load_steps=8904 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene load_steps=8917 format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
 [ext_resource type="Script" uid="uid://cepuwmx1ceef3" path="res://questsdg/goals.gd" id="2_2dw41"]
+[ext_resource type="PackedScene" uid="uid://d1s8kguqsnoko" path="res://questsdg/sdg7_assets/hydroelectric_dam.tscn" id="2_5mhuu"]
 [ext_resource type="Script" uid="uid://dttcldpevggnp" path="res://questsdg/hand.gd" id="2_p7tmn"]
 [ext_resource type="PackedScene" uid="uid://bvmb02eqtho4k" path="res://addons/hand_pose_detector/hands/LeftHandHumanoid.gltf" id="2_pvxhv"]
 [ext_resource type="Texture2D" uid="uid://8riwg23po5sb" path="res://goals/E-WEB-Goal-01.png" id="2_sasra"]
@@ -49,13 +50,16 @@
 [ext_resource type="AudioStream" uid="uid://6btr8h2lyp7u" path="res://Voices/sdg 10.mp3" id="29_axglg"]
 [ext_resource type="AudioStream" uid="uid://daj5g8b7d8s0k" path="res://Voices/sdg 11.mp3" id="32_jstes"]
 [ext_resource type="AudioStream" uid="uid://bhbaiig0iorsr" path="res://Voices/sdg 12.mp3" id="35_rarkd"]
+[ext_resource type="PackedScene" uid="uid://dopy8agnoqcd7" path="res://questsdg/sdg_7_manager.tscn" id="36_a1h62"]
 [ext_resource type="AudioStream" uid="uid://dsmxkmoiy3lhx" path="res://Voices/sdg 1 emily.mp3" id="37_dbnba"]
 [ext_resource type="PackedScene" uid="uid://bdllxnud8sodo" path="res://questsdg/goal_box_animated.tscn" id="38_dqovh"]
 [ext_resource type="AudioStream" uid="uid://caf2cxncs7t5y" path="res://Voices/sdg 2 emily.mp3" id="38_w5ut5"]
 [ext_resource type="AudioStream" uid="uid://dt8ldyuj5n7nv" path="res://Voices/sdg 13.mp3" id="38_y1on4"]
 [ext_resource type="AudioStream" uid="uid://ccynsond5b4q0" path="res://Voices/sdg 3.mp3" id="39_l8wyt"]
 [ext_resource type="AudioStream" uid="uid://cp75tpmqxbs6f" path="res://Voices/sdg 4.mp3" id="40_4gmfy"]
+[ext_resource type="PackedScene" uid="uid://blafapjwh5uke" path="res://questsdg/sdg7_assets/info_billboard.tscn" id="40_toam5"]
 [ext_resource type="AudioStream" uid="uid://d21xltfe0748c" path="res://Voices/sdg 5.mp3" id="41_0gxsn"]
+[ext_resource type="PackedScene" uid="uid://dwqlp6vkcw31o" path="res://questsdg/sdg7_assets/grange_info_billboard.tscn" id="41_f7hc6"]
 [ext_resource type="Texture2D" uid="uid://c4bt31a34xfcx" path="res://goals/Goal-2/Goal 2/2_SDG_MakeEveryDayCount_Gifs_GDU.png" id="41_rhdcm"]
 [ext_resource type="AudioStream" uid="uid://dtqrsamg553rw" path="res://Voices/sdg 14.mp3" id="41_wnpci"]
 [ext_resource type="Texture2D" uid="uid://b72r7cfwdv0kp" path="res://goals/Goal-2/Goal 2/E_GIF_02.png" id="42_er6et"]
@@ -63,10 +67,12 @@
 [ext_resource type="AudioStream" uid="uid://cryk0j5qv2gin" path="res://Voices/sdg 15.mp3" id="44_8su2q"]
 [ext_resource type="Texture2D" uid="uid://b78btybf85pbj" path="res://goals/Goal-3/Goal 3/E_GIF_03.png" id="44_bbrx0"]
 [ext_resource type="PackedScene" uid="uid://bmbo1gv835vbw" path="res://questsdg/color_wheel.tscn" id="44_rf3s6"]
+[ext_resource type="PackedScene" uid="uid://b3waa6inp8kdc" path="res://questsdg/sdg7_assets/aungier_info_billboard.tscn" id="45_5rext"]
 [ext_resource type="PackedScene" uid="uid://ds4f1hq2mdy1e" path="res://questsdg/maps.tscn" id="45_73ssi"]
 [ext_resource type="Texture2D" uid="uid://dbeytby7r733b" path="res://goals/Goal-4/Goal 4/4_SDG_MakeEveryDayCount_Gifs_GDU.png" id="45_axqpm"]
 [ext_resource type="Texture2D" uid="uid://c0p3sb3kk0xy7" path="res://goals/Goal-4/Goal 4/E_GIF_04.png" id="46_8y3yv"]
 [ext_resource type="AudioStream" uid="uid://iug7osy2xxq4" path="res://Voices/sdg 16.mp3" id="47_0s3vr"]
+[ext_resource type="PackedScene" uid="uid://ffu3fvalg7dw" path="res://questsdg/sdg7_assets/bolton_info_billboard.tscn" id="47_2mghe"]
 [ext_resource type="Texture2D" uid="uid://cvslcxfbh326g" path="res://goals/Goal-5/Goal 5/5_SDG_MakeEveryDayCount_Gifs_GDU.png" id="47_8vv8c"]
 [ext_resource type="Script" uid="uid://55aivdes8qlm" path="res://questsdg/climate_action.gd" id="47_r4p17"]
 [ext_resource type="AudioStream" uid="uid://c2l8101cn0dmb" path="res://sounds/birds-singing-in-and-leaves-rustling-with-the-wind-14557.mp3" id="48_rtc2l"]
@@ -104,9 +110,16 @@
 [ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://questsdg/3_dlabel.tscn" id="98_w1b63"]
 [ext_resource type="Script" uid="uid://cmw6n17mebkcx" path="res://behaviors/boid.gd" id="99_0s3vr"]
 [ext_resource type="Script" uid="uid://s5pb8njisohn" path="res://behaviors/avoidance.gd" id="100_8su2q"]
+[ext_resource type="PackedScene" uid="uid://br8xhjc0selya" path="res://questsdg/sdg7_assets/tallaght_info_billboard.tscn" id="101_ybhp3"]
+[ext_resource type="AudioStream" uid="uid://bk48a5olb3gqd" path="res://questsdg/sdg7_assets/completion-noise.mp3" id="102_cfjdm"]
 [ext_resource type="Material" uid="uid://dohx2u81lglvd" path="res://behaviors/jet_material.tres" id="102_wnpci"]
 [ext_resource type="Script" uid="uid://b6jj7yxhu2hi1" path="res://behaviors/follow_path.gd" id="104_0s3vr"]
 [ext_resource type="PackedScene" uid="uid://ctshf28j6y5lq" path="res://Models/craft_speederD.glb" id="104_ty5nw"]
+[ext_resource type="PackedScene" uid="uid://djmiqqs04sehe" path="res://questsdg/sdg7_assets/wind_turbine.tscn" id="109_bfjxy"]
+[ext_resource type="PackedScene" uid="uid://3lghc4walc8s" path="res://questsdg/sdg7_assets/geothermal_building.tscn" id="110_tlky0"]
+[ext_resource type="PackedScene" uid="uid://nl6ljcev1alx" path="res://questsdg/sdg7_assets/sun_rig.tscn" id="116_liulo"]
+[ext_resource type="PackedScene" uid="uid://chymgh6evd66l" path="res://questsdg/sdg7_assets/solar_panel.tscn" id="117_lacbc"]
+[ext_resource type="PackedScene" uid="uid://bmrj2w3qq87cr" path="res://questsdg/sdg7_assets/energy_box.tscn" id="119_8thac"]
 
 [sub_resource type="BoxShape3D" id="2"]
 size = Vector3(0.141968, 0.0560303, 0.0609894)
@@ -61852,6 +61865,24 @@ sprite_frames = SubResource("SpriteFrames_5rext")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated7/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_8thac")
 
+[node name="sdg7_manager" parent="tu dub/ani_goals/goal_box_animated7" node_paths=PackedStringArray("energy_box_spawn_point", "bolton_fog_particles", "wind_spawn_points", "geothermal_spawn_point", "hydro_spawn_point", "sun_rig_spawn_point", "solar_spawn_points", "billboard_spawn_points") instance=ExtResource("36_a1h62")]
+wind_turbine_scene = ExtResource("109_bfjxy")
+geothermal_scene = ExtResource("110_tlky0")
+hydro_dam_scene = ExtResource("2_5mhuu")
+sun_rig_scene = ExtResource("116_liulo")
+solar_panel_scene = ExtResource("117_lacbc")
+energy_box_scene = ExtResource("119_8thac")
+energy_box_spawn_point = NodePath("../../../maps/Bolton/sdg_spawn_assets/sdg7/grid-hub-spawn")
+bolton_fog_particles = NodePath("../../../maps/Bolton/sdg_spawn_assets/sdg7/SteamParticle")
+fog_fade_time = 0.1
+wind_spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn1"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn2"), NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/wind_turbine_spawn3")]
+geothermal_spawn_point = NodePath("../../../maps/Grangegorman/sdg_spawn_points/sdg7/geothermal_spawn")
+hydro_spawn_point = NodePath("../../../maps/Tallaght/sdg_spawn_points/sdg7/hydro_spawn_point")
+sun_rig_spawn_point = NodePath("../../../maps/aungier/sdg_spawn_points/sdg7/sun_rig_spawn")
+solar_spawn_points = [NodePath("../../../maps/aungier/sdg_spawn_points/sdg7/solar_panel_spawn1"), NodePath("../../../maps/aungier/sdg_spawn_points/sdg7/solar_panel_spawn2"), NodePath("../../../maps/aungier/sdg_spawn_points/sdg7/solar_panel_spawn3")]
+billboard_spawn_points = [NodePath("../../../maps/Blanchardstown/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/Grangegorman/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/Tallaght/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/aungier/sdg_spawn_points/sdg7/billboard_spawn"), NodePath("../../../maps/Bolton/sdg_spawn_assets/sdg7/billboard_spawn")]
+billboard_scenes = Array[PackedScene]([ExtResource("40_toam5"), ExtResource("41_f7hc6"), ExtResource("101_ybhp3"), ExtResource("45_5rext"), ExtResource("47_2mghe")])
+
 [node name="goal_box_animated8" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
@@ -62088,6 +62119,50 @@ multimesh = null
 [node name="MultiMeshInstance3D" parent="tu dub/maps/Blanchardstown/blanchTrees2" index="0"]
 multimesh = null
 
+[node name="sdg_spawn_points" type="Node3D" parent="tu dub/maps/Tallaght" index="5"]
+
+[node name="sdg7" type="Node3D" parent="tu dub/maps/Tallaght/sdg_spawn_points"]
+
+[node name="hydro_spawn_point" type="Node3D" parent="tu dub/maps/Tallaght/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.03628828, 0, 0.14554437, 0, 0.15, 0, -0.14554437, 0, 0.03628828, 0.45182273, -0.009809256, -0.2554307)
+
+[node name="billboard_spawn" type="Node3D" parent="tu dub/maps/Tallaght/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.24540679, 0, -0.04770225, 0, 0.25, 0, 0.04770225, 0, 0.24540679, 0.6, 0.5, -0.9)
+
+[node name="CompletionSound" type="AudioStreamPlayer3D" parent="tu dub/maps/Tallaght/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.99999964, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 0.99999964, 0.83783644, 0, -0.1480938)
+stream = ExtResource("102_cfjdm")
+volume_db = -10.0
+unit_size = 1.0
+max_db = 6.0
+max_distance = 15.0
+
+[node name="sdg_spawn_points" type="Node3D" parent="tu dub/maps/aungier" index="1"]
+
+[node name="sdg7" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points"]
+
+[node name="solar_panel_spawn1" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -0.30741334, 0, 0.23327887)
+
+[node name="solar_panel_spawn2" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0.24480772)
+
+[node name="solar_panel_spawn3" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.38360155, 0, 0.10310221)
+
+[node name="sun_rig_spawn" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+
+[node name="CompletionSound" type="AudioStreamPlayer3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+transform = Transform3D(0.99999964, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 0.99999964, 0.83783644, 0, -0.1480938)
+stream = ExtResource("102_cfjdm")
+volume_db = -10.0
+unit_size = 1.0
+max_db = 6.0
+max_distance = 15.0
+
+[node name="billboard_spawn" type="Node3D" parent="tu dub/maps/aungier/sdg_spawn_points/sdg7"]
+transform = Transform3D(-0.21650635, 0, -0.12500001, 0, 0.25, 0, 0.12500001, 0, -0.21650635, -0.15146971, 0.79999995, 0.71135926)
+
 [node name="tu_dub_logo" type="MeshInstance3D" parent="tu dub"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0867636, 0.331675, -0.05193)
 mesh = SubResource("ArrayMesh_8fby4")
@@ -62123,26 +62198,6 @@ angular_damp = 5.0
 
 [node name="godot_plushie_animated" parent="tu dub/godot_plushy" instance=ExtResource("96_ty5nw")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
-
-[node name="Skeleton3D" parent="tu dub/godot_plushy/godot_plushie_animated/Armature" index="0"]
-bones/0/position = Vector3(-4.7441544e-09, 0.15483436, 0)
-bones/0/scale = Vector3(1, 1.0917958, 1)
-bones/1/position = Vector3(-0.5535997, -0.64620894, -1.4332383e-07)
-bones/1/rotation = Quaternion(-0.7043076, 0.06285381, 0.7043079, -0.062854424)
-bones/2/rotation = Quaternion(1.5310142e-08, 5.002556e-07, -0.14667474, 0.9891848)
-bones/3/rotation = Quaternion(2.2101689e-07, -8.220096e-07, 0.5683017, 0.8228203)
-bones/4/rotation = Quaternion(0.6404197, -0.29977113, -0.64041954, -0.29977113)
-bones/5/rotation = Quaternion(0.6221701, -2.1585109e-07, 2.3733334e-07, 0.7828822)
-bones/6/rotation = Quaternion(0.03899031, 7.189151e-08, -1.8611944e-07, 0.9992396)
-bones/7/rotation = Quaternion(0.2455966, -1.3855903e-08, 1.8101172e-09, 0.96937215)
-bones/8/position = Vector3(0.5535997, -0.64620894, -1.420082e-07)
-bones/8/rotation = Quaternion(0.7043076, 0.06285381, 0.7043079, 0.062854424)
-bones/9/rotation = Quaternion(1.5310142e-08, -5.002556e-07, 0.14667474, 0.9891848)
-bones/10/rotation = Quaternion(2.2101689e-07, 8.220096e-07, -0.5683017, 0.8228203)
-bones/11/rotation = Quaternion(0.6404197, 0.29977113, 0.64041954, -0.29977113)
-bones/12/rotation = Quaternion(0.6221701, 2.1585112e-07, -2.3733334e-07, 0.7828822)
-bones/13/rotation = Quaternion(0.038990326, -7.18915e-08, 1.8611944e-07, 0.9992396)
-bones/14/rotation = Quaternion(0.2455966, 1.3855907e-08, -1.8101127e-09, 0.96937215)
 
 [node name="AnimationPlayer" parent="tu dub/godot_plushy/godot_plushie_animated" index="1"]
 speed_scale = 0.05
@@ -62277,6 +62332,7 @@ hand_pose_set = ExtResource("7_077gh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/collider"]
 shape = SubResource("CapsuleShape3D_dbnba")
 
+[connection signal="bounce" from="tu dub/ani_goals/goal_box_animated7" to="tu dub/ani_goals/goal_box_animated7/sdg7_manager" method="_on_goal_box_animated_7_bounce"]
 [connection signal="bounce" from="tu dub/ani_goals/goal_box_animated15" to="tu dub/ani_goals/goal_box_animated15/climate_action" method="_on_goal_box_animated_13_bounce"]
 [connection signal="animation_finished" from="tu dub/godot_plushy/godot_plushie_animated/AnimationPlayer" to="tu dub/godot_plushy/godot_plushie_animated/AnimationPlayer" method="_on_animation_finished"]
 [connection signal="area_entered" from="XROrigin3D/left/left_hand" to="XROrigin3D/left" method="_on_right_hand_area_entered"]

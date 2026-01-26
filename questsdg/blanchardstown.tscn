@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://buifie6p2dugp"]
+[gd_scene load_steps=10 format=3 uid="uid://buifie6p2dugp"]
 
 [ext_resource type="ArrayMesh" uid="uid://dqsdtbq11wh72" path="res://Models/Blanchardstown/Blanchardstown_TUDublin_Buildings.obj" id="1_jhfdp"]
 [ext_resource type="Material" uid="uid://cre5qov8oa88n" path="res://questsdg/buildings.tres" id="2_0v0m4"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://cln5ktkhygc8e" path="res://questsdg/highlight_color.tres" id="6_os5d3"]
 [ext_resource type="PackedScene" uid="uid://b00u5k8csutu6" path="res://questsdg/Tree.tscn" id="8_1whjv"]
 [ext_resource type="PackedScene" uid="uid://0f8utn8bitf4" path="res://questsdg/3_dlabel.tscn" id="9_8wyci"]
+[ext_resource type="AudioStream" uid="uid://bk48a5olb3gqd" path="res://questsdg/sdg7_assets/completion-noise.mp3" id="9_kpjav"]
 
 [node name="Blanchardstown" type="Node3D"]
 transform = Transform3D(0.990346, 0, 0.13862, 0, 1, 0, -0.13862, 0, 0.990346, 0, 0, 0)
@@ -46,6 +47,31 @@ area_size = Vector3(20, 0, 10)
 [node name="3dlabel3" parent="." instance=ExtResource("9_8wyci")]
 transform = Transform3D(1, 0, -1.04308e-07, 0, 1, 0, 1.04308e-07, 0, 1, 0.821995, 0.208835, -0.175405)
 text = "Blanchardstown Campus"
+
+[node name="sdg_spawn_points" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0014627322, 0, -0.010450231)
+
+[node name="sdg7" type="Node3D" parent="sdg_spawn_points"]
+
+[node name="wind_turbine_spawn1" type="Node3D" parent="sdg_spawn_points/sdg7"]
+transform = Transform3D(0.961425, 0, 0.27506685, 0, 1, 0, -0.27506685, 0, 0.961425, 1.1977233, 0.15036885, -0.48963368)
+
+[node name="wind_turbine_spawn2" type="Node3D" parent="sdg_spawn_points/sdg7"]
+transform = Transform3D(0.96126163, 0, 0.27563733, 0, 1, 0, -0.27563733, 0, 0.96126163, 1.17367, 0.1529373, -0.27187467)
+
+[node name="wind_turbine_spawn3" type="Node3D" parent="sdg_spawn_points/sdg7"]
+transform = Transform3D(0.9612617, 0, 0.27563736, 0, 1, 0, -0.27563736, 0, 0.9612617, 0.98800904, 0.14982465, -0.40130973)
+
+[node name="CompletionSound" type="AudioStreamPlayer3D" parent="sdg_spawn_points/sdg7"]
+transform = Transform3D(0.99999964, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 0.99999964, 0.83783644, 0, -0.1480938)
+stream = ExtResource("9_kpjav")
+volume_db = -10.0
+unit_size = 1.0
+max_db = 6.0
+max_distance = 15.0
+
+[node name="billboard_spawn" type="Node3D" parent="sdg_spawn_points/sdg7"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.8, 1, -0.8)
 
 [editable path="blanchTrees"]
 [editable path="blanchTrees2"]

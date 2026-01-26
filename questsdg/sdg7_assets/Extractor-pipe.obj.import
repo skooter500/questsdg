@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bm45p7a6w8e5s"
+path="res://.godot/imported/Extractor-pipe.obj-aac0579d8aa82a50222965b7941a2441.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Extractor-pipe.obj-aac0579d8aa82a50222965b7941a2441.mesh"]
+
+source_file="res://questsdg/sdg7_assets/Extractor-pipe.obj"
+dest_files=["res://.godot/imported/Extractor-pipe.obj-aac0579d8aa82a50222965b7941a2441.mesh", "res://.godot/imported/Extractor-pipe.obj-aac0579d8aa82a50222965b7941a2441.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
