@@ -1,4 +1,4 @@
-[gd_scene load_steps=8904 format=4 uid="uid://bm3rnwx5wv8tx"]
+[gd_scene format=4 uid="uid://bm3rnwx5wv8tx"]
 
 [ext_resource type="Script" uid="uid://k3b81g2egbnl" path="res://questsdg/cubes_scene_earlier.gd" id="1_d7fp4"]
 [ext_resource type="Script" uid="uid://djvs7cwaexbhh" path="res://questsdg/start_xr.gd" id="1_e2pu3"]
@@ -61692,10 +61692,10 @@ radius = 0.05
 radius = 0.05
 height = 0.2
 
-[node name="cubes_scene" type="Node3D"]
+[node name="cubes_scene" type="Node3D" unique_id=33242560]
 script = ExtResource("1_d7fp4")
 
-[node name="Boid" type="CharacterBody3D" parent="."]
+[node name="Boid" type="CharacterBody3D" parent="." unique_id=2040833281]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.247627, 1.60836, -0.863971)
 motion_mode = 1
 script = ExtResource("99_0s3vr")
@@ -61705,11 +61705,11 @@ banking = 10.0
 damping = 0.0
 draw_gizmos = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Boid"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Boid" unique_id=115802467]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0.000671387, -0.00756836, 0.00498195)
 shape = SubResource("2")
 
-[node name="Avoidance" type="Node" parent="Boid"]
+[node name="Avoidance" type="Node" parent="Boid" unique_id=311979028]
 script = ExtResource("100_8su2q")
 feeler_angle = 100
 feeler_length = 0.3
@@ -61717,17 +61717,17 @@ weight = 7.0
 draw_gizmos = false
 metadata/_custom_type_script = "uid://s5pb8njisohn"
 
-[node name="follow_path" type="Node" parent="Boid" node_paths=PackedStringArray("path")]
+[node name="follow_path" type="Node" parent="Boid" unique_id=1061335052 node_paths=PackedStringArray("path")]
 script = ExtResource("104_0s3vr")
 path = NodePath("../../tu dub/Path3D")
 waypoint_seek_distance = 0.1
 weight = 5.0
 draw_gizmos = false
 
-[node name="craft_speederD2" parent="Boid" instance=ExtResource("104_ty5nw")]
+[node name="craft_speederD2" parent="Boid" unique_id=847441606 instance=ExtResource("104_ty5nw")]
 transform = Transform3D(-0.05, 0, -4.37114e-09, 0, 0.05, 0, 4.37114e-09, 0, -0.05, 0.100756, -0.0180049, 0.0849958)
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Boid"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Boid" unique_id=1469215687]
 transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, 0.05, 0, -0.05, -2.18557e-09, -0.0178165, 0.00135851, -0.0503982)
 material_override = ExtResource("102_wnpci")
 amount = 500
@@ -61736,7 +61736,7 @@ trail_lifetime = 1.0
 process_material = SubResource("ParticleProcessMaterial_8su2q")
 draw_pass_1 = SubResource("PrismMesh_wnpci")
 
-[node name="GPUParticles3D2" type="GPUParticles3D" parent="Boid"]
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Boid" unique_id=421957228]
 transform = Transform3D(0.05, 0, 0, 0, -2.18557e-09, 0.05, 0, -0.05, -2.18557e-09, 0.0215936, 0.00135851, -0.0503982)
 material_override = ExtResource("102_wnpci")
 amount = 500
@@ -61745,23 +61745,23 @@ trail_lifetime = 1.0
 process_material = SubResource("ParticleProcessMaterial_8su2q")
 draw_pass_1 = SubResource("PrismMesh_wnpci")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Boid"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Boid" unique_id=15327753]
 stream = ExtResource("89_8su2q")
 attenuation_model = 2
 autoplay = true
 max_distance = 2.0
 
-[node name="tu dub" type="Node3D" parent="."]
+[node name="tu dub" type="Node3D" parent="." unique_id=2028748277]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3, 0)
 
-[node name="Path3D" type="Path3D" parent="tu dub"]
+[node name="Path3D" type="Path3D" parent="tu dub" unique_id=1555890595]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165009, 0.28011, 0)
 curve = SubResource("Curve3D_8su2q")
 
-[node name="ani_goals" type="Node3D" parent="tu dub"]
+[node name="ani_goals" type="Node3D" parent="tu dub" unique_id=1646268487]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75106, 0.426777, 0.0763259)
 
-[node name="goal_box_animated" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated" parent="tu dub/ani_goals" unique_id=1271396756 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 1.23005)
 visible = false
 
@@ -61774,7 +61774,7 @@ sprite_frames = SubResource("SpriteFrames_p4u8u")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_w1b63")
 
-[node name="goal_box_animated2" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated2" parent="tu dub/ani_goals" unique_id=1067505530 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61787,7 +61787,7 @@ sprite_frames = SubResource("SpriteFrames_a1h62")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated2/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_bfjxy")
 
-[node name="goal_box_animated3" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated3" parent="tu dub/ani_goals" unique_id=1371925267 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61800,7 +61800,7 @@ sprite_frames = SubResource("SpriteFrames_tlky0")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated3/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_5mhuu")
 
-[node name="goal_box_animated4" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated4" parent="tu dub/ani_goals" unique_id=1509472477 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61813,7 +61813,7 @@ sprite_frames = SubResource("SpriteFrames_toam5")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated4/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_f7hc6")
 
-[node name="goal_box_animated5" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated5" parent="tu dub/ani_goals" unique_id=1266021965 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61826,7 +61826,7 @@ sprite_frames = SubResource("SpriteFrames_ybhp3")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated5/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_cfjdm")
 
-[node name="goal_box_animated6" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated6" parent="tu dub/ani_goals" unique_id=1772484353 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61839,7 +61839,7 @@ sprite_frames = SubResource("SpriteFrames_liulo")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated6/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_lacbc")
 
-[node name="goal_box_animated7" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated7" parent="tu dub/ani_goals" unique_id=1144226375 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61852,7 +61852,7 @@ sprite_frames = SubResource("SpriteFrames_5rext")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated7/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_8thac")
 
-[node name="goal_box_animated8" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated8" parent="tu dub/ani_goals" unique_id=1033050554 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61865,7 +61865,7 @@ sprite_frames = SubResource("SpriteFrames_2mghe")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated8/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_iealq")
 
-[node name="goal_box_animated9" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated9" parent="tu dub/ani_goals" unique_id=432365473 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61878,7 +61878,7 @@ sprite_frames = SubResource("SpriteFrames_ve78m")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated9/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_31cib")
 
-[node name="goal_box_animated10" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated10" parent="tu dub/ani_goals" unique_id=424847590 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61891,7 +61891,7 @@ sprite_frames = SubResource("SpriteFrames_csyu2")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated10/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_urtq8")
 
-[node name="goal_box_animated11" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated11" parent="tu dub/ani_goals" unique_id=72412975 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61904,7 +61904,7 @@ sprite_frames = SubResource("SpriteFrames_u66v2")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated11/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_p8hdc")
 
-[node name="goal_box_animated12" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated12" parent="tu dub/ani_goals" unique_id=1196779007 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61917,7 +61917,7 @@ sprite_frames = SubResource("SpriteFrames_v4o4a")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated12/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_j75yb")
 
-[node name="goal_box_animated13" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated13" parent="tu dub/ani_goals" unique_id=287807842 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61930,7 +61930,7 @@ sprite_frames = SubResource("SpriteFrames_xg8iv")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated13/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_oxgc7")
 
-[node name="goal_box_animated14" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated14" parent="tu dub/ani_goals" unique_id=2051956385 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61943,7 +61943,7 @@ sprite_frames = SubResource("SpriteFrames_pwax4")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated14/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_hsav1")
 
-[node name="goal_box_animated15" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated15" parent="tu dub/ani_goals" unique_id=771274763 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61956,10 +61956,10 @@ sprite_frames = SubResource("SpriteFrames_ld8jp")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated15/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_5yt1y")
 
-[node name="climate_action" type="Node" parent="tu dub/ani_goals/goal_box_animated15"]
+[node name="climate_action" type="Node" parent="tu dub/ani_goals/goal_box_animated15" unique_id=583812962]
 script = ExtResource("47_r4p17")
 
-[node name="goal_box_animated16" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated16" parent="tu dub/ani_goals" unique_id=1102818305 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61972,7 +61972,7 @@ sprite_frames = SubResource("SpriteFrames_a8xv8")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated16/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_d28mf")
 
-[node name="goal_box_animated17" parent="tu dub/ani_goals" instance=ExtResource("38_dqovh")]
+[node name="goal_box_animated17" parent="tu dub/ani_goals" unique_id=1341203018 instance=ExtResource("38_dqovh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1000, 0)
 visible = false
 
@@ -61985,101 +61985,101 @@ sprite_frames = SubResource("SpriteFrames_128cd")
 [node name="bott" parent="tu dub/ani_goals/goal_box_animated17/Area3D/scaler" index="1"]
 sprite_frames = SubResource("SpriteFrames_msxeo")
 
-[node name="goals" type="Node3D" parent="tu dub"]
+[node name="goals" type="Node3D" parent="tu dub" unique_id=1883974634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75106, 0.426777, 0.0763259)
 script = ExtResource("2_2dw41")
 
-[node name="goal_box" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box" parent="tu dub/goals" unique_id=1366456379 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("2_sasra")
 
-[node name="goal_box2" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box2" parent="tu dub/goals" unique_id=1344525520 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("11_b11sm")
 goal = 2
 
-[node name="goal_box3" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box3" parent="tu dub/goals" unique_id=245302684 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("4_njel3")
 goal = 3
 
-[node name="goal_box4" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box4" parent="tu dub/goals" unique_id=1101579133 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("5_vr1i5")
 goal = 4
 
-[node name="goal_box5" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box5" parent="tu dub/goals" unique_id=307912738 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("6_rpuu0")
 goal = 5
 
-[node name="goal_box6" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box6" parent="tu dub/goals" unique_id=1906909093 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("7_oo8pe")
 goal = 6
 
-[node name="goal_box7" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box7" parent="tu dub/goals" unique_id=898968613 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("8_4gito")
 goal = 7
 
-[node name="goal_box8" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box8" parent="tu dub/goals" unique_id=2129563602 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("10_ykxp3")
 goal = 8
 
-[node name="goal_box9" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box9" parent="tu dub/goals" unique_id=793796514 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("9_fbuy2")
 goal = 9
 
-[node name="goal_box10" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box10" parent="tu dub/goals" unique_id=10473121 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("10_fbuy2")
 goal = 10
 
-[node name="goal_box11" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box11" parent="tu dub/goals" unique_id=1229316946 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("11_0k8yu")
 goal = 11
 
-[node name="goal_box12" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box12" parent="tu dub/goals" unique_id=1543704971 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("12_hiucn")
 goal = 12
 
-[node name="goal_box13" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box13" parent="tu dub/goals" unique_id=529723911 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("13_k6its")
 goal = 13
 
-[node name="goal_box14" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box14" parent="tu dub/goals" unique_id=942582357 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("14_2dw41")
 goal = 14
 
-[node name="goal_box15" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box15" parent="tu dub/goals" unique_id=2067429137 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("15_k6its")
 goal = 15
 
-[node name="goal_box16" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box16" parent="tu dub/goals" unique_id=920249282 instance=ExtResource("3_coq8p")]
 visible = false
 image = ExtResource("16_2dw41")
 goal = 16
 
-[node name="goal_box17" parent="tu dub/goals" instance=ExtResource("3_coq8p")]
+[node name="goal_box17" parent="tu dub/goals" unique_id=1982812917 instance=ExtResource("3_coq8p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00394344)
 visible = false
 image = ExtResource("17_ykxp3")
 goal = 17
 
-[node name="reset_wheel" parent="tu dub/goals" instance=ExtResource("44_rf3s6")]
+[node name="reset_wheel" parent="tu dub/goals" unique_id=2015897622 instance=ExtResource("44_rf3s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00605768, 0, 0.315702)
 visible = false
 script = ExtResource("87_axglg")
 
-[node name="maps" parent="tu dub" instance=ExtResource("45_73ssi")]
+[node name="maps" parent="tu dub" unique_id=1889539954 instance=ExtResource("45_73ssi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.25742, -0.742757, 0.762648)
 
 [node name="MultiMeshInstance3D" parent="tu dub/maps/Blanchardstown/blanchTrees" index="0"]
@@ -62088,40 +62088,40 @@ multimesh = null
 [node name="MultiMeshInstance3D" parent="tu dub/maps/Blanchardstown/blanchTrees2" index="0"]
 multimesh = null
 
-[node name="tu_dub_logo" type="MeshInstance3D" parent="tu dub"]
+[node name="tu_dub_logo" type="MeshInstance3D" parent="tu dub" unique_id=2053994461]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0867636, 0.331675, -0.05193)
 mesh = SubResource("ArrayMesh_8fby4")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_qrbae")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tu dub/tu_dub_logo"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="tu dub/tu_dub_logo" unique_id=1848090460]
 stream = ExtResource("22_6h1ut")
 volume_db = -49.931
 autoplay = true
 
-[node name="space" type="StaticBody3D" parent="tu dub"]
+[node name="space" type="StaticBody3D" parent="tu dub" unique_id=1547991803]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tu dub/space"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tu dub/space" unique_id=747844143]
 shape = SubResource("WorldBoundaryShape3D_rf3s6")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="tu dub/space"]
+[node name="StaticBody3D" type="StaticBody3D" parent="tu dub/space" unique_id=1561849389]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01724, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tu dub/space/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tu dub/space/StaticBody3D" unique_id=992324695]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19, 1.254, 0.556)
 shape = SubResource("BoxShape3D_p4u8u")
 
-[node name="color_wheel" parent="tu dub" instance=ExtResource("44_rf3s6")]
+[node name="color_wheel" parent="tu dub" unique_id=1928240218 instance=ExtResource("44_rf3s6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15001851, 0, 0.61833)
 
-[node name="godot_plushy" type="RigidBody3D" parent="tu dub"]
+[node name="godot_plushy" type="RigidBody3D" parent="tu dub" unique_id=1220456163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1653974, -0.1020844, 0.632358)
 mass = 10.0
 linear_damp = 5.0
 angular_damp = 5.0
 
-[node name="godot_plushie_animated" parent="tu dub/godot_plushy" instance=ExtResource("96_ty5nw")]
+[node name="godot_plushie_animated" parent="tu dub/godot_plushy" unique_id=847570243 instance=ExtResource("96_ty5nw")]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
 
 [node name="Skeleton3D" parent="tu dub/godot_plushy/godot_plushie_animated/Armature" index="0"]
@@ -62148,11 +62148,11 @@ bones/14/rotation = Quaternion(0.2455966, 1.3855907e-08, -1.8101127e-09, 0.96937
 speed_scale = 0.05
 script = ExtResource("97_p4u8u")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="tu dub/godot_plushy"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tu dub/godot_plushy" unique_id=280468654]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10439405, 0)
 shape = SubResource("SphereShape3D_p4u8u")
 
-[node name="Credits2" parent="tu dub" instance=ExtResource("98_w1b63")]
+[node name="Credits2" parent="tu dub" unique_id=1699508234 instance=ExtResource("98_w1b63")]
 transform = Transform3D(0.6468694, 0, -0.7626008, 0, 1, 0, 0.7626008, 0, 0.6468694, 0.9158054, 0.2595799, -1.1520331)
 text = "Created with:
 Godot Engine
@@ -62165,7 +62165,7 @@ https://skooter500.itch.io/quest-sdg"
 font_size = 64
 horizontal_alignment = 0
 
-[node name="Credits" parent="tu dub" instance=ExtResource("98_w1b63")]
+[node name="Credits" parent="tu dub" unique_id=48785334 instance=ExtResource("98_w1b63")]
 transform = Transform3D(0.5834704, 0, 0.8121344, 0, 1, 0, -0.8121344, 0, 0.5834704, -1.5190226, 0.10329819, -0.8006011)
 text = "Credits:
 
@@ -62191,90 +62191,90 @@ Neil Duignam"
 font_size = 64
 horizontal_alignment = 0
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1065501419]
 environment = SubResource("Environment_73ssi")
 
-[node name="start_passthrough" type="Node" parent="."]
+[node name="start_passthrough" type="Node" parent="." unique_id=240779422]
 script = ExtResource("1_e2pu3")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=762806755]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="XROrigin3D" type="XROrigin3D" parent="."]
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=656898413]
 
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" node_paths=PackedStringArray("spawn_in_front", "boid")]
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=2089154423 node_paths=PackedStringArray("spawn_in_front", "boid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.10548, 0)
 near = 0.001
 script = ExtResource("4_rf3s6")
 spawn_in_front = NodePath("../../tu dub")
 boid = NodePath("../../Boid")
 
-[node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D"]
+[node name="AudioListener3D" type="AudioListener3D" parent="XROrigin3D/XRCamera3D" unique_id=741043473]
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="XROrigin3D/XRCamera3D"]
+[node name="CharacterBody3D" type="CharacterBody3D" parent="XROrigin3D/XRCamera3D" unique_id=1846297190]
 motion_mode = 1
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/CharacterBody3D" unique_id=364351955]
 shape = SubResource("SphereShape3D_0s3vr")
 
-[node name="left" type="XRNode3D" parent="XROrigin3D"]
+[node name="left" type="XRNode3D" parent="XROrigin3D" unique_id=769580005]
 tracker = &"/user/hand_tracker/left"
 show_when_tracked = true
 script = ExtResource("2_p7tmn")
 
-[node name="HandPoseDetector" type="Node" parent="XROrigin3D/left"]
+[node name="HandPoseDetector" type="Node" parent="XROrigin3D/left" unique_id=251588269]
 script = ExtResource("3_b11sm")
 hand_pose_set = ExtResource("7_077gh")
 metadata/_custom_type_script = "uid://dya4sxc8awaw0"
 
-[node name="left_hand" type="Area3D" parent="XROrigin3D/left"]
+[node name="left_hand" type="Area3D" parent="XROrigin3D/left" unique_id=1207427196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0680579, 0.159387)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/left_hand"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/left_hand" unique_id=10067683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
 shape = SubResource("SphereShape3D_pvxhv")
 
-[node name="LeftHandHumanoid2" parent="XROrigin3D/left" instance=ExtResource("2_pvxhv")]
+[node name="LeftHandHumanoid2" parent="XROrigin3D/left" unique_id=1458473811 instance=ExtResource("2_pvxhv")]
 
 [node name="LeftHandHumanoidMesh" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("96_axglg")
 
-[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1"]
+[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/left/LeftHandHumanoid2/LeftHandHumanoid/Skeleton3D" index="1" unique_id=2045343829]
 
-[node name="collider" type="CharacterBody3D" parent="XROrigin3D/left"]
+[node name="collider" type="CharacterBody3D" parent="XROrigin3D/left" unique_id=2063881229]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/collider"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/left/collider" unique_id=1318406724]
 shape = SubResource("CapsuleShape3D_dbnba")
 
-[node name="right" type="XRNode3D" parent="XROrigin3D"]
+[node name="right" type="XRNode3D" parent="XROrigin3D" unique_id=1096865139]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.382027, 0, -0.143927)
 tracker = &"/user/hand_tracker/right"
 show_when_tracked = true
 script = ExtResource("2_p7tmn")
 
-[node name="right_hand" type="Area3D" parent="XROrigin3D/right"]
+[node name="right_hand" type="Area3D" parent="XROrigin3D/right" unique_id=1061267386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0676188, 0.159387)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/right_hand"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/right_hand" unique_id=928284623]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.144068)
 shape = SubResource("SphereShape3D_pvxhv")
 
-[node name="RightHandHumanoid2" parent="XROrigin3D/right" instance=ExtResource("3_6h1ut")]
+[node name="RightHandHumanoid2" parent="XROrigin3D/right" unique_id=948257162 instance=ExtResource("3_6h1ut")]
 
-[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="0"]
+[node name="XRHandModifier3D" type="XRHandModifier3D" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="0" unique_id=305640002]
 hand_tracker = &"/user/hand_tracker/right"
 
 [node name="RightHandHumanoidMesh" parent="XROrigin3D/right/RightHandHumanoid2/RightHandHumanoid/Skeleton3D" index="1"]
 surface_material_override/0 = ExtResource("96_axglg")
 
-[node name="HandPoseDetector" parent="XROrigin3D/right" instance=ExtResource("6_mfkbt")]
+[node name="HandPoseDetector" parent="XROrigin3D/right" unique_id=501268189 instance=ExtResource("6_mfkbt")]
 hand_tracker_name = "/user/hand_tracker/right"
 hand_pose_set = ExtResource("7_077gh")
 
-[node name="collider" type="CharacterBody3D" parent="XROrigin3D/right"]
+[node name="collider" type="CharacterBody3D" parent="XROrigin3D/right" unique_id=1465336265]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/collider"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/right/collider" unique_id=555406756]
 shape = SubResource("CapsuleShape3D_dbnba")
 
 [connection signal="bounce" from="tu dub/ani_goals/goal_box_animated15" to="tu dub/ani_goals/goal_box_animated15/climate_action" method="_on_goal_box_animated_13_bounce"]
